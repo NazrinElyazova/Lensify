@@ -1,24 +1,218 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8dE-IW-uNY">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Color Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ColorController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ColorController" customModule="Lensify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Lensify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZa-Qt-lmz">
+                                <rect key="frame" x="30" y="439.66666666666669" width="370" height="52.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="34"/>
+                                <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBD-lY-Ak7">
+                                <rect key="frame" x="20" y="778" width="390" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="lin-y5-A3z"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start">
+                                    <fontDescription key="titleFontDescription" name="Roboto-Bold" family="Roboto" pointSize="28"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="baseBackgroundColor" red="0.81568627450980391" green="0.55686274509803924" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="startActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="muq-e8-0hq"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OZa-Qt-lmz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Nf-GY-cbk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IBD-lY-Ak7" secondAttribute="trailing" constant="20" id="PE9-Lh-pr0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IBD-lY-Ak7" secondAttribute="bottom" constant="60" id="Tsg-NK-oNE"/>
+                            <constraint firstItem="OZa-Qt-lmz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="XUi-Qj-Sim"/>
+                            <constraint firstItem="IBD-lY-Ak7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="i1V-TG-76e"/>
+                            <constraint firstItem="OZa-Qt-lmz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pue-XA-pIJ"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="VWQ-nZ-GbM"/>
+                    <connections>
+                        <outlet property="myLabel" destination="OZa-Qt-lmz" id="xV6-bC-liw"/>
+                        <outlet property="startWelcomeButton" destination="IBD-lY-Ak7" id="LhG-MK-G9G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1124.4274809160304" y="31.690140845070424"/>
+        </scene>
+        <!--Launch Controller-->
+        <scene sceneID="Wyf-go-4nU">
+            <objects>
+                <viewController storyboardIdentifier="LaunchController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Wj-R6-qXw" customClass="LaunchController" customModule="Lensify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kqh-AJ-fRs">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="167-QH-Zjs" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="30" y="79" width="370" height="250"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="PDu-2z-c4j"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="lottieView"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every way to find FREE content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xP-fO-Ava">
+                                <rect key="frame" x="50" y="492.66666666666669" width="330" height="56.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkI-Uy-juF">
+                                <rect key="frame" x="20" y="778" width="390" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Y1w-OS-9mC"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Continue">
+                                    <fontDescription key="titleFontDescription" name="Roboto-Bold" family="Roboto" pointSize="28"/>
+                                    <color key="baseBackgroundColor" red="0.81568627450980391" green="0.55686274509803924" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover Lensify endless pool of images to serve your purpose." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbx-AE-aAU">
+                                <rect key="frame" x="20" y="601" width="390" height="40"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bFt-3f-RAM"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8xP-fO-Ava" firstAttribute="leading" secondItem="bFt-3f-RAM" secondAttribute="leading" constant="50" id="BwW-8H-HuP"/>
+                            <constraint firstItem="bFt-3f-RAM" firstAttribute="trailing" secondItem="Hbx-AE-aAU" secondAttribute="trailing" constant="20" id="FCG-Ms-jE8"/>
+                            <constraint firstItem="167-QH-Zjs" firstAttribute="top" secondItem="bFt-3f-RAM" secondAttribute="top" constant="20" id="Gji-C1-McD"/>
+                            <constraint firstItem="hkI-Uy-juF" firstAttribute="top" secondItem="Hbx-AE-aAU" secondAttribute="bottom" constant="137" id="PPt-m1-Dyi"/>
+                            <constraint firstItem="Hbx-AE-aAU" firstAttribute="leading" secondItem="bFt-3f-RAM" secondAttribute="leading" constant="20" id="SQi-8F-90F"/>
+                            <constraint firstItem="bFt-3f-RAM" firstAttribute="trailing" secondItem="8xP-fO-Ava" secondAttribute="trailing" constant="50" id="TO8-zi-7Wo"/>
+                            <constraint firstItem="bFt-3f-RAM" firstAttribute="trailing" secondItem="hkI-Uy-juF" secondAttribute="trailing" constant="20" id="Yio-Y1-iZd"/>
+                            <constraint firstItem="bFt-3f-RAM" firstAttribute="trailing" secondItem="167-QH-Zjs" secondAttribute="trailing" constant="30" id="mOJ-Qm-3vr"/>
+                            <constraint firstItem="hkI-Uy-juF" firstAttribute="leading" secondItem="bFt-3f-RAM" secondAttribute="leading" constant="20" id="qat-IQ-g42"/>
+                            <constraint firstItem="Hbx-AE-aAU" firstAttribute="top" secondItem="8xP-fO-Ava" secondAttribute="bottom" constant="52" id="tu0-RQ-llD"/>
+                            <constraint firstItem="bFt-3f-RAM" firstAttribute="bottom" secondItem="hkI-Uy-juF" secondAttribute="bottom" constant="60" id="uSm-wP-kj8"/>
+                            <constraint firstItem="167-QH-Zjs" firstAttribute="leading" secondItem="bFt-3f-RAM" secondAttribute="leading" constant="30" id="uvO-hC-sVk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="discoverLabel" destination="Hbx-AE-aAU" id="hJY-LD-Ebr"/>
+                        <outlet property="everyLabel" destination="8xP-fO-Ava" id="bBI-3h-GIq"/>
+                        <outlet property="lottieView" destination="167-QH-Zjs" id="3g9-uw-WuF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n5u-As-QIQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1915.2671755725189" y="31.690140845070424"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="25f-H7-qlV">
+            <objects>
+                <viewController id="gwp-4b-Jn9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kqm-ZA-1aJ">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="V1R-yY-Lt8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="3aY-6J-dtf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8HE-7v-s0Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3769" y="335"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="06g-cC-fBQ">
+            <objects>
+                <viewController id="r3b-aP-90W" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yHu-OR-F3L">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="4HP-o0-Sea"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="u1w-uS-F6G"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6JJ-0z-pjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3769" y="-272"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="RQ9-qq-8qo">
+            <objects>
+                <tabBarController id="GY4-bm-4SU" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lE7-Hz-eXY">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="r3b-aP-90W" kind="relationship" relationship="viewControllers" id="OR9-fo-J0u"/>
+                        <segue destination="gwp-4b-Jn9" kind="relationship" relationship="viewControllers" id="GxV-NZ-B3d"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oLf-f4-6MO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2890" y="32"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="O7W-QQ-KK8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8dE-IW-uNY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vbs-Zj-yli">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JGJ-t4-rn2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T9A-tk-KSH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="197.70992366412213" y="31.690140845070424"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

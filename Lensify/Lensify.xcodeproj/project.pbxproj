@@ -9,23 +9,43 @@
 /* Begin PBXBuildFile section */
 		7B90E2762B52C1FB0099FBA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2752B52C1FB0099FBA3 /* AppDelegate.swift */; };
 		7B90E2782B52C1FB0099FBA3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2772B52C1FB0099FBA3 /* SceneDelegate.swift */; };
-		7B90E27A2B52C1FB0099FBA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2792B52C1FB0099FBA3 /* ViewController.swift */; };
 		7B90E27D2B52C1FB0099FBA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B90E27B2B52C1FB0099FBA3 /* Main.storyboard */; };
 		7B90E2802B52C1FB0099FBA3 /* Lensify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E27E2B52C1FB0099FBA3 /* Lensify.xcdatamodeld */; };
 		7B90E2822B52C1FE0099FBA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B90E2812B52C1FE0099FBA3 /* Assets.xcassets */; };
 		7B90E2852B52C1FE0099FBA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B90E2832B52C1FE0099FBA3 /* LaunchScreen.storyboard */; };
+		7B90E28E2B52C4840099FBA3 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7B90E28D2B52C4840099FBA3 /* KeychainSwift */; };
+		7B90E2912B52C4960099FBA3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7B90E2902B52C4960099FBA3 /* Kingfisher */; };
+		7B90E2942B52C4A00099FBA3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 7B90E2932B52C4A00099FBA3 /* Alamofire */; };
+		7B90E2972B52C4AE0099FBA3 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7B90E2962B52C4AE0099FBA3 /* GoogleSignIn */; };
+		7B90E2992B52C4AE0099FBA3 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7B90E2982B52C4AE0099FBA3 /* GoogleSignInSwift */; };
+		7B90E29C2B52C4BF0099FBA3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7B90E29B2B52C4BF0099FBA3 /* Lottie */; };
+		7B90E29F2B52C4FD0099FBA3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E29E2B52C4FD0099FBA3 /* NetworkManager.swift */; };
+		7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2A02B52C5260099FBA3 /* NetworkHelper.swift */; };
+		7B90E2A32B52EC840099FBA3 /* ColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2A22B52EC840099FBA3 /* ColorController.swift */; };
+		7B90E2A52B52FAB20099FBA3 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2A42B52FAB20099FBA3 /* Endpoints.swift */; };
+		7B90E2A92B52FB110099FBA3 /* Wallpapers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2A82B52FB110099FBA3 /* Wallpapers.swift */; };
+		7B90E2AC2B52FB550099FBA3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2AB2B52FB550099FBA3 /* Extension.swift */; };
+		7B90E2B22B5329550099FBA3 /* LaunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2B12B5329550099FBA3 /* LaunchController.swift */; };
+		7B90E2B82B5332160099FBA3 /* lottieView.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B90E2B72B5332160099FBA3 /* lottieView.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7B90E2722B52C1FB0099FBA3 /* Lensify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lensify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B90E2752B52C1FB0099FBA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B90E2772B52C1FB0099FBA3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7B90E2792B52C1FB0099FBA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7B90E27C2B52C1FB0099FBA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7B90E27F2B52C1FB0099FBA3 /* Lensify.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Lensify.xcdatamodel; sourceTree = "<group>"; };
 		7B90E2812B52C1FE0099FBA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B90E2842B52C1FE0099FBA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B90E2862B52C1FE0099FBA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7B90E29E2B52C4FD0099FBA3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		7B90E2A02B52C5260099FBA3 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		7B90E2A22B52EC840099FBA3 /* ColorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorController.swift; sourceTree = "<group>"; };
+		7B90E2A42B52FAB20099FBA3 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		7B90E2A82B52FB110099FBA3 /* Wallpapers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpapers.swift; sourceTree = "<group>"; };
+		7B90E2AB2B52FB550099FBA3 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		7B90E2B12B5329550099FBA3 /* LaunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchController.swift; sourceTree = "<group>"; };
+		7B90E2B72B5332160099FBA3 /* lottieView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottieView.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +53,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B90E2992B52C4AE0099FBA3 /* GoogleSignInSwift in Frameworks */,
+				7B90E2942B52C4A00099FBA3 /* Alamofire in Frameworks */,
+				7B90E2972B52C4AE0099FBA3 /* GoogleSignIn in Frameworks */,
+				7B90E2912B52C4960099FBA3 /* Kingfisher in Frameworks */,
+				7B90E28E2B52C4840099FBA3 /* KeychainSwift in Frameworks */,
+				7B90E29C2B52C4BF0099FBA3 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,14 +86,61 @@
 			children = (
 				7B90E2752B52C1FB0099FBA3 /* AppDelegate.swift */,
 				7B90E2772B52C1FB0099FBA3 /* SceneDelegate.swift */,
-				7B90E2792B52C1FB0099FBA3 /* ViewController.swift */,
+				7B90E2AA2B52FB490099FBA3 /* Helper */,
+				7B90E2A72B52FAF20099FBA3 /* Model */,
+				7B90E2A62B52FAD60099FBA3 /* Scene */,
+				7B90E29D2B52C4E70099FBA3 /* Network */,
 				7B90E27B2B52C1FB0099FBA3 /* Main.storyboard */,
 				7B90E2812B52C1FE0099FBA3 /* Assets.xcassets */,
 				7B90E2832B52C1FE0099FBA3 /* LaunchScreen.storyboard */,
 				7B90E2862B52C1FE0099FBA3 /* Info.plist */,
 				7B90E27E2B52C1FB0099FBA3 /* Lensify.xcdatamodeld */,
+				7B90E2B72B5332160099FBA3 /* lottieView.json */,
 			);
 			path = Lensify;
+			sourceTree = "<group>";
+		};
+		7B90E29D2B52C4E70099FBA3 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7B90E29E2B52C4FD0099FBA3 /* NetworkManager.swift */,
+				7B90E2A02B52C5260099FBA3 /* NetworkHelper.swift */,
+				7B90E2A42B52FAB20099FBA3 /* Endpoints.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7B90E2A62B52FAD60099FBA3 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				7B90E2B92B5336530099FBA3 /* Welcome */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		7B90E2A72B52FAF20099FBA3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7B90E2A82B52FB110099FBA3 /* Wallpapers.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B90E2AA2B52FB490099FBA3 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7B90E2AB2B52FB550099FBA3 /* Extension.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		7B90E2B92B5336530099FBA3 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				7B90E2A22B52EC840099FBA3 /* ColorController.swift */,
+				7B90E2B12B5329550099FBA3 /* LaunchController.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +159,14 @@
 			dependencies = (
 			);
 			name = Lensify;
+			packageProductDependencies = (
+				7B90E28D2B52C4840099FBA3 /* KeychainSwift */,
+				7B90E2902B52C4960099FBA3 /* Kingfisher */,
+				7B90E2932B52C4A00099FBA3 /* Alamofire */,
+				7B90E2962B52C4AE0099FBA3 /* GoogleSignIn */,
+				7B90E2982B52C4AE0099FBA3 /* GoogleSignInSwift */,
+				7B90E29B2B52C4BF0099FBA3 /* Lottie */,
+			);
 			productName = Lensify;
 			productReference = 7B90E2722B52C1FB0099FBA3 /* Lensify.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +195,13 @@
 				Base,
 			);
 			mainGroup = 7B90E2692B52C1FB0099FBA3;
+			packageReferences = (
+				7B90E28C2B52C4840099FBA3 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				7B90E28F2B52C4960099FBA3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				7B90E2922B52C4A00099FBA3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				7B90E2952B52C4AE0099FBA3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				7B90E29A2B52C4BF0099FBA3 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 7B90E2732B52C1FB0099FBA3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -131,6 +219,7 @@
 				7B90E2852B52C1FE0099FBA3 /* LaunchScreen.storyboard in Resources */,
 				7B90E2822B52C1FE0099FBA3 /* Assets.xcassets in Resources */,
 				7B90E27D2B52C1FB0099FBA3 /* Main.storyboard in Resources */,
+				7B90E2B82B5332160099FBA3 /* lottieView.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,9 +230,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B90E27A2B52C1FB0099FBA3 /* ViewController.swift in Sources */,
+				7B90E2AC2B52FB550099FBA3 /* Extension.swift in Sources */,
+				7B90E29F2B52C4FD0099FBA3 /* NetworkManager.swift in Sources */,
+				7B90E2A32B52EC840099FBA3 /* ColorController.swift in Sources */,
 				7B90E2762B52C1FB0099FBA3 /* AppDelegate.swift in Sources */,
+				7B90E2A52B52FAB20099FBA3 /* Endpoints.swift in Sources */,
+				7B90E2B22B5329550099FBA3 /* LaunchController.swift in Sources */,
+				7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */,
 				7B90E2802B52C1FB0099FBA3 /* Lensify.xcdatamodeld in Sources */,
+				7B90E2A92B52FB110099FBA3 /* Wallpapers.swift in Sources */,
 				7B90E2782B52C1FB0099FBA3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +460,82 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7B90E28C2B52C4840099FBA3 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
+		7B90E28F2B52C4960099FBA3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.2;
+			};
+		};
+		7B90E2922B52C4A00099FBA3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+		7B90E2952B52C4AE0099FBA3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		7B90E29A2B52C4BF0099FBA3 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7B90E28D2B52C4840099FBA3 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B90E28C2B52C4840099FBA3 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+		7B90E2902B52C4960099FBA3 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B90E28F2B52C4960099FBA3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		7B90E2932B52C4A00099FBA3 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B90E2922B52C4A00099FBA3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		7B90E2962B52C4AE0099FBA3 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B90E2952B52C4AE0099FBA3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		7B90E2982B52C4AE0099FBA3 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B90E2952B52C4AE0099FBA3 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		7B90E29B2B52C4BF0099FBA3 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7B90E29A2B52C4BF0099FBA3 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7B90E27E2B52C1FB0099FBA3 /* Lensify.xcdatamodeld */ = {
