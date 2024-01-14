@@ -1,9 +1,7 @@
+// This file was generated from JSON Schema using quicktype, do not modify it directly.
+// To parse the JSON, add this file to your project and do:
 //
-//  Wallpapers.swift
-//  Lensify
-//
-//  Created by Nazrin on 13.01.24.
-//
+//   let unsplash = try? JSONDecoder().decode(Unsplash.self, from: jsonData)
 
 import Foundation
 
@@ -320,4 +318,5 @@ struct FluffyTopicSubmissions: Codable {
         case spirituality, nature
     }
 }
+
 

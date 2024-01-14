@@ -3,6 +3,7 @@
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -103,6 +104,9 @@
                                     <fontDescription key="titleFontDescription" name="Roboto-Bold" family="Roboto" pointSize="28"/>
                                     <color key="baseBackgroundColor" red="0.81568627450980391" green="0.55686274509803924" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="continueButtonAction:" destination="2Wj-R6-qXw" eventType="touchUpInside" id="74v-iv-h78"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover Lensify endless pool of images to serve your purpose." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbx-AE-aAU">
                                 <rect key="frame" x="20" y="601" width="390" height="40"/>
@@ -138,7 +142,7 @@
             </objects>
             <point key="canvasLocation" x="1915.2671755725189" y="31.690140845070424"/>
         </scene>
-        <!--Item 2-->
+        <!--Search-->
         <scene sceneID="25f-H7-qlV">
             <objects>
                 <viewController id="gwp-4b-Jn9" sceneMemberID="viewController">
@@ -148,36 +152,108 @@
                         <viewLayoutGuide key="safeArea" id="V1R-yY-Lt8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="3aY-6J-dtf"/>
+                    <tabBarItem key="tabBarItem" title="Search" id="3aY-6J-dtf">
+                        <imageReference key="image" image="magnifyingglass" catalog="system" renderingMode="hierarchical">
+                            <hierarchicalColors>
+                                <color systemColor="systemGray2Color"/>
+                                <color systemColor="secondaryLabelColor"/>
+                                <color systemColor="tertiaryLabelColor"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8HE-7v-s0Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3769" y="335"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="06g-cC-fBQ">
             <objects>
-                <viewController id="r3b-aP-90W" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r3b-aP-90W" customClass="HomeController" customModule="Lensify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yHu-OR-F3L">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZIa-Ll-dpe">
+                                <rect key="frame" x="0.0" y="164" width="430" height="685"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Sjf-Tf-BhE">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="r3b-aP-90W" id="gnm-MH-jqY"/>
+                                    <outlet property="delegate" destination="r3b-aP-90W" id="AFD-Nw-fnQ"/>
+                                </connections>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lensify" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsQ-zp-9ve">
+                                <rect key="frame" x="162" y="70" width="107.66666666666669" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="fpR-r7-5NE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3mj-Cv-G3e">
+                                <rect key="frame" x="20" y="105" width="390" height="32"/>
+                                <color key="backgroundColor" red="0.81568627450980391" green="0.55686274509803924" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <segments>
+                                    <segment title="Edutorial"/>
+                                    <segment title="Wallpapers"/>
+                                    <segment title="3D Renders"/>
+                                    <segment title="Nature"/>
+                                </segments>
+                                <connections>
+                                    <action selector="edutorialAction:" destination="r3b-aP-90W" eventType="valueChanged" id="3j4-Dq-g4y"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="4HP-o0-Sea"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3mj-Cv-G3e" firstAttribute="top" secondItem="wsQ-zp-9ve" secondAttribute="bottom" id="0RO-MY-emK"/>
+                            <constraint firstItem="4HP-o0-Sea" firstAttribute="bottom" secondItem="ZIa-Ll-dpe" secondAttribute="bottom" id="368-BB-P2W"/>
+                            <constraint firstItem="4HP-o0-Sea" firstAttribute="trailing" secondItem="3mj-Cv-G3e" secondAttribute="trailing" constant="20" id="7Cw-Bc-bSY"/>
+                            <constraint firstItem="ZIa-Ll-dpe" firstAttribute="top" secondItem="3mj-Cv-G3e" secondAttribute="bottom" constant="28" id="D9S-8o-Pnj"/>
+                            <constraint firstItem="3mj-Cv-G3e" firstAttribute="leading" secondItem="4HP-o0-Sea" secondAttribute="leading" constant="20" id="Gs9-Mj-x1u"/>
+                            <constraint firstItem="wsQ-zp-9ve" firstAttribute="top" secondItem="yHu-OR-F3L" secondAttribute="top" constant="70" id="J7U-ZT-Uy4"/>
+                            <constraint firstItem="wsQ-zp-9ve" firstAttribute="leading" secondItem="yHu-OR-F3L" secondAttribute="leading" constant="162" id="KDa-re-cFd"/>
+                            <constraint firstItem="4HP-o0-Sea" firstAttribute="trailing" secondItem="ZIa-Ll-dpe" secondAttribute="trailing" id="ooT-De-Rd9"/>
+                            <constraint firstItem="ZIa-Ll-dpe" firstAttribute="leading" secondItem="4HP-o0-Sea" secondAttribute="leading" id="ymB-06-MIR"/>
+                            <constraint firstItem="4HP-o0-Sea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wsQ-zp-9ve" secondAttribute="trailing" symbolic="YES" id="z1D-AY-GA5"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="u1w-uS-F6G"/>
+                    <tabBarItem key="tabBarItem" title="Home" id="u1w-uS-F6G">
+                        <imageReference key="image" image="house.fill" catalog="system" renderingMode="hierarchical">
+                            <hierarchicalColors>
+                                <color systemColor="systemGray2Color"/>
+                                <color systemColor="secondaryLabelColor"/>
+                                <color systemColor="tertiaryLabelColor"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="collection" destination="ZIa-Ll-dpe" id="ijE-Bh-HQj"/>
+                        <outlet property="edutorialSegment" destination="3mj-Cv-G3e" id="eaf-OZ-5IE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6JJ-0z-pjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3769" y="-272"/>
+            <point key="canvasLocation" x="3768.8372093023254" y="-272.3175965665236"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RQ9-qq-8qo">
             <objects>
-                <tabBarController id="GY4-bm-4SU" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GY4-bm-4SU" customClass="TabBarController" customModule="Lensify" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lE7-Hz-eXY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="r3b-aP-90W" kind="relationship" relationship="viewControllers" id="OR9-fo-J0u"/>
@@ -208,11 +284,22 @@
         </scene>
     </scenes>
     <resources>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

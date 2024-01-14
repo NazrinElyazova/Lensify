@@ -21,5 +21,9 @@ class LaunchController: UIViewController {
         lottieView.play()
         lottieView.loopMode = .loop
     }
-
+    @IBAction func continueButtonAction(_ sender: Any) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(TabBarController.self)") as! TabBarController
+        navigationController?.show(controller, sender: nil)
+    }
+    
 }

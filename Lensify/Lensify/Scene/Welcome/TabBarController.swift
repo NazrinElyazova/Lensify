@@ -1,0 +1,20 @@
+//
+//  TabBarController.swift
+//  Lensify
+//
+//  Created by Nazrin on 14.01.24.
+//
+
+import UIKit
+
+class TabBarController: UITabBarController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tabBar.backgroundColor = .black
+        tabBar.barTintColor = .black
+        
+        // Do any additional setup after loading the view.
+    }
+
+}

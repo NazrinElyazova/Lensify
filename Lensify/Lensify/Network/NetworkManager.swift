@@ -18,8 +18,12 @@ class NetworkManager {
         encoding: ParameterEncoding = URLEncoding.default,
         parameters: Parameters? = nil,
         completion: @escaping((T?, String?)-> Void)) {
-    
-            AF.request("\(NetworkHelper.baseURL)\(endpoint)??client_id=QDkrKxHnXw5_P5WcTxtWfeEbf-XZSntir16cfzE9YSE", method: method, parameters: parameters, encoding: encoding,headers: header).responseDecodable(of: T.self) { response in
+            
+            AF.request("\(NetworkHelper.baseURL)\(endpoint)?client_id=QDkrKxHnXw5_P5WcTxtWfeEbf-XZSntir16cfzE9YSE",
+                       method: method,
+                       parameters: parameters,
+                       encoding: encoding,
+                       headers: header).responseDecodable(of: T.self) { response in
                 switch response.result {
                 case.success(let data):
                     completion(data, nil)
@@ -28,5 +32,5 @@ class NetworkManager {
                 }
                 
             }
-    }
+        }
 }

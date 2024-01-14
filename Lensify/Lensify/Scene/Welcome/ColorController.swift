@@ -16,7 +16,7 @@ class ColorController: UIViewController {
         super.viewDidLoad()
         myLabel.text = "Welcome to Lensify"
         startWelcomeButton.layer.cornerRadius = 20
-    
+        
     }
     @IBAction func startActionButton(_ sender: UIButton) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(LaunchController.self)") as! LaunchController
@@ -27,17 +27,17 @@ class ColorController: UIViewController {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [UIColor.purple.cgColor,  UIColor.systemPink.cgColor, UIColor.blue.cgColor]
-            // purple, pink, white, blue, black,
+        // purple, pink, white, blue, black,
         
         gradientLayer.startPoint = CGPoint(x: 0.7, y: 0.3)
         gradientLayer.endPoint = CGPoint(x: 0.2, y: 1.3)
         view.layer.addSublayer(gradientLayer)
         view.bringSubviewToFront(myLabel)
         view.bringSubviewToFront(startWelcomeButton)
-     
+        
         
     }
-
+}
     //   gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.5)
     //gradientLayer.endPoint = CGPoint(x: 0, y: 1)
     
@@ -48,12 +48,10 @@ class ColorController: UIViewController {
     //gradientLayer.startPoint = CGPoint(x: 0, y: 0)
     //gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
     
-    //en yaxsisi
+    //orta yaxsisi
     //gradientLayer.startPoint = CGPoint(x: 0.7, y: 0.3)
     //gradientLayer.endPoint = CGPoint(x: 0.2, y: 0.8)
     
     //best
     //gradientLayer.startPoint = CGPoint(x: 0.7, y: 0.3)
     //gradientLayer.endPoint = CGPoint(x: 0.2, y: 1.3)
-    
-}
