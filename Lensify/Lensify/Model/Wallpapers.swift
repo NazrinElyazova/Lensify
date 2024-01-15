@@ -7,6 +7,7 @@ import Foundation
 
 // MARK: - Wallpapers
 struct Wallpapers: Codable {
+    
     let id, title: String?
     let publishedAt, lastCollectedAt, updatedAt: String?
     let featured: Bool?
@@ -20,6 +21,15 @@ struct Wallpapers: Codable {
     let previewPhotos: [PreviewPhoto]?
     let description: String?
 
+//    var titleLabel: String {
+//        title ?? ""
+//    }
+//    
+//    var imagePath: String {
+//        "\(String(describing: coverPhoto))"
+//    }
+    
+    
     enum CodingKeys: String, CodingKey {
         case id, title
         case publishedAt = "published_at"

@@ -89,7 +89,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every way to find FREE content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xP-fO-Ava">
-                                <rect key="frame" x="50" y="493.33333333333326" width="330" height="56"/>
+                                <rect key="frame" x="50" y="492.66666666666669" width="330" height="56.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -109,7 +109,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover Lensify endless pool of images to serve your purpose." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbx-AE-aAU">
-                                <rect key="frame" x="20" y="601.33333333333337" width="390" height="39.666666666666629"/>
+                                <rect key="frame" x="20" y="601" width="390" height="40"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -253,10 +253,10 @@
                                 <rect key="frame" x="20" y="105" width="390" height="32"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <segments>
-                                    <segment title="Edutorial"/>
                                     <segment title="Wallpapers"/>
-                                    <segment title="3D Renders"/>
                                     <segment title="Nature"/>
+                                    <segment title="3D Renders"/>
+                                    <segment title="Architecture"/>
                                 </segments>
                                 <connections>
                                     <action selector="edutorialAction:" destination="r3b-aP-90W" eventType="valueChanged" id="3j4-Dq-g4y"/>
@@ -295,6 +295,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6JJ-0z-pjq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3768.8372093023254" y="-272.3175965665236"/>
+        </scene>
+        <!--Nature Controller-->
+        <scene sceneID="9UV-Uy-ugi">
+            <objects>
+                <viewController storyboardIdentifier="NatureController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="osY-b2-BFC" customClass="NatureController" customModule="Lensify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Ww-mp-bfW">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rll-dq-nNr">
+                                <rect key="frame" x="0.0" y="59" width="430" height="839"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="GqT-sf-gfH">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="osY-b2-BFC" id="xna-Oi-QWJ"/>
+                                    <outlet property="delegate" destination="osY-b2-BFC" id="GvT-gw-i8R"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JRP-hf-ZVX"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rll-dq-nNr" firstAttribute="leading" secondItem="JRP-hf-ZVX" secondAttribute="leading" id="UyH-v6-HcK"/>
+                            <constraint firstItem="JRP-hf-ZVX" firstAttribute="trailing" secondItem="rll-dq-nNr" secondAttribute="trailing" id="iGS-cK-gLi"/>
+                            <constraint firstItem="JRP-hf-ZVX" firstAttribute="bottom" secondItem="rll-dq-nNr" secondAttribute="bottom" id="q4q-kJ-nGn"/>
+                            <constraint firstItem="rll-dq-nNr" firstAttribute="top" secondItem="JRP-hf-ZVX" secondAttribute="top" id="s3I-Zl-tyD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collection" destination="rll-dq-nNr" id="aac-ne-ki4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0S0-NU-BNL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4568" y="-272"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RQ9-qq-8qo">
@@ -335,8 +376,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="house.fill" catalog="system" width="128" height="106"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="purple" width="1024" height="583"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

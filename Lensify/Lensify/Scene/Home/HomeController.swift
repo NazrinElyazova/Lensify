@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeController: UIViewController {
-  var viewModel = HomeViewModel()
+  let viewModel = HomeViewModel()
     
     @IBOutlet weak var edutorialSegment: UISegmentedControl!
     @IBOutlet weak var collection: UICollectionView!
@@ -24,8 +24,8 @@ class HomeController: UIViewController {
         case 0:
             print("first")
         case 1:
-            let controller = storyboard?.instantiateViewController(withIdentifier: "\(ColorController.self)") as! ColorController
-           present(controller, animated: true)
+            let controller = storyboard?.instantiateViewController(withIdentifier: "\(NatureController.self)") as! NatureController
+            navigationController?.show(controller, sender: nil)
         case 2:
             let controller = storyboard?.instantiateViewController(withIdentifier: "\(LaunchController.self)") as! LaunchController
             navigationController?.show(controller, sender: nil)
@@ -57,7 +57,8 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
-        cell.configure(data: viewModel.items[indexPath.item])
+        let item = viewModel.items[indexPath.item]
+        cell.configure(data: item)
        
         return cell
 

@@ -6,6 +6,10 @@
 //
 
 import UIKit
+//protocol HomeCellProtocol {
+//    var titleLabel: String { get }
+//    var imagePath: String { get }
+//}
 
 class HomeCell: UICollectionViewCell {
 var items = [Wallpapers]()
@@ -19,7 +23,13 @@ var items = [Wallpapers]()
 
         homeLabel.text = data.title
         homeImage.loadImage(url: data.coverPhoto?.urls?.small ?? "")
-//        homeLabel.text = data.user?.instagramUsername
     }
-
+    func configure2(data: Photo) {
+        homeImage.loadImage(url: data.urls?.small ?? "")
+        homeLabel.text = data.altDescription
+    }
+//    func configure(data: HomeCellProtocol) {
+//        homeImage.loadImage(url: data.imagePath)
+//        homeLabel.text = data.titleLabel
+//    }
 }

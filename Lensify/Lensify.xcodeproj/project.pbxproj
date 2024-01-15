@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B3021D02B55A15200CE19E6 /* NatureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3021CF2B55A15200CE19E6 /* NatureController.swift */; };
+		7B3021D22B55A16D00CE19E6 /* NatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3021D12B55A16D00CE19E6 /* NatureViewModel.swift */; };
+		7B3021D42B55A1DE00CE19E6 /* Nature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3021D32B55A1DE00CE19E6 /* Nature.swift */; };
 		7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7A02B53E6B3005D0CED /* HomeController.swift */; };
 		7B53E7A32B53E6C6005D0CED /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7A22B53E6C6005D0CED /* HomeViewModel.swift */; };
 		7B53E7CA2B53F1F5005D0CED /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7C92B53F1F5005D0CED /* TabBarController.swift */; };
@@ -37,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B3021CF2B55A15200CE19E6 /* NatureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureController.swift; sourceTree = "<group>"; };
+		7B3021D12B55A16D00CE19E6 /* NatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureViewModel.swift; sourceTree = "<group>"; };
+		7B3021D32B55A1DE00CE19E6 /* Nature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nature.swift; sourceTree = "<group>"; };
 		7B53E7A02B53E6B3005D0CED /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		7B53E7A22B53E6C6005D0CED /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7B53E7C92B53F1F5005D0CED /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -79,6 +85,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B3021CE2B55A11F00CE19E6 /* Nature */ = {
+			isa = PBXGroup;
+			children = (
+				7B3021CF2B55A15200CE19E6 /* NatureController.swift */,
+				7B3021D12B55A16D00CE19E6 /* NatureViewModel.swift */,
+				7B3021D32B55A1DE00CE19E6 /* Nature.swift */,
+			);
+			path = Nature;
+			sourceTree = "<group>";
+		};
 		7B53E79F2B53E6A0005D0CED /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +163,7 @@
 		7B90E2A62B52FAD60099FBA3 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7B3021CE2B55A11F00CE19E6 /* Nature */,
 				7B97B9D62B54636300D489CB /* Header */,
 				7B53E79F2B53E6A0005D0CED /* Home */,
 				7B90E2B92B5336530099FBA3 /* Welcome */,
@@ -277,10 +294,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B90E2AC2B52FB550099FBA3 /* Extension.swift in Sources */,
+				7B3021D22B55A16D00CE19E6 /* NatureViewModel.swift in Sources */,
 				7B90E29F2B52C4FD0099FBA3 /* NetworkManager.swift in Sources */,
 				7B97B9D02B5451D300D489CB /* HomeCell.swift in Sources */,
 				7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */,
+				7B3021D42B55A1DE00CE19E6 /* Nature.swift in Sources */,
 				7B90E2A32B52EC840099FBA3 /* ColorController.swift in Sources */,
+				7B3021D02B55A15200CE19E6 /* NatureController.swift in Sources */,
 				7B90E2762B52C1FB0099FBA3 /* AppDelegate.swift in Sources */,
 				7B90E2A52B52FAB20099FBA3 /* Endpoints.swift in Sources */,
 				7B90E2B22B5329550099FBA3 /* LaunchController.swift in Sources */,

@@ -8,4 +8,5 @@
 import Foundation
 enum Endpoints: String {
     case wallpaper = "collections"
+    case nature = "photos"
 }
