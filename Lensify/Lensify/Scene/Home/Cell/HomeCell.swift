@@ -16,8 +16,10 @@ var items = [Wallpapers]()
         // Initialization code
     }
     func configure(data: Wallpapers) {
-        homeImage.loadImage(url: data.coverPhoto?.urls?.small ?? "")
+
         homeLabel.text = data.title
+        homeImage.loadImage(url: data.coverPhoto?.urls?.small ?? "")
+//        homeLabel.text = data.user?.instagramUsername
     }
 
 }

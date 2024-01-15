@@ -33,6 +33,7 @@
 		7B97B9D02B5451D300D489CB /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B97B9CE2B5451D300D489CB /* HomeCell.swift */; };
 		7B97B9D12B5451D300D489CB /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B97B9CF2B5451D300D489CB /* HomeCell.xib */; };
 		7B97B9D32B54586600D489CB /* SegmentedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B97B9D22B54586600D489CB /* SegmentedController.swift */; };
+		7B97B9D52B54630700D489CB /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B97B9D42B54630600D489CB /* HeaderReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		7B97B9CE2B5451D300D489CB /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		7B97B9CF2B5451D300D489CB /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		7B97B9D22B54586600D489CB /* SegmentedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedController.swift; sourceTree = "<group>"; };
+		7B97B9D42B54630600D489CB /* HeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 		7B90E2A62B52FAD60099FBA3 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7B97B9D62B54636300D489CB /* Header */,
 				7B53E79F2B53E6A0005D0CED /* Home */,
 				7B90E2B92B5336530099FBA3 /* Welcome */,
 			);
@@ -175,6 +178,14 @@
 				7B53E7C92B53F1F5005D0CED /* TabBarController.swift */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		7B97B9D62B54636300D489CB /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				7B97B9D42B54630600D489CB /* HeaderReusableView.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,6 +286,7 @@
 				7B90E2B22B5329550099FBA3 /* LaunchController.swift in Sources */,
 				7B97B9D32B54586600D489CB /* SegmentedController.swift in Sources */,
 				7B53E7A32B53E6C6005D0CED /* HomeViewModel.swift in Sources */,
+				7B97B9D52B54630700D489CB /* HeaderReusableView.swift in Sources */,
 				7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */,
 				7B90E2802B52C1FB0099FBA3 /* Lensify.xcdatamodeld in Sources */,
 				7B90E2A92B52FB110099FBA3 /* Wallpapers.swift in Sources */,

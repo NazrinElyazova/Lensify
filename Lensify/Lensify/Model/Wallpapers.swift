@@ -5,54 +5,50 @@
 
 import Foundation
 
-// MARK: - UnsplashElement
+// MARK: - Wallpapers
 struct Wallpapers: Codable {
     let id, title: String?
-    let description: String?
     let publishedAt, lastCollectedAt, updatedAt: String?
     let featured: Bool?
     let totalPhotos: Int?
-    let unsplashPrivate: Bool?
+    let wallpapersPrivate: Bool?
     let shareKey: String?
-//    let tags: [Tag]?
-//    let links: UnsplashLinks?
-//    let user: User?
-    let coverPhoto: UnsplashCoverPhoto?
-//    let previewPhotos: [PreviewPhoto]?
+    let tags: [Tag]?
+    let links: WallpapersLinks?
+    let user: User?
+    let coverPhoto: WallpapersCoverPhoto?
+    let previewPhotos: [PreviewPhoto]?
+    let description: String?
 
     enum CodingKeys: String, CodingKey {
-        case id, title, description
+        case id, title
         case publishedAt = "published_at"
         case lastCollectedAt = "last_collected_at"
         case updatedAt = "updated_at"
         case featured
         case totalPhotos = "total_photos"
-        case unsplashPrivate = "private"
+        case wallpapersPrivate = "private"
         case shareKey = "share_key"
-//        case tags, links, user
+        case tags, links, user
         case coverPhoto = "cover_photo"
-//        case previewPhotos = "preview_photos"
+        case previewPhotos = "preview_photos"
+        case description
     }
 }
 
-// MARK: - UnsplashCoverPhoto
-struct UnsplashCoverPhoto: Codable {
+// MARK: - WallpapersCoverPhoto
+struct WallpapersCoverPhoto: Codable {
     let id, slug: String?
-    let createdAt, updatedAt: String?
-    let promotedAt: String?
+    let createdAt, updatedAt, promotedAt: String?
     let width, height: Int?
-    let color, blurHash: String?
-    let description: String?
-    let altDescription: String?
-//    let breadcrumbs: [String]?
+    let color, blurHash, altDescription: String?
     let urls: Urls?
     let links: CoverPhotoLinks?
     let likes: Int?
     let likedByUser: Bool?
-//    let currentUserCollections: [String]?
-    let sponsorship: String?
-//    let topicSubmissions: PurpleTopicSubmissions?
-//    let user: User?
+    let topicSubmissions: PurpleTopicSubmissions?
+    let user: User?
+    let description: String?
 
     enum CodingKeys: String, CodingKey {
         case id, slug
@@ -61,15 +57,11 @@ struct UnsplashCoverPhoto: Codable {
         case promotedAt = "promoted_at"
         case width, height, color
         case blurHash = "blur_hash"
-        case description
         case altDescription = "alt_description"
-//        case breadcrumbs
         case urls, links, likes
         case likedByUser = "liked_by_user"
-//        case currentUserCollections = "current_user_collections"
-        case sponsorship
-//        case topicSubmissions = "topic_submissions"
-//        case user
+        case topicSubmissions = "topic_submissions"
+        case user, description
     }
 }
 
@@ -100,7 +92,7 @@ struct PurpleTopicSubmissions: Codable {
 // MARK: - The3_DRenders
 struct The3_DRenders: Codable {
     let status: Status?
-    let approvedOn: Date?
+    let approvedOn: String?
 
     enum CodingKeys: String, CodingKey {
         case status
@@ -128,7 +120,6 @@ struct User: Codable {
     let id: String?
     let updatedAt: String?
     let username, name, firstName, lastName: String?
-    let twitterUsername: String?
     let portfolioURL: String?
     let bio, location: String?
     let links: UserLinks?
@@ -137,6 +128,7 @@ struct User: Codable {
     let totalCollections, totalLikes, totalPhotos, totalPromotedPhotos: Int?
     let acceptedTos, forHire: Bool?
     let social: Social?
+    let twitterUsername: String?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -144,7 +136,6 @@ struct User: Codable {
         case username, name
         case firstName = "first_name"
         case lastName = "last_name"
-        case twitterUsername = "twitter_username"
         case portfolioURL = "portfolio_url"
         case bio, location, links
         case profileImage = "profile_image"
@@ -156,6 +147,7 @@ struct User: Codable {
         case acceptedTos = "accepted_tos"
         case forHire = "for_hire"
         case social
+        case twitterUsername = "twitter_username"
     }
 }
 
@@ -180,18 +172,16 @@ struct Social: Codable {
     let instagramUsername: String?
     let portfolioURL: String?
     let twitterUsername: String?
-    let paypalEmail: String?
 
     enum CodingKeys: String, CodingKey {
         case instagramUsername = "instagram_username"
         case portfolioURL = "portfolio_url"
         case twitterUsername = "twitter_username"
-        case paypalEmail = "paypal_email"
     }
 }
 
-// MARK: - UnsplashLinks
-struct UnsplashLinks: Codable {
+// MARK: - WallpapersLinks
+struct WallpapersLinks: Codable {
     let linksSelf, html, photos, related: String?
 
     enum CodingKeys: String, CodingKey {
@@ -203,7 +193,7 @@ struct UnsplashLinks: Codable {
 // MARK: - PreviewPhoto
 struct PreviewPhoto: Codable {
     let id, slug: String?
-    let createdAt, updatedAt: Date?
+    let createdAt, updatedAt: String?
     let blurHash: String?
     let urls: Urls?
 
@@ -256,38 +246,33 @@ struct Category: Codable {
 // MARK: - SourceCoverPhoto
 struct SourceCoverPhoto: Codable {
     let id, slug: String?
-    let createdAt, updatedAt: Date?
-    let promotedAt: Date?
+    let createdAt, updatedAt: String?
     let width, height: Int?
-    let color, blurHash: String?
-    let description: String?
-    let altDescription: String?
-    let breadcrumbs: [Breadcrumb]?
+    let color, blurHash, altDescription: String?
     let urls: Urls?
     let links: CoverPhotoLinks?
     let likes: Int?
     let likedByUser: Bool?
-    let currentUserCollections: [String]?
-    let sponsorship: String?
     let topicSubmissions: FluffyTopicSubmissions?
     let premium, plus: Bool?
     let user: User?
+    let promotedAt: String?
+    let description: String?
+    let breadcrumbs: [Breadcrumb]?
 
     enum CodingKeys: String, CodingKey {
         case id, slug
         case createdAt = "created_at"
         case updatedAt = "updated_at"
-        case promotedAt = "promoted_at"
         case width, height, color
         case blurHash = "blur_hash"
-        case description
         case altDescription = "alt_description"
-        case breadcrumbs, urls, links, likes
+        case urls, links, likes
         case likedByUser = "liked_by_user"
-        case currentUserCollections = "current_user_collections"
-        case sponsorship
         case topicSubmissions = "topic_submissions"
         case premium, plus, user
+        case promotedAt = "promoted_at"
+        case description, breadcrumbs
     }
 }
 
@@ -318,5 +303,4 @@ struct FluffyTopicSubmissions: Codable {
         case spirituality, nature
     }
 }
-
 
