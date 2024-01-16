@@ -10,6 +10,13 @@
 		7B3021D02B55A15200CE19E6 /* NatureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3021CF2B55A15200CE19E6 /* NatureController.swift */; };
 		7B3021D22B55A16D00CE19E6 /* NatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3021D12B55A16D00CE19E6 /* NatureViewModel.swift */; };
 		7B3021D42B55A1DE00CE19E6 /* Nature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3021D32B55A1DE00CE19E6 /* Nature.swift */; };
+		7B42A0442B56D626003C5D34 /* Architecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42A0432B56D626003C5D34 /* Architecture.swift */; };
+		7B42A0462B56E8D8003C5D34 /* NatureReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42A0452B56E8D8003C5D34 /* NatureReusableView.swift */; };
+		7B42A0492B56EEF2003C5D34 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42A0482B56EEF2003C5D34 /* SearchController.swift */; };
+		7B42A04D2B56EF53003C5D34 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42A04B2B56EF53003C5D34 /* SearchCell.swift */; };
+		7B42A04E2B56EF53003C5D34 /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B42A04C2B56EF53003C5D34 /* SearchCell.xib */; };
+		7B42A0502B56EF85003C5D34 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42A04F2B56EF85003C5D34 /* SearchViewModel.swift */; };
+		7B42A0522B56F1F2003C5D34 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42A0512B56F1F2003C5D34 /* Search.swift */; };
 		7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7A02B53E6B3005D0CED /* HomeController.swift */; };
 		7B53E7A32B53E6C6005D0CED /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7A22B53E6C6005D0CED /* HomeViewModel.swift */; };
 		7B53E7CA2B53F1F5005D0CED /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7C92B53F1F5005D0CED /* TabBarController.swift */; };
@@ -43,6 +50,13 @@
 		7B3021CF2B55A15200CE19E6 /* NatureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureController.swift; sourceTree = "<group>"; };
 		7B3021D12B55A16D00CE19E6 /* NatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureViewModel.swift; sourceTree = "<group>"; };
 		7B3021D32B55A1DE00CE19E6 /* Nature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nature.swift; sourceTree = "<group>"; };
+		7B42A0432B56D626003C5D34 /* Architecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Architecture.swift; sourceTree = "<group>"; };
+		7B42A0452B56E8D8003C5D34 /* NatureReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureReusableView.swift; sourceTree = "<group>"; };
+		7B42A0482B56EEF2003C5D34 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		7B42A04B2B56EF53003C5D34 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		7B42A04C2B56EF53003C5D34 /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
+		7B42A04F2B56EF85003C5D34 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		7B42A0512B56F1F2003C5D34 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		7B53E7A02B53E6B3005D0CED /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		7B53E7A22B53E6C6005D0CED /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7B53E7C92B53F1F5005D0CED /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -91,8 +105,37 @@
 				7B3021CF2B55A15200CE19E6 /* NatureController.swift */,
 				7B3021D12B55A16D00CE19E6 /* NatureViewModel.swift */,
 				7B3021D32B55A1DE00CE19E6 /* Nature.swift */,
+				7B42A0452B56E8D8003C5D34 /* NatureReusableView.swift */,
 			);
 			path = Nature;
+			sourceTree = "<group>";
+		};
+		7B42A0422B56D617003C5D34 /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+				7B42A0432B56D626003C5D34 /* Architecture.swift */,
+			);
+			path = Architecture;
+			sourceTree = "<group>";
+		};
+		7B42A0472B56EEE1003C5D34 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				7B42A04A2B56EF41003C5D34 /* Cell */,
+				7B42A0482B56EEF2003C5D34 /* SearchController.swift */,
+				7B42A04F2B56EF85003C5D34 /* SearchViewModel.swift */,
+				7B42A0512B56F1F2003C5D34 /* Search.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		7B42A04A2B56EF41003C5D34 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7B42A04B2B56EF53003C5D34 /* SearchCell.swift */,
+				7B42A04C2B56EF53003C5D34 /* SearchCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		7B53E79F2B53E6A0005D0CED /* Home */ = {
@@ -163,6 +206,8 @@
 		7B90E2A62B52FAD60099FBA3 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7B42A0472B56EEE1003C5D34 /* Search */,
+				7B42A0422B56D617003C5D34 /* Architecture */,
 				7B3021CE2B55A11F00CE19E6 /* Nature */,
 				7B97B9D62B54636300D489CB /* Header */,
 				7B53E79F2B53E6A0005D0CED /* Home */,
@@ -281,6 +326,7 @@
 				7B97B9D12B5451D300D489CB /* HomeCell.xib in Resources */,
 				7B90E2852B52C1FE0099FBA3 /* LaunchScreen.storyboard in Resources */,
 				7B90E2822B52C1FE0099FBA3 /* Assets.xcassets in Resources */,
+				7B42A04E2B56EF53003C5D34 /* SearchCell.xib in Resources */,
 				7B90E27D2B52C1FB0099FBA3 /* Main.storyboard in Resources */,
 				7B90E2B82B5332160099FBA3 /* lottieView.json in Resources */,
 			);
@@ -297,6 +343,7 @@
 				7B3021D22B55A16D00CE19E6 /* NatureViewModel.swift in Sources */,
 				7B90E29F2B52C4FD0099FBA3 /* NetworkManager.swift in Sources */,
 				7B97B9D02B5451D300D489CB /* HomeCell.swift in Sources */,
+				7B42A0442B56D626003C5D34 /* Architecture.swift in Sources */,
 				7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */,
 				7B3021D42B55A1DE00CE19E6 /* Nature.swift in Sources */,
 				7B90E2A32B52EC840099FBA3 /* ColorController.swift in Sources */,
@@ -307,11 +354,16 @@
 				7B97B9D32B54586600D489CB /* SegmentedController.swift in Sources */,
 				7B53E7A32B53E6C6005D0CED /* HomeViewModel.swift in Sources */,
 				7B97B9D52B54630700D489CB /* HeaderReusableView.swift in Sources */,
+				7B42A0462B56E8D8003C5D34 /* NatureReusableView.swift in Sources */,
 				7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */,
 				7B90E2802B52C1FB0099FBA3 /* Lensify.xcdatamodeld in Sources */,
+				7B42A0502B56EF85003C5D34 /* SearchViewModel.swift in Sources */,
 				7B90E2A92B52FB110099FBA3 /* Wallpapers.swift in Sources */,
+				7B42A0492B56EEF2003C5D34 /* SearchController.swift in Sources */,
 				7B53E7CA2B53F1F5005D0CED /* TabBarController.swift in Sources */,
+				7B42A0522B56F1F2003C5D34 /* Search.swift in Sources */,
 				7B90E2782B52C1FB0099FBA3 /* SceneDelegate.swift in Sources */,
+				7B42A04D2B56EF53003C5D34 /* SearchCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

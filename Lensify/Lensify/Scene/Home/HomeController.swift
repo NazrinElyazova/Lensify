@@ -27,8 +27,11 @@ class HomeController: UIViewController {
             let controller = storyboard?.instantiateViewController(withIdentifier: "\(NatureController.self)") as! NatureController
             navigationController?.show(controller, sender: nil)
         case 2:
-            let controller = storyboard?.instantiateViewController(withIdentifier: "\(LaunchController.self)") as! LaunchController
-            navigationController?.show(controller, sender: nil)
+//            let controller = storyboard?.instantiateViewController(withIdentifier: "\(LaunchController.self)") as! LaunchController
+//            navigationController?.show(controller, sender: nil)
+            print("3d renders")
+        case 3:
+            print("architecture")
         default:
             break
         }

@@ -8,7 +8,7 @@
 import UIKit
 
 class HeaderReusableView: UICollectionReusableView {
-    var items = [Wallpapers]()
+
     
     @IBOutlet weak var gradientImage: UIImageView!
 }

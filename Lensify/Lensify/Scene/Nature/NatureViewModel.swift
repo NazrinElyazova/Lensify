@@ -22,9 +22,6 @@ class NatureViewModel {
                 self.nature = data
                 self.onSuccess?()
             }
-            
-            
-            
-        }   
+        }
     }
 }

@@ -23,8 +23,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Lensify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZa-Qt-lmz">
-                                <rect key="frame" x="30" y="439.66666666666669" width="370" height="52.666666666666686"/>
-                                <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="34"/>
+                                <rect key="frame" x="30" y="427.33333333333331" width="370" height="77.333333333333314"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="65"/>
                                 <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -145,12 +145,35 @@
         <!--Search-->
         <scene sceneID="25f-H7-qlV">
             <objects>
-                <viewController id="gwp-4b-Jn9" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gwp-4b-Jn9" customClass="SearchController" customModule="Lensify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kqm-ZA-1aJ">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gNU-h0-qwb">
+                                <rect key="frame" x="0.0" y="59" width="430" height="790"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="S5B-gm-enO">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="gwp-4b-Jn9" id="qMH-Oo-BRs"/>
+                                    <outlet property="delegate" destination="gwp-4b-Jn9" id="BiN-k6-syj"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="V1R-yY-Lt8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="V1R-yY-Lt8" firstAttribute="trailing" secondItem="gNU-h0-qwb" secondAttribute="trailing" id="CY1-fn-T9K"/>
+                            <constraint firstItem="gNU-h0-qwb" firstAttribute="leading" secondItem="V1R-yY-Lt8" secondAttribute="leading" id="dEJ-wU-PD2"/>
+                            <constraint firstItem="gNU-h0-qwb" firstAttribute="top" secondItem="V1R-yY-Lt8" secondAttribute="top" id="fzS-nx-cs7"/>
+                            <constraint firstItem="V1R-yY-Lt8" firstAttribute="bottom" secondItem="gNU-h0-qwb" secondAttribute="bottom" id="tEm-mm-4eV"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" id="3aY-6J-dtf">
                         <imageReference key="image" image="magnifyingglass" catalog="system" renderingMode="hierarchical">
@@ -161,6 +184,9 @@
                             </hierarchicalColors>
                         </imageReference>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="collection" destination="gNU-h0-qwb" id="AZA-YH-J2H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8HE-7v-s0Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -309,11 +335,60 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="GqT-sf-gfH">
                                     <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="headerReferenceSize" width="50" height="200"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells/>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="NatureReusableView" id="sfa-E1-JrU" customClass="NatureReusableView" customModule="Lensify" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="430" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="purple" translatesAutoresizingMaskIntoConstraints="NO" id="wqZ-bG-tqu">
+                                            <rect key="frame" x="0.0" y="0.0" width="430" height="200"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nature's wonders take center stage in this category, where photographerscapture the breathtaking photos." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06K-O5-kgG">
+                                            <rect key="frame" x="28" y="68" width="374" height="61"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXp-fS-P2F">
+                                            <rect key="frame" x="28" y="28" width="374" height="30"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sye-34-oDi">
+                                            <rect key="frame" x="28" y="142" width="374" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="2H5-xT-8C7"/>
+                                                <constraint firstAttribute="height" constant="40" id="Xet-eb-87w"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="filled" title="Submit a photo">
+                                                <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="baseBackgroundColor" systemColor="systemGray5Color"/>
+                                            </buttonConfiguration>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="06K-O5-kgG" secondAttribute="trailing" constant="20" id="8b5-gF-Esf"/>
+                                        <constraint firstAttribute="bottom" secondItem="wqZ-bG-tqu" secondAttribute="bottom" id="9cD-Lx-4HD"/>
+                                        <constraint firstItem="jXp-fS-P2F" firstAttribute="leading" secondItem="sfa-E1-JrU" secondAttribute="leadingMargin" constant="20" id="Gmb-2b-TwX"/>
+                                        <constraint firstAttribute="trailing" secondItem="wqZ-bG-tqu" secondAttribute="trailing" id="hqH-ZQ-1rk"/>
+                                        <constraint firstItem="Sye-34-oDi" firstAttribute="leading" secondItem="sfa-E1-JrU" secondAttribute="leadingMargin" constant="20" id="j07-Pf-zKs"/>
+                                        <constraint firstItem="06K-O5-kgG" firstAttribute="top" secondItem="jXp-fS-P2F" secondAttribute="bottom" constant="10" id="l6n-kB-uq8"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Sye-34-oDi" secondAttribute="trailing" constant="20" id="mEK-8k-040"/>
+                                        <constraint firstItem="wqZ-bG-tqu" firstAttribute="leading" secondItem="sfa-E1-JrU" secondAttribute="leading" id="o8Z-Zv-c2M"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="jXp-fS-P2F" secondAttribute="trailing" constant="20" id="qPt-Ot-rjb"/>
+                                        <constraint firstItem="Sye-34-oDi" firstAttribute="top" secondItem="06K-O5-kgG" secondAttribute="bottom" constant="13" id="sY7-ce-tMk"/>
+                                        <constraint firstItem="wqZ-bG-tqu" firstAttribute="top" secondItem="sfa-E1-JrU" secondAttribute="top" id="uG0-Qt-Ih4"/>
+                                        <constraint firstItem="jXp-fS-P2F" firstAttribute="top" secondItem="sfa-E1-JrU" secondAttribute="topMargin" constant="20" id="vv1-Sv-dqL"/>
+                                        <constraint firstItem="06K-O5-kgG" firstAttribute="leading" secondItem="sfa-E1-JrU" secondAttribute="leadingMargin" constant="20" id="yeJ-6c-FCP"/>
+                                    </constraints>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="osY-b2-BFC" id="xna-Oi-QWJ"/>
                                     <outlet property="delegate" destination="osY-b2-BFC" id="GvT-gw-i8R"/>
@@ -335,7 +410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0S0-NU-BNL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4568" y="-272"/>
+            <point key="canvasLocation" x="4566.9767441860467" y="-272.3175965665236"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RQ9-qq-8qo">
@@ -383,19 +458,19 @@
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
