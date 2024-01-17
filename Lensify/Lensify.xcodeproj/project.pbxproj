@@ -17,6 +17,8 @@
 		7B42A04E2B56EF53003C5D34 /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B42A04C2B56EF53003C5D34 /* SearchCell.xib */; };
 		7B42A0502B56EF85003C5D34 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42A04F2B56EF85003C5D34 /* SearchViewModel.swift */; };
 		7B42A0522B56F1F2003C5D34 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42A0512B56F1F2003C5D34 /* Search.swift */; };
+		7B4DE9B32B57E86A00F4C3AA /* HomeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4DE9B22B57E86A00F4C3AA /* HomeManager.swift */; };
+		7B4DE9B62B57F44B00F4C3AA /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4DE9B52B57F44B00F4C3AA /* HomeEndpoint.swift */; };
 		7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7A02B53E6B3005D0CED /* HomeController.swift */; };
 		7B53E7A32B53E6C6005D0CED /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7A22B53E6C6005D0CED /* HomeViewModel.swift */; };
 		7B53E7CA2B53F1F5005D0CED /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7C92B53F1F5005D0CED /* TabBarController.swift */; };
@@ -57,6 +59,8 @@
 		7B42A04C2B56EF53003C5D34 /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
 		7B42A04F2B56EF85003C5D34 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		7B42A0512B56F1F2003C5D34 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		7B4DE9B22B57E86A00F4C3AA /* HomeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeManager.swift; sourceTree = "<group>"; };
+		7B4DE9B52B57F44B00F4C3AA /* HomeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
 		7B53E7A02B53E6B3005D0CED /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		7B53E7A22B53E6C6005D0CED /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7B53E7C92B53F1F5005D0CED /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
@@ -138,6 +142,31 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		7B4DE9B02B57E84300F4C3AA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				7B90E29E2B52C4FD0099FBA3 /* NetworkManager.swift */,
+				7B90E2A02B52C5260099FBA3 /* NetworkHelper.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		7B4DE9B12B57E84C00F4C3AA /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7B4DE9B22B57E86A00F4C3AA /* HomeManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		7B4DE9B42B57F43A00F4C3AA /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				7B4DE9B52B57F44B00F4C3AA /* HomeEndpoint.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
 		7B53E79F2B53E6A0005D0CED /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -196,8 +225,9 @@
 		7B90E29D2B52C4E70099FBA3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				7B90E29E2B52C4FD0099FBA3 /* NetworkManager.swift */,
-				7B90E2A02B52C5260099FBA3 /* NetworkHelper.swift */,
+				7B4DE9B42B57F43A00F4C3AA /* Endpoints */,
+				7B4DE9B12B57E84C00F4C3AA /* Manager */,
+				7B4DE9B02B57E84300F4C3AA /* Core */,
 				7B90E2A42B52FAB20099FBA3 /* Endpoints.swift */,
 			);
 			path = Network;
@@ -353,10 +383,12 @@
 				7B90E2B22B5329550099FBA3 /* LaunchController.swift in Sources */,
 				7B97B9D32B54586600D489CB /* SegmentedController.swift in Sources */,
 				7B53E7A32B53E6C6005D0CED /* HomeViewModel.swift in Sources */,
+				7B4DE9B62B57F44B00F4C3AA /* HomeEndpoint.swift in Sources */,
 				7B97B9D52B54630700D489CB /* HeaderReusableView.swift in Sources */,
 				7B42A0462B56E8D8003C5D34 /* NatureReusableView.swift in Sources */,
 				7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */,
 				7B90E2802B52C1FB0099FBA3 /* Lensify.xcdatamodeld in Sources */,
+				7B4DE9B32B57E86A00F4C3AA /* HomeManager.swift in Sources */,
 				7B42A0502B56EF85003C5D34 /* SearchViewModel.swift in Sources */,
 				7B90E2A92B52FB110099FBA3 /* Wallpapers.swift in Sources */,
 				7B42A0492B56EEF2003C5D34 /* SearchController.swift in Sources */,

@@ -42,7 +42,7 @@ class HomeController: UIViewController {
         self.collection.reloadData()
     }
     func configureViewModel() {
-        viewModel.getPhotos()
+        viewModel.getHomePhotos()
         viewModel.onSuccess = {
             self.collection.reloadData()
         }

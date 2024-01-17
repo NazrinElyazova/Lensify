@@ -8,6 +8,8 @@
 import UIKit
 
 class SearchController: UIViewController {
+    
+    @IBOutlet weak var searchTextFieldOutlet: UITextField!
     let viewModel = SearchViewModel()
     
     @IBOutlet weak var collection: UICollectionView!
@@ -16,11 +18,15 @@ class SearchController: UIViewController {
         configureUI()
         configureViewModel()
     }
+    @IBAction func searchTextField(_ sender: Any) {
+        viewModel.getSearchItems(searchText: "\(searchTextFieldOutlet.text ?? "")", pageID: 0)
+//        print("\(String(describing: searchTextFieldOutlet.text))")
+    }
     func configureUI() {
         self.collection.register(UINib(nibName: "\(SearchCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(SearchCell.self)")
     }
     func configureViewModel() {
-        viewModel.getSearchItems()
+        guard searchTextFieldOutlet.text != nil else {return}
         viewModel.onError = {
             errorMessage in
             print("Search controllerde error var: \(errorMessage)")
@@ -36,7 +42,9 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(SearchCell.self)", for: indexPath) as! SearchCell
-        cell.backgroundColor = .yellow
+//        cell.backgroundColor = .yellow
+        let item = viewModel.search[indexPath.item]
+        cell.configure(data: item)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

@@ -12,15 +12,17 @@ class HomeViewModel {
     var onSuccess: (()-> Void)?
     var onError: ((String)-> Void)?
     
-    func getPhotos() {
-        NetworkManager.request(model: [Wallpapers].self, endpoint: Endpoints.wallpaper.rawValue) {
+    private let manager = HomeManager()
+    func getHomePhotos() {
+        self.getPhotos(endpoint: HomeEndpoint.wallpaper)
+    }
+    func getPhotos(endpoint: HomeEndpoint) {
+        manager.getHomeList(endpoint: endpoint) {
             data, errorMessage in
             if let errorMessage = errorMessage {
                 self.onError?(errorMessage)
-            }
-            else if let data = data {
+            } else if let data = data {
                 self.items = data
-                self.onSuccess?()
             }
         }
     }

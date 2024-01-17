@@ -29,7 +29,7 @@ struct SearchResult: Codable {
     let shareKey: String?
     let tags: [TagSearch]?
     let links: ResultLinksSearch?
-    let user: UserSearch?
+//    let user: UserSearch?
     let coverPhoto: ResultCoverPhotoSearch?
     let previewPhotos: [PreviewPhotoSearch]?
   
@@ -43,7 +43,7 @@ struct SearchResult: Codable {
         case totalPhotos = "total_photos"
         case resultPrivate = "private"
         case shareKey = "share_key"
-        case tags, links, user
+        case tags, links/*, user*/
         case coverPhoto = "cover_photo"
         case previewPhotos = "preview_photos"
         
@@ -61,10 +61,10 @@ struct ResultCoverPhotoSearch: Codable {
     let links: CoverPhotoLinksSearch?
     let likes: Int?
     let likedByUser: Bool?
-    let user: UserSearch?
-//    let promotedAt: String?
-//    let altDescription: String?
-//    let topicSubmissions: PurpleTopicSubmissionsSearch?
+//    let user: UserSearch?
+    let promotedAt: String?
+    let altDescription: String?
+    let topicSubmissions: PurpleTopicSubmissionsSearch?
   
   
     let breadcrumbs: [BreadcrumbSearch]?
@@ -77,10 +77,10 @@ struct ResultCoverPhotoSearch: Codable {
         case blurHash = "blur_hash"
         case urls, links, likes
         case likedByUser = "liked_by_user"
-        case user
-//        case promotedAt = "promoted_at"
-//        case altDescription = "alt_description"
-//        case topicSubmissions = "topic_submissions"
+//        case user
+        case promotedAt = "promoted_at"
+        case altDescription = "alt_description"
+        case topicSubmissions = "topic_submissions"
         case  breadcrumbs
     }
 }
@@ -110,9 +110,9 @@ struct CoverPhotoLinksSearch: Codable {
 
 // MARK: - PurpleTopicSubmissions
 struct PurpleTopicSubmissionsSearch: Codable {
-    let streetPhotography, nature, travel: ExperimentalSearch?
+    let streetPhotography, nature, travel, experimental: ExperimentalSearch?
     let wallpapers: WallpapersSearch?
-    let experimental: ExperimentalSearch?
+ 
 
     enum CodingKeys: String, CodingKey {
         case streetPhotography = "street-photography"
@@ -157,16 +157,16 @@ struct ExperimentalSearch: Codable {
         let id: String?
         let updatedAt: String?
         let username, name, firstName, lastName: String?
-//        let bio: String?
-        let links: UserLinksSearch?
+        let bio: String?
+//        let links: UserLinksSearch?
         let profileImage: ProfileImageSearch?
-//        let instagramUsername: String?
+        let instagramUsername: String?
         let totalCollections, totalLikes, totalPhotos, totalPromotedPhotos: Int?
         let acceptedTos, forHire: Bool?
         let social: SocialSearch?
-//        let twitterUsername: String?
-//        let portfolioURL: String?
-//        let location: String?
+        let twitterUsername: String?
+        let portfolioURL: String?
+        let location: String?
         
         enum CodingKeys: String, CodingKey {
             case id
@@ -174,9 +174,9 @@ struct ExperimentalSearch: Codable {
             case username, name
             case firstName = "first_name"
             case lastName = "last_name"
-            case /*bio,*/ links
+            case bio/*, links*/
             case profileImage = "profile_image"
-//            case instagramUsername = "instagram_username"
+            case instagramUsername = "instagram_username"
             case totalCollections = "total_collections"
             case totalLikes = "total_likes"
             case totalPhotos = "total_photos"
@@ -184,9 +184,9 @@ struct ExperimentalSearch: Codable {
             case acceptedTos = "accepted_tos"
             case forHire = "for_hire"
             case social
-//            case twitterUsername = "twitter_username"
-//            case portfolioURL = "portfolio_url"
-//            case location
+            case twitterUsername = "twitter_username"
+            case portfolioURL = "portfolio_url"
+            case location
         }
     }
     
@@ -208,15 +208,15 @@ struct ExperimentalSearch: Codable {
     
     // MARK: - Social
     struct SocialSearch: Codable {
-//        let instagramUsername: String?
+        let instagramUsername: String?
         let portfolioURL: String?
-//        let twitterUsername: String?
+        let twitterUsername: String?
         
         
         enum CodingKeys: String, CodingKey {
-//            case instagramUsername = "instagram_username"
+            case instagramUsername = "instagram_username"
             case portfolioURL = "portfolio_url"
-//            case twitterUsername = "twitter_username"
+            case twitterUsername = "twitter_username"
             
         }
     }
@@ -289,31 +289,31 @@ struct ExperimentalSearch: Codable {
     struct SourceCoverPhotoSearch: Codable {
         let id, slug: String?
         let createdAt, updatedAt: String?
-//        let promotedAt: String?
+        let promotedAt: String?
         let width, height: Int?
-        let color, blurHash/*, altDescription*/: String?
+        let color, blurHash, altDescription: String?
         let breadcrumbs: [BreadcrumbSearch]?
         let urls: UrlsSearch?
         let links: CoverPhotoLinksSearch?
         let likes: Int?
         let likedByUser, premium, plus: Bool?
-        let user: UserSearch?
-//        let topicSubmissions: FluffyTopicSubmissionsSearch?
+//        let user: UserSearch?
+        let topicSubmissions: FluffyTopicSubmissionsSearch?
         
         
         enum CodingKeys: String, CodingKey {
             case id, slug
             case createdAt = "created_at"
             case updatedAt = "updated_at"
-//            case promotedAt = "promoted_at"
+            case promotedAt = "promoted_at"
             case width, height, color
             case blurHash = "blur_hash"
             
-//            case altDescription = "alt_description"
+            case altDescription = "alt_description"
             case breadcrumbs, urls, links, likes
             case likedByUser = "liked_by_user"
-            case premium, plus, user
-//            case topicSubmissions = "topic_submissions"
+            case premium, plus/*, user*/
+            case topicSubmissions = "topic_submissions"
             
         }
     }
