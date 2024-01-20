@@ -9,7 +9,7 @@ import UIKit
 import Lottie
 
 class LaunchController: UIViewController {
-
+    
     @IBOutlet weak var discoverLabel: UILabel!
     @IBOutlet weak var everyLabel: UILabel!
     

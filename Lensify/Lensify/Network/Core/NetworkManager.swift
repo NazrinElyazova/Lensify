@@ -30,7 +30,6 @@ class NetworkManager {
                 case.failure(let error):
                     completion(nil, error.localizedDescription)
                 }
-                
             }
         }
 }

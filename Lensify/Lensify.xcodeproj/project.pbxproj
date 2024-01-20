@@ -46,6 +46,7 @@
 		7B97B9D12B5451D300D489CB /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B97B9CF2B5451D300D489CB /* HomeCell.xib */; };
 		7B97B9D32B54586600D489CB /* SegmentedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B97B9D22B54586600D489CB /* SegmentedController.swift */; };
 		7B97B9D52B54630700D489CB /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B97B9D42B54630600D489CB /* HeaderReusableView.swift */; };
+		7BDB91CA2B5B924B00002EAC /* HomeUseCse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB91C92B5B924B00002EAC /* HomeUseCse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,7 @@
 		7B97B9CF2B5451D300D489CB /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		7B97B9D22B54586600D489CB /* SegmentedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedController.swift; sourceTree = "<group>"; };
 		7B97B9D42B54630600D489CB /* HeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
+		7BDB91C92B5B924B00002EAC /* HomeUseCse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				7B53E7A42B53EFBE005D0CED /* Cell */,
 				7B53E7A02B53E6B3005D0CED /* HomeController.swift */,
 				7B53E7A22B53E6C6005D0CED /* HomeViewModel.swift */,
+				7B90E2A82B52FB110099FBA3 /* Wallpapers.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 		7B90E29D2B52C4E70099FBA3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7BDB91C82B5B923800002EAC /* UseCase */,
 				7B4DE9B42B57F43A00F4C3AA /* Endpoints */,
 				7B4DE9B12B57E84C00F4C3AA /* Manager */,
 				7B4DE9B02B57E84300F4C3AA /* Core */,
@@ -249,7 +253,6 @@
 		7B90E2A72B52FAF20099FBA3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7B90E2A82B52FB110099FBA3 /* Wallpapers.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,6 +281,14 @@
 				7B97B9D42B54630600D489CB /* HeaderReusableView.swift */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		7BDB91C82B5B923800002EAC /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				7BDB91C92B5B924B00002EAC /* HomeUseCse.swift */,
+			);
+			path = UseCase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +388,7 @@
 				7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */,
 				7B3021D42B55A1DE00CE19E6 /* Nature.swift in Sources */,
 				7B90E2A32B52EC840099FBA3 /* ColorController.swift in Sources */,
+				7BDB91CA2B5B924B00002EAC /* HomeUseCse.swift in Sources */,
 				7B3021D02B55A15200CE19E6 /* NatureController.swift in Sources */,
 				7B90E2762B52C1FB0099FBA3 /* AppDelegate.swift in Sources */,
 				7B90E2A52B52FAB20099FBA3 /* Endpoints.swift in Sources */,

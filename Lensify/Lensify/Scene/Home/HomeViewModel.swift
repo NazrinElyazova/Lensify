@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 class HomeViewModel {
     var items = [Wallpapers]()
     
@@ -13,6 +14,7 @@ class HomeViewModel {
     var onError: ((String)-> Void)?
     
     private let manager = HomeManager()
+    
     func getHomePhotos() {
         self.getPhotos(endpoint: HomeEndpoint.wallpaper)
     }
@@ -22,7 +24,8 @@ class HomeViewModel {
             if let errorMessage = errorMessage {
                 self.onError?(errorMessage)
             } else if let data = data {
-                self.items = data
+                self.items.append(contentsOf: data)
+                self.onSuccess?()
             }
         }
     }

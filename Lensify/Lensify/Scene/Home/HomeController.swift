@@ -8,7 +8,8 @@
 import UIKit
 
 class HomeController: UIViewController {
-  let viewModel = HomeViewModel()
+    
+    let viewModel = HomeViewModel()
     
     @IBOutlet weak var edutorialSegment: UISegmentedControl!
     @IBOutlet weak var collection: UICollectionView!
@@ -27,8 +28,8 @@ class HomeController: UIViewController {
             let controller = storyboard?.instantiateViewController(withIdentifier: "\(NatureController.self)") as! NatureController
             navigationController?.show(controller, sender: nil)
         case 2:
-//            let controller = storyboard?.instantiateViewController(withIdentifier: "\(LaunchController.self)") as! LaunchController
-//            navigationController?.show(controller, sender: nil)
+            //            let controller = storyboard?.instantiateViewController(withIdentifier: "\(LaunchController.self)") as! LaunchController
+            //            navigationController?.show(controller, sender: nil)
             print("3d renders")
         case 3:
             print("architecture")
@@ -55,24 +56,23 @@ class HomeController: UIViewController {
 extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 //        print(viewModel.items.count)
-       return viewModel.items.count
+        return viewModel.items.count
         
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
         let item = viewModel.items[indexPath.item]
         cell.configure(data: item)
-       
         return cell
-
+        
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: collectionView.frame.width, height: 300)
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "HeaderReusableView", for: indexPath) as! HeaderReusableView
-//        header.backgroundColor = .cyan
+        //        header.backgroundColor = .cyan
         return header
     }
-
+    
 }

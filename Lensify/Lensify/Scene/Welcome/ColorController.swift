@@ -38,20 +38,20 @@ class ColorController: UIViewController {
         
     }
 }
-    //   gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.5)
-    //gradientLayer.endPoint = CGPoint(x: 0, y: 1)
-    
-    
-    //  gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.5)
-    //gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
-    
-    //gradientLayer.startPoint = CGPoint(x: 0, y: 0)
-    //gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-    
-    //orta yaxsisi
-    //gradientLayer.startPoint = CGPoint(x: 0.7, y: 0.3)
-    //gradientLayer.endPoint = CGPoint(x: 0.2, y: 0.8)
-    
-    //best
-    //gradientLayer.startPoint = CGPoint(x: 0.7, y: 0.3)
-    //gradientLayer.endPoint = CGPoint(x: 0.2, y: 1.3)
+//   gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.5)
+//gradientLayer.endPoint = CGPoint(x: 0, y: 1)
+
+
+//  gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.5)
+//gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
+
+//gradientLayer.startPoint = CGPoint(x: 0, y: 0)
+//gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+
+//orta yaxsisi
+//gradientLayer.startPoint = CGPoint(x: 0.7, y: 0.3)
+//gradientLayer.endPoint = CGPoint(x: 0.2, y: 0.8)
+
+//best
+//gradientLayer.startPoint = CGPoint(x: 0.7, y: 0.3)
+//gradientLayer.endPoint = CGPoint(x: 0.2, y: 1.3)

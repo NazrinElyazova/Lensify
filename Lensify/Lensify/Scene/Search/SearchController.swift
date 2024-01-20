@@ -8,23 +8,26 @@
 import UIKit
 
 class SearchController: UIViewController {
-    
-    @IBOutlet weak var searchTextFieldOutlet: UITextField!
-    let viewModel = SearchViewModel()
-    
     @IBOutlet weak var collection: UICollectionView!
+    @IBOutlet weak var searchTextFieldOutlet: UITextField!
+    
+    let viewModel = SearchViewModel()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
         configureViewModel()
     }
+    
     @IBAction func searchTextField(_ sender: Any) {
         viewModel.getSearchItems(searchText: "\(searchTextFieldOutlet.text ?? "")", pageID: 0)
-//        print("\(String(describing: searchTextFieldOutlet.text))")
+        print("\(String(describing: searchTextFieldOutlet.text))")
     }
+    
     func configureUI() {
         self.collection.register(UINib(nibName: "\(SearchCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(SearchCell.self)")
     }
+    
     func configureViewModel() {
         guard searchTextFieldOutlet.text != nil else {return}
         viewModel.onError = {
@@ -38,7 +41,9 @@ class SearchController: UIViewController {
 }
 extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.search.count
+       
+        print( viewModel.search.count)
+        return  viewModel.search.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(SearchCell.self)", for: indexPath) as! SearchCell
