@@ -15,13 +15,13 @@ struct Photo: Codable {
     let createdAt, updatedAt: String?
     let width, height: Int?
     let color, blurHash, description, altDescription: String?
-    let urls: Urls?
+    let urls: UrlsNature?
     let links: PhotoLinks?
     let likes: Int?
     let likedByUser: Bool?
     let sponsorship: Sponsorship?
     let topicSubmissions: TopicSubmissions?
-    let user: User?
+    let user: UserNature?
     let promotedAt: String?
     
     enum CodingKeys: String, CodingKey {
@@ -57,7 +57,7 @@ struct Sponsorship: Codable {
     let impressionUrls: [String]?
     let tagline: String?
     let taglineURL: String?
-    let sponsor: User?
+    let sponsor: UserNature?
 
     enum CodingKeys: String, CodingKey {
         case impressionUrls = "impression_urls"

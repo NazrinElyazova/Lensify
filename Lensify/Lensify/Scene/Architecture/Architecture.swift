@@ -12,12 +12,12 @@ struct Architecture: Codable {
     let createdAt, updatedAt, promotedAt: Date?
     let width, height: Int?
     let color, blurHash, description, altDescription: String?
-    let urls: Urls?
+    let urls: UrlsArch?
     let links: GetPhotoLinks?
     let likes: Int?
     let likedByUser: Bool?
     let sponsorship: Sponsorship?
-    let user: User?
+    let user: UserArch?
     let exif: Exif?
     let location: Location?
     let meta: Meta?
@@ -100,9 +100,9 @@ struct Result: Codable {
     let shareKey: String?
     let tags: [ResultTag]?
     let links: ResultLinks?
-    let user: User?
+    let user: UserArch?
     let coverPhoto: ResultCoverPhoto?
-    let previewPhotos: [PreviewPhoto]?
+    let previewPhotos: [PreviewPhotoArch]?
 
     enum CodingKeys: String, CodingKey {
         case id, title
@@ -125,12 +125,12 @@ struct ResultCoverPhoto: Codable {
     let createdAt, updatedAt, promotedAt: Date?
     let width, height: Int?
     let color, blurHash, altDescription: String?
-    let urls: Urls?
+    let urls: UrlsArch?
     let links: GetPhotoLinks?
     let likes: Int?
     let likedByUser: Bool?
-    let user: User?
-    let topicSubmissions: PurpleTopicSubmissions?
+    let user: UserArch?
+    let topicSubmissions: PurpleTopicSubmissionsArch?
     let description: String?
 
     enum CodingKeys: String, CodingKey {
@@ -156,7 +156,7 @@ struct PurpleTopicSubmissionsArch: Codable {
 
 // MARK: - Retro
 struct Retro: Codable {
-    let status: Status?
+    let status: StatusArch?
     let approvedOn: String?
 
     enum CodingKeys: String, CodingKey {
@@ -187,12 +187,12 @@ struct UserArch: Codable {
     let username, name, firstName: String?
     let lastName: String?
     let bio, location: String?
-    let links: UserLinks?
-    let profileImage: ProfileImage?
+    let links: UserLinksArch?
+    let profileImage: ProfileImageArch?
     let instagramUsername: String?
     let totalCollections, totalLikes, totalPhotos, totalPromotedPhotos: Int?
     let acceptedTos, forHire: Bool?
-    let social: Social?
+    let social: SocialArch?
     let twitterUsername: String?
     let portfolioURL: String?
 
@@ -261,7 +261,7 @@ struct PreviewPhotoArch: Codable {
     let id, slug: String?
     let createdAt, updatedAt: Date?
     let blurHash: String?
-    let urls: Urls?
+    let urls: UrlsArch?
 
     enum CodingKeys: String, CodingKey {
         case id, slug
@@ -274,17 +274,17 @@ struct PreviewPhotoArch: Codable {
 
 // MARK: - ResultTag
 struct ResultTag: Codable {
-    let type: TypeEnum?
+    let type: TypeEnumArch?
     let title: String?
     let source: PurpleSource?
 }
 
 // MARK: - PurpleSource
 struct PurpleSource: Codable {
-    let ancestry: Ancestry?
+    let ancestry: AncestryArch?
     let title, subtitle, description, metaTitle: String?
     let metaDescription: String?
-    let coverPhoto: PurpleCoverPhoto?
+    let coverPhoto: PurpleCoverPhotoArch?
 
     enum CodingKeys: String, CodingKey {
         case ancestry, title, subtitle, description
@@ -296,7 +296,7 @@ struct PurpleSource: Codable {
 
 // MARK: - Ancestry
 struct AncestryArch: Codable {
-    let type, category, subcategory: Category?
+    let type, category, subcategory: CategoryArch?
 }
 
 // MARK: - Category
@@ -310,18 +310,18 @@ struct CategoryArch: Codable {
 }
 
 // MARK: - PurpleCoverPhoto
-struct PurpleCoverPhoto: Codable {
+struct PurpleCoverPhotoArch: Codable {
     let id, slug: String?
     let createdAt, updatedAt, promotedAt: Date?
     let width, height: Int?
     let color, blurHash, description, altDescription: String?
-    let urls: Urls?
+    let urls: UrlsArch?
     let links: GetPhotoLinks?
     let likes: Int?
     let likedByUser, premium, plus: Bool?
-    let user: User?
-    let topicSubmissions: FluffyTopicSubmissions?
-    let breadcrumbs: [Breadcrumb]?
+    let user: UserArch?
+    let topicSubmissions: FluffyTopicSubmissionsArch?
+    let breadcrumbs: [BreadcrumbArch]?
 
     enum CodingKeys: String, CodingKey {
         case id, slug
@@ -344,7 +344,7 @@ struct PurpleCoverPhoto: Codable {
 struct BreadcrumbArch: Codable {
     let slug, title: String?
     let index: Int?
-    let type: TypeEnum?
+    let type: TypeEnumArch?
 }
 
 enum TypeEnumArch: String, Codable {
@@ -371,7 +371,7 @@ struct SponsorshipArch: Codable {
     let impressionUrls: [String]?
     let tagline: String?
     let taglineURL: String?
-    let sponsor: User?
+    let sponsor: UserArch?
 
     enum CodingKeys: String, CodingKey {
         case impressionUrls = "impression_urls"
@@ -383,14 +383,14 @@ struct SponsorshipArch: Codable {
 
 // MARK: - GetPhotoTag
 struct GetPhotoTag: Codable {
-    let type: TypeEnum?
+    let type: TypeEnumArch?
     let title: String?
     let source: FluffySource?
 }
 
 // MARK: - FluffySource
 struct FluffySource: Codable {
-    let ancestry: Ancestry?
+    let ancestry: AncestryArch?
     let title, subtitle, description, metaTitle: String?
     let metaDescription: String?
     let coverPhoto: FluffyCoverPhoto?
@@ -409,14 +409,14 @@ struct FluffyCoverPhoto: Codable {
     let createdAt, updatedAt, promotedAt: Date?
     let width, height: Int?
     let color, blurHash, description, altDescription: String?
-    let breadcrumbs: [Breadcrumb]?
-    let urls: Urls?
+    let breadcrumbs: [BreadcrumbArch]?
+    let urls: UrlsArch?
     let links: GetPhotoLinks?
     let likes: Int?
     let likedByUser: Bool?
     let topicSubmissions: TentacledTopicSubmissions?
     let premium, plus: Bool?
-    let user: User?
+    let user: UserArch?
 
     enum CodingKeys: String, CodingKey {
         case id, slug
@@ -449,6 +449,6 @@ struct TentacledTopicSubmissions: Codable {
 
 // MARK: - TagsPreview
 struct TagsPreviewArch: Codable {
-    let type: TypeEnum?
+    let type: TypeEnumArch?
     let title: String?
 }

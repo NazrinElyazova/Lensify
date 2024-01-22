@@ -153,12 +153,12 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		7B4DE9B12B57E84C00F4C3AA /* Manager */ = {
+		7B4DE9B12B57E84C00F4C3AA /* MiddleLayer */ = {
 			isa = PBXGroup;
 			children = (
 				7B4DE9B22B57E86A00F4C3AA /* HomeManager.swift */,
 			);
-			path = Manager;
+			path = MiddleLayer;
 			sourceTree = "<group>";
 		};
 		7B4DE9B42B57F43A00F4C3AA /* Endpoints */ = {
@@ -230,7 +230,7 @@
 			children = (
 				7BDB91C82B5B923800002EAC /* UseCase */,
 				7B4DE9B42B57F43A00F4C3AA /* Endpoints */,
-				7B4DE9B12B57E84C00F4C3AA /* Manager */,
+				7B4DE9B12B57E84C00F4C3AA /* MiddleLayer */,
 				7B4DE9B02B57E84300F4C3AA /* Core */,
 				7B90E2A42B52FAB20099FBA3 /* Endpoints.swift */,
 			);

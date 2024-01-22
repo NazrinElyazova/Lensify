@@ -21,8 +21,8 @@ var items = [Wallpapers]()
     }
     func configure(data: Wallpapers) {
 
-        homeLabel.text = data.title
-        homeImage.loadImage(url: data.coverPhoto?.urls?.small ?? "")
+        homeLabel.text = data.altDescription
+        homeImage.loadImage(url: data.urls?.small ?? "")
     }
     func configure2(data: Photo) {
         homeImage.loadImage(url: data.urls?.small ?? "")

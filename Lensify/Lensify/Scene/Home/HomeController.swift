@@ -55,7 +55,7 @@ class HomeController: UIViewController {
 }
 extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        print(viewModel.items.count)
+        print(viewModel.items.count)
         return viewModel.items.count
         
     }
@@ -74,5 +74,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         //        header.backgroundColor = .cyan
         return header
     }
-    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        viewModel.pagination(index: indexPath.item)
+    }
 }

@@ -7,5 +7,5 @@
 
 import Foundation
 protocol HomeUseCse {
-    func getHomeList(endpoint: HomeEndpoint, completion: @escaping(([Wallpapers]?, String?)->Void)) 
+    func getHomeList(id: String?, endpoint: HomeEndpoint, completion: @escaping(([Wallpapers]?, String?)->Void)) 
 }
