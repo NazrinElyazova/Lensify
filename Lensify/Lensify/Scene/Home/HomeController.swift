@@ -40,7 +40,7 @@ class HomeController: UIViewController {
     
     func configureUI() {
         collection.register(UINib(nibName: "\(HomeCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HomeCell.self)")
-        self.collection.reloadData()
+//        self.collection.reloadData()
     }
     func configureViewModel() {
         viewModel.getHomePhotos()
@@ -61,8 +61,9 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
-        let item = viewModel.items[indexPath.item]
-        cell.configure(data: item)
+//        let item = viewModel.items[indexPath.item]
+        cell.homeLabel.text = "hellllllloo"
+//        cell.configure(data: item)
         return cell
         
     }

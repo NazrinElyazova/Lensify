@@ -10,7 +10,6 @@ import Foundation
 class HomeViewModel {
     var items = [Wallpapers]()
 //    var wallpapersData: Wallpapers?
-
     
     var onSuccess: (()-> Void)?
     var onError: ((String)-> Void)?
@@ -18,19 +17,17 @@ class HomeViewModel {
     private let manager = HomeManager()
     
     func getHomePhotos() {
-        self.getPhotos(endpoint: HomeEndpoint.topics, id: "")
+        self.getPhotos(endpoint: HomeEndpoint.topics)
     }
-    func getPhotos(endpoint: HomeEndpoint, id: String?) {
-        let url = HomeEndpoint.topics.rawValue + "\(id ?? "")/photos"
-    /*    NetworkManager.request(model: Wallpapers.self, endpoint: url)*/ 
-        manager.getHomeList(id: "", endpoint: .topics) {
+    func getPhotos(endpoint: HomeEndpoint) {
+        manager.getHomeList(id: "", endpoint: endpoint) {
             data, errorMessage in
             if let errorMessage = errorMessage {
                 self.onError?(errorMessage)
             } else if let data = data {
-//                self.items.append(contentsOf: data)
-//                self.items = data
                 self.items.append(contentsOf: data)
+//                self.items = data
+//                self.items.append(data)
                 self.onSuccess?()
             }
         }
