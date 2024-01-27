@@ -8,19 +8,38 @@
 import Foundation
 
 class HomeViewModel {
+    
     var items = [Wallpapers]()
 //    var wallpapersData: Wallpapers?
     
+//    var ID: String = wallpapersData?.id ?? ""
+     
+//    var id: String?
+//    
+//    init(id: String) {
+//           self.id = id
+//       }
+    
+    var topicItems = [TopicElement]()
     var onSuccess: (()-> Void)?
+    var topicSuccess: (()-> Void)?
     var onError: ((String)-> Void)?
     
     private let manager = HomeManager()
     
-    func getHomePhotos() {
-        self.getPhotos(endpoint: HomeEndpoint.topics)
+    func getTopics() {
+        manager.getTopics { data, errorMessage in
+            if let errorMessage {
+                self.onError?(errorMessage)
+            } else if let data {
+                self.topicItems = data
+                self.topicSuccess?()
+            }
+        }
     }
-    func getPhotos(endpoint: HomeEndpoint) {
-        manager.getHomeList(id: "", endpoint: endpoint) {
+    
+    func getPhotos(id: String) {        
+        manager.getHomeList(id: id, endpoint: HomeEndpoint.topics) {
             data, errorMessage in
             if let errorMessage = errorMessage {
                 self.onError?(errorMessage)

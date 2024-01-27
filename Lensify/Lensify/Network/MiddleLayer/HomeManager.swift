@@ -6,11 +6,17 @@
 //
 
 import Foundation
-class HomeManager: HomeUseCse {
-    func getHomeList(id: String?, endpoint: HomeEndpoint, completion: @escaping (([Wallpapers]?, String?) -> Void)) {
-//        let url = HomeEndpoint.topics.rawValue + "\(id ?? "")/photos"
+class HomeManager: HomeUseCase {
+    func getTopics(completion: @escaping (([TopicElement]?, String?) -> Void)) {
+        NetworkManager.request(model: [TopicElement].self,
+                               endpoint: HomeEndpoint.topics.rawValue,
+                               completion: completion)
+    }
+    
+    func getHomeList(id: String, endpoint: HomeEndpoint, completion: @escaping (([Wallpapers]?, String?) -> Void)) {
+        let url = endpoint.rawValue + "\(id)/photos"
         NetworkManager.request(model: [Wallpapers].self,
-                               endpoint: endpoint.rawValue) {
+                               endpoint: url) {
             data, errorMessage in
             if let errorMessage = errorMessage {
                 completion(nil, errorMessage)

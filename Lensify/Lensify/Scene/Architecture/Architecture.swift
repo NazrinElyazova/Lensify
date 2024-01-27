@@ -16,7 +16,7 @@ struct Architecture: Codable {
     let links: GetPhotoLinks?
     let likes: Int?
     let likedByUser: Bool?
-    let sponsorship: Sponsorship?
+    let sponsorship: SponsorshipArch?
     let user: UserArch?
     let exif: Exif?
     let location: Location?
@@ -93,7 +93,7 @@ struct RelatedCollections: Codable {
 // MARK: - Result
 struct Result: Codable {
     let id, title: String?
-    let publishedAt, lastCollectedAt, updatedAt: Date?
+    let publishedAt, lastCollectedAt, updatedAt: String?
     let featured: Bool?
     let totalPhotos: Int?
     let resultPrivate: Bool?
@@ -122,7 +122,7 @@ struct Result: Codable {
 // MARK: - ResultCoverPhoto
 struct ResultCoverPhoto: Codable {
     let id, slug: String?
-    let createdAt, updatedAt, promotedAt: Date?
+    let createdAt, updatedAt, promotedAt: String?
     let width, height: Int?
     let color, blurHash, altDescription: String?
     let urls: UrlsArch?
@@ -259,7 +259,7 @@ struct ResultLinks: Codable {
 // MARK: - PreviewPhoto
 struct PreviewPhotoArch: Codable {
     let id, slug: String?
-    let createdAt, updatedAt: Date?
+    let createdAt, updatedAt: String?
     let blurHash: String?
     let urls: UrlsArch?
 

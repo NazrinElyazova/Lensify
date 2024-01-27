@@ -9,41 +9,36 @@ import UIKit
 
 class HomeController: UIViewController {
     
-    let viewModel = HomeViewModel()
-    
-    @IBOutlet weak var edutorialSegment: UISegmentedControl!
     @IBOutlet weak var collection: UICollectionView!
+    @IBOutlet weak var topicView: UIView!
+    
+    private let topicHeaderView = TopicHeaderView.loadFromNib()
+    
+    let viewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureUI()
         configureViewModel()
     }
     
-    @IBAction func edutorialAction(_ sender: UISegmentedControl) {
-        switch edutorialSegment.selectedSegmentIndex {
-        case 0:
-            print("first")
-        case 1:
-            let controller = storyboard?.instantiateViewController(withIdentifier: "\(NatureController.self)") as! NatureController
-            navigationController?.show(controller, sender: nil)
-        case 2:
-            //            let controller = storyboard?.instantiateViewController(withIdentifier: "\(LaunchController.self)") as! LaunchController
-            //            navigationController?.show(controller, sender: nil)
-            print("3d renders")
-        case 3:
-            print("architecture")
-        default:
-            break
+    func configureUI() {
+        topicView.addSubview(topicHeaderView)
+        topicHeaderView.callback = { id in
+            self.viewModel.items.removeAll()
+            self.viewModel.getPhotos(id: id)
         }
+        topicHeaderView.frame = topicView.bounds
+        
+        collection.register(UINib(nibName: "\(HomeCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HomeCell.self)")
     }
     
-    func configureUI() {
-        collection.register(UINib(nibName: "\(HomeCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HomeCell.self)")
-//        self.collection.reloadData()
-    }
     func configureViewModel() {
-        viewModel.getHomePhotos()
+        viewModel.getTopics()
+        viewModel.topicSuccess = {
+            self.topicHeaderView.configure(data: self.viewModel.topicItems)
+        }
         viewModel.onSuccess = {
             self.collection.reloadData()
         }
@@ -61,9 +56,8 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
-//        let item = viewModel.items[indexPath.item]
-        cell.homeLabel.text = "hellllllloo"
-//        cell.configure(data: item)
+        let item = viewModel.items[indexPath.item]
+        cell.configure(data: item)
         return cell
         
     }
@@ -76,6 +70,6 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return header
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        viewModel.pagination(index: indexPath.item)
+        //        viewModel.pagination(index: indexPath.item)
     }
 }

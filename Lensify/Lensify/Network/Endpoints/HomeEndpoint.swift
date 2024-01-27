@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 enum HomeEndpoint: String {
 //    case wallpaper = "collections"
     case topics = "topics/"

@@ -42,9 +42,16 @@
 		7B90E2AC2B52FB550099FBA3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2AB2B52FB550099FBA3 /* Extension.swift */; };
 		7B90E2B22B5329550099FBA3 /* LaunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2B12B5329550099FBA3 /* LaunchController.swift */; };
 		7B90E2B82B5332160099FBA3 /* lottieView.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B90E2B72B5332160099FBA3 /* lottieView.json */; };
+		7B9565322B64C64700044E58 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9565302B64C64700044E58 /* TopicCell.swift */; };
+		7B9565332B64C64700044E58 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B9565312B64C64700044E58 /* TopicCell.xib */; };
+		7B9565352B64CDDC00044E58 /* NatureEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9565342B64CDDC00044E58 /* NatureEndpoint.swift */; };
+		7B9565372B64CDE700044E58 /* NatureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9565362B64CDE700044E58 /* NatureManager.swift */; };
+		7B9565392B64CE0600044E58 /* NatureUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9565382B64CE0600044E58 /* NatureUseCase.swift */; };
+		7B95653E2B65025800044E58 /* TopicHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95653D2B65025800044E58 /* TopicHeaderView.swift */; };
+		7B9565402B65025E00044E58 /* TopicHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B95653F2B65025E00044E58 /* TopicHeaderView.xib */; };
+		7B9565422B650C1800044E58 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9565412B650C1800044E58 /* Topic.swift */; };
 		7B97B9D02B5451D300D489CB /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B97B9CE2B5451D300D489CB /* HomeCell.swift */; };
 		7B97B9D12B5451D300D489CB /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B97B9CF2B5451D300D489CB /* HomeCell.xib */; };
-		7B97B9D32B54586600D489CB /* SegmentedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B97B9D22B54586600D489CB /* SegmentedController.swift */; };
 		7B97B9D52B54630700D489CB /* HeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B97B9D42B54630600D489CB /* HeaderReusableView.swift */; };
 		7BDB91CA2B5B924B00002EAC /* HomeUseCse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB91C92B5B924B00002EAC /* HomeUseCse.swift */; };
 /* End PBXBuildFile section */
@@ -81,9 +88,16 @@
 		7B90E2AB2B52FB550099FBA3 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7B90E2B12B5329550099FBA3 /* LaunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchController.swift; sourceTree = "<group>"; };
 		7B90E2B72B5332160099FBA3 /* lottieView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottieView.json; sourceTree = "<group>"; };
+		7B9565302B64C64700044E58 /* TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
+		7B9565312B64C64700044E58 /* TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
+		7B9565342B64CDDC00044E58 /* NatureEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureEndpoint.swift; sourceTree = "<group>"; };
+		7B9565362B64CDE700044E58 /* NatureManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureManager.swift; sourceTree = "<group>"; };
+		7B9565382B64CE0600044E58 /* NatureUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureUseCase.swift; sourceTree = "<group>"; };
+		7B95653D2B65025800044E58 /* TopicHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicHeaderView.swift; sourceTree = "<group>"; };
+		7B95653F2B65025E00044E58 /* TopicHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicHeaderView.xib; sourceTree = "<group>"; };
+		7B9565412B650C1800044E58 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		7B97B9CE2B5451D300D489CB /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		7B97B9CF2B5451D300D489CB /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
-		7B97B9D22B54586600D489CB /* SegmentedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedController.swift; sourceTree = "<group>"; };
 		7B97B9D42B54630600D489CB /* HeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderReusableView.swift; sourceTree = "<group>"; };
 		7BDB91C92B5B924B00002EAC /* HomeUseCse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -157,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				7B4DE9B22B57E86A00F4C3AA /* HomeManager.swift */,
+				7B9565362B64CDE700044E58 /* NatureManager.swift */,
 			);
 			path = MiddleLayer;
 			sourceTree = "<group>";
@@ -165,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				7B4DE9B52B57F44B00F4C3AA /* HomeEndpoint.swift */,
+				7B9565342B64CDDC00044E58 /* NatureEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -210,14 +226,13 @@
 			children = (
 				7B90E2752B52C1FB0099FBA3 /* AppDelegate.swift */,
 				7B90E2772B52C1FB0099FBA3 /* SceneDelegate.swift */,
-				7B90E27B2B52C1FB0099FBA3 /* Main.storyboard */,
-				7B97B9D22B54586600D489CB /* SegmentedController.swift */,
 				7B90E29D2B52C4E70099FBA3 /* Network */,
 				7B90E2AA2B52FB490099FBA3 /* Helper */,
 				7B90E2A72B52FAF20099FBA3 /* Model */,
 				7B90E2A62B52FAD60099FBA3 /* Scene */,
 				7B90E2812B52C1FE0099FBA3 /* Assets.xcassets */,
 				7B90E2832B52C1FE0099FBA3 /* LaunchScreen.storyboard */,
+				7B90E27B2B52C1FB0099FBA3 /* Main.storyboard */,
 				7B90E2862B52C1FE0099FBA3 /* Info.plist */,
 				7B90E27E2B52C1FB0099FBA3 /* Lensify.xcdatamodeld */,
 				7B90E2B72B5332160099FBA3 /* lottieView.json */,
@@ -253,6 +268,7 @@
 		7B90E2A72B52FAF20099FBA3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7B9565412B650C1800044E58 /* Topic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -260,6 +276,7 @@
 		7B90E2AA2B52FB490099FBA3 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				7B95653A2B65022E00044E58 /* Reusable */,
 				7B90E2AB2B52FB550099FBA3 /* Extension.swift */,
 			);
 			path = Helper;
@@ -275,6 +292,33 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		7B95653A2B65022E00044E58 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				7B95653C2B65023D00044E58 /* Cell */,
+				7B95653B2B65023800044E58 /* View */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		7B95653B2B65023800044E58 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7B95653D2B65025800044E58 /* TopicHeaderView.swift */,
+				7B95653F2B65025E00044E58 /* TopicHeaderView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7B95653C2B65023D00044E58 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7B9565302B64C64700044E58 /* TopicCell.swift */,
+				7B9565312B64C64700044E58 /* TopicCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		7B97B9D62B54636300D489CB /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				7BDB91C92B5B924B00002EAC /* HomeUseCse.swift */,
+				7B9565382B64CE0600044E58 /* NatureUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -367,9 +412,11 @@
 				7B97B9D12B5451D300D489CB /* HomeCell.xib in Resources */,
 				7B90E2852B52C1FE0099FBA3 /* LaunchScreen.storyboard in Resources */,
 				7B90E2822B52C1FE0099FBA3 /* Assets.xcassets in Resources */,
+				7B9565332B64C64700044E58 /* TopicCell.xib in Resources */,
 				7B42A04E2B56EF53003C5D34 /* SearchCell.xib in Resources */,
 				7B90E27D2B52C1FB0099FBA3 /* Main.storyboard in Resources */,
 				7B90E2B82B5332160099FBA3 /* lottieView.json in Resources */,
+				7B9565402B65025E00044E58 /* TopicHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,24 +428,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B90E2AC2B52FB550099FBA3 /* Extension.swift in Sources */,
+				7B9565322B64C64700044E58 /* TopicCell.swift in Sources */,
 				7B3021D22B55A16D00CE19E6 /* NatureViewModel.swift in Sources */,
 				7B90E29F2B52C4FD0099FBA3 /* NetworkManager.swift in Sources */,
 				7B97B9D02B5451D300D489CB /* HomeCell.swift in Sources */,
 				7B42A0442B56D626003C5D34 /* Architecture.swift in Sources */,
+				7B9565392B64CE0600044E58 /* NatureUseCase.swift in Sources */,
 				7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */,
+				7B9565352B64CDDC00044E58 /* NatureEndpoint.swift in Sources */,
 				7B3021D42B55A1DE00CE19E6 /* Nature.swift in Sources */,
 				7B90E2A32B52EC840099FBA3 /* ColorController.swift in Sources */,
 				7BDB91CA2B5B924B00002EAC /* HomeUseCse.swift in Sources */,
 				7B3021D02B55A15200CE19E6 /* NatureController.swift in Sources */,
+				7B9565422B650C1800044E58 /* Topic.swift in Sources */,
 				7B90E2762B52C1FB0099FBA3 /* AppDelegate.swift in Sources */,
 				7B90E2A52B52FAB20099FBA3 /* Endpoints.swift in Sources */,
 				7B90E2B22B5329550099FBA3 /* LaunchController.swift in Sources */,
-				7B97B9D32B54586600D489CB /* SegmentedController.swift in Sources */,
 				7B53E7A32B53E6C6005D0CED /* HomeViewModel.swift in Sources */,
 				7B4DE9B62B57F44B00F4C3AA /* HomeEndpoint.swift in Sources */,
 				7B97B9D52B54630700D489CB /* HeaderReusableView.swift in Sources */,
+				7B95653E2B65025800044E58 /* TopicHeaderView.swift in Sources */,
 				7B42A0462B56E8D8003C5D34 /* NatureReusableView.swift in Sources */,
 				7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */,
+				7B9565372B64CDE700044E58 /* NatureManager.swift in Sources */,
 				7B90E2802B52C1FB0099FBA3 /* Lensify.xcdatamodeld in Sources */,
 				7B4DE9B32B57E86A00F4C3AA /* HomeManager.swift in Sources */,
 				7B42A0502B56EF85003C5D34 /* SearchViewModel.swift in Sources */,

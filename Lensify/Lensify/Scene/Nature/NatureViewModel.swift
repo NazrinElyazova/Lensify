@@ -13,8 +13,10 @@ class NatureViewModel {
     var onSuccess: (()->Void)?
     var onError: ((String)-> Void)?
     
+    let manager = NatureManager()
+    
     func getNature() {
-        NetworkManager.request(model: [Photo].self, endpoint: Endpoints.nature.rawValue)
+        manager.getNatureList(endpoint: NatureEndpoint.nature)
         { data, errorMessage in
             if let errorMessage = errorMessage {
                 self.onError?(errorMessage)

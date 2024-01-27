@@ -17,3 +17,9 @@ extension UIImageView {
         }
     }
 }
+
+extension UIView {
+    static func loadFromNib() -> Self {
+        return Bundle(for: self).loadNibNamed(String(describing: self), owner: nil, options: nil)![0] as! Self
+    }
+}
