@@ -16,12 +16,12 @@
                 <rect key="frame" x="0.0" y="0.0" width="246" height="50"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbj-bZ-9HO">
-                        <rect key="frame" x="20" y="14" width="106" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbj-bZ-9HO">
+                        <rect key="frame" x="20" y="14" width="206" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="gDP-RG-fXj"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -31,7 +31,7 @@
             <constraints>
                 <constraint firstItem="wbj-bZ-9HO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="1s4-kx-xE9"/>
                 <constraint firstItem="wbj-bZ-9HO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="14" id="RcD-rJ-zSU"/>
-                <constraint firstAttribute="trailing" secondItem="wbj-bZ-9HO" secondAttribute="trailing" constant="120" id="Za3-7b-7en"/>
+                <constraint firstAttribute="trailing" secondItem="wbj-bZ-9HO" secondAttribute="trailing" constant="20" id="Za3-7b-7en"/>
             </constraints>
             <size key="customSize" width="246" height="50"/>
             <connections>

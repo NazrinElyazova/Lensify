@@ -29,7 +29,9 @@ extension TopicHeaderView: UICollectionViewDelegate, UICollectionViewDataSource,
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(TopicCell.self)", for: indexPath) as! TopicCell
-        cell.backgroundColor = .red
+//        cell.backgroundColor = .red
+        cell.topicLabel.text = items[indexPath.item].title
+  
         return cell
     }
     
@@ -38,6 +40,6 @@ extension TopicHeaderView: UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: 200, height: collectionView.bounds.height)
+        .init(width: 150, height: collectionView.bounds.height)
     }
 }
