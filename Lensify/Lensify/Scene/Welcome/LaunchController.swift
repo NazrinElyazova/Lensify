@@ -18,12 +18,16 @@ class LaunchController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        lottieView.play()
-        lottieView.loopMode = .loop
+        lottieAnimation()
     }
     @IBAction func continueButtonAction(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(TabBarController.self)") as! TabBarController
         navigationController?.show(controller, sender: nil)
     }
-    
+    func lottieAnimation() {
+        DispatchQueue.main.async {
+            self.lottieView.play()
+            self.lottieView.loopMode = .loop
+        }
+    }
 }

@@ -10,6 +10,8 @@ import Foundation
 class HomeViewModel {
     
     var items = [Wallpapers]()
+    
+    var test = [CoverPhotoWallpapers]()
 //    var wallpapersData: Wallpapers?
     
 //    var ID: String = wallpapersData?.id ?? ""

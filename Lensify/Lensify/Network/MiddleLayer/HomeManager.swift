@@ -7,6 +7,7 @@
 
 import Foundation
 class HomeManager: HomeUseCase {
+    
     func getTopics(completion: @escaping (([TopicElement]?, String?) -> Void)) {
         NetworkManager.request(model: [TopicElement].self,
                                endpoint: HomeEndpoint.topics.rawValue,

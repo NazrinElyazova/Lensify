@@ -40,6 +40,6 @@ extension TopicHeaderView: UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: 150, height: collectionView.bounds.height)
+        .init(width: 120, height: collectionView.bounds.height)
     }
 }
