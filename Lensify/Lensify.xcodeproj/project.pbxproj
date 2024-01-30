@@ -36,7 +36,7 @@
 		7B90E29C2B52C4BF0099FBA3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 7B90E29B2B52C4BF0099FBA3 /* Lottie */; };
 		7B90E29F2B52C4FD0099FBA3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E29E2B52C4FD0099FBA3 /* NetworkManager.swift */; };
 		7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2A02B52C5260099FBA3 /* NetworkHelper.swift */; };
-		7B90E2A32B52EC840099FBA3 /* ColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2A22B52EC840099FBA3 /* ColorController.swift */; };
+		7B90E2A32B52EC840099FBA3 /* WelcomeToLensifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2A22B52EC840099FBA3 /* WelcomeToLensifyController.swift */; };
 		7B90E2A52B52FAB20099FBA3 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2A42B52FAB20099FBA3 /* Endpoints.swift */; };
 		7B90E2A92B52FB110099FBA3 /* Wallpapers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2A82B52FB110099FBA3 /* Wallpapers.swift */; };
 		7B90E2AC2B52FB550099FBA3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2AB2B52FB550099FBA3 /* Extension.swift */; };
@@ -52,7 +52,8 @@
 		7B9565422B650C1800044E58 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9565412B650C1800044E58 /* Topic.swift */; };
 		7B97B9D02B5451D300D489CB /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B97B9CE2B5451D300D489CB /* HomeCell.swift */; };
 		7B97B9D12B5451D300D489CB /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B97B9CF2B5451D300D489CB /* HomeCell.xib */; };
-		7BDB91CA2B5B924B00002EAC /* HomeUseCse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB91C92B5B924B00002EAC /* HomeUseCse.swift */; };
+		7BD4FB282B698DB600B5EA3E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD4FB272B698DB600B5EA3E /* LoginController.swift */; };
+		7BDB91CA2B5B924B00002EAC /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,7 +82,7 @@
 		7B90E2862B52C1FE0099FBA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B90E29E2B52C4FD0099FBA3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7B90E2A02B52C5260099FBA3 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
-		7B90E2A22B52EC840099FBA3 /* ColorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorController.swift; sourceTree = "<group>"; };
+		7B90E2A22B52EC840099FBA3 /* WelcomeToLensifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeToLensifyController.swift; sourceTree = "<group>"; };
 		7B90E2A42B52FAB20099FBA3 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		7B90E2A82B52FB110099FBA3 /* Wallpapers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpapers.swift; sourceTree = "<group>"; };
 		7B90E2AB2B52FB550099FBA3 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -97,7 +98,8 @@
 		7B9565412B650C1800044E58 /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 		7B97B9CE2B5451D300D489CB /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		7B97B9CF2B5451D300D489CB /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
-		7BDB91C92B5B924B00002EAC /* HomeUseCse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCse.swift; sourceTree = "<group>"; };
+		7BD4FB272B698DB600B5EA3E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,7 +191,6 @@
 				7B53E7A42B53EFBE005D0CED /* Cell */,
 				7B53E7A02B53E6B3005D0CED /* HomeController.swift */,
 				7B53E7A22B53E6C6005D0CED /* HomeViewModel.swift */,
-				7B90E2A82B52FB110099FBA3 /* Wallpapers.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -253,6 +254,7 @@
 		7B90E2A62B52FAD60099FBA3 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7BD4FB262B6972C000B5EA3E /* MyLensify */,
 				7B42A0472B56EEE1003C5D34 /* Search */,
 				7B42A0422B56D617003C5D34 /* Architecture */,
 				7B3021CE2B55A11F00CE19E6 /* Nature */,
@@ -266,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				7B9565412B650C1800044E58 /* Topic.swift */,
+				7B90E2A82B52FB110099FBA3 /* Wallpapers.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -282,7 +285,7 @@
 		7B90E2B92B5336530099FBA3 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
-				7B90E2A22B52EC840099FBA3 /* ColorController.swift */,
+				7B90E2A22B52EC840099FBA3 /* WelcomeToLensifyController.swift */,
 				7B90E2B12B5329550099FBA3 /* LaunchController.swift */,
 				7B53E7C92B53F1F5005D0CED /* TabBarController.swift */,
 			);
@@ -316,10 +319,18 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		7BD4FB262B6972C000B5EA3E /* MyLensify */ = {
+			isa = PBXGroup;
+			children = (
+				7BD4FB272B698DB600B5EA3E /* LoginController.swift */,
+			);
+			path = MyLensify;
+			sourceTree = "<group>";
+		};
 		7BDB91C82B5B923800002EAC /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				7BDB91C92B5B924B00002EAC /* HomeUseCse.swift */,
+				7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */,
 				7B9565382B64CE0600044E58 /* NatureUseCase.swift */,
 			);
 			path = UseCase;
@@ -426,8 +437,8 @@
 				7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */,
 				7B9565352B64CDDC00044E58 /* NatureEndpoint.swift in Sources */,
 				7B3021D42B55A1DE00CE19E6 /* Nature.swift in Sources */,
-				7B90E2A32B52EC840099FBA3 /* ColorController.swift in Sources */,
-				7BDB91CA2B5B924B00002EAC /* HomeUseCse.swift in Sources */,
+				7B90E2A32B52EC840099FBA3 /* WelcomeToLensifyController.swift in Sources */,
+				7BDB91CA2B5B924B00002EAC /* HomeUseCase.swift in Sources */,
 				7B3021D02B55A15200CE19E6 /* NatureController.swift in Sources */,
 				7B9565422B650C1800044E58 /* Topic.swift in Sources */,
 				7B90E2762B52C1FB0099FBA3 /* AppDelegate.swift in Sources */,
@@ -438,6 +449,7 @@
 				7B95653E2B65025800044E58 /* TopicHeaderView.swift in Sources */,
 				7B42A0462B56E8D8003C5D34 /* NatureReusableView.swift in Sources */,
 				7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */,
+				7BD4FB282B698DB600B5EA3E /* LoginController.swift in Sources */,
 				7B9565372B64CDE700044E58 /* NatureManager.swift in Sources */,
 				7B90E2802B52C1FB0099FBA3 /* Lensify.xcdatamodeld in Sources */,
 				7B4DE9B32B57E86A00F4C3AA /* HomeManager.swift in Sources */,

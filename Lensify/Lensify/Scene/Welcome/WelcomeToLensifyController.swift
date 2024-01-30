@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ColorController: UIViewController {
+class WelcomeToLensifyController: UIViewController {
     @IBOutlet weak var myLabel: UILabel!
     
     @IBOutlet weak var startWelcomeButton: UIButton!

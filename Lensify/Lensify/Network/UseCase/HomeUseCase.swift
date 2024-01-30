@@ -1,5 +1,5 @@
 //
-//  HomeUseCse.swift
+//  HomeUseCase.swift
 //  Lensify
 //
 //  Created by Nazrin on 20.01.24.
