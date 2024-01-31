@@ -15,6 +15,7 @@ class SearchController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureUI()
         configureViewModel()
     }
@@ -42,7 +43,7 @@ class SearchController: UIViewController {
 extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        //        print( viewModel.search.count)
+//                print( viewModel.search.count)
         return  viewModel.search.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

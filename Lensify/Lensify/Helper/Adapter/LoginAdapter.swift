@@ -38,7 +38,7 @@ class LoginAdapter {
    fileprivate func googleLogin() {
         GIDSignIn.sharedInstance.signIn(withPresenting: controller) { result, error in
             if let error = error {
-                
+                print(error)
             }
             else if let result = result {
                 let user = UserData(email: result.user.profile?.email ?? "", password: "", firstName: result.user.profile?.name ?? "", lastName: result.user.profile?.familyName ?? "")

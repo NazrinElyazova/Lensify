@@ -58,6 +58,7 @@
 		7BC6AEFF2B6A72A700694CD0 /* DatabaseAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AEFE2B6A72A700694CD0 /* DatabaseAdapter.swift */; };
 		7BC6AF012B6A981E00694CD0 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AF002B6A981E00694CD0 /* SearchManager.swift */; };
 		7BC6AF032B6A999E00694CD0 /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AF022B6A999E00694CD0 /* SearchUseCase.swift */; };
+		7BC6AF1E2B6AAB1600694CD0 /* SearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AF1D2B6AAB1600694CD0 /* SearchEndpoint.swift */; };
 		7BD4FB282B698DB600B5EA3E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD4FB272B698DB600B5EA3E /* LoginController.swift */; };
 		7BDB91CA2B5B924B00002EAC /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */; };
 /* End PBXBuildFile section */
@@ -110,6 +111,7 @@
 		7BC6AEFE2B6A72A700694CD0 /* DatabaseAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseAdapter.swift; sourceTree = "<group>"; };
 		7BC6AF002B6A981E00694CD0 /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
 		7BC6AF022B6A999E00694CD0 /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
+		7BC6AF1D2B6AAB1600694CD0 /* SearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoint.swift; sourceTree = "<group>"; };
 		7BD4FB272B698DB600B5EA3E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				7B4DE9B52B57F44B00F4C3AA /* HomeEndpoint.swift */,
+				7BC6AF1D2B6AAB1600694CD0 /* SearchEndpoint.swift */,
 				7B9565342B64CDDC00044E58 /* NatureEndpoint.swift */,
 			);
 			path = Endpoints;
@@ -475,6 +478,7 @@
 				7B90E2B22B5329550099FBA3 /* LaunchController.swift in Sources */,
 				7B53E7A32B53E6C6005D0CED /* HomeViewModel.swift in Sources */,
 				7B4DE9B62B57F44B00F4C3AA /* HomeEndpoint.swift in Sources */,
+				7BC6AF1E2B6AAB1600694CD0 /* SearchEndpoint.swift in Sources */,
 				7B95653E2B65025800044E58 /* TopicHeaderView.swift in Sources */,
 				7B42A0462B56E8D8003C5D34 /* NatureReusableView.swift in Sources */,
 				7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */,

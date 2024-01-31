@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 class HomeManager: HomeUseCase {
     
     func getTopics(completion: @escaping (([TopicElement]?, String?) -> Void)) {

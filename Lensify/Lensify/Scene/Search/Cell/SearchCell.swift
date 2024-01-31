@@ -8,10 +8,11 @@
 import UIKit
 
 class SearchCell: UICollectionViewCell {
-    @IBOutlet weak var searchLabel: UILabel!
     
+    @IBOutlet weak var searchLabel: UILabel!
     @IBOutlet weak var searchUIView: UIView!
     @IBOutlet weak var searchImageview: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         searchUIView.alpha = 0.5

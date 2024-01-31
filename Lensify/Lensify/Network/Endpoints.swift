@@ -8,5 +8,5 @@
 import Foundation
 enum Endpoints: String {
     case architecture = ""
-    case search = "search/collections"
+   
 }
