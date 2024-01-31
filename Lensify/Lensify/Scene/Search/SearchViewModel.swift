@@ -21,7 +21,7 @@ class SearchViewModel {
             } else if let data = data {
                 self.search = data.results ?? []
                 self.onSucces?()
-                print(data)
+//                print(data)
             }
         }
     }
