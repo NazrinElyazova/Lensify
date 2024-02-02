@@ -15,7 +15,6 @@ class TabBarController: UITabBarController {
         tabBar.backgroundColor = .black
         tabBar.barTintColor = UIColor.black
         
-        // Do any additional setup after loading the view.
     }
-    
+   
 }
