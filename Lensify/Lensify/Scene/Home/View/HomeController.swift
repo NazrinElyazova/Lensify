@@ -18,10 +18,11 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-login()
+        login()
         configureUI()
         configureViewModel()
     }
+    
     func login() {
         UserDefaults.standard.set(true, forKey: "loggedIn")
     }

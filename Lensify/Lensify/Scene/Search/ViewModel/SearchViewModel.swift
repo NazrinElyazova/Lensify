@@ -14,7 +14,7 @@ class SearchViewModel {
     var onSucces: (()->Void)?
     var onError: ((String)-> Void)?
     
-    func getSearchItems(searchText: String, pageID: Int) {
+    func getSearchItems(searchText: String) {
 //        let path = SearchEndpoint.search.rawValue + "?query=\(searchText)"
         /*NetworkManager.request(model: Search.self, endpoint: path) */
         

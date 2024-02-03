@@ -8,6 +8,7 @@
 import UIKit
 
 class SearchController: UIViewController {
+    
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchTextFieldOutlet: UITextField!
     
@@ -16,12 +17,18 @@ class SearchController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        hideKeyboardWhenTappedAround()
         configureUI()
         configureViewModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        searchTextFieldOutlet.becomeFirstResponder()
+    }
+    
     @IBAction func searchTextField(_ sender: Any) {
-        viewModel.getSearchItems(searchText: "\(searchTextFieldOutlet.text ?? "")", pageID: 0)
+        viewModel.getSearchItems(searchText: "\(searchTextFieldOutlet.text ?? "")")
         print("\(String(describing: searchTextFieldOutlet.text))")
     }
     
@@ -42,8 +49,7 @@ class SearchController: UIViewController {
 }
 extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-//                print( viewModel.search.count)
+        //                print( viewModel.search.count)
         return  viewModel.search.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,5 +61,17 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: collectionView.frame.width/3-2, height: 108)
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

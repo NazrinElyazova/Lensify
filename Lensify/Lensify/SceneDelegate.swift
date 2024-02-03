@@ -29,7 +29,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
 //            print("login deyil")
             window = UIWindow(windowScene: windowScene)
-            
             let navigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(WelcomeToLensifyController.self)")
             window?.rootViewController = UINavigationController(rootViewController: navigationController)
             window?.makeKeyAndVisible()
