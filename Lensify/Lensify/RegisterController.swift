@@ -9,7 +9,7 @@ import UIKit
 import FirebaseAuth
 
 class RegisterController: UIViewController {
-
+    
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var fullnameTextField: UITextField!
@@ -18,8 +18,8 @@ class RegisterController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-  }
+        
+    }
     @IBAction func registerAction(_ sender: Any) {
         if let email = emailTextField.text,
            let password = passwordTextField.text {
@@ -29,7 +29,7 @@ class RegisterController: UIViewController {
                 if let error = error {
                     print(error.localizedDescription)
                 } else if let user = result?.user {
-//                    print(user)
+                    //                    print(user)
                     self?.completion?(user.email ?? "", password)
                     self?.navigationController?.popViewController(animated: true)
                 }

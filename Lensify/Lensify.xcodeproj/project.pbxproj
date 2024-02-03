@@ -69,6 +69,8 @@
 		7BC6AF1E2B6AAB1600694CD0 /* SearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AF1D2B6AAB1600694CD0 /* SearchEndpoint.swift */; };
 		7BD4FB282B698DB600B5EA3E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD4FB272B698DB600B5EA3E /* LoginController.swift */; };
 		7BD6007F2B6EC13700B28661 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7BD6007E2B6EC13700B28661 /* FirebaseAuth */; };
+		7BD600812B6ED4EB00B28661 /* downloadLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BD600802B6ED4EB00B28661 /* downloadLottie.json */; };
+		7BD600842B6ED58700B28661 /* ReadyForDownloadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD600832B6ED58700B28661 /* ReadyForDownloadController.swift */; };
 		7BDB91CA2B5B924B00002EAC /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +126,8 @@
 		7BC6AF022B6A999E00694CD0 /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
 		7BC6AF1D2B6AAB1600694CD0 /* SearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoint.swift; sourceTree = "<group>"; };
 		7BD4FB272B698DB600B5EA3E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		7BD600802B6ED4EB00B28661 /* downloadLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = downloadLottie.json; sourceTree = "<group>"; };
+		7BD600832B6ED58700B28661 /* ReadyForDownloadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyForDownloadController.swift; sourceTree = "<group>"; };
 		7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -362,7 +366,6 @@
 				7B90E2862B52C1FE0099FBA3 /* Info.plist */,
 				7B7967822B6D35A90032BB63 /* GoogleService-Info.plist */,
 				7B90E27E2B52C1FB0099FBA3 /* Lensify.xcdatamodeld */,
-				7B90E2B72B5332160099FBA3 /* lottieView.json */,
 			);
 			path = Lensify;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 		7B90E2A62B52FAD60099FBA3 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7BD600822B6ED55000B28661 /* DownloadWallpaper */,
 				7BD4FB262B6972C000B5EA3E /* Login */,
 				7B42A0472B56EEE1003C5D34 /* Search */,
 				7B42A0422B56D617003C5D34 /* Architecture */,
@@ -394,6 +398,7 @@
 		7B90E2AA2B52FB490099FBA3 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				7BD600852B6EDC1100B28661 /* LottieFiles */,
 				7BC6AEFB2B6A50BE00694CD0 /* Adapter */,
 				7B95653A2B65022E00044E58 /* Reusable */,
 				7B90E2AB2B52FB550099FBA3 /* Extension.swift */,
@@ -453,6 +458,23 @@
 				7B7967722B6D2C390032BB63 /* ViewModel */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		7BD600822B6ED55000B28661 /* DownloadWallpaper */ = {
+			isa = PBXGroup;
+			children = (
+				7BD600832B6ED58700B28661 /* ReadyForDownloadController.swift */,
+			);
+			path = DownloadWallpaper;
+			sourceTree = "<group>";
+		};
+		7BD600852B6EDC1100B28661 /* LottieFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7BD600802B6ED4EB00B28661 /* downloadLottie.json */,
+				7B90E2B72B5332160099FBA3 /* lottieView.json */,
+			);
+			path = LottieFiles;
 			sourceTree = "<group>";
 		};
 		7BDB91C82B5B923800002EAC /* UseCase */ = {
@@ -553,6 +575,7 @@
 				7B9565332B64C64700044E58 /* TopicCell.xib in Resources */,
 				7B42A04E2B56EF53003C5D34 /* SearchCell.xib in Resources */,
 				7B90E27D2B52C1FB0099FBA3 /* Main.storyboard in Resources */,
+				7BD600812B6ED4EB00B28661 /* downloadLottie.json in Resources */,
 				7B90E2B82B5332160099FBA3 /* lottieView.json in Resources */,
 				7B9565402B65025E00044E58 /* TopicHeaderView.xib in Resources */,
 			);
@@ -565,6 +588,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BD600842B6ED58700B28661 /* ReadyForDownloadController.swift in Sources */,
 				7B90E2AC2B52FB550099FBA3 /* Extension.swift in Sources */,
 				7B9565322B64C64700044E58 /* TopicCell.swift in Sources */,
 				7B3021D22B55A16D00CE19E6 /* NatureViewModel.swift in Sources */,

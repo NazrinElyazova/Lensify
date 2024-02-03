@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 import FirebaseFirestoreInternal
 
 class LoginController: UIViewController {
@@ -38,9 +39,13 @@ class LoginController: UIViewController {
     @IBAction func loginSegment(_ sender: Any) {
         
         if (sender as AnyObject).selectedSegmentIndex == 0 {
-            print("First")
+            print("First login controller")
         } else if (sender as AnyObject).selectedSegmentIndex == 1 {
             let controller = storyboard?.instantiateViewController(withIdentifier: "\(RegisterController.self)") as! RegisterController
+            controller.completion = { [weak self] email, password in
+                self?.passwordTextField.text = password
+                self?.userNameEmailTextField.text = email
+            }
             navigationController?.show(controller, sender: nil)
         }
     }
@@ -61,9 +66,21 @@ class LoginController: UIViewController {
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {
-        if !(passwordTextField.text?.isEmpty == true), !(userNameEmailTextField.text?.isEmpty == true) {
-            print("bos deyillllllerrr")
-          
+        if !(passwordTextField.text?.isEmpty == true), !(userNameEmailTextField.text?.isEmpty == true),
+           let email = userNameEmailTextField.text,
+           let password = passwordTextField.text {
+            Auth.auth().signIn(withEmail: email, password: password) { result, error in
+                
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+                else if let user = result?.user {
+//                    print("user movcuddur")
+                    let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
+                    self.navigationController?.show(controller, sender: nil)
+                }
+            }
+            
         } else {
             showAlert()
         }
