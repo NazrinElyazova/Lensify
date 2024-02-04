@@ -12,17 +12,9 @@ class HomeViewModel {
     var items = [Wallpapers]()
     
     var test = [CoverPhotoWallpapers]()
-//    var wallpapersData: Wallpapers?
-    
-//    var ID: String = wallpapersData?.id ?? ""
-     
-//    var id: String?
-//    
-//    init(id: String) {
-//           self.id = id
-//       }
     
     var topicItems = [TopicElement]()
+    
     var onSuccess: (()-> Void)?
     var topicSuccess: (()-> Void)?
     var onError: ((String)-> Void)?

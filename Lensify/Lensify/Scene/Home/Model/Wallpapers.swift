@@ -4,11 +4,11 @@ import Foundation
 struct Wallpapers: Codable {
     let id, slug, title, description: String?
     let publishedAt, updatedAt, startsAt, endsAt: String?
-    let visibility: Visibility?
+    let visibility: VisibilityWallpapers?
     let featured: Bool?
     let totalPhotos: Int?
     let links: PhotoLinksWallpapers?
-    let status: PhotoStatus?
+    let status: PhotoStatusWallpapers?
     let owners: [UserWallpapers]?
     let urls: UrlsWallpapers?
     let previewPhotos: [PreviewPhotoWallpapers]?

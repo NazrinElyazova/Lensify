@@ -8,19 +8,12 @@
 import Foundation
 
 class SearchManager: SearchUseCase {
+   
     
-    func getSearchItems(searchText: String, endpoint: SearchEndpoint, completion: @escaping ((Search?, String?) -> Void)) {
+    func getSearchItems(endpoint: SearchEndpoint, completion: @escaping ((Search?, String?) -> Void)) {
         
-        let path = SearchEndpoint.search.rawValue + "?query=\(searchText)"
-        NetworkManager.request(model: Search.self, endpoint: path) {
-            data, errorMessage in
-            
-            if let errorMessage = errorMessage {
-                completion(nil, errorMessage)
-            }
-            else if let data = data {
-                completion(data, nil)
-            }
+//        let path = SearchEndpoint.search.rawValue + "?query=\(searchText)"
+        NetworkManager.request(model: Search.self, endpoint: SearchEndpoint.search.rawValue, completion: completion)
+//
         }
     }
-}

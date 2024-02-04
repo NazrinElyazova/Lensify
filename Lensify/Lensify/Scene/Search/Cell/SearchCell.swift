@@ -18,7 +18,7 @@ class SearchCell: UICollectionViewCell {
         searchUIView.alpha = 0.5
     }
     func configure(data: SearchResult) {
-        searchLabel.text = data.title
-        searchImageview.loadImage(url: data.coverPhoto?.urls?.small ?? "")
+        searchLabel.text = data.description
+        searchImageview.loadImage(url: data.urls?.small ?? "")
     }
 }

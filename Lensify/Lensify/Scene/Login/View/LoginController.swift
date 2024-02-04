@@ -33,7 +33,7 @@ class LoginController: UIViewController {
             
             self.databaseAdapter.saveUserInfo(data: user)
             //            print(user)
-            //save to coredata
+            //save to firebase
         }
     }
     @IBAction func loginSegment(_ sender: Any) {

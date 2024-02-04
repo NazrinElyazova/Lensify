@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchController: UIViewController {
+class SearchController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchTextFieldOutlet: UITextField!
@@ -16,6 +16,8 @@ class SearchController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchTextFieldOutlet.delegate = self
         
         hideKeyboardWhenTappedAround()
         configureUI()
@@ -46,6 +48,9 @@ class SearchController: UIViewController {
             self.collection.reloadData()
         }
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
+    }
 }
 extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -60,7 +65,7 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: collectionView.frame.width/3-2, height: 108)
+        .init(width: collectionView.frame.width/2, height: 108)
     }
 }
 
