@@ -33,9 +33,7 @@ class RegisterController: UIViewController {
                     self?.completion?(user.email ?? "", password)
                     self?.navigationController?.popViewController(animated: true)
                 }
-                
             }
-            
         }
     }
 }

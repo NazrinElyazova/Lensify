@@ -24,6 +24,8 @@ class HomeCell: UICollectionViewCell {
     func configure(data: Wallpapers) {
         homeLabel.text = data.description
         homeImage.loadImage(url: data.urls?.small ?? "")
+        
+//        print("\(data.id)")
     }
     
 //    func configure(data: HomeCellProtocol) {

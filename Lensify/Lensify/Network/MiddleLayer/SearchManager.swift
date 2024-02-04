@@ -9,11 +9,13 @@ import Foundation
 
 class SearchManager: SearchUseCase {
    
-    
-    func getSearchItems(endpoint: SearchEndpoint, completion: @escaping ((Search?, String?) -> Void)) {
+    func getSearchItems(searchText: String, completion: @escaping ((Search?, String?) -> Void)) {
         
 //        let path = SearchEndpoint.search.rawValue + "?query=\(searchText)"
-        NetworkManager.request(model: Search.self, endpoint: SearchEndpoint.search.rawValue, completion: completion)
+        
+        let url = NetworkHelper.urlConfiguration(endpoint: SearchEndpoint.search.rawValue)
+        let path = url + "&query=\(searchText)"
+        NetworkManager.request(model: Search.self, endpoint: path, completion: completion)
 //
         }
     }

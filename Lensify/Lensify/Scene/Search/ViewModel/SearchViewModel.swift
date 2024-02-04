@@ -16,10 +16,9 @@ class SearchViewModel {
     var onError: ((String)-> Void)?
     
     func getSearchItems(searchText: String) {
-        let path = SearchEndpoint.search.rawValue + "?query=\(searchText)"
+//        let path = SearchEndpoint.search.rawValue + "?query=\(searchText)"
         
-        /* manager.getSearchItems(endpoint: path)*/
-        NetworkManager.request(model: Search.self, endpoint: path) {
+        manager.getSearchItems(searchText: searchText) {
             
             data, errorMessage in
             if let errorMessage = errorMessage {

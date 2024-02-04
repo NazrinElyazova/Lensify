@@ -11,8 +11,6 @@ class HomeViewModel {
     
     var items = [Wallpapers]()
     
-    var test = [CoverPhotoWallpapers]()
-    
     var topicItems = [TopicElement]()
     
     var onSuccess: (()-> Void)?
@@ -33,14 +31,15 @@ class HomeViewModel {
     }
     
     func getPhotos(id: String) {        
-        manager.getHomeList(id: id, endpoint: HomeEndpoint.topics) {
+        /*manager.getHomeList(id: id, endpoint: HomeEndpoint.topics)*/ 
+        manager.getHomeList(id: id) {
             data, errorMessage in
             if let errorMessage = errorMessage {
                 self.onError?(errorMessage)
             } else if let data = data {
-                self.items.append(contentsOf: data)
+//                self.items.append(contentsOf: data)
 //                self.items = data
-//                self.items.append(data)
+                self.items.append(contentsOf: data)
                 self.onSuccess?()
             }
         }

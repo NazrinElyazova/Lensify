@@ -18,6 +18,7 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         login()
         configureUI()
         configureViewModel()
@@ -29,10 +30,13 @@ class HomeController: UIViewController {
   
     func configureUI() {
         topicView.addSubview(topicHeaderView)
+        
         topicHeaderView.callback = { id in
             self.viewModel.items.removeAll()
             self.viewModel.getPhotos(id: id)
+            print("getPhotos callback called")
         }
+        
         topicHeaderView.frame = topicView.bounds
         
         collection.register(UINib(nibName: "\(HomeCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HomeCell.self)")
@@ -61,6 +65,8 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
         let item = viewModel.items[indexPath.item]
+        
+//        print("\(item.id)") 
         cell.configure(data: item)
         return cell
         

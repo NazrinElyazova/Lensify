@@ -65,7 +65,7 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: collectionView.frame.width/2, height: 108)
+        .init(width: collectionView.frame.width, height: 200)
     }
 }
 

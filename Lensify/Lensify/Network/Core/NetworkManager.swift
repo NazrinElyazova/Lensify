@@ -20,17 +20,18 @@ class NetworkManager {
         completion: @escaping((T?, String?)-> Void)) {
             //            print("url: \(NetworkHelper.baseURL)\(endpoint))")
             AF.request(
-                "\(NetworkHelper.baseURL)\(endpoint)?client_id=QDkrKxHnXw5_P5WcTxtWfeEbf-XZSntir16cfzE9YSE",
-                       method: method,
-                       parameters: parameters,
-                       encoding: encoding,
-                       headers: header).responseDecodable(of: T.self) { response in
-                switch response.result {
-                case.success(let data):
-                    completion(data, nil)
-                case.failure(let error):
-                    completion(nil, error.localizedDescription)
+                /* "\(NetworkHelper.baseURL)\(endpoint)?client_id=QDkrKxHnXw5_P5WcTxtWfeEbf-XZSntir16cfzE9YSE"*/
+                endpoint,
+                method: method,
+                parameters: parameters,
+                encoding: encoding,
+                headers: header).responseDecodable(of: T.self) { response in
+                    switch response.result {
+                    case.success(let data):
+                        completion(data, nil)
+                    case.failure(let error):
+                        completion(nil, error.localizedDescription)
+                    }
                 }
-            }
         }
 }

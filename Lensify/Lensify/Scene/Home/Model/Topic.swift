@@ -17,7 +17,7 @@ struct TopicElement: Codable {
 //    let links: TopicLinks?
 //    let status: String?
 //    let owners: [User]?
-//    let coverPhoto: CoverPhoto?
+//    let coverPhoto: CoverPhotoWallpapers?
 //    let previewPhotos: [PreviewPhoto]?
 
     enum CodingKeys: String, CodingKey {

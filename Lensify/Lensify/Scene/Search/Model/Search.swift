@@ -28,14 +28,14 @@ struct SearchResult: Codable {
     let color, blurHash, description, altDescription: String?
     //    let breadcrumbs: [BreadcrumbSearch]?
     let urls: UrlsSearch?
-//    let links: ResultLinksSearch?
+    let links: ResultLinksSearch?
     let likes: Int?
     let likedByUser: Bool?
     //    let currentUserCollections: [String]?
     let sponsorship: String?
-    //    let topicSubmissions: ResultTopicSubmissionsSearch?
-//    let user: UserSearch?
-//    let tags: [TagSearch]?
+        let topicSubmissions: ResultTopicSubmissionsSearch?
+    let user: UserSearch?
+    let tags: [TagSearch]?
     
     enum CodingKeys: String, CodingKey {
         case id, slug
@@ -47,52 +47,52 @@ struct SearchResult: Codable {
         case description
         case altDescription = "alt_description"
         //        case breadcrumbs
-        case urls, /*links,*/ likes
+        case urls, links, likes
         case likedByUser = "liked_by_user"
         //        case currentUserCollections = "current_user_collections"
         case sponsorship
-        //        case topicSubmissions = "topic_submissions"
-//        case user, tags
+                case topicSubmissions = "topic_submissions"
+        case user, tags
     }
 }
 
 // MARK: - ResultLinks
 struct ResultLinksSearch: Codable {
     let linksSelf, html, download: String?
-//    let downloadLocation: String?
+    let downloadLocation: String?
     
     enum CodingKeys: String, CodingKey {
         case linksSelf = "self"
         case html, download
-//        case downloadLocation = "download_location"
+        case downloadLocation = "download_location"
     }
 }
 
 // MARK: - Tag
 struct TagSearch: Codable {
-//    let type: TypeEnum?
+    let type: TypeEnum?
     let title: String?
-//    let source: SourceSearch?
+    let source: SourceSearch?
 }
 
 // MARK: - Source
 struct SourceSearch: Codable {
-//    let ancestry: AncestrySearch?
+    let ancestry: AncestrySearch?
     let title, subtitle, description, metaTitle: String?
     let metaDescription: String?
-//    let coverPhoto: CoverPhotoSearch?
+    let coverPhoto: CoverPhotoSearch?
     
     enum CodingKeys: String, CodingKey {
-        case /*ancestry,*/ title, subtitle, description
+        case ancestry, title, subtitle, description
         case metaTitle = "meta_title"
         case metaDescription = "meta_description"
-//        case coverPhoto = "cover_photo"
+        case coverPhoto = "cover_photo"
     }
 }
 
 // MARK: - Ancestry
 struct AncestrySearch: Codable {
-//    let type, category, subcategory: CategorySearch?
+    let type, category, subcategory: CategorySearch?
 }
 
 // MARK: - Category
@@ -113,15 +113,15 @@ struct CoverPhotoSearch: Codable {
     let width, height: Int?
     let color, blurHash, description, altDescription: String?
 //    let breadcrumbs: [BreadcrumbSearch]?
-//    let urls: UrlsSearch?
-//    let links: ResultLinksSearch?
+    let urls: UrlsSearch?
+    let links: ResultLinksSearch?
     let likes: Int?
     let likedByUser: Bool?
-    //    let currentUserCollections: [String]?
+//        let currentUserCollections: [String]?
     let sponsorship: String?
-//    let topicSubmissions: CoverPhotoTopicSubmissionsSearch?
+    let topicSubmissions: CoverPhotoTopicSubmissionsSearch?
     let premium, plus: Bool?
-//    let user: UserSearch?
+    let user: UserSearch?
     
     enum CodingKeys: String, CodingKey {
         case id, slug
@@ -133,12 +133,12 @@ struct CoverPhotoSearch: Codable {
         case description
         case altDescription = "alt_description"
 //        case breadcrumbs
-        case /*urls,*/ /*links,*/ likes
+        case urls, links, likes
         case likedByUser = "liked_by_user"
-        //        case currentUserCollections = "current_user_collections"
+//                case currentUserCollections = "current_user_collections"
         case sponsorship
-//        case topicSubmissions = "topic_submissions"
-        case premium, plus/*, user*/
+        case topicSubmissions = "topic_submissions"
+        case premium, plus, user
     }
 }
 
@@ -146,7 +146,7 @@ struct CoverPhotoSearch: Codable {
 struct BreadcrumbSearch: Codable {
     let slug, title: String?
     let index: Int?
-//    let type: TypeEnum?
+    let type: TypeEnum?
 }
 
 enum TypeEnum: String, Codable {
@@ -156,7 +156,7 @@ enum TypeEnum: String, Codable {
 
 // MARK: - CoverPhotoTopicSubmissions
 struct CoverPhotoTopicSubmissionsSearch: Codable {
-//    let nature, wallpapers: NatureSearch?
+    let nature, wallpapers: NatureSearch?
 }
 
 // MARK: - Nature
@@ -189,12 +189,12 @@ struct UserSearch: Codable {
     let twitterUsername: String?
     let portfolioURL: String?
     let bio, location: String?
-//    let links: UserLinksSearch?
-//    let profileImage: ProfileImageSearch?
+    let links: UserLinksSearch?
+    let profileImage: ProfileImageSearch?
     let instagramUsername: String?
     let totalCollections, totalLikes, totalPhotos, totalPromotedPhotos: Int?
     let acceptedTos, forHire: Bool?
-//    let social: SocialSearch?
+    let social: SocialSearch?
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -204,8 +204,8 @@ struct UserSearch: Codable {
         case lastName = "last_name"
         case twitterUsername = "twitter_username"
         case portfolioURL = "portfolio_url"
-        case bio, location/*, links*/
-//        case profileImage = "profile_image"
+        case bio, location, links
+        case profileImage = "profile_image"
         case instagramUsername = "instagram_username"
         case totalCollections = "total_collections"
         case totalLikes = "total_likes"
@@ -213,7 +213,7 @@ struct UserSearch: Codable {
         case totalPromotedPhotos = "total_promoted_photos"
         case acceptedTos = "accepted_tos"
         case forHire = "for_hire"
-//        case social
+        case social
     }
 }
 
@@ -250,10 +250,11 @@ struct SocialSearch: Codable {
 
 // MARK: - ResultTopicSubmissions
 struct ResultTopicSubmissionsSearch: Codable {
-//    let nature, streetPhotography: NatureSearch?
+    let nature, streetPhotography: NatureSearch?
     
-//    enum CodingKeys: String, CodingKey {
-//        case nature
-//        case streetPhotography = "street-photography"
-//    }
+    enum CodingKeys: String, CodingKey {
+        case nature
+        case streetPhotography = "street-photography"
+        //    }
+    }
 }
