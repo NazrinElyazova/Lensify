@@ -6,22 +6,28 @@
 //
 
 import Foundation
-import KeychainSwift
+//import KeychainSwift
+import FirebaseAuth
+import FirebaseFirestore
 
 class DatabaseAdapter {
-    var keychain = KeychainSwift()
-        func saveUserInfo(data: UserData) {
+//    var keychain = KeychainSwift()
+//        func saveUserInfo(data: UserData) {
             
             //file manager
             //keychain
             //core data
             //user defaults
             
-            UserDefaults.standard.setValue(data.firstName, forKey: "firstName")
-            UserDefaults.standard.setValue(data.lastName, forKey: "lastName")
+//            UserDefaults.standard.setValue(data.firstName, forKey: "firstName")
+//            UserDefaults.standard.setValue(data.lastName, forKey: "lastName")
 
-            keychain.set(data.email, forKey: "email")
-            keychain.set(data.password, forKey: "password")
+//            keychain.set(data.email, forKey: "email")
+//            keychain.set(data.password, forKey: "password")
+    let database = Firestore.firestore()
 
+//            func saveUserInfo(data: UserData) {
+//                database.collection("UserInfo").addDocument(data: <#T##[String : Any]#>)
+//               }
         }
-}
+

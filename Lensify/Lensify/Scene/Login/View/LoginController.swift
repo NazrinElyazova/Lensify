@@ -10,8 +10,10 @@ import GoogleSignIn
 import Firebase
 import FirebaseAuth
 import FirebaseFirestoreInternal
+import FBSDKLoginKit
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, LoginButtonDelegate {
+    
     
     var adapter: LoginAdapter?
     var databaseAdapter = DatabaseAdapter()
@@ -21,11 +23,35 @@ class LoginController: UIViewController {
     var info = [UserInfo]()
     var success: (() -> Void)?
     
+//    @IBOutlet weak var loginButton: FBLoginButton!
+    //    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userNameEmailTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        if let token = AccessToken.current, !token.isExpired {
+            let token = token.tokenString
+            let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "email, name"], tokenString: token, version: nil, httpMethod: .get)
+            
+            //            request.start(completionHandler: { connection, result, error in
+            //                print("\(result)")
+            //            })
+            request.start(completion: { connection, result, error in
+                print("\(result)")
+                
+            })
+        } else {
+//                       let loginButton = FBLoginButton()
+//            loginButton.delegate = self
+//            loginButton.permissions = ["public_profile", "email"]
+//                        loginButton.center = view.center
+//                        view.addSubview(loginButton)
+        }
+        
+        
         
         getUserInfo()
         
@@ -34,11 +60,32 @@ class LoginController: UIViewController {
         adapter?.completion = {
             user in
             
-            self.databaseAdapter.saveUserInfo(data: user)
+            //            self.databaseAdapter.saveUserInfo(data: user)
             //            print(user)
             //save to firebase
         }
     }
+    
+    func loginButton(_ loginButton: FBSDKLoginKit.FBLoginButton, didCompleteWith result: FBSDKLoginKit.LoginManagerLoginResult?, error: Error?) {
+        let token = result?.token?.tokenString
+        let request = FBSDKLoginKit.GraphRequest(graphPath: "me",
+                                                 parameters: ["fields": "email, name"],
+                                                 tokenString: token,
+                                                 version: nil,
+                                                 httpMethod: .get)
+        
+        //        request.start(completionHandler: { connection, result, error in
+        //            print("\(result)")
+        request.start(completion: { connection, result, error in
+            print("\(result)")
+            
+        })
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginKit.FBLoginButton) {
+        
+    }
+    
     @IBAction func loginSegment(_ sender: Any) {
         
         if (sender as AnyObject).selectedSegmentIndex == 0 {
@@ -65,7 +112,6 @@ class LoginController: UIViewController {
                     self.info.append(info)
                 }
             }
-            
         }
     }
     @IBAction func loginButtonAction(_ sender: Any) {
@@ -76,8 +122,6 @@ class LoginController: UIViewController {
                 
                 if let error = error {
                     print(error.localizedDescription)
-                }
-                else if let user = result?.user {
                 }
                 else if let _ = result?.user {
                     print("user movcuddur")
@@ -102,11 +146,13 @@ class LoginController: UIViewController {
     
     @IBAction func googleButtonAction(_ sender: Any) {
         adapter?.login(type: .google)
-        if let email = userNameEmailTextField.text {
-            self.success?()
-            self.navigationController?.popViewController(animated: true)
+        adapter?.completion = { user in
+            // Kullanıcı bilgilerini ekrana yerleştir
+            self.userNameEmailTextField.text = user.email
+            self.passwordTextField.text = user.password
+            // Diğer bilgileri de yerleştirilebilir
         }
-       
+        
     }
     @IBAction func facebookButtonAction(_ sender: Any) {
     }
@@ -114,3 +160,5 @@ class LoginController: UIViewController {
     }
     
 }
+
+
