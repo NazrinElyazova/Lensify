@@ -27,22 +27,6 @@ class LoginController: UIViewController, LoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let token = AccessToken.current, !token.isExpired {
-            let token = token.tokenString
-            let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "email, name"], tokenString: token, version: nil, httpMethod: .get)
-     
-            request.start(completion: { connection, result, error in
-                print("\(result)")
-                
-            })
-        } else {
-//                       let loginButton = FBLoginButton()
-//            loginButton.delegate = self
-//            loginButton.permissions = ["public_profile", "email"]
-//                        loginButton.center = view.center
-//                        view.addSubview(loginButton)
-        }
         getUserInfo()
         
         adapter = LoginAdapter(controller: self)
@@ -144,6 +128,21 @@ class LoginController: UIViewController, LoginButtonDelegate {
         
     }
     @IBAction func facebookButtonAction(_ sender: Any) {
+        if let token = AccessToken.current, !token.isExpired {
+            let token = token.tokenString
+            let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "email, name"], tokenString: token, version: nil, httpMethod: .get)
+     
+            request.start(completion: { connection, result, error in
+                print("Facebook Graph uğurlu oldu: \(result)")
+                
+            })
+        } else {
+//                       let loginButton = FBLoginButton()
+//            loginButton.delegate = self
+//            loginButton.permissions = ["public_profile", "email"]
+//                        loginButton.center = view.center
+//                        view.addSubview(loginButton)
+        }
     }
     @IBAction func appleButtonAction(_ sender: Any) {
     }

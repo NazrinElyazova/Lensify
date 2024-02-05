@@ -320,11 +320,11 @@
                                     <constraint firstAttribute="height" constant="9" id="M0N-Zz-qyM"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="Lgz-1L-dwj">
-                                <rect key="frame" x="103" y="663" width="224" height="46"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Lgz-1L-dwj">
+                                <rect key="frame" x="130" y="663" width="170" height="46"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ay7-0T-Wcb">
-                                        <rect key="frame" x="0.0" y="0.0" width="44.666666666666664" height="46"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="46"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Google logo"/>
@@ -338,7 +338,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yh-hX-XpR">
-                                        <rect key="frame" x="89.666666666666657" y="0.0" width="44.666666666666657" height="46"/>
+                                        <rect key="frame" x="100" y="0.0" width="70" height="46"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Facebook"/>
@@ -349,20 +349,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="facebookButtonAction:" destination="QS7-fi-ds4" eventType="touchUpInside" id="VhE-vk-S2R"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sw1-Fq-xLE">
-                                        <rect key="frame" x="179.33333333333331" y="0.0" width="44.666666666666657" height="46"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="APPLE"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="23"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="appleButtonAction:" destination="QS7-fi-ds4" eventType="touchUpInside" id="HMD-Zm-vpj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -388,11 +374,11 @@
                         <constraints>
                             <constraint firstItem="IJ5-yr-1L7" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="38" id="04i-AR-b8W"/>
                             <constraint firstItem="KY8-Ju-H3k" firstAttribute="bottom" secondItem="Lgz-1L-dwj" secondAttribute="bottom" constant="140" id="4oD-Oc-Dkv"/>
-                            <constraint firstItem="Lgz-1L-dwj" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="103" id="6DP-oF-b33"/>
+                            <constraint firstItem="Lgz-1L-dwj" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="130" id="6DP-oF-b33"/>
                             <constraint firstItem="j65-Ac-DOU" firstAttribute="top" secondItem="IJ5-yr-1L7" secondAttribute="bottom" constant="60" id="8Aw-b7-ezi"/>
                             <constraint firstItem="Qzg-61-axf" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="38" id="FIp-AY-16h"/>
                             <constraint firstItem="rsP-TG-vK0" firstAttribute="leading" secondItem="cP7-8A-UbC" secondAttribute="trailing" constant="10" id="FKT-kq-5qy"/>
-                            <constraint firstItem="KY8-Ju-H3k" firstAttribute="trailing" secondItem="Lgz-1L-dwj" secondAttribute="trailing" constant="103" id="GhH-Uv-aOa"/>
+                            <constraint firstItem="KY8-Ju-H3k" firstAttribute="trailing" secondItem="Lgz-1L-dwj" secondAttribute="trailing" constant="130" id="GhH-Uv-aOa"/>
                             <constraint firstItem="rsP-TG-vK0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cP7-8A-UbC" secondAttribute="trailing" id="JUp-ef-KZf"/>
                             <constraint firstItem="j65-Ac-DOU" firstAttribute="leading" secondItem="rsP-TG-vK0" secondAttribute="trailing" constant="10" id="P4S-s2-yOl"/>
                             <constraint firstItem="Lgz-1L-dwj" firstAttribute="top" secondItem="rsP-TG-vK0" secondAttribute="bottom" constant="20" id="PYz-rO-LGP"/>
@@ -514,13 +500,60 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="downloadLottie"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations 🥳" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHl-a9-INb">
+                                <rect key="frame" x="80" y="330" width="270" height="33.666666666666686"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are ready for download an image..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wt4-W2-GE1">
+                                <rect key="frame" x="40" y="423.66666666666669" width="350" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click for it " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3S-JS-dgZ">
+                                <rect key="frame" x="110" y="518.66666666666663" width="210" height="47"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="39"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="narrow" translatesAutoresizingMaskIntoConstraints="NO" id="W2r-7N-Jpc">
+                                <rect key="frame" x="130" y="605.66666666666663" width="170" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="TXa-oA-Atw"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kb9-6J-kXl">
+                                <rect key="frame" x="40" y="725.66666666666663" width="350" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Zm0-Q4-a2s"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qvr-AB-YUj"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="W2r-7N-Jpc" firstAttribute="leading" secondItem="qvr-AB-YUj" secondAttribute="leading" constant="130" id="54s-Oq-cc6"/>
+                            <constraint firstItem="W2r-7N-Jpc" firstAttribute="top" secondItem="O3S-JS-dgZ" secondAttribute="bottom" constant="40" id="6rG-Wc-NFV"/>
+                            <constraint firstItem="wt4-W2-GE1" firstAttribute="top" secondItem="BHl-a9-INb" secondAttribute="bottom" constant="60" id="8tf-gR-VOK"/>
+                            <constraint firstItem="wt4-W2-GE1" firstAttribute="leading" secondItem="qvr-AB-YUj" secondAttribute="leading" constant="40" id="Bvg-Gb-CS9"/>
                             <constraint firstItem="W11-4a-9h9" firstAttribute="top" secondItem="qvr-AB-YUj" secondAttribute="top" id="Die-zU-cFg"/>
                             <constraint firstItem="W11-4a-9h9" firstAttribute="leading" secondItem="qvr-AB-YUj" secondAttribute="leading" constant="40" id="F6b-Ma-zLL"/>
+                            <constraint firstItem="Kb9-6J-kXl" firstAttribute="leading" secondItem="qvr-AB-YUj" secondAttribute="leading" constant="40" id="H88-Og-pIY"/>
+                            <constraint firstItem="BHl-a9-INb" firstAttribute="top" secondItem="W11-4a-9h9" secondAttribute="bottom" constant="40" id="HWS-uS-7lL"/>
+                            <constraint firstItem="Kb9-6J-kXl" firstAttribute="top" secondItem="W2r-7N-Jpc" secondAttribute="bottom" constant="60" id="Nn1-At-zMi"/>
+                            <constraint firstItem="qvr-AB-YUj" firstAttribute="trailing" secondItem="BHl-a9-INb" secondAttribute="trailing" constant="80" id="PcK-Lp-24i"/>
+                            <constraint firstItem="qvr-AB-YUj" firstAttribute="trailing" secondItem="Kb9-6J-kXl" secondAttribute="trailing" constant="40" id="SJX-14-PPj"/>
+                            <constraint firstItem="O3S-JS-dgZ" firstAttribute="leading" secondItem="qvr-AB-YUj" secondAttribute="leading" constant="110" id="g0L-Rt-qwp"/>
                             <constraint firstItem="qvr-AB-YUj" firstAttribute="trailing" secondItem="W11-4a-9h9" secondAttribute="trailing" constant="40" id="iyI-p7-c1c"/>
+                            <constraint firstItem="qvr-AB-YUj" firstAttribute="trailing" secondItem="O3S-JS-dgZ" secondAttribute="trailing" constant="110" id="ojc-CR-lCe"/>
+                            <constraint firstItem="qvr-AB-YUj" firstAttribute="trailing" secondItem="W2r-7N-Jpc" secondAttribute="trailing" constant="130" id="qwn-Hw-09B"/>
+                            <constraint firstItem="qvr-AB-YUj" firstAttribute="trailing" secondItem="wt4-W2-GE1" secondAttribute="trailing" constant="40" id="snI-eV-r09"/>
+                            <constraint firstItem="O3S-JS-dgZ" firstAttribute="top" secondItem="wt4-W2-GE1" secondAttribute="bottom" constant="40" id="vxB-vj-pwN"/>
+                            <constraint firstItem="BHl-a9-INb" firstAttribute="leading" secondItem="qvr-AB-YUj" secondAttribute="leading" constant="80" id="y4O-w9-Iix"/>
                         </constraints>
                     </view>
                     <connections>
@@ -735,12 +768,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="APPLE" width="26" height="30"/>
         <image name="Facebook" width="30" height="30"/>
         <image name="Google logo" width="30" height="30"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="narrow" width="400" height="400"/>
         <systemColor name="groupTableViewBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
