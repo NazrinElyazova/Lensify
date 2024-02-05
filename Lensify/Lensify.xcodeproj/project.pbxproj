@@ -17,6 +17,7 @@
 		7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7A02B53E6B3005D0CED /* HomeController.swift */; };
 		7B53E7A32B53E6C6005D0CED /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7A22B53E6C6005D0CED /* HomeViewModel.swift */; };
 		7B53E7CA2B53F1F5005D0CED /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7C92B53F1F5005D0CED /* TabBarController.swift */; };
+		7B5A90802B70E1860025E18B /* client_213676420665-klno39bjlv7ovpc11549egkoeei52usj.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B5A907F2B70E1860025E18B /* client_213676420665-klno39bjlv7ovpc11549egkoeei52usj.apps.googleusercontent.com.plist */; };
 		7B78ABC42B6E3B620010312B /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 7B78ABC32B6E3B620010312B /* FirebaseFirestore */; };
 		7B7967742B6D2C510032BB63 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7967732B6D2C510032BB63 /* LoginViewModel.swift */; };
 		7B7967762B6D2C9E0032BB63 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7967752B6D2C9E0032BB63 /* LoginManager.swift */; };
@@ -77,6 +78,7 @@
 		7B53E7A02B53E6B3005D0CED /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		7B53E7A22B53E6C6005D0CED /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7B53E7C92B53F1F5005D0CED /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		7B5A907F2B70E1860025E18B /* client_213676420665-klno39bjlv7ovpc11549egkoeei52usj.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_213676420665-klno39bjlv7ovpc11549egkoeei52usj.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
 		7B7967732B6D2C510032BB63 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		7B7967752B6D2C9E0032BB63 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		7B7967822B6D35A90032BB63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -207,6 +209,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		7B5A907C2B70C4D60025E18B /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				7BC6AEF72B6A0FD900694CD0 /* RegisterController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		7B78ABC22B6E3B620010312B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +335,7 @@
 				7B90E2812B52C1FE0099FBA3 /* Assets.xcassets */,
 				7B90E2832B52C1FE0099FBA3 /* LaunchScreen.storyboard */,
 				7B90E27B2B52C1FB0099FBA3 /* Main.storyboard */,
+				7B5A907F2B70E1860025E18B /* client_213676420665-klno39bjlv7ovpc11549egkoeei52usj.apps.googleusercontent.com.plist */,
 				7B90E2862B52C1FE0099FBA3 /* Info.plist */,
 				7B7967822B6D35A90032BB63 /* GoogleService-Info.plist */,
 				7B90E27E2B52C1FB0099FBA3 /* Lensify.xcdatamodeld */,
@@ -346,6 +357,7 @@
 		7B90E2A62B52FAD60099FBA3 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7B5A907C2B70C4D60025E18B /* Register */,
 				7BD600822B6ED55000B28661 /* DownloadWallpaper */,
 				7BD4FB262B6972C000B5EA3E /* Login */,
 				7B42A0472B56EEE1003C5D34 /* Search */,
@@ -413,7 +425,6 @@
 		7BD4FB262B6972C000B5EA3E /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				7BC6AEF72B6A0FD900694CD0 /* RegisterController.swift */,
 				7B7967672B6D1E730032BB63 /* Model */,
 				7B7967682B6D1E950032BB63 /* View */,
 				7B7967722B6D2C390032BB63 /* ViewModel */,
@@ -531,6 +542,7 @@
 				7B97B9D12B5451D300D489CB /* HomeCell.xib in Resources */,
 				7B7967832B6D35A90032BB63 /* GoogleService-Info.plist in Resources */,
 				7B90E2852B52C1FE0099FBA3 /* LaunchScreen.storyboard in Resources */,
+				7B5A90802B70E1860025E18B /* client_213676420665-klno39bjlv7ovpc11549egkoeei52usj.apps.googleusercontent.com.plist in Resources */,
 				7B90E2822B52C1FE0099FBA3 /* Assets.xcassets in Resources */,
 				7B9565332B64C64700044E58 /* TopicCell.xib in Resources */,
 				7B42A04E2B56EF53003C5D34 /* SearchCell.xib in Resources */,

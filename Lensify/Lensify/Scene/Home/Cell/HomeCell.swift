@@ -7,10 +7,10 @@
 
 import UIKit
 
-//protocol HomeCellProtocol {
-//    var titleLabel: String { get }
-//    var imagePath: String { get }
-//}
+protocol HomeCellProtocol {
+    var titleLabel: String { get }
+    var imagePath: String { get }
+}
 
 class HomeCell: UICollectionViewCell {
     
@@ -25,11 +25,14 @@ class HomeCell: UICollectionViewCell {
         homeLabel.text = data.description
         homeImage.loadImage(url: data.urls?.small ?? "")
         
-//        print("\(data.id)")
+        //        print("\(data.id)")
+        //            print(homeImage.image ?? "NO image ")
+        //        print(homeLabel.text ?? "bosdur label")
     }
     
-//    func configure(data: HomeCellProtocol) {
-//        homeImage.loadImage(url: data.imagePath)
-//        homeLabel.text = data.titleLabel
-//    }
+    //    func configure(data: HomeCellProtocol) {
+    //        homeImage.loadImage(url: data.imagePath)
+    //        homeLabel.text = data.titleLabel
+    //    }
 }
+//}

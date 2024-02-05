@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 import FirebaseAuth
 
 class RegisterController: UIViewController {
@@ -22,10 +23,10 @@ class RegisterController: UIViewController {
     }
     @IBAction func registerAction(_ sender: Any) {
         if let email = emailTextField.text,
-           let password = passwordTextField.text {
+           let password = passwordTextField.text 
+     {
             Auth.auth().createUser(withEmail: email, password: password) { [weak self]
                 result, error in
-                
                 if let error = error {
                     print(error.localizedDescription)
                 } else if let user = result?.user {

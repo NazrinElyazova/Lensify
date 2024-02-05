@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import GoogleSignIn
+import Firebase
 import FirebaseAuth
 import FirebaseFirestoreInternal
 
@@ -17,6 +19,7 @@ class LoginController: UIViewController {
     let database = Firestore.firestore()
     
     var info = [UserInfo]()
+    var success: (() -> Void)?
     
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userNameEmailTextField: UITextField!
@@ -48,6 +51,7 @@ class LoginController: UIViewController {
             }
             navigationController?.show(controller, sender: nil)
         }
+        
     }
     
     func getUserInfo() {
@@ -64,7 +68,6 @@ class LoginController: UIViewController {
             
         }
     }
-    
     @IBAction func loginButtonAction(_ sender: Any) {
         if !(passwordTextField.text?.isEmpty == true), !(userNameEmailTextField.text?.isEmpty == true),
            let email = userNameEmailTextField.text,
@@ -75,7 +78,9 @@ class LoginController: UIViewController {
                     print(error.localizedDescription)
                 }
                 else if let user = result?.user {
-//                    print("user movcuddur")
+                }
+                else if let _ = result?.user {
+                    print("user movcuddur")
                     let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
                     self.navigationController?.show(controller, sender: nil)
                 }
@@ -97,10 +102,15 @@ class LoginController: UIViewController {
     
     @IBAction func googleButtonAction(_ sender: Any) {
         adapter?.login(type: .google)
+        if let email = userNameEmailTextField.text {
+            self.success?()
+            self.navigationController?.popViewController(animated: true)
+        }
+       
     }
     @IBAction func facebookButtonAction(_ sender: Any) {
     }
     @IBAction func appleButtonAction(_ sender: Any) {
     }
+    
 }
-

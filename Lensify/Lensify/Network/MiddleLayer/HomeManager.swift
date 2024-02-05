@@ -9,8 +9,6 @@ import Foundation
 
 class HomeManager: HomeUseCase {
   
-    
-    
     func getTopics(completion: @escaping (([TopicElement]?, String?) -> Void)) {
         //        NetworkManager.request(model: [TopicElement].self,
         //                               endpoint: HomeEndpoint.topics.rawValue,
@@ -24,9 +22,7 @@ class HomeManager: HomeUseCase {
         //        let url = endpoint.rawValue + "\(id)/photos"
         //        NetworkManager.request(model: [Wallpapers].self,
         //                               endpoint: url) {
-        let url = NetworkHelper.urlConfiguration(endpoint: HomeEndpoint.wallpaper.rawValue) 
-        
-//        let path = "\(url)&\(id)/photos"
+        let url = NetworkHelper.urlConfiguration(endpoint: HomeEndpoint.wallpaper.rawValue)
         let path = url + "&\(id)/photos"
         
         NetworkManager.request(model: [Wallpapers].self, endpoint: path) {
@@ -39,7 +35,7 @@ class HomeManager: HomeUseCase {
             }
         }
     }
-    // COOOX VACIBDIRRR ID MESELESI
+    // COOOX VACIBDIRRR ID
     
     func getTopicPhotos(id: String, completion: @escaping (([Wallpapers]?, String?) -> Void)) {
         //        let url = HomeEndpoint.topics.rawValue + "\(id)/photos"

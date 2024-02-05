@@ -11,6 +11,7 @@ import KeychainSwift
 class DatabaseAdapter {
     var keychain = KeychainSwift()
         func saveUserInfo(data: UserData) {
+            
             //file manager
             //keychain
             //core data

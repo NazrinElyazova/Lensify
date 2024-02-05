@@ -2,6 +2,8 @@ import Foundation
 
 // MARK: - PhotoElement
 struct Wallpapers: Codable {
+
+    
     let id, slug, title, description: String?
     let publishedAt, updatedAt, startsAt, endsAt: String?
     let visibility: VisibilityWallpapers?

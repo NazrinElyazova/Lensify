@@ -10,6 +10,9 @@ import GoogleSignIn
 
 class LoginAdapter {
     
+    
+    var success: (() -> Void)?
+    
     var completion: ((UserData)->())?
     
     var controller: UIViewController  //Strong variable olmasi ucun init edirik. Controllerde set etmek yaddan cixsa app crash etmesin
@@ -42,7 +45,10 @@ class LoginAdapter {
             }
             else if let result = result {
                 let user = UserData(email: result.user.profile?.email ?? "", password: "", firstName: result.user.profile?.name ?? "", lastName: result.user.profile?.familyName ?? "")
+                
                 self.completion?(user)
+            
+               
             }
         }
     }
