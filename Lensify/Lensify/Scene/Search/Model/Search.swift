@@ -255,6 +255,6 @@ struct ResultTopicSubmissionsSearch: Codable {
     enum CodingKeys: String, CodingKey {
         case nature
         case streetPhotography = "street-photography"
-        //    }
+            }
     }
-}
+

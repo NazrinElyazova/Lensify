@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 protocol HomeUseCase {
     
     func getTopics(completion: @escaping(([TopicElement]?, String?)->Void))

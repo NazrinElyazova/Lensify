@@ -37,9 +37,7 @@ class HomeViewModel {
             if let errorMessage = errorMessage {
                 self.onError?(errorMessage)
             } else if let data = data {
-//                self.items.append(contentsOf: data)
                 self.items = data
-//                self.items.append(contentsOf: data)
                 self.onSuccess?()
             }
         }

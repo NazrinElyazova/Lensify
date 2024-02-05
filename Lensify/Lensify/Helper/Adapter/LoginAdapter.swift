@@ -10,11 +10,8 @@ import GoogleSignIn
 
 class LoginAdapter {
     
-    
     var success: (() -> Void)?
-    
     var completion: ((UserData)->())?
-    
     var controller: UIViewController  //Strong variable olmasi ucun init edirik. Controllerde set etmek yaddan cixsa app crash etmesin
     
     init(controller: UIViewController) {
@@ -38,24 +35,22 @@ class LoginAdapter {
         }
     }
     
-   fileprivate func googleLogin() {
+    fileprivate func googleLogin() {
         GIDSignIn.sharedInstance.signIn(withPresenting: controller) { result, error in
             if let error = error {
                 print(error)
             }
             else if let result = result {
                 let user = UserData(email: result.user.profile?.email ?? "", password: "Nezrin123", firstName: result.user.profile?.name ?? "", lastName: result.user.profile?.familyName ?? "")
-                
                 self.completion?(user)
-            
-//                self.save
             }
         }
     }
-  fileprivate  func facebookLogin() {
+    
+    fileprivate  func facebookLogin() {
         
     }
-  fileprivate  func appleLogin() {
+    fileprivate  func appleLogin() {
         
     }
 }

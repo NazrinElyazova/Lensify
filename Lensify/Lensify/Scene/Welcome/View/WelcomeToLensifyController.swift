@@ -8,12 +8,13 @@
 import UIKit
 
 class WelcomeToLensifyController: UIViewController {
-    @IBOutlet weak var myLabel: UILabel!
     
+    @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var startWelcomeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         myLabel.text = "Welcome to Lensify"
         startWelcomeButton.layer.cornerRadius = 20
         

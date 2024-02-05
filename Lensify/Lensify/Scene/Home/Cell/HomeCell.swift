@@ -6,11 +6,11 @@
 //
 
 import UIKit
-
-protocol HomeCellProtocol {
-    var titleLabel: String { get }
-    var imagePath: String { get }
-}
+//
+//protocol HomeCellProtocol {
+//    var titleLabel: String { get }
+//    var imagePath: String { get }
+//}
 
 class HomeCell: UICollectionViewCell {
     
@@ -19,7 +19,6 @@ class HomeCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     func configure(data: Wallpapers) {
         homeLabel.text = data.description
@@ -30,9 +29,5 @@ class HomeCell: UICollectionViewCell {
         //        print(homeLabel.text ?? "bosdur label")
     }
     
-    //    func configure(data: HomeCellProtocol) {
-    //        homeImage.loadImage(url: data.imagePath)
-    //        homeLabel.text = data.titleLabel
-    //    }
 }
-//}
+

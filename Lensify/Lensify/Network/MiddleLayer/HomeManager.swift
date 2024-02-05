@@ -36,12 +36,5 @@ class HomeManager: HomeUseCase {
         }
     }
     // COOOX VACIBDIRRR ID
-    
-    func getTopicPhotos(id: String, completion: @escaping (([Wallpapers]?, String?) -> Void)) {
         //        let url = HomeEndpoint.topics.rawValue + "\(id)/photos"
-        //        print("urlimiz: \(url)")
-        //        NetworkManager.request(model: [Wallpapers].self, endpoint: url) { <#(Decodable & Encodable)?#>, <#String?#> in
-        //            <#code#>
-        //        }
-    }
 }

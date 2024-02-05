@@ -14,7 +14,6 @@ import FBSDKLoginKit
 
 class LoginController: UIViewController, LoginButtonDelegate {
     
-    
     var adapter: LoginAdapter?
     var databaseAdapter = DatabaseAdapter()
     
@@ -22,23 +21,17 @@ class LoginController: UIViewController, LoginButtonDelegate {
     
     var info = [UserInfo]()
     var success: (() -> Void)?
-    
-//    @IBOutlet weak var loginButton: FBLoginButton!
-    //    @IBOutlet weak var loginButton: UIButton!
+
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userNameEmailTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         if let token = AccessToken.current, !token.isExpired {
             let token = token.tokenString
             let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "email, name"], tokenString: token, version: nil, httpMethod: .get)
-            
-            //            request.start(completionHandler: { connection, result, error in
-            //                print("\(result)")
-            //            })
+     
             request.start(completion: { connection, result, error in
                 print("\(result)")
                 
@@ -50,9 +43,6 @@ class LoginController: UIViewController, LoginButtonDelegate {
 //                        loginButton.center = view.center
 //                        view.addSubview(loginButton)
         }
-        
-        
-        
         getUserInfo()
         
         adapter = LoginAdapter(controller: self)
@@ -129,7 +119,6 @@ class LoginController: UIViewController, LoginButtonDelegate {
                     self.navigationController?.show(controller, sender: nil)
                 }
             }
-            
         } else {
             showAlert()
         }

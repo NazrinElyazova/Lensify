@@ -54,12 +54,10 @@ class SearchController: UIViewController, UITextFieldDelegate {
 }
 extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //                print( viewModel.search.count)
         return  viewModel.search.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(SearchCell.self)", for: indexPath) as! SearchCell
-        //        cell.backgroundColor = .yellow
         let item = viewModel.search[indexPath.item]
         cell.configure(data: item)
         return cell

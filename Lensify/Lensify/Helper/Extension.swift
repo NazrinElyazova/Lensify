@@ -11,13 +11,7 @@ import UIKit
 
 extension UIImageView {
     
-//    static func urlConfiguration(endpoint: String) -> String {
-//        NetworkHelper.baseURL + endpoint + "?client_id=\(NetworkHelper.clientId)"
-//    }
-    
-    func loadImage(url: String){
-//        let path = "\(NetworkHelper.imagePath)\(url)"
-        
+    func loadImage(url: String){        
         if let finalURL = URL(string: url) {
             self.kf.setImage(with: finalURL)
         }

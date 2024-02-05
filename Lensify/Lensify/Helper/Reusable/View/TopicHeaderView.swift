@@ -29,7 +29,6 @@ extension TopicHeaderView: UICollectionViewDelegate, UICollectionViewDataSource,
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(TopicCell.self)", for: indexPath) as! TopicCell
-        //        cell.backgroundColor = .red
         cell.topicLabel.text = items[indexPath.item].title
         
         return cell

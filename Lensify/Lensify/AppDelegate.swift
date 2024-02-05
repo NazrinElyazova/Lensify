@@ -20,12 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         ApplicationDelegate.shared.application(
             application,
-            didFinishLaunchingWithOptions: launchOptions
-        )
+            didFinishLaunchingWithOptions: launchOptions)
     
         return true
-
-//        return true
     }
 
     // MARK: UISceneSession Lifecycle

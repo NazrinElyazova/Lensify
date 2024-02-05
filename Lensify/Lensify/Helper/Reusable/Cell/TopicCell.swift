@@ -12,6 +12,5 @@ class TopicCell: UICollectionViewCell {
     @IBOutlet weak var topicLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 }

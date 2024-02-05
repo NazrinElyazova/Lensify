@@ -18,7 +18,7 @@ class NetworkManager {
         encoding: ParameterEncoding = URLEncoding.default,
         parameters: Parameters? = nil,
         completion: @escaping((T?, String?)-> Void)) {
-//                        print("url: \(NetworkHelper.baseURL)\(endpoint))")
+            //                        print("url: \(NetworkHelper.baseURL)\(endpoint))")
             AF.request(
                 /* "\(NetworkHelper.baseURL)\(endpoint)?client_id=QDkrKxHnXw5_P5WcTxtWfeEbf-XZSntir16cfzE9YSE"*/
                 endpoint,

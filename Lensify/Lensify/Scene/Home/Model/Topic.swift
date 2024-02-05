@@ -10,27 +10,27 @@ import Foundation
 // MARK: - TopicElement
 struct TopicElement: Codable {
     let id, slug, title, description: String?
-//    let publishedAt, updatedAt, startsAt, endsAt: Date?
-//    let visibility: String?
-//    let featured: Bool?
-//    let totalPhotos: Int?
-//    let links: TopicLinks?
-//    let status: String?
-//    let owners: [User]?
-//    let coverPhoto: CoverPhotoWallpapers?
-//    let previewPhotos: [PreviewPhoto]?
-
+    //    let publishedAt, updatedAt, startsAt, endsAt: Date?
+    //    let visibility: String?
+    //    let featured: Bool?
+    //    let totalPhotos: Int?
+    //    let links: TopicLinks?
+    //    let status: String?
+    //    let owners: [User]?
+    //    let coverPhoto: CoverPhotoWallpapers?
+    //    let previewPhotos: [PreviewPhoto]?
+    
     enum CodingKeys: String, CodingKey {
         case id, slug, title, description
-//        case publishedAt = "published_at"
-//        case updatedAt = "updated_at"
-//        case startsAt = "starts_at"
-//        case endsAt = "ends_at"
-//        case visibility, featured
-//        case totalPhotos = "total_photos"
-//        case links, status, owners
-//        case coverPhoto = "cover_photo"
-//        case previewPhotos = "preview_photos"
+        //        case publishedAt = "published_at"
+        //        case updatedAt = "updated_at"
+        //        case startsAt = "starts_at"
+        //        case endsAt = "ends_at"
+        //        case visibility, featured
+        //        case totalPhotos = "total_photos"
+        //        case links, status, owners
+        //        case coverPhoto = "cover_photo"
+        //        case previewPhotos = "preview_photos"
     }
 }
 
@@ -46,7 +46,7 @@ struct CoverPhotoWallpapers: Codable {
     let likedByUser: Bool?
     let topicSubmissions: TopicSubmissionsWallpapers?
     let user: UserWallpapers?
-
+    
     enum CodingKeys: String, CodingKey {
         case id, slug
         case createdAt = "created_at"
@@ -66,7 +66,7 @@ struct CoverPhotoWallpapers: Codable {
 // MARK: - CoverPhotoLinks
 struct CoverPhotoLinksWallpapers: Codable {
     let linksSelf, html, download, downloadLocation: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case linksSelf = "self"
         case html, download
@@ -77,7 +77,7 @@ struct CoverPhotoLinksWallpapers: Codable {
 // MARK: - TopicLinks
 struct TopicLinks: Codable {
     let linksSelf, html, photos: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case linksSelf = "self"
         case html, photos
