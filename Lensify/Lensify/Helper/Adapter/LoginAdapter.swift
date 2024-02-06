@@ -7,8 +7,12 @@
 
 import Foundation
 import GoogleSignIn
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class LoginAdapter {
+    
+    let manager = LoginManager()
     
     var success: (() -> Void)?
     var completion: ((UserData)->())?
@@ -49,6 +53,30 @@ class LoginAdapter {
     
     fileprivate  func facebookLogin() {
         
+        if let token = AccessToken.current, !token.isExpired {
+            let token = token.tokenString
+            let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "email, name"], tokenString: token, version: nil, httpMethod: .get)
+            
+            request.start(completion: { connection, result, error in
+                print("Facebook Graph uğurlu oldu: \(String(describing: result))")
+                
+            })
+        } else {
+            
+        }
+//        let graphRequest = GraphRequest(graphPath: "me", parameters: ["fields": "email, name"])
+//         graphRequest.start { connection, result, error in
+//             if let error = error {
+//                 print("Facebook Graph API error: \(error.localizedDescription)")
+//             } else if let result = result as? [String: Any] {
+//                 // Parse the Facebook user data
+//                 let email = result["email"] as? String ?? ""
+//                 let name = result["name"] as? String ?? ""
+//                 
+//                 let user = UserData(email: email, password: "Nezrin123", firstName: name, lastName: "")
+//                 self.completion?(user)
+//             }
+//         }
     }
     fileprivate  func appleLogin() {
         

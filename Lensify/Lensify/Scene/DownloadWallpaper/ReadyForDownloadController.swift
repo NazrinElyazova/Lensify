@@ -22,4 +22,6 @@ class ReadyForDownloadController: UIViewController {
             self.downloadLottie.loopMode = .loop
         }
     }
+    @IBAction func clickAction(_ sender: Any) {
+    }
 }

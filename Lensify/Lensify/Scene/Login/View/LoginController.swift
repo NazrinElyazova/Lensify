@@ -51,7 +51,7 @@ class LoginController: UIViewController, LoginButtonDelegate {
         //        request.start(completionHandler: { connection, result, error in
         //            print("\(result)")
         request.start(completion: { connection, result, error in
-            print("\(result)")
+            print("\(String(describing: result))")
             
         })
     }
@@ -120,28 +120,28 @@ class LoginController: UIViewController, LoginButtonDelegate {
     @IBAction func googleButtonAction(_ sender: Any) {
         adapter?.login(type: .google)
         adapter?.completion = { user in
-            // Kullanıcı bilgilerini ekrana yerleştir
             self.userNameEmailTextField.text = user.email
             self.passwordTextField.text = user.password
-            // Diğer bilgileri de yerleştirilebilir
         }
         
     }
     @IBAction func facebookButtonAction(_ sender: Any) {
-        if let token = AccessToken.current, !token.isExpired {
-            let token = token.tokenString
-            let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "email, name"], tokenString: token, version: nil, httpMethod: .get)
-     
-            request.start(completion: { connection, result, error in
-                print("Facebook Graph uğurlu oldu: \(result)")
-                
-            })
-        } else {
-//                       let loginButton = FBLoginButton()
-//            loginButton.delegate = self
-//            loginButton.permissions = ["public_profile", "email"]
-//                        loginButton.center = view.center
-//                        view.addSubview(loginButton)
+//        if let token = AccessToken.current, !token.isExpired {
+//            let token = token.tokenString
+//            let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "email, name"], tokenString: token, version: nil, httpMethod: .get)
+//     
+//            request.start(completion: { connection, result, error in
+//                print("Facebook Graph uğurlu oldu: \(result)")
+//                
+//            })
+//        } else {
+//
+//        }
+        adapter?.login(type: .facebook)
+        adapter?.completion = { user in
+            self.userNameEmailTextField.text = user.email
+            self.passwordTextField.text = user.password
+            
         }
     }
     @IBAction func appleButtonAction(_ sender: Any) {
