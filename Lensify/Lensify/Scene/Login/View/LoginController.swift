@@ -12,8 +12,10 @@ import FirebaseAuth
 import FirebaseFirestoreInternal
 import FBSDKLoginKit
 
-class LoginController: UIViewController, LoginButtonDelegate {
+class LoginController: UIViewController {
     
+  
+    @IBOutlet weak var facebook: UIButton!
     var adapter: LoginAdapter?
     var databaseAdapter = DatabaseAdapter()
     
@@ -27,6 +29,15 @@ class LoginController: UIViewController, LoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let loginButton = FBLoginButton()
+            loginButton.center = view.center
+            view.addSubview(loginButton)
+
+        loginButton.permissions = ["public_profile", "email"]
+
+        
+        
         getUserInfo()
         
         adapter = LoginAdapter(controller: self)
@@ -38,26 +49,6 @@ class LoginController: UIViewController, LoginButtonDelegate {
             //            print(user)
             //save to firebase
         }
-    }
-    
-    func loginButton(_ loginButton: FBSDKLoginKit.FBLoginButton, didCompleteWith result: FBSDKLoginKit.LoginManagerLoginResult?, error: Error?) {
-        let token = result?.token?.tokenString
-        let request = FBSDKLoginKit.GraphRequest(graphPath: "me",
-                                                 parameters: ["fields": "email, name"],
-                                                 tokenString: token,
-                                                 version: nil,
-                                                 httpMethod: .get)
-        
-        //        request.start(completionHandler: { connection, result, error in
-        //            print("\(result)")
-        request.start(completion: { connection, result, error in
-            print("\(String(describing: result))")
-            
-        })
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginKit.FBLoginButton) {
-        
     }
     
     @IBAction func loginSegment(_ sender: Any) {
@@ -126,17 +117,9 @@ class LoginController: UIViewController, LoginButtonDelegate {
         
     }
     @IBAction func facebookButtonAction(_ sender: Any) {
-//        if let token = AccessToken.current, !token.isExpired {
-//            let token = token.tokenString
-//            let request = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "email, name"], tokenString: token, version: nil, httpMethod: .get)
-//     
-//            request.start(completion: { connection, result, error in
-//                print("Facebook Graph uğurlu oldu: \(result)")
-//                
-//            })
-//        } else {
-//
-//        }
+   
+        
+        
         adapter?.login(type: .facebook)
         adapter?.completion = { user in
             self.userNameEmailTextField.text = user.email
@@ -145,5 +128,4 @@ class LoginController: UIViewController, LoginButtonDelegate {
         }
     }
 }
-
 

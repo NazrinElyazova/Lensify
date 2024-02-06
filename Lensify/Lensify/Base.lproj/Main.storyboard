@@ -401,6 +401,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Welcome Back" id="tKU-ah-x3N"/>
                     <connections>
+                        <outlet property="facebook" destination="2yh-hX-XpR" id="wsW-4a-CZN"/>
                         <outlet property="passwordTextField" destination="etm-zi-XA0" id="dUo-hX-5Jz"/>
                         <outlet property="userNameEmailTextField" destination="mcy-yL-lee" id="uTd-Mi-Nbl"/>
                     </connections>

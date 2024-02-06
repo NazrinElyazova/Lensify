@@ -6,9 +6,9 @@
 //
 
 import Foundation
-
-class LoginManager {
-    func loginWithFacebook(permissions: [String], completion: @escaping() -> Void) {
-        
-    }
-}
+//
+//class LoginManager {
+//    func loginWithFacebook(permissions: [String], completion: @escaping() -> Void) {
+//        
+//    }
+//}

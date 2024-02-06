@@ -5,9 +5,11 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>708181877964501</string>
+				<string>fb708181877964501</string>
 			</array>
 		</dict>
 		<dict>
@@ -19,11 +21,11 @@
 			</array>
 		</dict>
 	</array>
-	<key>708181877964501</key>
+	<key>FacebookAppID</key>
 	<string>708181877964501</string>
-	<key>52d42b3b7ad0cf54f23bb72b088f363a</key>
+	<key>FacebookClientToken</key>
 	<string>52d42b3b7ad0cf54f23bb72b088f363a</string>
-	<key>Lensify</key>
+	<key>FacebookDisplayName</key>
 	<string>Lensify</string>
 	<key>GIDClientID</key>
 	<string>215549789252-r7loprpm6psuv6lgtjhsg7pfm1pvor5e.apps.googleusercontent.com</string>
