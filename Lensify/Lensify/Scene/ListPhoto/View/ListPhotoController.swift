@@ -9,11 +9,12 @@ import UIKit
 import CHTCollectionViewWaterfallLayout
 
 class ListPhotoController: UIViewController {
-let viewModel = ListPhotoViewModel()
+    let viewModel = ListPhotoViewModel()
     @IBOutlet weak var collection: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         configureUI()
         configureViewModel()
         change()
@@ -46,9 +47,9 @@ let viewModel = ListPhotoViewModel()
             
             let ur = Urls(small: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NDQ5MTZ8MHwxfHNlYXJjaHwxfHxsb25kb258ZW58MHx8fHwxNzA3MjIzODIwfDA&ixlib=rb-4.0.3&q=80&w=400"
             )
-//            var id = String?
-//            return ListPhoto.init(urls: ur, height: CGFloat.random(in: 200...400))
-//            return List.init(/*id: id,*/ urls: ur)
+     
+            //            return ListPhoto.init(urls: ur, height: CGFloat.random(in: 200...400))
+            //            return List.init(/*id: id,*/ urls: ur)
             return List.init(url: ur, height: CGFloat.random(in: 100...400))
         }
         print(viewModel.items.map { $0.url })

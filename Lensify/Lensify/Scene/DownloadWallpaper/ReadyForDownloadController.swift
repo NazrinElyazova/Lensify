@@ -13,10 +13,10 @@ class ReadyForDownloadController: UIViewController {
     @IBOutlet weak var downloadLottie: LottieAnimationView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         readyForDownload()  
     }
     func readyForDownload() {
+        navigationController?.navigationBar.isHidden = true
         DispatchQueue.main.async {
             self.downloadLottie.play()
             self.downloadLottie.loopMode = .loop
@@ -26,4 +26,7 @@ class ReadyForDownloadController: UIViewController {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(ListPhotoController.self)") as! ListPhotoController
         navigationController?.show(controller, sender: nil)
     }
+//    func login() {
+//        UserDefaults.standard.set(true, forKey: "loggedIn")
+//    }
 }

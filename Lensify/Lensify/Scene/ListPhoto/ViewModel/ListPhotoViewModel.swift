@@ -22,9 +22,7 @@ class ListPhotoViewModel {
             if let errorMessage = errorMessage {
                 self.error?(errorMessage)
             } else if let data = data {
-//                self.items.append(data)
                 self.items.append(contentsOf: data)
-//                self.items = data
                 self.success?()
             }
         }

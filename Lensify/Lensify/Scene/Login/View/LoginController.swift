@@ -144,9 +144,6 @@ class LoginController: UIViewController, LoginButtonDelegate {
             
         }
     }
-    @IBAction func appleButtonAction(_ sender: Any) {
-    }
-    
 }
 
 
