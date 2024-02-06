@@ -71,6 +71,16 @@
 		7BD600812B6ED4EB00B28661 /* downloadLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BD600802B6ED4EB00B28661 /* downloadLottie.json */; };
 		7BD600842B6ED58700B28661 /* ReadyForDownloadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD600832B6ED58700B28661 /* ReadyForDownloadController.swift */; };
 		7BDB91CA2B5B924B00002EAC /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */; };
+		7BFEFFDB2B72A39B00A1CCC7 /* ListPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEFFDA2B72A39B00A1CCC7 /* ListPhoto.swift */; };
+		7BFEFFDE2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEFFDD2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift */; };
+		7BFEFFE22B72A50300A1CCC7 /* ListPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEFFE12B72A50300A1CCC7 /* ListPhotoController.swift */; };
+		7BFEFFE42B72A51700A1CCC7 /* ListPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEFFE32B72A51700A1CCC7 /* ListPhotoViewModel.swift */; };
+		7BFEFFE82B72A55A00A1CCC7 /* ListPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEFFE62B72A55A00A1CCC7 /* ListPhotoCell.swift */; };
+		7BFEFFE92B72A55A00A1CCC7 /* ListPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BFEFFE72B72A55A00A1CCC7 /* ListPhotoCell.xib */; };
+		7BFEFFEB2B72A5A300A1CCC7 /* ListPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEFFEA2B72A5A300A1CCC7 /* ListPhotoManager.swift */; };
+		7BFEFFED2B72A5AF00A1CCC7 /* ListPhotoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEFFEC2B72A5AF00A1CCC7 /* ListPhotoUseCase.swift */; };
+		7BFEFFF02B72A83800A1CCC7 /* CHTCollectionViewWaterfallLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 7BFEFFEF2B72A83700A1CCC7 /* CHTCollectionViewWaterfallLayout */; };
+		7BFEFFF22B72A83800A1CCC7 /* CHTCollectionViewWaterfallLayoutObjC in Frameworks */ = {isa = PBXBuildFile; productRef = 7BFEFFF12B72A83800A1CCC7 /* CHTCollectionViewWaterfallLayoutObjC */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +131,14 @@
 		7BD600802B6ED4EB00B28661 /* downloadLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = downloadLottie.json; sourceTree = "<group>"; };
 		7BD600832B6ED58700B28661 /* ReadyForDownloadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyForDownloadController.swift; sourceTree = "<group>"; };
 		7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
+		7BFEFFDA2B72A39B00A1CCC7 /* ListPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhoto.swift; sourceTree = "<group>"; };
+		7BFEFFDD2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoEndpoint.swift; sourceTree = "<group>"; };
+		7BFEFFE12B72A50300A1CCC7 /* ListPhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoController.swift; sourceTree = "<group>"; };
+		7BFEFFE32B72A51700A1CCC7 /* ListPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoViewModel.swift; sourceTree = "<group>"; };
+		7BFEFFE62B72A55A00A1CCC7 /* ListPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoCell.swift; sourceTree = "<group>"; };
+		7BFEFFE72B72A55A00A1CCC7 /* ListPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListPhotoCell.xib; sourceTree = "<group>"; };
+		7BFEFFEA2B72A5A300A1CCC7 /* ListPhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoManager.swift; sourceTree = "<group>"; };
+		7BFEFFEC2B72A5AF00A1CCC7 /* ListPhotoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +162,10 @@
 				7BD6007F2B6EC13700B28661 /* FirebaseAuth in Frameworks */,
 				7B51892A2B7138D5000B4403 /* FacebookBasics in Frameworks */,
 				7B5189302B7138D5000B4403 /* FacebookLogin in Frameworks */,
+				7BFEFFF02B72A83800A1CCC7 /* CHTCollectionViewWaterfallLayout in Frameworks */,
 				7B79677B2B6D2EB90032BB63 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				7B7967812B6D2EB90032BB63 /* FirebaseAppCheck in Frameworks */,
+				7BFEFFF22B72A83800A1CCC7 /* CHTCollectionViewWaterfallLayoutObjC in Frameworks */,
 				7B51892C2B7138D5000B4403 /* FacebookCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,6 +208,7 @@
 				7B4DE9B22B57E86A00F4C3AA /* HomeManager.swift */,
 				7BC6AF002B6A981E00694CD0 /* SearchManager.swift */,
 				7B7967752B6D2C9E0032BB63 /* LoginManager.swift */,
+				7BFEFFEA2B72A5A300A1CCC7 /* ListPhotoManager.swift */,
 			);
 			path = MiddleLayer;
 			sourceTree = "<group>";
@@ -197,6 +218,7 @@
 			children = (
 				7B4DE9B52B57F44B00F4C3AA /* HomeEndpoint.swift */,
 				7BC6AF1D2B6AAB1600694CD0 /* SearchEndpoint.swift */,
+				7BFEFFDD2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -369,6 +391,7 @@
 		7B90E2A62B52FAD60099FBA3 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7BFEFFD92B72A38C00A1CCC7 /* ListPhoto */,
 				7B5A907C2B70C4D60025E18B /* Register */,
 				7BD600822B6ED55000B28661 /* DownloadWallpaper */,
 				7BD4FB262B6972C000B5EA3E /* Login */,
@@ -466,8 +489,53 @@
 			children = (
 				7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */,
 				7BC6AF022B6A999E00694CD0 /* SearchUseCase.swift */,
+				7BFEFFEC2B72A5AF00A1CCC7 /* ListPhotoUseCase.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		7BFEFFD92B72A38C00A1CCC7 /* ListPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				7BFEFFDC2B72A3A100A1CCC7 /* Model */,
+				7BFEFFDF2B72A4DF00A1CCC7 /* View */,
+				7BFEFFE02B72A4E500A1CCC7 /* ViewModel */,
+			);
+			path = ListPhoto;
+			sourceTree = "<group>";
+		};
+		7BFEFFDC2B72A3A100A1CCC7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7BFEFFDA2B72A39B00A1CCC7 /* ListPhoto.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7BFEFFDF2B72A4DF00A1CCC7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7BFEFFE12B72A50300A1CCC7 /* ListPhotoController.swift */,
+				7BFEFFE52B72A54100A1CCC7 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7BFEFFE02B72A4E500A1CCC7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7BFEFFE32B72A51700A1CCC7 /* ListPhotoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7BFEFFE52B72A54100A1CCC7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				7BFEFFE62B72A55A00A1CCC7 /* ListPhotoCell.swift */,
+				7BFEFFE72B72A55A00A1CCC7 /* ListPhotoCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,6 +574,8 @@
 				7B51892D2B7138D5000B4403 /* FacebookGamingServices */,
 				7B51892F2B7138D5000B4403 /* FacebookLogin */,
 				7B5189312B7142F8000B4403 /* FacebookShare */,
+				7BFEFFEF2B72A83700A1CCC7 /* CHTCollectionViewWaterfallLayout */,
+				7BFEFFF12B72A83800A1CCC7 /* CHTCollectionViewWaterfallLayoutObjC */,
 			);
 			productName = Lensify;
 			productReference = 7B90E2722B52C1FB0099FBA3 /* Lensify.app */;
@@ -543,6 +613,7 @@
 				7B90E29A2B52C4BF0099FBA3 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 				7B7967772B6D2EB80032BB63 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				7B5189262B7138D5000B4403 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				7BFEFFEE2B72A83700A1CCC7 /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */,
 			);
 			productRefGroup = 7B90E2732B52C1FB0099FBA3 /* Products */;
 			projectDirPath = "";
@@ -558,6 +629,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BFEFFE92B72A55A00A1CCC7 /* ListPhotoCell.xib in Resources */,
 				7B97B9D12B5451D300D489CB /* HomeCell.xib in Resources */,
 				7B7967832B6D35A90032BB63 /* GoogleService-Info.plist in Resources */,
 				7B90E2852B52C1FE0099FBA3 /* LaunchScreen.storyboard in Resources */,
@@ -586,7 +658,9 @@
 				7B90E29F2B52C4FD0099FBA3 /* NetworkManager.swift in Sources */,
 				7B97B9D02B5451D300D489CB /* HomeCell.swift in Sources */,
 				7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */,
+				7BFEFFE82B72A55A00A1CCC7 /* ListPhotoCell.swift in Sources */,
 				7B90E2A32B52EC840099FBA3 /* WelcomeToLensifyController.swift in Sources */,
+				7BFEFFE22B72A50300A1CCC7 /* ListPhotoController.swift in Sources */,
 				7BDB91CA2B5B924B00002EAC /* HomeUseCase.swift in Sources */,
 				7BC6AEFA2B6A183400694CD0 /* User.swift in Sources */,
 				7B9565422B650C1800044E58 /* Topic.swift in Sources */,
@@ -600,17 +674,22 @@
 				7B95653E2B65025800044E58 /* TopicHeaderView.swift in Sources */,
 				7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */,
 				7BD4FB282B698DB600B5EA3E /* LoginController.swift in Sources */,
+				7BFEFFDE2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift in Sources */,
 				7B90E2802B52C1FB0099FBA3 /* Lensify.xcdatamodeld in Sources */,
 				7B7967742B6D2C510032BB63 /* LoginViewModel.swift in Sources */,
 				7B4DE9B32B57E86A00F4C3AA /* HomeManager.swift in Sources */,
 				7B42A0502B56EF85003C5D34 /* SearchViewModel.swift in Sources */,
 				7B90E2A92B52FB110099FBA3 /* Wallpapers.swift in Sources */,
+				7BFEFFED2B72A5AF00A1CCC7 /* ListPhotoUseCase.swift in Sources */,
 				7B42A0492B56EEF2003C5D34 /* SearchController.swift in Sources */,
+				7BFEFFE42B72A51700A1CCC7 /* ListPhotoViewModel.swift in Sources */,
 				7B53E7CA2B53F1F5005D0CED /* TabBarController.swift in Sources */,
 				7BC6AEF82B6A0FD900694CD0 /* RegisterController.swift in Sources */,
 				7B42A0522B56F1F2003C5D34 /* Search.swift in Sources */,
+				7BFEFFEB2B72A5A300A1CCC7 /* ListPhotoManager.swift in Sources */,
 				7B90E2782B52C1FB0099FBA3 /* SceneDelegate.swift in Sources */,
 				7B42A04D2B56EF53003C5D34 /* SearchCell.swift in Sources */,
+				7BFEFFDB2B72A39B00A1CCC7 /* ListPhoto.swift in Sources */,
 				7BC6AEFD2B6A50CE00694CD0 /* LoginAdapter.swift in Sources */,
 				7BC6AF012B6A981E00694CD0 /* SearchManager.swift in Sources */,
 			);
@@ -895,6 +974,14 @@
 				minimumVersion = 4.3.4;
 			};
 		};
+		7BFEFFEE2B72A83700A1CCC7 /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/chiahsien/CHTCollectionViewWaterfallLayout.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.10;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -992,6 +1079,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7B7967772B6D2EB80032BB63 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		7BFEFFEF2B72A83700A1CCC7 /* CHTCollectionViewWaterfallLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BFEFFEE2B72A83700A1CCC7 /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */;
+			productName = CHTCollectionViewWaterfallLayout;
+		};
+		7BFEFFF12B72A83800A1CCC7 /* CHTCollectionViewWaterfallLayoutObjC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BFEFFEE2B72A83700A1CCC7 /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */;
+			productName = CHTCollectionViewWaterfallLayoutObjC;
 		};
 /* End XCSwiftPackageProductDependency section */
 
