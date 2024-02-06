@@ -25,7 +25,6 @@ class LoginAdapter {
     enum LoginType {
         case google
         case facebook
-        case apple
     }
     
     func login(type: LoginType) {
@@ -34,8 +33,6 @@ class LoginAdapter {
             googleLogin()
         case .facebook:
             facebookLogin()
-        case .apple:
-            appleLogin()
         }
     }
     
@@ -55,10 +52,7 @@ class LoginAdapter {
         
         if let token = AccessToken.current,
               !token.isExpired {
-              // User is logged in, do work such as go to next view controller.
+              // User qeydiyyatdan kecdi, do work such as go to next view controller.
           }
-    }
-    fileprivate  func appleLogin() {
-        
     }
 }

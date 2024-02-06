@@ -30,6 +30,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // MARK: Programatic button
         let loginButton = FBLoginButton()
             loginButton.center = view.center
             view.addSubview(loginButton)
@@ -55,6 +56,9 @@ class LoginController: UIViewController {
         
         if (sender as AnyObject).selectedSegmentIndex == 0 {
             print("First login controller")
+//            let controller = storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
+//            navigationController?.show(controller, sender: nil)
+            
         } else if (sender as AnyObject).selectedSegmentIndex == 1 {
             let controller = storyboard?.instantiateViewController(withIdentifier: "\(RegisterController.self)") as! RegisterController
             controller.completion = { [weak self] email, password in
@@ -117,9 +121,6 @@ class LoginController: UIViewController {
         
     }
     @IBAction func facebookButtonAction(_ sender: Any) {
-   
-        
-        
         adapter?.login(type: .facebook)
         adapter?.completion = { user in
             self.userNameEmailTextField.text = user.email
