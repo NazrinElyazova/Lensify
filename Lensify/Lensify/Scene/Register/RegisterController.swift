@@ -19,6 +19,7 @@ class RegisterController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = true
         
     }
     @IBAction func registerAction(_ sender: Any) {

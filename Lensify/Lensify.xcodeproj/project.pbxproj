@@ -139,6 +139,7 @@
 		7BFEFFE72B72A55A00A1CCC7 /* ListPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListPhotoCell.xib; sourceTree = "<group>"; };
 		7BFEFFEA2B72A5A300A1CCC7 /* ListPhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoManager.swift; sourceTree = "<group>"; };
 		7BFEFFEC2B72A5AF00A1CCC7 /* ListPhotoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoUseCase.swift; sourceTree = "<group>"; };
+		7BFEFFF32B72C2F200A1CCC7 /* Lensify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lensify.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,6 +362,7 @@
 		7B90E2742B52C1FB0099FBA3 /* Lensify */ = {
 			isa = PBXGroup;
 			children = (
+				7BFEFFF32B72C2F200A1CCC7 /* Lensify.entitlements */,
 				7B90E2752B52C1FB0099FBA3 /* AppDelegate.swift */,
 				7B90E2772B52C1FB0099FBA3 /* SceneDelegate.swift */,
 				7B90E2A62B52FAD60099FBA3 /* Scene */,
@@ -841,6 +843,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Lensify/Lensify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 39VUM992D2;
@@ -870,6 +873,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Lensify/Lensify.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 39VUM992D2;
