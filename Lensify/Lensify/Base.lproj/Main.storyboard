@@ -323,7 +323,7 @@
                                 <rect key="frame" x="130" y="663" width="170" height="46"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ay7-0T-Wcb">
-                                        <rect key="frame" x="0.0" y="0.0" width="70" height="46"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="46"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="Google logo"/>
@@ -334,20 +334,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="googleButtonAction:" destination="QS7-fi-ds4" eventType="touchUpInside" id="0Cc-qk-JBH"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yh-hX-XpR">
-                                        <rect key="frame" x="100" y="0.0" width="70" height="46"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="Facebook"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="23"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="facebookButtonAction:" destination="QS7-fi-ds4" eventType="touchUpInside" id="VhE-vk-S2R"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -401,8 +387,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Welcome Back" id="tKU-ah-x3N"/>
                     <connections>
-                        <outlet property="facebook" destination="2yh-hX-XpR" id="wsW-4a-CZN"/>
                         <outlet property="passwordTextField" destination="etm-zi-XA0" id="dUo-hX-5Jz"/>
+                        <outlet property="stackView" destination="Lgz-1L-dwj" id="eHx-AY-Klf"/>
                         <outlet property="userNameEmailTextField" destination="mcy-yL-lee" id="uTd-Mi-Nbl"/>
                     </connections>
                 </viewController>
@@ -787,7 +773,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Facebook" width="30" height="30"/>
         <image name="Google logo" width="30" height="30"/>
         <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>

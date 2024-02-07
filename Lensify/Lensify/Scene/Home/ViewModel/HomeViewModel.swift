@@ -30,8 +30,8 @@ class HomeViewModel {
         }
     }
     
-    func getPhotos(id: String) {        
-        /*manager.getHomeList(id: id, endpoint: HomeEndpoint.topics)*/ 
+    func getPhotos(id: String) {
+        /*manager.getHomeList(id: id, endpoint: HomeEndpoint.topics)*/
         manager.getHomeList(id: id) {
             data, errorMessage in
             if let errorMessage = errorMessage {
@@ -42,10 +42,10 @@ class HomeViewModel {
             }
         }
     }
-//    func pagination(index: Int) {
-//        //current page < total page
-//        if index == items.count-2 /*&& (wallpapersData.)*/{
-////            getHomePhotos()
-//        }
-//    }
+    //    func pagination(index: Int) {
+    //        //current page < total page
+    //        if index == items.count-2 /*&& (wallpapersData.)*/{
+    ////            getHomePhotos()
+    //        }
+    //    }
 }

@@ -21,7 +21,7 @@ class HomeCell: UICollectionViewCell {
         super.awakeFromNib()
     }
     func configure(data: Wallpapers) {
-        homeLabel.text = data.description
+        homeLabel.text = data.title
         homeImage.loadImage(url: data.urls?.small ?? "")
         
         //        print("\(data.id)")

@@ -13,31 +13,25 @@ import FirebaseFirestoreInternal
 import FBSDKLoginKit
 
 class LoginController: UIViewController {
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var userNameEmailTextField: UITextField!
+    @IBOutlet weak var stackView: UIStackView!
     
-  
-    @IBOutlet weak var facebook: UIButton!
     var adapter: LoginAdapter?
     var databaseAdapter = DatabaseAdapter()
     
+    let facebookButton = FBLoginButton()
     let database = Firestore.firestore()
     
     var info = [UserInfo]()
     var success: (() -> Void)?
-
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var userNameEmailTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // MARK: Programatic button
-        let loginButton = FBLoginButton()
-            loginButton.center = view.center
-            view.addSubview(loginButton)
-
-        loginButton.permissions = ["public_profile", "email"]
-
-        
+        stackView.axis = .vertical
+        stackView.addArrangedSubview(facebookButton)
+        facebookButton.permissions = ["public_profile", "email"]
         
         getUserInfo()
         
@@ -56,8 +50,8 @@ class LoginController: UIViewController {
         
         if (sender as AnyObject).selectedSegmentIndex == 0 {
             print("First login controller")
-//            let controller = storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
-//            navigationController?.show(controller, sender: nil)
+            //            let controller = storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
+            //            navigationController?.show(controller, sender: nil)
             
         } else if (sender as AnyObject).selectedSegmentIndex == 1 {
             let controller = storyboard?.instantiateViewController(withIdentifier: "\(RegisterController.self)") as! RegisterController
@@ -83,6 +77,7 @@ class LoginController: UIViewController {
             }
         }
     }
+    
     @IBAction func loginButtonAction(_ sender: Any) {
         if !(passwordTextField.text?.isEmpty == true), !(userNameEmailTextField.text?.isEmpty == true),
            let email = userNameEmailTextField.text,

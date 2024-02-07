@@ -8,7 +8,6 @@
 import Foundation
 
 class HomeManager: HomeUseCase {
-  
     func getTopics(completion: @escaping (([TopicElement]?, String?) -> Void)) {
         //        NetworkManager.request(model: [TopicElement].self,
         //                               endpoint: HomeEndpoint.topics.rawValue,
@@ -17,13 +16,12 @@ class HomeManager: HomeUseCase {
         
         NetworkManager.request(model: [TopicElement].self, endpoint: url, completion: completion)
     }
-    
     func getHomeList(id: String, completion: @escaping (([Wallpapers]?, String?) -> Void)) {
         //        let url = endpoint.rawValue + "\(id)/photos"
         //        NetworkManager.request(model: [Wallpapers].self,
         //                               endpoint: url) {
-        let url = NetworkHelper.urlConfiguration(endpoint: HomeEndpoint.wallpaper.rawValue)
-        let path = url + "&\(id)/photos"
+        let path = NetworkHelper.urlConfiguration(endpoint: "\(HomeEndpoint.topics.rawValue)\(id)/photos")
+//        let path = url + "&\(id)/photos"
         
         NetworkManager.request(model: [Wallpapers].self, endpoint: path) {
             data, errorMessage in
@@ -36,5 +34,5 @@ class HomeManager: HomeUseCase {
         }
     }
     // COOOX VACIBDIRRR ID
-        //        let url = HomeEndpoint.topics.rawValue + "\(id)/photos"
+    //        let url = HomeEndpoint.topics.rawValue + "\(id)/photos"
 }

@@ -11,7 +11,8 @@ import UIKit
 
 extension UIImageView {
     
-    func loadImage(url: String){        
+    func loadImage(url: String){  
+        
         if let finalURL = URL(string: url) {
             self.kf.setImage(with: finalURL)
         }

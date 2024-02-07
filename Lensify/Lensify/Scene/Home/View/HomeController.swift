@@ -27,7 +27,7 @@ class HomeController: UIViewController {
     func login() {
         UserDefaults.standard.set(true, forKey: "loggedIn")
     }
-  
+    
     func configureUI() {
         topicView.addSubview(topicHeaderView)
         
@@ -72,7 +72,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: collectionView.frame.width, height: 200)
     }
-   
+    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         //        viewModel.pagination(index: indexPath.item)
     }
