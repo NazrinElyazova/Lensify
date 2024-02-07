@@ -25,6 +25,21 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpf-1N-Bbo">
+                        <rect key="frame" x="195" y="10" width="46" height="46"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="46" id="a3U-FU-s33"/>
+                            <constraint firstAttribute="width" constant="46" id="cFh-4T-AQx"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" image="square.and.arrow.down" catalog="system">
+                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="saveOrShareButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="K9Z-qw-Nke"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -32,8 +47,10 @@
                 <constraint firstAttribute="trailing" secondItem="pIH-16-dQt" secondAttribute="trailing" id="3Qe-1o-lEX"/>
                 <constraint firstAttribute="bottom" secondItem="pIH-16-dQt" secondAttribute="bottom" id="6mW-wl-jSd"/>
                 <constraint firstAttribute="bottom" secondItem="HY3-iQ-cQ3" secondAttribute="bottom" constant="8" id="8rK-pA-OBX"/>
+                <constraint firstAttribute="trailing" secondItem="Mpf-1N-Bbo" secondAttribute="trailing" constant="10" id="ILc-LW-To6"/>
                 <constraint firstItem="HY3-iQ-cQ3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="RrU-LE-lgS"/>
                 <constraint firstItem="pIH-16-dQt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="e4Y-UQ-elf"/>
+                <constraint firstItem="Mpf-1N-Bbo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="g8W-uf-Gso"/>
                 <constraint firstItem="pIH-16-dQt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gR9-JJ-I1R"/>
                 <constraint firstAttribute="trailing" secondItem="HY3-iQ-cQ3" secondAttribute="trailing" constant="20" id="jjr-qf-TSp"/>
             </constraints>
@@ -41,8 +58,12 @@
             <connections>
                 <outlet property="homeImage" destination="pIH-16-dQt" id="cRk-Jp-fCT"/>
                 <outlet property="homeLabel" destination="HY3-iQ-cQ3" id="qMg-qy-8wd"/>
+                <outlet property="saveButton" destination="Mpf-1N-Bbo" id="4Ow-ag-lKe"/>
             </connections>
             <point key="canvasLocation" x="180.91603053435114" y="50.352112676056343"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="square.and.arrow.down" catalog="system" width="112" height="128"/>
+    </resources>
 </document>

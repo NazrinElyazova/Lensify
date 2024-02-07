@@ -18,7 +18,7 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         login()
         configureUI()
         configureViewModel()
@@ -55,6 +55,15 @@ class HomeController: UIViewController {
             print("Home controllerde error var: \(errorMessage)")
         }
     }
+    @objc func presentSaveAndShareSheet() {
+         guard let image = UIImage(systemName: "bell"), let url = URL(string: "https://www.google.com") else {return}
+          let saveandshare = UIActivityViewController(
+         activityItems: [
+             image, url
+         ],
+         applicationActivities: nil)
+         present(saveandshare, animated: true)
+     }
 }
 extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -66,6 +75,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
         let item = viewModel.items[indexPath.item]
         cell.configure(data: item)
+        cell.controller = self
         return cell
         
     }

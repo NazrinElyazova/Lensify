@@ -35,6 +35,10 @@ class LoginController: UIViewController {
         
         getUserInfo()
         
+//        let googleSignInButton = GIDSignInButton()
+////             googleSignInButton.center = stackView.center
+//             stackView.addArrangedSubview(googleSignInButton)
+        
         adapter = LoginAdapter(controller: self)
         
         adapter?.completion = {
@@ -115,13 +119,13 @@ class LoginController: UIViewController {
         }
         
     }
-    @IBAction func facebookButtonAction(_ sender: Any) {
-        adapter?.login(type: .facebook)
-        adapter?.completion = { user in
-            self.userNameEmailTextField.text = user.email
-            self.passwordTextField.text = user.password
-            
-        }
-    }
+//    @IBAction func facebookButtonAction(_ sender: Any) {
+//        adapter?.login(type: .facebook)
+//        adapter?.completion = { user in
+//            self.userNameEmailTextField.text = user.email
+//            self.passwordTextField.text = user.password
+//            
+//        }
+//    }
 }
 

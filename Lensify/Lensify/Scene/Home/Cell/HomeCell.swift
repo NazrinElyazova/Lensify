@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 //
 //protocol HomeCellProtocol {
 //    var titleLabel: String { get }
@@ -13,13 +14,21 @@ import UIKit
 //}
 
 class HomeCell: UICollectionViewCell {
+    weak var controller: HomeController?
     
     @IBOutlet weak var homeLabel: UILabel!
     @IBOutlet weak var homeImage: UIImageView!
     
+    @IBOutlet weak var saveButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    @IBAction func saveOrShareButtonAction(_ sender: Any) {
+        controller?.presentSaveAndShareSheet()
+    }
+  
+    
     func configure(data: Wallpapers) {
         homeLabel.text = data.title
         homeImage.loadImage(url: data.urls?.small ?? "")
