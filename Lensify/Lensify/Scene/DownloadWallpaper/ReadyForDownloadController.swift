@@ -26,7 +26,4 @@ class ReadyForDownloadController: UIViewController {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(ListPhotoController.self)") as! ListPhotoController
         navigationController?.show(controller, sender: nil)
     }
-//    func login() {
-//        UserDefaults.standard.set(true, forKey: "loggedIn")
-//    }
 }

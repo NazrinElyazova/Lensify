@@ -442,7 +442,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Pp-F3-hrP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3703.2558139534885" y="31.545064377682404"/>
+            <point key="canvasLocation" x="2913" y="32"/>
         </scene>
         <!--Save Photo-->
         <scene sceneID="q2N-hF-Dun">
@@ -484,7 +484,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWT-jc-ghM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3703" y="726"/>
+            <point key="canvasLocation" x="2912" y="1508"/>
         </scene>
         <!--Ready For Download Controller-->
         <scene sceneID="ykI-O2-Dp7">
@@ -564,7 +564,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bL-9N-JHm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5494.8837209302328" y="60.515021459227469"/>
+            <point key="canvasLocation" x="3772" y="32"/>
         </scene>
         <!--Lensify-->
         <scene sceneID="06g-cC-fBQ">

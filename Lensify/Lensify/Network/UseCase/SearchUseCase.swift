@@ -7,5 +7,5 @@
 
 import Foundation
 protocol SearchUseCase {
-    func getSearchItems (searchText: String, completion: @escaping((Search?, String?)-> Void))
+    func getSearchItems (pageNumber: Int, searchText: String, completion: @escaping((Search?, String?)-> Void))
 }

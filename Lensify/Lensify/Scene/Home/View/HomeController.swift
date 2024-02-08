@@ -9,21 +9,14 @@ import UIKit
 import Photos
 
 class HomeController: UIViewController {
-//    var testUrl = ""
-    
-//    var u: UrlsWallpapers?
-    
-    
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var topicView: UIView!
     
     private let topicHeaderView = TopicHeaderView.loadFromNib()
-    
     let viewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         login()
         configureUI()
         configureViewModel()
@@ -35,7 +28,6 @@ class HomeController: UIViewController {
     
     func configureUI() {
         topicView.addSubview(topicHeaderView)
-        
         topicHeaderView.callback = { id in
             self.viewModel.items.removeAll()
             self.viewModel.getPhotos(id: id)
@@ -43,7 +35,6 @@ class HomeController: UIViewController {
         }
         
         topicHeaderView.frame = topicView.bounds
-        
         collection.register(UINib(nibName: "\(HomeCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HomeCell.self)")
     }
     
@@ -60,12 +51,9 @@ class HomeController: UIViewController {
             print("Home controllerde error var: \(errorMessage)")
         }
     }
-    func presentSaveAndShareSheet(/*data: Wallpapers*/) {
+    func presentSaveAndShareSheet() {
         
         guard let image = UIImage(named: "purple"), let url = URL(string: "https://unsplash.com/") else {return}
-        
-        
-//       let imageUrl = testUrl
         
         let saveandshare = UIActivityViewController(
             activityItems: [
@@ -85,7 +73,6 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
         let item = viewModel.items[indexPath.item]
         cell.configure(data: item)
-//        self.testUrl = viewModel.items[indexPath.item].urls?.small ?? ""
         cell.controller = self
         return cell
         
@@ -98,15 +85,4 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         //        viewModel.pagination(index: indexPath.item)
     }
 }
-//         guard let image = UIImage(systemName: "bell"), let url = URL(string: "https://www.google.com") else {return}
-
-
-
-
-//        guard let image = UIImage(named: "\(String(describing: data.urls?.small ?? ""))") else {return}
-
-
-//        guard let imag = data.urls?.small, let _ = URL(string: imag) else {return}
-
-
 

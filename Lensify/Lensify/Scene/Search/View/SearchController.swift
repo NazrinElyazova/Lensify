@@ -14,6 +14,8 @@ class SearchController: UIViewController, UITextFieldDelegate {
     
     let viewModel = SearchViewModel()
     
+    let refreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +25,6 @@ class SearchController: UIViewController, UITextFieldDelegate {
         configureUI()
         configureViewModel()
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         searchTextFieldOutlet.becomeFirstResponder()
@@ -36,6 +37,8 @@ class SearchController: UIViewController, UITextFieldDelegate {
     
     func configureUI() {
         self.collection.register(UINib(nibName: "\(SearchCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(SearchCell.self)")
+        
+        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
     }
     
     func configureViewModel() {
@@ -47,7 +50,15 @@ class SearchController: UIViewController, UITextFieldDelegate {
         viewModel.onSucces = {
             self.collection.reloadData()
         }
+        viewModel.getSearchItems(searchText: searchTextFieldOutlet.text ?? "" )
     }
+    
+    @objc func pullToRefresh() {
+        viewModel.search.removeAll()
+        collection.reloadData()
+        viewModel.getSearchItems(searchText: searchTextFieldOutlet.text ?? "")
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return true
     }
@@ -64,6 +75,11 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: collectionView.frame.width, height: 200)
+    }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        if indexPath.item == viewModel.search.count - 1 {
+            viewModel.pagination(index: indexPath.item, searchText: searchTextFieldOutlet.text ?? "")
+//        }
     }
 }
 
