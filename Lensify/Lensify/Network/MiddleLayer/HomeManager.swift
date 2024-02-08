@@ -21,7 +21,7 @@ class HomeManager: HomeUseCase {
         //        NetworkManager.request(model: [Wallpapers].self,
         //                               endpoint: url) {
         let path = NetworkHelper.urlConfiguration(endpoint: "\(HomeEndpoint.topics.rawValue)\(id)/photos")
-//        let path = url + "&\(id)/photos"
+        //        let path = url + "&\(id)/photos"
         
         NetworkManager.request(model: [GetTopics].self, endpoint: path) {
             data, errorMessage in

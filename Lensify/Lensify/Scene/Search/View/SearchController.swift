@@ -42,7 +42,9 @@ class SearchController: UIViewController, UITextFieldDelegate {
     }
     
     func configureViewModel() {
+        viewModel.getSearchItems(searchText: searchTextFieldOutlet.text ?? "" )
         guard searchTextFieldOutlet.text != nil else {return}
+        
         viewModel.onError = {
             errorMessage in
             print("Search controllerde error var: \(errorMessage)")
@@ -50,7 +52,7 @@ class SearchController: UIViewController, UITextFieldDelegate {
         viewModel.onSucces = {
             self.collection.reloadData()
         }
-        viewModel.getSearchItems(searchText: searchTextFieldOutlet.text ?? "" )
+       
     }
     
     @objc func pullToRefresh() {
@@ -65,6 +67,7 @@ class SearchController: UIViewController, UITextFieldDelegate {
 }
 extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+      print(viewModel.search.count) 
         return  viewModel.search.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

@@ -17,7 +17,7 @@ class HomeCell: UICollectionViewCell {
     weak var controller: HomeController?
     
     var u: UrlsWallpapers?
-
+    
     
     @IBOutlet weak var homeLabel: UILabel!
     @IBOutlet weak var homeImage: UIImageView!
@@ -28,42 +28,38 @@ class HomeCell: UICollectionViewCell {
     }
     
     @IBAction func saveOrShareButtonAction(_ sender: Any) {
-//        if let wall = test {
+        //        if let wall = test {
         
-//        if let gifData = try? Data(contentsOf: URL(string: self.u?.small ?? "")!) {
-//            self.saveImageToLibrary(gifData: gifData)
+        //        if let gifData = try? Data(contentsOf: URL(string: self.u?.small ?? "")!) {
+        //            self.saveImageToLibrary(gifData: gifData)
         guard let image = homeImage.image else {return}
         UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_: didFinishSavingWithError: contextInfo:)), nil)
         controller?.presentSaveAndShareSheet(/*data: test*/)
-
-        }
-//        }
-//        else {
-//            print("deyer yoxdur")
-//        }
-    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-//        if let error = error {
-//            let alertcont1 = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
-//            
-//            alertcont1.addAction(UIAlertAction(title: "Ok", style: .default))
-//            controller?.present(alertcont1, animated: true)
-//
-//        } else {
-            let alertcont2 = UIAlertController(title: "Saved ! ", message: "Your alerted image has been saved to your gallery.", preferredStyle: .alert)
-            alertcont2.addAction(UIAlertAction(title: "OK", style: .default))
-            controller?.present(alertcont2, animated: true)
-//        }
+        
     }
-
-func configure(data: GetTopics) {
-//        homeLabel.text = data.title
-    homeImage.loadImage(url: data.urls?.small ?? "")
+    //        }
+    //        else {
+    //            print("deyer yoxdur")
+    //        }
+    @objc func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        //        if let error = error {
+        //            let alertcont1 = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+        //
+        //            alertcont1.addAction(UIAlertAction(title: "Ok", style: .default))
+        //            controller?.present(alertcont1, animated: true)
+        //
+        //        } else {
+        let alertcont2 = UIAlertController(title: "Saved ! ", message: "Your alerted image has been saved to your gallery.", preferredStyle: .alert)
+        alertcont2.addAction(UIAlertAction(title: "OK", style: .default))
+        controller?.present(alertcont2, animated: true)
+        //        }
+    }
     
-    //        print("\(data.id)")
-    //            print(homeImage.image ?? "NO image ")
-    //        print(homeLabel.text ?? "bosdur label")
-}
-  
+    func configure(data: GetTopics) {
+        homeLabel.text = data.title
+        homeImage.loadImage(url: data.urls?.small ?? "")
+    }
+    
     func saveImageToLibrary(gifData: Data) {
         PHPhotoLibrary.shared().performChanges {
             let creationRequest = PHAssetCreationRequest.forAsset()

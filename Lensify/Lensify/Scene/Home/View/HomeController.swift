@@ -31,7 +31,7 @@ class HomeController: UIViewController {
         topicHeaderView.callback = { id in
             self.viewModel.items.removeAll()
             self.viewModel.getPhotos(id: id)
-//            print("getPhotos callback called")
+            //            print("getPhotos callback called")
         }
         
         topicHeaderView.frame = topicView.bounds
@@ -65,7 +65,7 @@ class HomeController: UIViewController {
 }
 extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(viewModel.items.count)
+//        print(viewModel.items.count)
         return viewModel.items.count
         
     }

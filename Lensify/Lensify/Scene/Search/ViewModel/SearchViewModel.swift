@@ -36,6 +36,9 @@ class SearchViewModel {
         guard let total = searchData?.total,
               let totalPages = searchData?.totalPages,
               total > search.count else {return}
+        
+        // Calculate the current page based on the number of items and items per page
+//            let currentPage = (search.count / itemsPerPage) + 1
             
         let currentPage = (search.count / 10) + 1
         print("Current Page: \(currentPage), Total Pages: \(totalPages), Total Items: \(total), Current Items: \(search.count)")

@@ -2,29 +2,29 @@ import Foundation
 
 // MARK: - PhotoElement
 struct GetTopics: Codable { // MARK: GET TOPICS
-    let id/*, slug, title, description*/: String?
-//    let publishedAt, updatedAt, startsAt, endsAt: String?
-//    let visibility: VisibilityWallpapers?
-//    let featured: Bool?
-//    let totalPhotos: Int?
-//    let links: PhotoLinksWallpapers?
-//    let status: PhotoStatusWallpapers?
-//    let owners: [UserWallpapers]?
+    let id, slug, title, description: String?
+    //    let publishedAt, updatedAt, startsAt, endsAt: String?
+    //    let visibility: VisibilityWallpapers?
+    //    let featured: Bool?
+    //    let totalPhotos: Int?
+    //    let links: PhotoLinksWallpapers?
+    //    let status: PhotoStatusWallpapers?
+    //    let owners: [UserWallpapers]?
     let urls: UrlsWallpapers?
-//    let previewPhotos: [PreviewPhotoWallpapers]?
-
+    //    let previewPhotos: [PreviewPhotoWallpapers]?
+    
     enum CodingKeys: String, CodingKey {
         case id
-//        case slug, title, description
-//        case publishedAt = "published_at"
-//        case updatedAt = "updated_at"
-//        case startsAt = "starts_at"
-//        case endsAt = "ends_at"
-//        case visibility, featured
-//        case totalPhotos = "total_photos"
-//        case links, status, owners
+        case slug, title, description
+        //        case publishedAt = "published_at"
+        //        case updatedAt = "updated_at"
+        //        case startsAt = "starts_at"
+        //        case endsAt = "ends_at"
+        //        case visibility, featured
+        //        case totalPhotos = "total_photos"
+        //        case links, status, owners
         case urls
-//        case previewPhotos = "preview_photos"
+        //        case previewPhotos = "preview_photos"
     }
 }
 
@@ -35,7 +35,7 @@ struct TopicSubmissionsWallpapers: Codable {
     let travel, texturesPatterns, experimental, nature: The3_DRendersWallpapers?
     let wallpapers, the3DRenders, archival, architectureInterior: The3_DRendersWallpapers?
     let film, people, streetPhotography: The3_DRendersWallpapers?
-
+    
     enum CodingKeys: String, CodingKey {
         case minimalism, health, spirituality, travel
         case texturesPatterns = "textures-patterns"
@@ -52,7 +52,7 @@ struct TopicSubmissionsWallpapers: Codable {
 struct The3_DRendersWallpapers: Codable {
     let status: The3DRendersStatusWallpapers?
     let approvedOn: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case status
         case approvedOn = "approved_on"
@@ -72,13 +72,13 @@ struct HealthWallpapers: Codable {
 // MARK: - Urls
 struct UrlsWallpapers: Codable {
     let /*raw, full, regular,*/ small: String?
-//    let thumb, smallS3: String?
-
+    //    let thumb, smallS3: String?
+    
     enum CodingKeys: String, CodingKey {
-//        case raw, full, regular, 
-             case small
-//        case thumb
-//        case smallS3 = "small_s3"
+        //        case raw, full, regular,
+        case small
+        //        case thumb
+        //        case smallS3 = "small_s3"
     }
 }
 
@@ -96,7 +96,7 @@ struct UserWallpapers: Codable {
     let acceptedTos, forHire: Bool?
     let social: SocialWallpapers?
     let twitterUsername: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case updatedAt = "updated_at"
@@ -122,7 +122,7 @@ struct UserWallpapers: Codable {
 struct UserLinksWallpapers: Codable {
     let linksSelf, html, photos, likes: String?
     let portfolio, following, followers: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case linksSelf = "self"
         case html, photos, likes, portfolio, following, followers
@@ -139,7 +139,7 @@ struct SocialWallpapers: Codable {
     let instagramUsername: String?
     let portfolioURL: String?
     let twitterUsername: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case instagramUsername = "instagram_username"
         case portfolioURL = "portfolio_url"
@@ -150,7 +150,7 @@ struct SocialWallpapers: Codable {
 // MARK: - PhotoLinks
 struct PhotoLinksWallpapers: Codable {
     let linksSelf, html, photos: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case linksSelf = "self"
         case html, photos
@@ -163,7 +163,7 @@ struct PreviewPhotoWallpapers: Codable {
     let createdAt, updatedAt: String?
     let blurHash: String?
     let urls: UrlsWallpapers?
-
+    
     enum CodingKeys: String, CodingKey {
         case id, slug
         case createdAt = "created_at"
