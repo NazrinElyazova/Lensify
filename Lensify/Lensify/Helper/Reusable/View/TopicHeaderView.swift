@@ -10,7 +10,7 @@ import UIKit
 class TopicHeaderView: UIView {
     @IBOutlet weak var collection: UICollectionView!
     
-    var items = [TopicElement]()
+    var top = [TopicElement]()
     var callback: ((String) -> Void)?
     
     override func layoutSubviews() {
@@ -18,24 +18,24 @@ class TopicHeaderView: UIView {
     }
     
     func configure(data: [TopicElement]) {
-        items = data
+        top = data
         collection.reloadData()
-        callback?(items.first?.id ?? "")
+        callback?(top.first?.id ?? "")
     }
 }
 extension TopicHeaderView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        items.count
+        top.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(TopicCell.self)", for: indexPath) as! TopicCell
-        cell.topicLabel.text = items[indexPath.item].title
+        cell.topicLabel.text = top[indexPath.item].title
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        callback?(items[indexPath.item].id ?? "")
+        callback?(top[indexPath.item].id ?? "")
         
     }
     

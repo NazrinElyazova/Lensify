@@ -6,8 +6,13 @@
 //
 
 import UIKit
+import Photos
 
 class HomeController: UIViewController {
+//    var testUrl = ""
+    
+//    var u: UrlsWallpapers?
+    
     
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var topicView: UIView!
@@ -18,7 +23,7 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         login()
         configureUI()
         configureViewModel()
@@ -34,7 +39,7 @@ class HomeController: UIViewController {
         topicHeaderView.callback = { id in
             self.viewModel.items.removeAll()
             self.viewModel.getPhotos(id: id)
-            print("getPhotos callback called")
+//            print("getPhotos callback called")
         }
         
         topicHeaderView.frame = topicView.bounds
@@ -55,15 +60,20 @@ class HomeController: UIViewController {
             print("Home controllerde error var: \(errorMessage)")
         }
     }
-    @objc func presentSaveAndShareSheet() {
-         guard let image = UIImage(systemName: "bell"), let url = URL(string: "https://www.google.com") else {return}
-          let saveandshare = UIActivityViewController(
-         activityItems: [
-             image, url
-         ],
-         applicationActivities: nil)
-         present(saveandshare, animated: true)
-     }
+    func presentSaveAndShareSheet(/*data: Wallpapers*/) {
+        
+        guard let image = UIImage(named: "purple"), let url = URL(string: "https://unsplash.com/") else {return}
+        
+        
+//       let imageUrl = testUrl
+        
+        let saveandshare = UIActivityViewController(
+            activityItems: [
+                url, image
+            ],
+            applicationActivities: nil)
+        present(saveandshare, animated: true)
+    }
 }
 extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -75,6 +85,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
         let item = viewModel.items[indexPath.item]
         cell.configure(data: item)
+//        self.testUrl = viewModel.items[indexPath.item].urls?.small ?? ""
         cell.controller = self
         return cell
         
@@ -87,3 +98,15 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         //        viewModel.pagination(index: indexPath.item)
     }
 }
+//         guard let image = UIImage(systemName: "bell"), let url = URL(string: "https://www.google.com") else {return}
+
+
+
+
+//        guard let image = UIImage(named: "\(String(describing: data.urls?.small ?? ""))") else {return}
+
+
+//        guard let imag = data.urls?.small, let _ = URL(string: imag) else {return}
+
+
+

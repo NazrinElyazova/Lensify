@@ -9,7 +9,7 @@ import Foundation
 
 class HomeViewModel {
     
-    var items = [Wallpapers]()
+    var items = [GetTopics]()
     
     var topicItems = [TopicElement]()
     

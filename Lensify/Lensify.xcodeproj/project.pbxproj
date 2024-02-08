@@ -48,7 +48,7 @@
 		7B90E29F2B52C4FD0099FBA3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E29E2B52C4FD0099FBA3 /* NetworkManager.swift */; };
 		7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2A02B52C5260099FBA3 /* NetworkHelper.swift */; };
 		7B90E2A32B52EC840099FBA3 /* WelcomeToLensifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2A22B52EC840099FBA3 /* WelcomeToLensifyController.swift */; };
-		7B90E2A92B52FB110099FBA3 /* Wallpapers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2A82B52FB110099FBA3 /* Wallpapers.swift */; };
+		7B90E2A92B52FB110099FBA3 /* GetTopics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2A82B52FB110099FBA3 /* GetTopics.swift */; };
 		7B90E2AC2B52FB550099FBA3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2AB2B52FB550099FBA3 /* Extension.swift */; };
 		7B90E2B22B5329550099FBA3 /* LaunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2B12B5329550099FBA3 /* LaunchController.swift */; };
 		7B90E2B82B5332160099FBA3 /* lottieView.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B90E2B72B5332160099FBA3 /* lottieView.json */; };
@@ -109,7 +109,7 @@
 		7B90E29E2B52C4FD0099FBA3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7B90E2A02B52C5260099FBA3 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
 		7B90E2A22B52EC840099FBA3 /* WelcomeToLensifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeToLensifyController.swift; sourceTree = "<group>"; };
-		7B90E2A82B52FB110099FBA3 /* Wallpapers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpapers.swift; sourceTree = "<group>"; };
+		7B90E2A82B52FB110099FBA3 /* GetTopics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTopics.swift; sourceTree = "<group>"; };
 		7B90E2AB2B52FB550099FBA3 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7B90E2B12B5329550099FBA3 /* LaunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchController.swift; sourceTree = "<group>"; };
 		7B90E2B72B5332160099FBA3 /* lottieView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottieView.json; sourceTree = "<group>"; };
@@ -303,7 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				7B9565412B650C1800044E58 /* Topic.swift */,
-				7B90E2A82B52FB110099FBA3 /* Wallpapers.swift */,
+				7B90E2A82B52FB110099FBA3 /* GetTopics.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -681,7 +681,7 @@
 				7B7967742B6D2C510032BB63 /* LoginViewModel.swift in Sources */,
 				7B4DE9B32B57E86A00F4C3AA /* HomeManager.swift in Sources */,
 				7B42A0502B56EF85003C5D34 /* SearchViewModel.swift in Sources */,
-				7B90E2A92B52FB110099FBA3 /* Wallpapers.swift in Sources */,
+				7B90E2A92B52FB110099FBA3 /* GetTopics.swift in Sources */,
 				7BFEFFED2B72A5AF00A1CCC7 /* ListPhotoUseCase.swift in Sources */,
 				7B42A0492B56EEF2003C5D34 /* SearchController.swift in Sources */,
 				7BFEFFE42B72A51700A1CCC7 /* ListPhotoViewModel.swift in Sources */,
