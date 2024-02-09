@@ -5,8 +5,8 @@
 //  Created by Nazrin on 31.01.24.
 //
 
-import UIKit
 import GoogleSignIn
+import UIKit
 import Firebase
 import FirebaseAuth
 import FirebaseFirestoreInternal
@@ -29,43 +29,52 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        GIDSignIn.sharedInstance.delegate = self
+//         GIDSignIn.sharedInstance.presentingViewController = self
+        
+        faceButton()
+        getUserInfo()
+        adapterSave()
+        saveFirebase()
+    }
+    @IBAction func registerButtonAction(_ sender: Any) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(RegisterController.self)") as! RegisterController
+        controller.completion = { [weak self] email, password in
+            self?.passwordTextField.text = password
+            self?.userNameEmailTextField.text = email
+        }
+        navigationController?.show(controller, sender: nil)
+    }
+    func faceButton() {
         stackView.axis = .vertical
         stackView.addArrangedSubview(facebookButton)
         facebookButton.permissions = ["public_profile", "email"]
-        
-        getUserInfo()
-        
-//        let googleSignInButton = GIDSignInButton()
-////             googleSignInButton.center = stackView.center
-//             stackView.addArrangedSubview(googleSignInButton)
-        
+        facebookButton.layer.cornerRadius = 20
+        adapter?.login(type: .facebook)
+        adapter?.completion = { user in
+            self.userNameEmailTextField.text = user.email
+            self.passwordTextField.text = user.password
+            
+        }
+    }
+    func adapterSave() {
         adapter = LoginAdapter(controller: self)
         
         adapter?.completion = {
             user in
             
-            //            self.databaseAdapter.saveUserInfo(data: user)
-            //            print(user)
+            self.databaseAdapter.saveUserInfo(data: user)
+                        print(user)
             //save to firebase
+           
         }
     }
-    
-    @IBAction func loginSegment(_ sender: Any) {
-        
-        if (sender as AnyObject).selectedSegmentIndex == 0 {
-            print("First login controller")
-            //            let controller = storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
-            //            navigationController?.show(controller, sender: nil)
-            
-        } else if (sender as AnyObject).selectedSegmentIndex == 1 {
-            let controller = storyboard?.instantiateViewController(withIdentifier: "\(RegisterController.self)") as! RegisterController
-            controller.completion = { [weak self] email, password in
-                self?.passwordTextField.text = password
-                self?.userNameEmailTextField.text = email
-            }
-            navigationController?.show(controller, sender: nil)
+    func saveFirebase() {
+        adapter = LoginAdapter(controller: self)
+        adapter?.fireBaseCompletion = {
+            userFire in
+            self.databaseAdapter.saveUserInfoFirebase(data: userFire)
         }
-        
     }
     
     func getUserInfo() {
@@ -117,15 +126,6 @@ class LoginController: UIViewController {
             self.userNameEmailTextField.text = user.email
             self.passwordTextField.text = user.password
         }
-        
     }
-//    @IBAction func facebookButtonAction(_ sender: Any) {
-//        adapter?.login(type: .facebook)
-//        adapter?.completion = { user in
-//            self.userNameEmailTextField.text = user.email
-//            self.passwordTextField.text = user.password
-//            
-//        }
-//    }
 }
 

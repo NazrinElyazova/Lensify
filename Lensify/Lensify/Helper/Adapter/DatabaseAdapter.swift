@@ -6,28 +6,42 @@
 //
 
 import Foundation
-//import KeychainSwift
+import KeychainSwift
 import FirebaseAuth
 import FirebaseFirestore
 
 class DatabaseAdapter {
-//    var keychain = KeychainSwift()
-//        func saveUserInfo(data: UserData) {
+    var keychain = KeychainSwift()
+    func saveUserInfo(data: UserData) {
+        
+        //file manager
+        //keychain
+        //core data
+        //user defaults
+        
+        UserDefaults.standard.setValue(data.firstName, forKey: "firstName")
+        
+        keychain.set(data.email, forKey: "email")
+        keychain.set(data.password, forKey: "password")
+    }
+        
+        func saveUserInfoFirebase(data: UserInfo) {
             
-            //file manager
-            //keychain
-            //core data
-            //user defaults
+            let database = Firestore.firestore()
+            let info: [String: Any] = [
+                "email": data.email as Any,
+                "password": data.password as Any,
+                "fullname": data.fullname as Any
+            ]
             
-//            UserDefaults.standard.setValue(data.firstName, forKey: "firstName")
-//            UserDefaults.standard.setValue(data.lastName, forKey: "lastName")
-
-//            keychain.set(data.email, forKey: "email")
-//            keychain.set(data.password, forKey: "password")
-    let database = Firestore.firestore()
-
-//            func saveUserInfo(data: UserData) {
-//                database.collection("UserInfo").addDocument(data: <#T##[String : Any]#>)
-//               }
+            database.collection("UserInfo").addDocument(data: info) {
+                error in
+                if let error = error {
+                    print("User infonu firebase save edende error bas verdi: \(error.localizedDescription)")
+                } else {
+                    print("User info ugurla elave olundu")
+                }
+            }
         }
+    }
 

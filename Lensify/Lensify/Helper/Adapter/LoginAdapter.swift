@@ -16,6 +16,8 @@ class LoginAdapter {
     
     var success: (() -> Void)?
     var completion: ((UserData)->())?
+    
+    var fireBaseCompletion: ((UserInfo)-> ())?
     var controller: UIViewController  //Strong variable olmasi ucun init edirik. Controllerde set etmek yaddan cixsa app crash etmesin
     
     init(controller: UIViewController) {
@@ -37,6 +39,7 @@ class LoginAdapter {
     }
     
     fileprivate func googleLogin() {
+//        let signInConfig = GIDConfiguration.init(clientID: clientID)
         GIDSignIn.sharedInstance.signIn(withPresenting: controller) { result, error in
             if let error = error {
                 print(error)
@@ -44,6 +47,9 @@ class LoginAdapter {
             else if let result = result {
                 let user = UserData(email: result.user.profile?.email ?? "", password: "Nezrin123", firstName: result.user.profile?.name ?? "", lastName: result.user.profile?.familyName ?? "")
                 self.completion?(user)
+                
+                let userFire = UserInfo(email: result.user.profile?.email ?? "", password: "", fullname: result.user.profile?.name ?? "")
+                self.fireBaseCompletion?(userFire)
             }
         }
     }
