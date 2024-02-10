@@ -7,9 +7,9 @@ struct GetTopics: Codable { // MARK: GET TOPICS
     //    let visibility: VisibilityWallpapers?
     //    let featured: Bool?
     //    let totalPhotos: Int?
-    //    let links: PhotoLinksWallpapers?
-    //    let status: PhotoStatusWallpapers?
-    //    let owners: [UserWallpapers]?
+    let links: PhotoLinksWallpapers?
+    let status: PhotoStatusWallpapers?
+    let owners: [UserWallpapers]?
     let urls: UrlsWallpapers?
     //    let previewPhotos: [PreviewPhotoWallpapers]?
     
@@ -22,7 +22,7 @@ struct GetTopics: Codable { // MARK: GET TOPICS
         //        case endsAt = "ends_at"
         //        case visibility, featured
         //        case totalPhotos = "total_photos"
-        //        case links, status, owners
+        case links, status, owners
         case urls
         //        case previewPhotos = "preview_photos"
     }

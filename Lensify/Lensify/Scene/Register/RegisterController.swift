@@ -67,7 +67,7 @@ class RegisterController: UIViewController {
                     print(error.localizedDescription)
                 } else if let user = result?.user {
                     //                    print(user)
-//                    self?.credential()
+                    //                    self?.credential()
                     self?.completion?(user.email ?? "", password)
                     self?.navigationController?.popViewController(animated: true)
                 }
@@ -83,17 +83,17 @@ class RegisterController: UIViewController {
             print(user)
         }
     }
-//    func credential() {
-//        NotificationCenter.default.addObserver(self, selector: #selector(handleGoogleSignIn(_:)), name: .AuthStateDidChange, object: nil)
-//
-////        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: <#T##String#>)
-//    }
-//    @objc func handleGoogleSignIn(_ notification: Notification) {
-//          guard let userInfo = notification.userInfo,
-//              let user = Auth.auth().currentUser else {
-//                  return
-//          }
-//    }
+    //    func credential() {
+    //        NotificationCenter.default.addObserver(self, selector: #selector(handleGoogleSignIn(_:)), name: .AuthStateDidChange, object: nil)
+    //
+    ////        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: <#T##String#>)
+    //    }
+    //    @objc func handleGoogleSignIn(_ notification: Notification) {
+    //          guard let userInfo = notification.userInfo,
+    //              let user = Auth.auth().currentUser else {
+    //                  return
+    //          }
+    //    }
     func singIn(email: String, password: String) {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             

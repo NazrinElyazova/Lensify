@@ -12,47 +12,47 @@ import Foundation
 struct List: Codable {
     let url: Urls?
     let height: CGFloat?
-//    let id: ListPhoto?
+    //    let id: ListPhoto?
 }
 struct ListPhoto: Codable {
-//    let id/*, slug*/: String?
-//    let createdAt, updatedAt: String?
-//    let promotedAt: String?
-//    let width, height: Int?
-//    let color, blurHash: String?
-//    let description: String?
-//    let altDescription: String?
+    //    let id/*, slug*/: String?
+    //    let createdAt, updatedAt: String?
+    //    let promotedAt: String?
+    //    let width, height: Int?
+    //    let color, blurHash: String?
+    //    let description: String?
+    //    let altDescription: String?
     let urls: Urls?
-//    let links: ListPhotoLinks?
-//    let likes: Int?
-//    let likedByUser: Bool?
-//    let sponsorship: Sponsorship?
-//    let topicSubmissions: TopicSubmissions?
-//    let user: User?
-
+    //    let links: ListPhotoLinks?
+    //    let likes: Int?
+    //    let likedByUser: Bool?
+    //    let sponsorship: Sponsorship?
+    //    let topicSubmissions: TopicSubmissions?
+    //    let user: User?
+    
     enum CodingKeys: String, CodingKey {
-//        case id
-//        case slug
-//        case createdAt = "created_at"
-//        case updatedAt = "updated_at"
-//        case promotedAt = "promoted_at"
-//        case width, height, color
-//        case blurHash = "blur_hash"
-//        case description
-//        case altDescription = "alt_description"
+        //        case id
+        //        case slug
+        //        case createdAt = "created_at"
+        //        case updatedAt = "updated_at"
+        //        case promotedAt = "promoted_at"
+        //        case width, height, color
+        //        case blurHash = "blur_hash"
+        //        case description
+        //        case altDescription = "alt_description"
         case urls
-//        case links, likes
-//        case likedByUser = "liked_by_user"
-//        case sponsorship
-//        case topicSubmissions = "topic_submissions"
-//        case user
+        //        case links, likes
+        //        case likedByUser = "liked_by_user"
+        //        case sponsorship
+        //        case topicSubmissions = "topic_submissions"
+        //        case user
     }
 }
 
 // MARK: - ListPhotoLinks
 struct ListPhotoLinks: Codable {
     let linksSelf, html, download, downloadLocation: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case linksSelf = "self"
         case html, download
@@ -66,7 +66,7 @@ struct Sponsorship: Codable {
     let tagline: String?
     let taglineURL: String?
     let sponsor: User?
-
+    
     enum CodingKeys: String, CodingKey {
         case impressionUrls = "impression_urls"
         case tagline
@@ -90,7 +90,7 @@ struct User: Codable {
     let totalCollections, totalLikes, totalPhotos, totalPromotedPhotos: Int?
     let acceptedTos, forHire: Bool?
     let social: Social?
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case updatedAt = "updated_at"
@@ -116,7 +116,7 @@ struct User: Codable {
 struct UserLinks: Codable {
     let linksSelf, html, photos, likes: String?
     let portfolio, following, followers: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case linksSelf = "self"
         case html, photos, likes, portfolio, following, followers
@@ -133,7 +133,7 @@ struct Social: Codable {
     let instagramUsername: String?
     let portfolioURL: String?
     let twitterUsername: String?
-
+    
     enum CodingKeys: String, CodingKey {
         case instagramUsername = "instagram_username"
         case portfolioURL = "portfolio_url"
@@ -145,7 +145,7 @@ struct Social: Codable {
 struct TopicSubmissions: Codable {
     let coolTones, people: CoolTones?
     let travel: Travel?
-
+    
     enum CodingKeys: String, CodingKey {
         case coolTones = "cool-tones"
         case people, travel
@@ -156,7 +156,7 @@ struct TopicSubmissions: Codable {
 struct CoolTones: Codable {
     let status: String?
     let approvedOn: Date?
-
+    
     enum CodingKeys: String, CodingKey {
         case status
         case approvedOn = "approved_on"
@@ -171,12 +171,12 @@ struct Travel: Codable {
 // MARK: - Urls
 struct Urls: Codable {
     let /*raw, full, regular,*/ small: String?
-//    let thumb, smallS3: String?
-
+    //    let thumb, smallS3: String?
+    
     enum CodingKeys: String, CodingKey {
         case /*raw, full, regular, */small
-//             case thumb
-//        case smallS3 = "small_s3"
+        //             case thumb
+        //        case smallS3 = "small_s3"
     }
 }
 

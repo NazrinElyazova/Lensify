@@ -7,8 +7,10 @@
 
 import UIKit
 import Photos
+import SkeletonView
 
 class HomeController: UIViewController {
+    
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var topicView: UIView!
     
@@ -17,11 +19,20 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
         configureUI()
-        configureViewModel()
+        //        configureViewModel()
     }
-  
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        skeletonConfigure()
+        collection.isSkeletonable = true
+        collection.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .darkClouds),
+                                                animation: nil,
+                                                transition: .crossDissolve(0.10))
+        configureViewModel()
+        
+    }
     
     func configureUI() {
         topicView.addSubview(topicHeaderView)
@@ -36,6 +47,7 @@ class HomeController: UIViewController {
     }
     
     func configureViewModel() {
+        
         viewModel.getTopics()
         
         viewModel.topicSuccess = {
@@ -61,7 +73,6 @@ class HomeController: UIViewController {
 extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //        print(viewModel.items.count)
         return viewModel.items.count
         
     }
@@ -73,7 +84,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         return cell
         
     }
-        
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: collectionView.frame.width, height: 200)
     }
@@ -82,15 +93,14 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         //        viewModel.pagination(index: indexPath.item)
     }
 }
-
 extension HomeController: SaveImageProtocol {
     
     func didTApDownloadButton(image: UIImage) {
         if UserDefaults.standard.bool(forKey: "loggedIn") {
-//            print(UserDefaults.standard.bool(forKey: "loggedIn"))
+            //            print(UserDefaults.standard.bool(forKey: "loggedIn"))
             presentSaveAndShareSheet(image: image )
         } else {
-          showAlert()
+            showAlert()
         }
     }
     func showAlert() {
@@ -104,5 +114,17 @@ extension HomeController: SaveImageProtocol {
         alertController.addAction(cancelButton)
         present(alertController, animated: true)
     }
-
+}
+extension HomeController: SkeletonCollectionViewDataSource {
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
+        return "\(HomeCell.self)"
+    }
+    func skeletonConfigure() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
+            
+            self.collection.stopSkeletonAnimation()
+            self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
+            self.collection.reloadData()
+        })
+    }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 class ListPhotoCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var listPhoto: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

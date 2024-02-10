@@ -26,7 +26,7 @@ class SearchController: UIViewController, UITextFieldDelegate {
         configureViewModel()
         
         self.navigationController?.navigationBar.topItem?.title = ""
-
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

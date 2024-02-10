@@ -58,6 +58,7 @@
 		7B9565422B650C1800044E58 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9565412B650C1800044E58 /* Topic.swift */; };
 		7B97B9D02B5451D300D489CB /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B97B9CE2B5451D300D489CB /* HomeCell.swift */; };
 		7B97B9D12B5451D300D489CB /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B97B9CF2B5451D300D489CB /* HomeCell.xib */; };
+		7BABCF752B77E2D3008FCDDE /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 7BABCF742B77E2D3008FCDDE /* SkeletonView */; };
 		7BC6AEF82B6A0FD900694CD0 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AEF72B6A0FD900694CD0 /* RegisterController.swift */; };
 		7BC6AEFA2B6A183400694CD0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AEF92B6A183400694CD0 /* User.swift */; };
 		7BC6AEFD2B6A50CE00694CD0 /* LoginAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AEFC2B6A50CE00694CD0 /* LoginAdapter.swift */; };
@@ -149,6 +150,7 @@
 				7B1736552B763E520030DE63 /* GoogleSignInSwift in Frameworks */,
 				7B1736702B7646700030DE63 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				7B90E2942B52C4A00099FBA3 /* Alamofire in Frameworks */,
+				7BABCF752B77E2D3008FCDDE /* SkeletonView in Frameworks */,
 				7B86F7732B764E80005755B0 /* FirebaseFirestore in Frameworks */,
 				7B17366A2B7646700030DE63 /* FirebaseAnalytics in Frameworks */,
 				7B17366C2B7646700030DE63 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
@@ -572,6 +574,7 @@
 				7B17367C2B7646FF0030DE63 /* FacebookLogin */,
 				7B86F7702B764E68005755B0 /* FirebaseAuth */,
 				7B86F7722B764E80005755B0 /* FirebaseFirestore */,
+				7BABCF742B77E2D3008FCDDE /* SkeletonView */,
 			);
 			productName = Lensify;
 			productReference = 7B90E2722B52C1FB0099FBA3 /* Lensify.app */;
@@ -610,6 +613,7 @@
 				7B1736512B763E520030DE63 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				7B1736682B7646700030DE63 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				7B1736732B7646FF0030DE63 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				7BABCF732B77E2D3008FCDDE /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = 7B90E2732B52C1FB0099FBA3 /* Products */;
 			projectDirPath = "";
@@ -972,6 +976,14 @@
 				minimumVersion = 4.3.4;
 			};
 		};
+		7BABCF732B77E2D3008FCDDE /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.30.4;
+			};
+		};
 		7BFEFFEE2B72A83700A1CCC7 /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/chiahsien/CHTCollectionViewWaterfallLayout.git";
@@ -1067,6 +1079,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7B90E29A2B52C4BF0099FBA3 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		7BABCF742B77E2D3008FCDDE /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BABCF732B77E2D3008FCDDE /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
 		};
 		7BFEFFEF2B72A83700A1CCC7 /* CHTCollectionViewWaterfallLayout */ = {
 			isa = XCSwiftPackageProductDependency;

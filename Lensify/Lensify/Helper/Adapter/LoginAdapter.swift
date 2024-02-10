@@ -39,16 +39,16 @@ class LoginAdapter {
     }
     
     fileprivate func googleLogin() {
-//        let signInConfig = GIDConfiguration.init(clientID: clientID)
+        //        let signInConfig = GIDConfiguration.init(clientID: clientID)
         GIDSignIn.sharedInstance.signIn(withPresenting: controller) { result, error in
             if let error = error {
                 print(error)
             }
             else if let result = result {
-                let user = UserData(email: result.user.profile?.email ?? "", 
+                let user = UserData(email: result.user.profile?.email ?? "",
                                     password: "Nezrin123",
                                     firstName: result.user.profile?.name ?? "")
-//                                    lastName: result.user.profile?.familyName ?? "")
+                //                                    lastName: result.user.profile?.familyName ?? "")
                 self.completion?(user)
             }
         }
@@ -57,8 +57,8 @@ class LoginAdapter {
     fileprivate  func facebookLogin() {
         
         if let token = AccessToken.current,
-              !token.isExpired {
-              // User qeydiyyatdan kecdi, do work such as go to next view controller.
-          }
+           !token.isExpired {
+            // User qeydiyyatdan kecdi, do work such as go to next view controller.
+        }
     }
 }

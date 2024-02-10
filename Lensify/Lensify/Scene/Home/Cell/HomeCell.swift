@@ -20,7 +20,7 @@ protocol SaveImageProtocol: AnyObject {
 class HomeCell: UICollectionViewCell {
     
     weak var delegate: SaveImageProtocol?
-
+    
     @IBOutlet weak var homeLabel: UILabel!
     @IBOutlet weak var homeImage: UIImageView!
     
@@ -33,11 +33,13 @@ class HomeCell: UICollectionViewCell {
         guard let image = homeImage.image else {return}
         delegate?.didTApDownloadButton(image: image)
     }
-
+    
     func configure(data: GetTopics) {
-        homeLabel.text = data.title
+        //        homeLabel.text = data.title
         homeImage.loadImage(url: data.urls?.small ?? "")
+        
+        //        print(homeLabel.text = data.title)
     }
-      
+    
 }
 
