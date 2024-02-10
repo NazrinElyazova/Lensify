@@ -21,6 +21,8 @@ class RegisterController: UIViewController {
     
     var completion: ((String, String)-> Void)?
     
+    var successLogin:((String, String)-> Void)?
+    
     var adapter: LoginAdapter?
     let databaseAdapter = DatabaseAdapter()
     let facebookButton = FBLoginButton()
@@ -30,7 +32,8 @@ class RegisterController: UIViewController {
         title = "Register Now !"
         adapterSave()
         faceButton()
-        saveFirebase()
+        
+        self.navigationController?.navigationBar.topItem?.title = ""
     }
     
     @IBAction func googleButtonAction(_ sender: Any) {
@@ -52,15 +55,6 @@ class RegisterController: UIViewController {
             
         }
     }
-    
-    func saveFirebase() {
-        adapter = LoginAdapter(controller: self)
-        adapter?.fireBaseCompletion = {
-            userFire in
-            self.databaseAdapter.saveUserInfoFirebase(data: userFire)
-        }
-    }
-    
     @IBAction func loginActionButton(_ sender: Any) {
         
     }

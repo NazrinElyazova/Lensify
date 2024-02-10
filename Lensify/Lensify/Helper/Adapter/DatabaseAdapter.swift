@@ -24,24 +24,5 @@ class DatabaseAdapter {
         keychain.set(data.email, forKey: "email")
         keychain.set(data.password, forKey: "password")
     }
-        
-        func saveUserInfoFirebase(data: UserInfo) {
-            
-            let database = Firestore.firestore()
-            let info: [String: Any] = [
-                "email": data.email as Any,
-                "password": data.password as Any,
-                "fullname": data.fullname as Any
-            ]
-            
-            database.collection("UserInfo").addDocument(data: info) {
-                error in
-                if let error = error {
-                    print("User infonu firebase save edende error bas verdi: \(error.localizedDescription)")
-                } else {
-                    print("User info ugurla elave olundu")
-                }
-            }
-        }
-    }
+}
 

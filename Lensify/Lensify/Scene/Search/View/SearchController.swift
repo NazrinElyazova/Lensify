@@ -24,6 +24,9 @@ class SearchController: UIViewController, UITextFieldDelegate {
         hideKeyboardWhenTappedAround()
         configureUI()
         configureViewModel()
+        
+        self.navigationController?.navigationBar.topItem?.title = ""
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

@@ -50,9 +50,6 @@ class LoginAdapter {
                                     firstName: result.user.profile?.name ?? "")
 //                                    lastName: result.user.profile?.familyName ?? "")
                 self.completion?(user)
-                
-//                let userFire = UserInfo(email: result.user.profile?.email ?? "", password: "", fullname: result.user.profile?.name ?? "")
-//                self.fireBaseCompletion?(userFire)
             }
         }
     }

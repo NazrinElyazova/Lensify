@@ -17,13 +17,11 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        login()
+    
         configureUI()
         configureViewModel()
     }
-    func login() {
-        UserDefaults.standard.set(true, forKey: "loggedIn")
-    }
+  
     
     func configureUI() {
         topicView.addSubview(topicHeaderView)
@@ -39,30 +37,29 @@ class HomeController: UIViewController {
     
     func configureViewModel() {
         viewModel.getTopics()
+        
         viewModel.topicSuccess = {
             self.topicHeaderView.configure(data: self.viewModel.topicItems)
         }
+        
         viewModel.onSuccess = {
             self.collection.reloadData()
         }
+        
         viewModel.onError = {
             errorMessage in
             print("Home controllerde error var: \(errorMessage)")
         }
     }
-    func presentSaveAndShareSheet() {
-        
-        guard let image = UIImage(named: "purple"), let url = URL(string: "https://unsplash.com/") else {return}
-        
+    func presentSaveAndShareSheet(image: UIImage) {
         let saveandshare = UIActivityViewController(
-            activityItems: [
-                url, image
-            ],
+            activityItems: [image],
             applicationActivities: nil)
         present(saveandshare, animated: true)
     }
 }
 extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //        print(viewModel.items.count)
         return viewModel.items.count
@@ -72,10 +69,11 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
         let item = viewModel.items[indexPath.item]
         cell.configure(data: item)
-        cell.controller = self
+        cell.delegate = self
         return cell
         
     }
+        
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: collectionView.frame.width, height: 200)
     }
@@ -85,3 +83,26 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
 }
 
+extension HomeController: SaveImageProtocol {
+    
+    func didTApDownloadButton(image: UIImage) {
+        if UserDefaults.standard.bool(forKey: "loggedIn") {
+//            print(UserDefaults.standard.bool(forKey: "loggedIn"))
+            presentSaveAndShareSheet(image: image )
+        } else {
+          showAlert()
+        }
+    }
+    func showAlert() {
+        let alertController = UIAlertController(title: "Warning!", message: "You have no account. Please, login.", preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Ok", style: .default) {_ in
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
+            self.navigationController?.show(controller, sender: nil)
+        }
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(okButton)
+        alertController.addAction(cancelButton)
+        present(alertController, animated: true)
+    }
+
+}
