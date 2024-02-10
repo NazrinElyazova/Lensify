@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B0F42CF2B780E2B00785A37 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0F42CE2B780E2B00785A37 /* Profile.swift */; };
 		7B1736532B763E520030DE63 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7B1736522B763E520030DE63 /* GoogleSignIn */; };
 		7B1736552B763E520030DE63 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7B1736542B763E520030DE63 /* GoogleSignInSwift */; };
 		7B17366A2B7646700030DE63 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7B1736692B7646700030DE63 /* FirebaseAnalytics */; };
@@ -83,6 +84,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B0F42CE2B780E2B00785A37 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		7B42A0482B56EEF2003C5D34 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		7B42A04B2B56EF53003C5D34 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		7B42A04C2B56EF53003C5D34 /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
@@ -172,6 +174,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B0F42CC2B780DE200785A37 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				7B0F42CD2B780E1A00785A37 /* Model */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		7B0F42CD2B780E1A00785A37 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7B0F42CE2B780E2B00785A37 /* Profile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		7B42A0472B56EEE1003C5D34 /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +409,7 @@
 		7B90E2A62B52FAD60099FBA3 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7B0F42CC2B780DE200785A37 /* Profile */,
 				7BFEFFD92B72A38C00A1CCC7 /* ListPhoto */,
 				7B5A907C2B70C4D60025E18B /* Register */,
 				7BD600822B6ED55000B28661 /* DownloadWallpaper */,
@@ -682,6 +701,7 @@
 				7B90E2A92B52FB110099FBA3 /* GetTopics.swift in Sources */,
 				7BFEFFED2B72A5AF00A1CCC7 /* ListPhotoUseCase.swift in Sources */,
 				7B42A0492B56EEF2003C5D34 /* SearchController.swift in Sources */,
+				7B0F42CF2B780E2B00785A37 /* Profile.swift in Sources */,
 				7BFEFFE42B72A51700A1CCC7 /* ListPhotoViewModel.swift in Sources */,
 				7B53E7CA2B53F1F5005D0CED /* TabBarController.swift in Sources */,
 				7BC6AEF82B6A0FD900694CD0 /* RegisterController.swift in Sources */,

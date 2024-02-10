@@ -7,6 +7,7 @@
 
 import UIKit
 import Photos
+
 //
 //protocol HomeCellProtocol {
 //    var titleLabel: String { get }
@@ -21,7 +22,6 @@ class HomeCell: UICollectionViewCell {
     
     weak var delegate: SaveImageProtocol?
     
-    @IBOutlet weak var homeLabel: UILabel!
     @IBOutlet weak var homeImage: UIImageView!
     
     @IBOutlet weak var saveButton: UIButton!

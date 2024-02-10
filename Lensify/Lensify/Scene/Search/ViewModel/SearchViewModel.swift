@@ -41,7 +41,8 @@ class SearchViewModel {
         //            let currentPage = (search.count / itemsPerPage) + 1
         
         let currentPage = (search.count / 10) + 1
-        print("Current Page: \(currentPage), Total Pages: \(totalPages), Total Items: \(total), Current Items: \(search.count)")
+        print(currentPage)
+//        print("Current Page: \(currentPage), Total Pages: \(totalPages), Total Items: \(total), Current Items: \(search.count)")
         
         if index == search.count - 1 && currentPage < totalPages {
             print("Triggering pagination...")
@@ -49,8 +50,8 @@ class SearchViewModel {
             getSearchItems(searchText: searchText)
         }
     }
-    func reset() {
-        searchData = nil
-        search.removeAll()
-    }
+//    func reset() {
+//        searchData = nil
+//        search.removeAll()
+//    }
 }

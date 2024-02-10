@@ -22,15 +22,6 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HY3-iQ-cQ3">
-                        <rect key="frame" x="8" y="108.66666666666667" width="223" height="20.333333333333329"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                        </userDefinedRuntimeAttributes>
-                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mpf-1N-Bbo">
                         <rect key="frame" x="195" y="10" width="46" height="46"/>
                         <constraints>
@@ -55,13 +46,10 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="pIH-16-dQt" secondAttribute="trailing" id="3Qe-1o-lEX"/>
                 <constraint firstAttribute="bottom" secondItem="pIH-16-dQt" secondAttribute="bottom" id="6mW-wl-jSd"/>
-                <constraint firstAttribute="bottom" secondItem="HY3-iQ-cQ3" secondAttribute="bottom" constant="8" id="8rK-pA-OBX"/>
                 <constraint firstAttribute="trailing" secondItem="Mpf-1N-Bbo" secondAttribute="trailing" constant="10" id="ILc-LW-To6"/>
-                <constraint firstItem="HY3-iQ-cQ3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="RrU-LE-lgS"/>
                 <constraint firstItem="pIH-16-dQt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="e4Y-UQ-elf"/>
                 <constraint firstItem="Mpf-1N-Bbo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="g8W-uf-Gso"/>
                 <constraint firstItem="pIH-16-dQt" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="gR9-JJ-I1R"/>
-                <constraint firstAttribute="trailing" secondItem="HY3-iQ-cQ3" secondAttribute="trailing" constant="20" id="jjr-qf-TSp"/>
             </constraints>
             <size key="customSize" width="251" height="137"/>
             <userDefinedRuntimeAttributes>
@@ -69,7 +57,6 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="homeImage" destination="pIH-16-dQt" id="cRk-Jp-fCT"/>
-                <outlet property="homeLabel" destination="HY3-iQ-cQ3" id="qMg-qy-8wd"/>
                 <outlet property="saveButton" destination="Mpf-1N-Bbo" id="4Ow-ag-lKe"/>
             </connections>
             <point key="canvasLocation" x="180.91603053435114" y="50.352112676056343"/>
