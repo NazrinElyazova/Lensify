@@ -23,6 +23,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             application,
             didFinishLaunchingWithOptions: launchOptions)
     
+        //MARK: GOOGLE REGISTER
+        
+//        GIDSignIn.sharedInstance.clientID = FirebaseApp.app()?.options.clientID
+
         return true
     }
 

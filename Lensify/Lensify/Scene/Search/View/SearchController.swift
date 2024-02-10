@@ -52,7 +52,7 @@ class SearchController: UIViewController, UITextFieldDelegate {
         viewModel.onSucces = {
             self.collection.reloadData()
         }
-       
+        
     }
     
     @objc func pullToRefresh() {
@@ -67,7 +67,7 @@ class SearchController: UIViewController, UITextFieldDelegate {
 }
 extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      print(viewModel.search.count) 
+        print(viewModel.search.count)
         return  viewModel.search.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -80,9 +80,9 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
         .init(width: collectionView.frame.width, height: 200)
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        if indexPath.item == viewModel.search.count - 1 {
-            viewModel.pagination(index: indexPath.item, searchText: searchTextFieldOutlet.text ?? "")
-//        }
+        //        if indexPath.item == viewModel.search.count - 1 {
+        viewModel.pagination(index: indexPath.item, searchText: searchTextFieldOutlet.text ?? "")
+        //        }
     }
 }
 

@@ -17,7 +17,7 @@ struct TopicElement: Codable {
     //    let links: TopicLinks?
     //    let status: String?
     //    let owners: [User]?
-        let coverPhoto: CoverPhotoTopicElement?
+    let coverPhoto: CoverPhotoTopicElement?
     //    let previewPhotos: [PreviewPhoto]?
     
     enum CodingKeys: String, CodingKey {
@@ -29,7 +29,7 @@ struct TopicElement: Codable {
         //        case visibility, featured
         //        case totalPhotos = "total_photos"
         //        case links, status, owners
-                case coverPhoto = "cover_photo"
+        case coverPhoto = "cover_photo"
         //        case previewPhotos = "preview_photos"
     }
 }
@@ -44,8 +44,8 @@ struct CoverPhotoTopicElement: Codable {
     let links: CoverPhotoLinksTopicElement?
     let likes: Int?
     let likedByUser: Bool?
-//    let topicSubmissions: TopicSubmissionsWallpapers?
-//    let user: Usertop?
+    //    let topicSubmissions: TopicSubmissionsWallpapers?
+    //    let user: Usertop?
     
     enum CodingKeys: String, CodingKey {
         case id, slug
@@ -58,8 +58,8 @@ struct CoverPhotoTopicElement: Codable {
         case altDescription = "alt_description"
         case urls, links, likes
         case likedByUser = "liked_by_user"
-//        case topicSubmissions = "topic_submissions"
-//        case user
+        //        case topicSubmissions = "topic_submissions"
+        //        case user
     }
 }
 

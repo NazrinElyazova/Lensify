@@ -33,7 +33,7 @@ struct SearchResult: Codable {
     let likedByUser: Bool?
     //    let currentUserCollections: [String]?
     let sponsorship: String?
-        let topicSubmissions: ResultTopicSubmissionsSearch?
+    let topicSubmissions: ResultTopicSubmissionsSearch?
     let user: UserSearch?
     let tags: [TagSearch]?
     
@@ -51,7 +51,7 @@ struct SearchResult: Codable {
         case likedByUser = "liked_by_user"
         //        case currentUserCollections = "current_user_collections"
         case sponsorship
-                case topicSubmissions = "topic_submissions"
+        case topicSubmissions = "topic_submissions"
         case user, tags
     }
 }
@@ -108,16 +108,16 @@ struct CategorySearch: Codable {
 // MARK: - CoverPhoto
 struct CoverPhotoSearch: Codable {
     let id, slug: String?
-//    let createdAt, updatedAt: String?
-//    let promotedAt: String?
+    //    let createdAt, updatedAt: String?
+    //    let promotedAt: String?
     let width, height: Int?
     let color, blurHash, description, altDescription: String?
-//    let breadcrumbs: [BreadcrumbSearch]?
+    //    let breadcrumbs: [BreadcrumbSearch]?
     let urls: UrlsSearch?
     let links: ResultLinksSearch?
     let likes: Int?
     let likedByUser: Bool?
-//        let currentUserCollections: [String]?
+    //        let currentUserCollections: [String]?
     let sponsorship: String?
     let topicSubmissions: CoverPhotoTopicSubmissionsSearch?
     let premium, plus: Bool?
@@ -125,17 +125,17 @@ struct CoverPhotoSearch: Codable {
     
     enum CodingKeys: String, CodingKey {
         case id, slug
-//        case createdAt = "created_at"
-//        case updatedAt = "updated_at"
-//        case promotedAt = "promoted_at"
+        //        case createdAt = "created_at"
+        //        case updatedAt = "updated_at"
+        //        case promotedAt = "promoted_at"
         case width, height, color
         case blurHash = "blur_hash"
         case description
         case altDescription = "alt_description"
-//        case breadcrumbs
+        //        case breadcrumbs
         case urls, links, likes
         case likedByUser = "liked_by_user"
-//                case currentUserCollections = "current_user_collections"
+        //                case currentUserCollections = "current_user_collections"
         case sponsorship
         case topicSubmissions = "topic_submissions"
         case premium, plus, user
@@ -184,7 +184,7 @@ struct UrlsSearch: Codable {
 // MARK: - User
 struct UserSearch: Codable {
     let id: String?
-//    let updatedAt: String?
+    //    let updatedAt: String?
     let username, name, firstName, lastName: String?
     let twitterUsername: String?
     let portfolioURL: String?
@@ -198,7 +198,7 @@ struct UserSearch: Codable {
     
     enum CodingKeys: String, CodingKey {
         case id
-//        case updatedAt = "updated_at"
+        //        case updatedAt = "updated_at"
         case username, name
         case firstName = "first_name"
         case lastName = "last_name"
@@ -255,6 +255,6 @@ struct ResultTopicSubmissionsSearch: Codable {
     enum CodingKeys: String, CodingKey {
         case nature
         case streetPhotography = "street-photography"
-            }
     }
+}
 

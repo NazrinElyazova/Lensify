@@ -308,28 +308,6 @@
                                 <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Lgz-1L-dwj">
-                                <rect key="frame" x="80" y="540" width="270" height="100"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ay7-0T-Wcb">
-                                        <rect key="frame" x="0.0" y="0.0" width="270" height="100"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="Google logo" title="        Sign in with Google"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="googleButtonAction:" destination="QS7-fi-ds4" eventType="touchUpInside" id="0Cc-qk-JBH"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="SQi-Aa-xJK"/>
-                                </constraints>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't you have an account still? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNk-6p-u64">
                                 <rect key="frame" x="20" y="720" width="245" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -354,25 +332,21 @@
                             <constraint firstItem="rsP-TG-vK0" firstAttribute="top" secondItem="IJ5-yr-1L7" secondAttribute="bottom" constant="30" id="8Hz-WP-frt"/>
                             <constraint firstItem="KY8-Ju-H3k" firstAttribute="trailing" secondItem="rsP-TG-vK0" secondAttribute="trailing" constant="163" id="AYw-k2-sN4"/>
                             <constraint firstItem="KY8-Ju-H3k" firstAttribute="trailing" secondItem="Lf1-zH-y8j" secondAttribute="trailing" constant="20" id="DvJ-zm-dqj"/>
-                            <constraint firstItem="Lf1-zH-y8j" firstAttribute="top" secondItem="Lgz-1L-dwj" secondAttribute="bottom" constant="75" id="Guh-Jr-zmb"/>
+                            <constraint firstItem="cNk-6p-u64" firstAttribute="top" secondItem="rsP-TG-vK0" secondAttribute="bottom" constant="210" id="EqP-5k-hqW"/>
                             <constraint firstItem="IJ5-yr-1L7" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="20" id="Knr-W6-DBK"/>
                             <constraint firstItem="Lf1-zH-y8j" firstAttribute="leading" secondItem="cNk-6p-u64" secondAttribute="trailing" constant="40" id="QOv-Pj-Xr5"/>
-                            <constraint firstItem="Lgz-1L-dwj" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="80" id="YcP-yU-uOH"/>
                             <constraint firstItem="KY8-Ju-H3k" firstAttribute="trailing" secondItem="yn3-6p-5g9" secondAttribute="trailing" constant="20" id="ZVe-K4-8bc"/>
-                            <constraint firstItem="Lgz-1L-dwj" firstAttribute="top" secondItem="rsP-TG-vK0" secondAttribute="bottom" constant="30" id="a61-AD-H7N"/>
                             <constraint firstItem="cNk-6p-u64" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="20" id="ckS-Lb-kD3"/>
                             <constraint firstItem="yn3-6p-5g9" firstAttribute="top" secondItem="KY8-Ju-H3k" secondAttribute="top" constant="40" id="eRH-sA-5ly"/>
-                            <constraint firstItem="cNk-6p-u64" firstAttribute="top" secondItem="Lgz-1L-dwj" secondAttribute="bottom" constant="80" id="iTY-s1-yBp"/>
+                            <constraint firstItem="Lf1-zH-y8j" firstAttribute="top" secondItem="IJ5-yr-1L7" secondAttribute="bottom" constant="252" id="f4h-1e-Ia2"/>
                             <constraint firstItem="rsP-TG-vK0" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="163" id="k1n-By-zck"/>
                             <constraint firstItem="yn3-6p-5g9" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="20" id="kwd-qx-TJw"/>
                             <constraint firstItem="IJ5-yr-1L7" firstAttribute="top" secondItem="yn3-6p-5g9" secondAttribute="bottom" constant="30" id="s8B-P0-h8f"/>
-                            <constraint firstItem="KY8-Ju-H3k" firstAttribute="trailing" secondItem="Lgz-1L-dwj" secondAttribute="trailing" constant="80" id="vda-7x-NwC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Welcome Back" id="tKU-ah-x3N"/>
                     <connections>
                         <outlet property="passwordTextField" destination="etm-zi-XA0" id="dUo-hX-5Jz"/>
-                        <outlet property="stackView" destination="Lgz-1L-dwj" id="eHx-AY-Klf"/>
                         <outlet property="userNameEmailTextField" destination="mcy-yL-lee" id="uTd-Mi-Nbl"/>
                     </connections>
                 </viewController>
@@ -430,25 +404,47 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWd-sm-t3I">
-                                <rect key="frame" x="30" y="626.33333333333337" width="195" height="20.333333333333371"/>
+                                <rect key="frame" x="30" y="676.33333333333337" width="195" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hI-Rh-3eZ">
-                                <rect key="frame" x="330.33333333333331" y="616.33333333333337" width="65.666666666666686" height="34.333333333333371"/>
+                                <rect key="frame" x="330.33333333333331" y="666.33333333333337" width="65.666666666666686" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                 <connections>
                                     <action selector="loginActionButton:" destination="X9n-Cv-tYd" eventType="touchUpInside" id="Qm2-F2-rd9"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vqX-ki-mIv">
+                                <rect key="frame" x="90" y="556.33333333333337" width="250" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X75-Fk-aGJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="Google logo" title="        Sign in with Google"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="googleButtonAction:" destination="X9n-Cv-tYd" eventType="touchUpInside" id="mb9-kr-Rcc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Wuv-5a-0hg"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="P54-Ky-Go6"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="4hI-Rh-3eZ" firstAttribute="top" secondItem="DSE-9V-LkV" secondAttribute="bottom" constant="90" id="0u9-SP-zpy"/>
-                            <constraint firstItem="GWd-sm-t3I" firstAttribute="top" secondItem="DSE-9V-LkV" secondAttribute="bottom" constant="100" id="1rg-bZ-rms"/>
+                            <constraint firstItem="4hI-Rh-3eZ" firstAttribute="top" secondItem="DSE-9V-LkV" secondAttribute="bottom" constant="140" id="0u9-SP-zpy"/>
+                            <constraint firstItem="GWd-sm-t3I" firstAttribute="top" secondItem="DSE-9V-LkV" secondAttribute="bottom" constant="150" id="1rg-bZ-rms"/>
                             <constraint firstItem="DSE-9V-LkV" firstAttribute="top" secondItem="3jU-dU-yC2" secondAttribute="bottom" constant="100" id="51r-xk-a07"/>
                             <constraint firstItem="GWd-sm-t3I" firstAttribute="leading" secondItem="P54-Ky-Go6" secondAttribute="leading" constant="30" id="Eoa-UD-cPc"/>
                             <constraint firstItem="3jU-dU-yC2" firstAttribute="top" secondItem="P54-Ky-Go6" secondAttribute="top" constant="40" id="NtV-Rw-Bgx"/>
@@ -456,8 +452,11 @@
                             <constraint firstItem="P54-Ky-Go6" firstAttribute="trailing" secondItem="DSE-9V-LkV" secondAttribute="trailing" constant="30" id="XRd-Dc-R3M"/>
                             <constraint firstItem="4hI-Rh-3eZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GWd-sm-t3I" secondAttribute="trailing" constant="8" symbolic="YES" id="d1C-5w-jz4"/>
                             <constraint firstItem="3jU-dU-yC2" firstAttribute="leading" secondItem="P54-Ky-Go6" secondAttribute="leading" constant="30" id="f9j-iW-8xe"/>
+                            <constraint firstItem="vqX-ki-mIv" firstAttribute="top" secondItem="DSE-9V-LkV" secondAttribute="bottom" constant="30" id="kKG-6j-0bf"/>
+                            <constraint firstItem="vqX-ki-mIv" firstAttribute="leading" secondItem="P54-Ky-Go6" secondAttribute="leading" constant="90" id="n4r-Zd-FzO"/>
                             <constraint firstItem="P54-Ky-Go6" firstAttribute="trailing" secondItem="4hI-Rh-3eZ" secondAttribute="trailing" constant="34" id="qZG-Lj-Rtq"/>
                             <constraint firstItem="P54-Ky-Go6" firstAttribute="trailing" secondItem="3jU-dU-yC2" secondAttribute="trailing" constant="30" id="vfK-MJ-tk4"/>
+                            <constraint firstItem="P54-Ky-Go6" firstAttribute="trailing" secondItem="vqX-ki-mIv" secondAttribute="trailing" constant="90" id="za9-Ti-sNX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Register" id="TVC-Ju-JlY"/>
@@ -465,6 +464,7 @@
                         <outlet property="emailTextField" destination="8rz-Ka-w8u" id="UJ4-dR-Yev"/>
                         <outlet property="fullnameTextField" destination="MU6-wU-Xez" id="4KI-Pm-pyx"/>
                         <outlet property="passwordTextField" destination="74a-cp-uIE" id="MX7-I8-3pV"/>
+                        <outlet property="stackView" destination="vqX-ki-mIv" id="8dd-mw-Uej"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Pp-F3-hrP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

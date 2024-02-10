@@ -21,7 +21,6 @@ class HomeController: UIViewController {
         configureUI()
         configureViewModel()
     }
-    
     func login() {
         UserDefaults.standard.set(true, forKey: "loggedIn")
     }
@@ -65,7 +64,7 @@ class HomeController: UIViewController {
 }
 extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        print(viewModel.items.count)
+        //        print(viewModel.items.count)
         return viewModel.items.count
         
     }

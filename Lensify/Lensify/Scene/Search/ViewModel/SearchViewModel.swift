@@ -18,7 +18,7 @@ class SearchViewModel {
     var onError: ((String)-> Void)?
     
     func getSearchItems(searchText: String) {
-//        let path = SearchEndpoint.search.rawValue + "?query=\(searchText)"
+        //        let path = SearchEndpoint.search.rawValue + "?query=\(searchText)"
         
         manager.getSearchItems(pageNumber: (searchData?.totalPages ?? 0) + 1, searchText: searchText) {
             
@@ -38,14 +38,14 @@ class SearchViewModel {
               total > search.count else {return}
         
         // Calculate the current page based on the number of items and items per page
-//            let currentPage = (search.count / itemsPerPage) + 1
-            
+        //            let currentPage = (search.count / itemsPerPage) + 1
+        
         let currentPage = (search.count / 10) + 1
         print("Current Page: \(currentPage), Total Pages: \(totalPages), Total Items: \(total), Current Items: \(search.count)")
-
+        
         if index == search.count - 1 && currentPage < totalPages {
             print("Triggering pagination...")
-
+            
             getSearchItems(searchText: searchText)
         }
     }

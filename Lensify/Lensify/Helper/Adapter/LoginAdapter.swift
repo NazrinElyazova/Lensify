@@ -45,11 +45,14 @@ class LoginAdapter {
                 print(error)
             }
             else if let result = result {
-                let user = UserData(email: result.user.profile?.email ?? "", password: "Nezrin123", firstName: result.user.profile?.name ?? "", lastName: result.user.profile?.familyName ?? "")
+                let user = UserData(email: result.user.profile?.email ?? "", 
+                                    password: "Nezrin123",
+                                    firstName: result.user.profile?.name ?? "")
+//                                    lastName: result.user.profile?.familyName ?? "")
                 self.completion?(user)
                 
-                let userFire = UserInfo(email: result.user.profile?.email ?? "", password: "", fullname: result.user.profile?.name ?? "")
-                self.fireBaseCompletion?(userFire)
+//                let userFire = UserInfo(email: result.user.profile?.email ?? "", password: "", fullname: result.user.profile?.name ?? "")
+//                self.fireBaseCompletion?(userFire)
             }
         }
     }

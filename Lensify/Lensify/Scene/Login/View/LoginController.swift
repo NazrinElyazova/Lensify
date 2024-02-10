@@ -28,15 +28,11 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        GIDSignIn.sharedInstance.delegate = self
-//         GIDSignIn.sharedInstance.presentingViewController = self
-        
-        faceButton()
         getUserInfo()
         adapterSave()
         saveFirebase()
     }
+    
     @IBAction func registerButtonAction(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(RegisterController.self)") as! RegisterController
         controller.completion = { [weak self] email, password in
@@ -45,18 +41,8 @@ class LoginController: UIViewController {
         }
         navigationController?.show(controller, sender: nil)
     }
-    func faceButton() {
-        stackView.axis = .vertical
-        stackView.addArrangedSubview(facebookButton)
-        facebookButton.permissions = ["public_profile", "email"]
-        facebookButton.layer.cornerRadius = 20
-        adapter?.login(type: .facebook)
-        adapter?.completion = { user in
-            self.userNameEmailTextField.text = user.email
-            self.passwordTextField.text = user.password
-            
-        }
-    }
+    
+    
     func adapterSave() {
         adapter = LoginAdapter(controller: self)
         
@@ -64,9 +50,9 @@ class LoginController: UIViewController {
             user in
             
             self.databaseAdapter.saveUserInfo(data: user)
-                        print(user)
+            print(user)
             //save to firebase
-           
+            
         }
     }
     func saveFirebase() {
@@ -95,17 +81,8 @@ class LoginController: UIViewController {
         if !(passwordTextField.text?.isEmpty == true), !(userNameEmailTextField.text?.isEmpty == true),
            let email = userNameEmailTextField.text,
            let password = passwordTextField.text {
-            Auth.auth().signIn(withEmail: email, password: password) { result, error in
-                
-                if let error = error {
-                    print(error.localizedDescription)
-                }
-                else if let _ = result?.user {
-                    print("user movcuddur")
-                    let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
-                    self.navigationController?.show(controller, sender: nil)
-                }
-            }
+            let controller = storyboard?.instantiateViewController(withIdentifier: "\(HomeController.self)") as! HomeController
+            navigationController?.show(controller, sender: nil)
         } else {
             showAlert()
         }
@@ -120,12 +97,18 @@ class LoginController: UIViewController {
         present(alertController, animated: true)
     }
     
-    @IBAction func googleButtonAction(_ sender: Any) {
-        adapter?.login(type: .google)
-        adapter?.completion = { user in
-            self.userNameEmailTextField.text = user.email
-            self.passwordTextField.text = user.password
-        }
-    }
+    //    func singIn(email: String, password: String) {
+    //        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+    //
+    //            if let error = error {
+    //                print(error.localizedDescription)
+    //            }
+    //            else if let _ = result?.user {
+    //                print("user movcuddur")
+    //                let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
+    //                self.navigationController?.show(controller, sender: nil)
+    //            }
+    //        }
+    //    }
+    
 }
-
