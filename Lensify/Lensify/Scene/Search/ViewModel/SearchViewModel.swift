@@ -9,7 +9,7 @@ import Foundation
 
 class SearchViewModel {
     var search = [SearchResult]()
-    
+
     let manager = SearchManager()
     
     var searchData: Search?
@@ -19,13 +19,16 @@ class SearchViewModel {
     
     func getSearchItems(searchText: String) {
         //        let path = SearchEndpoint.search.rawValue + "?query=\(searchText)"
-        
-        manager.getSearchItems(pageNumber: (searchData?.totalPages ?? 0) + 1, searchText: searchText) {
-            
+        let currentPage = (search.count / 10) + 1
+//
+        manager.getSearchItems(pageNumber: currentPage + 1, searchText: searchText) {
+       
             data, errorMessage in
+            print("==========")
             if let errorMessage = errorMessage {
                 self.onError?(errorMessage)
             } else if let data = data {
+                self.searchData = data
                 self.search = data.results ?? []
                 self.onSucces?()
                 //                print(data)
@@ -33,20 +36,14 @@ class SearchViewModel {
         }
     }
     func pagination(index: Int, searchText: String) {
-        guard let total = searchData?.total,
-              let totalPages = searchData?.totalPages,
-              total > search.count else {return}
+//        // Calculate the current page based on the number of items and items per page
         
-        // Calculate the current page based on the number of items and items per page
-        //            let currentPage = (search.count / itemsPerPage) + 1
-        
+        //MARK: Current page < Total Page
         let currentPage = (search.count / 10) + 1
-        print(currentPage)
-//        print("Current Page: \(currentPage), Total Pages: \(totalPages), Total Items: \(total), Current Items: \(search.count)")
-        
-        if index == search.count - 1 && currentPage < totalPages {
-            print("Triggering pagination...")
-            
+//        let currentPage = (searchData?.total/searchData?.totalPages)
+//        var page = Int()
+        if index == search.count-1 && currentPage <= searchData?.totalPages ?? 0 {
+          print("+++++++++++++")
             getSearchItems(searchText: searchText)
         }
     }

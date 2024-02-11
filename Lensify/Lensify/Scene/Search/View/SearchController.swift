@@ -83,15 +83,8 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
         .init(width: collectionView.frame.width, height: 200)
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if indexPath.item == viewModel.search.count - 1 {
             viewModel.pagination(index: indexPath.item, searchText: searchTextFieldOutlet.text ?? "")
-            print("errrrroorr")
-        }
-        else {
-            let currentPage = (viewModel.search.count / 10) + 1
-            print(currentPage)
-            print("something happened. it looks like an error on search controller")
-        }
+//            print("errrrroorr")
     }
 }
 

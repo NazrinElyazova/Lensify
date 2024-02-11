@@ -16,6 +16,8 @@ class SearchManager: SearchUseCase {
         let url = NetworkHelper.urlConfiguration(endpoint: SearchEndpoint.search.rawValue)
         
         let path = url + "&query=\(searchText)" + "&page=\(pageNumber)"
+        
+        print(path)
         NetworkManager.request(model: Search.self, endpoint: path, completion: completion)
         
     }

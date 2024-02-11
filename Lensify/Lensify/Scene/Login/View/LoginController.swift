@@ -45,8 +45,6 @@ class LoginController: UIViewController {
         }
         navigationController?.show(controller, sender: nil)
     }
-    
-    
     func adapterSave() {
         adapter = LoginAdapter(controller: self)
         
@@ -72,8 +70,6 @@ class LoginController: UIViewController {
             }
         }
     }
-   
-    
     @IBAction func loginButtonAction(_ sender: Any) {
         if !(passwordTextField.text?.isEmpty == true), !(userNameEmailTextField.text?.isEmpty == true),
            let email = userNameEmailTextField.text,
