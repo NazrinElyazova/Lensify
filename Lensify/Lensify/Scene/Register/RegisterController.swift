@@ -56,7 +56,8 @@ class RegisterController: UIViewController {
         }
     }
     @IBAction func loginActionButton(_ sender: Any) {
-        
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
+        navigationController?.show(controller, sender: nil)
     }
     @IBAction func registerAction(_ sender: Any) {
         if let email = emailTextField.text,

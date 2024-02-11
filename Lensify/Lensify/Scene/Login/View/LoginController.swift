@@ -72,6 +72,7 @@ class LoginController: UIViewController {
             }
         }
     }
+   
     
     @IBAction func loginButtonAction(_ sender: Any) {
         if !(passwordTextField.text?.isEmpty == true), !(userNameEmailTextField.text?.isEmpty == true),
@@ -81,6 +82,7 @@ class LoginController: UIViewController {
             navigationController?.show(controller, sender: nil)
             getUserInfo()
             adapterSave()
+            login()
         } else {
             showAlert()
         }
