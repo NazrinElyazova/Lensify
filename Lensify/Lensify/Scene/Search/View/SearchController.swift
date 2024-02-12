@@ -42,7 +42,7 @@ class SearchController: UIViewController, UITextFieldDelegate {
     
     func configureViewModel() {
         
-//        viewModel.getSearchItems(searchText: searchTextFieldOutlet.text ?? "", limit: 10)
+        //        viewModel.getSearchItems(searchText: searchTextFieldOutlet.text ?? "", limit: 10)
         guard searchTextFieldOutlet.text != nil else {return}
         
         viewModel.onError = {
@@ -50,25 +50,25 @@ class SearchController: UIViewController, UITextFieldDelegate {
             print("Search controllerde error var: \(errorMessage)")
         }
         viewModel.onSucces = {
-                self.collection.reloadData()
-        
+            self.collection.reloadData()
+            
         }
     }
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-//        let updatedText = (searchTextFieldOutlet.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
-//        viewModel.getSearchItems(searchText: updatedText, limit: 10)
-//        return true
-//    }
+    func presentSaveAndShareSheet(image: UIImage) {
+        let saveandshare = UIActivityViewController(
+            activityItems: [image],
+            applicationActivities: nil)
+        present(saveandshare, animated: true)
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-          textField.resignFirstResponder()
-//        if ((viewModel.search.count - 1) != 0) {
-            viewModel.getSearchItems(searchText: textField.text ?? "", limit: 10)
-      
-//        }
+        textField.resignFirstResponder()
+        //        if ((viewModel.search.count - 1) != 0) {
+        viewModel.getSearchItems(searchText: textField.text ?? "", limit: 10)
+        
+        //        }
         return true
-      }
+    }
 }
 extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -79,6 +79,7 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(SearchCell.self)", for: indexPath) as! SearchCell
         let item = viewModel.search[indexPath.item]
         cell.configure(data: item)
+        cell.delegate = self
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -98,5 +99,26 @@ extension UIViewController {
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+extension SearchController: SaveImageProtocol {
+    func didTApDownloadButton(image: UIImage) {
+        if UserDefaults.standard.bool(forKey: "loggedIn") {
+            presentSaveAndShareSheet(image: image)
+        }
+        else {
+            showAlert()
+        }
+    }
+    func showAlert() {
+        let alertController = UIAlertController(title: "Warning!", message: "You have no account. Please, login.", preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "Ok", style: .default) {_ in
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
+            self.navigationController?.show(controller, sender: nil)
+        }
+        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
+        alertController.addAction(okButton)
+        alertController.addAction(cancelButton)
+        present(alertController, animated: true)
     }
 }

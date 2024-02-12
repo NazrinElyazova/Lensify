@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -38,12 +37,32 @@
                             <constraint firstItem="OIY-80-jEt" firstAttribute="top" secondItem="bgC-KV-FwI" secondAttribute="top" constant="3" id="di8-En-s6c"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5Q-ML-sZj">
+                        <rect key="frame" x="156" y="8" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="36" id="DBa-6d-JHY"/>
+                            <constraint firstAttribute="width" constant="36" id="rkz-DA-YaS"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="filled" image="square.and.arrow.down" catalog="system">
+                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="baseBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </buttonConfiguration>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="saveButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="e7L-ae-wsr"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
+                <constraint firstItem="D5Q-ML-sZj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="9TE-rr-Rde"/>
                 <constraint firstAttribute="trailing" secondItem="bgC-KV-FwI" secondAttribute="trailing" id="Fjg-dv-eGR"/>
                 <constraint firstItem="mgF-1y-NSK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Lnr-Hk-OcF"/>
+                <constraint firstAttribute="trailing" secondItem="D5Q-ML-sZj" secondAttribute="trailing" constant="8" id="Lvl-JY-hgo"/>
                 <constraint firstAttribute="bottom" secondItem="bgC-KV-FwI" secondAttribute="bottom" id="WuZ-YS-coo"/>
                 <constraint firstAttribute="bottom" secondItem="mgF-1y-NSK" secondAttribute="bottom" id="nFP-4X-hrU"/>
                 <constraint firstItem="mgF-1y-NSK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="nhh-XV-8fN"/>
@@ -59,4 +78,7 @@
             <point key="canvasLocation" x="227.48091603053433" y="41.197183098591552"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="square.and.arrow.down" catalog="system" width="112" height="128"/>
+    </resources>
 </document>

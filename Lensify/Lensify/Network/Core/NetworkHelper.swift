@@ -17,12 +17,4 @@ class NetworkHelper {
         let url = baseURL + endpoint + "?client_id=\(clientId)"
         return url
     }
-    
-    //    func loadImage(url: String){
-    //
-    //        NetworkHelper.baseURL + endpoint + "?client_id=\(clientId)"
-    //        if let finalURL = URL(string: url) {
-    //            self.kf.setImage(with: finalURL)
-    //        }
-    //    }
 }
