@@ -17,36 +17,49 @@ class SearchViewModel {
     var onSucces: (()->Void)?
     var onError: ((String)-> Void)?
     
-    func getSearchItems(searchText: String) {
+    func getSearchItems(searchText: String, limit: Int) {
         //        let path = SearchEndpoint.search.rawValue + "?query=\(searchText)"
-        let currentPage = (search.count / 10) + 1
+        let currentPage = (search.count / limit) + 1
 //
-        manager.getSearchItems(pageNumber: currentPage + 1, searchText: searchText) {
+        manager.getSearchItems(limit: limit, pageNumber: currentPage, searchText: searchText) {
        
             data, errorMessage in
             print("==========")
             if let errorMessage = errorMessage {
                 self.onError?(errorMessage)
             } else if let data = data {
-                self.searchData = data
-                self.search = data.results ?? []
+                let existingIds = Set(self.search.map {
+                    $0.id
+                })
+                let newResults = data.results?.filter {
+                    !existingIds.contains($0.id)
+                } ?? []
+//                self.searchData = data
+//                self.search = data.results ?? []
+                self.search += newResults
                 self.onSucces?()
                 //                print(data)
             }
         }
     }
-    func pagination(index: Int, searchText: String) {
-//        // Calculate the current page based on the number of items and items per page
-        
-        //MARK: Current page < Total Page
-        let currentPage = (search.count / 10) + 1
-//        let currentPage = (searchData?.total/searchData?.totalPages)
-//        var page = Int()
-        if index == search.count-1 && currentPage <= searchData?.totalPages ?? 0 {
-          print("+++++++++++++")
-            getSearchItems(searchText: searchText)
-        }
+    func pagination(searchText: String) {
+        let limit = 10
+        getSearchItems(searchText: searchText, limit: limit)
     }
+//    func pagination(index: Int, searchText: String) {
+////        // Calculate the current page based on the number of items and items per page
+//        
+//        //MARK: Current page < Total Page
+//        let currentPage = (search.count / 10) + 1
+////        let total = searchData?.total
+////        let totalPages = searchData?.totalPages
+////        let currentPage = ("\(total / totalPages)")
+////        var page = Int()
+//        if index == search.count-1 && currentPage <= searchData?.totalPages ?? 0 {
+//          print("+++++++++++++")
+//            getSearchItems(searchText: searchText)
+//        }
+//    }
 //    func reset() {
 //        searchData = nil
 //        search.removeAll()

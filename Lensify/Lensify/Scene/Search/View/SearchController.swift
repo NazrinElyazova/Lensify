@@ -14,8 +14,6 @@ class SearchController: UIViewController, UITextFieldDelegate {
     
     let viewModel = SearchViewModel()
     
-    let refreshControl = UIRefreshControl()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +23,7 @@ class SearchController: UIViewController, UITextFieldDelegate {
         configureUI()
         configureViewModel()
         
+        title = "Search For New Lives"
         self.navigationController?.navigationBar.topItem?.title = ""
         
     }
@@ -34,18 +33,16 @@ class SearchController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func searchTextField(_ sender: Any) {
-        viewModel.getSearchItems(searchText: "\(searchTextFieldOutlet.text ?? "")")
-        print("\(String(describing: searchTextFieldOutlet.text))")
+        viewModel.getSearchItems(searchText: searchTextFieldOutlet.text ?? "", limit: 10)
     }
     
     func configureUI() {
         self.collection.register(UINib(nibName: "\(SearchCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(SearchCell.self)")
-        
-        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
     }
     
     func configureViewModel() {
-        viewModel.getSearchItems(searchText: searchTextFieldOutlet.text ?? "" )
+        
+//        viewModel.getSearchItems(searchText: searchTextFieldOutlet.text ?? "", limit: 10)
         guard searchTextFieldOutlet.text != nil else {return}
         
         viewModel.onError = {
@@ -53,24 +50,29 @@ class SearchController: UIViewController, UITextFieldDelegate {
             print("Search controllerde error var: \(errorMessage)")
         }
         viewModel.onSucces = {
-            self.collection.reloadData()
-        }
+                self.collection.reloadData()
         
+        }
     }
-    
-    @objc func pullToRefresh() {
-        viewModel.search.removeAll()
-        collection.reloadData()
-        viewModel.getSearchItems(searchText: searchTextFieldOutlet.text ?? "")
-    }
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+//        let updatedText = (searchTextFieldOutlet.text as NSString?)?.replacingCharacters(in: range, with: string) ?? ""
+//        viewModel.getSearchItems(searchText: updatedText, limit: 10)
+//        return true
+//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+          textField.resignFirstResponder()
+//        if ((viewModel.search.count - 1) != 0) {
+            viewModel.getSearchItems(searchText: textField.text ?? "", limit: 10)
+      
+//        }
         return true
-    }
+      }
 }
 extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(viewModel.search.count)
         return  viewModel.search.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -83,8 +85,7 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
         .init(width: collectionView.frame.width, height: 200)
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-            viewModel.pagination(index: indexPath.item, searchText: searchTextFieldOutlet.text ?? "")
-//            print("errrrroorr")
+        viewModel.pagination(searchText: searchTextFieldOutlet.text ?? "")
     }
 }
 

@@ -9,7 +9,7 @@ import Foundation
 
 class SearchManager: SearchUseCase {
     
-    func getSearchItems(pageNumber: Int, searchText: String, completion: @escaping ((Search?, String?) -> Void)) {
+    func getSearchItems(limit: Int, pageNumber: Int, searchText: String, completion: @escaping ((Search?, String?) -> Void)) {
         
         //        let path = SearchEndpoint.search.rawValue + "?query=\(searchText)"
         
@@ -17,7 +17,7 @@ class SearchManager: SearchUseCase {
         
         let path = url + "&query=\(searchText)" + "&page=\(pageNumber)"
         
-        print(path)
+//        print(path)
         NetworkManager.request(model: Search.self, endpoint: path, completion: completion)
         
     }
