@@ -29,6 +29,7 @@
 		7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7A02B53E6B3005D0CED /* HomeController.swift */; };
 		7B53E7A32B53E6C6005D0CED /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7A22B53E6C6005D0CED /* HomeViewModel.swift */; };
 		7B53E7CA2B53F1F5005D0CED /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7C92B53F1F5005D0CED /* TabBarController.swift */; };
+		7B54A2D62B7A9E91004D29E9 /* ListUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B54A2D52B7A9E91004D29E9 /* ListUserProfile.swift */; };
 		7B5A90802B70E1860025E18B /* client_213676420665-klno39bjlv7ovpc11549egkoeei52usj.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B5A907F2B70E1860025E18B /* client_213676420665-klno39bjlv7ovpc11549egkoeei52usj.apps.googleusercontent.com.plist */; };
 		7B7967742B6D2C510032BB63 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7967732B6D2C510032BB63 /* LoginViewModel.swift */; };
 		7B7967762B6D2C9E0032BB63 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7967752B6D2C9E0032BB63 /* LoginManager.swift */; };
@@ -95,6 +96,7 @@
 		7B53E7A02B53E6B3005D0CED /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		7B53E7A22B53E6C6005D0CED /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7B53E7C92B53F1F5005D0CED /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		7B54A2D52B7A9E91004D29E9 /* ListUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserProfile.swift; sourceTree = "<group>"; };
 		7B5A907F2B70E1860025E18B /* client_213676420665-klno39bjlv7ovpc11549egkoeei52usj.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_213676420665-klno39bjlv7ovpc11549egkoeei52usj.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
 		7B7967732B6D2C510032BB63 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		7B7967752B6D2C9E0032BB63 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				7B0F42CE2B780E2B00785A37 /* Profile.swift */,
+				7B54A2D52B7A9E91004D29E9 /* ListUserProfile.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				7B90E2AC2B52FB550099FBA3 /* Extension.swift in Sources */,
 				7B9565322B64C64700044E58 /* TopicCell.swift in Sources */,
 				7B7967762B6D2C9E0032BB63 /* LoginManager.swift in Sources */,
+				7B54A2D62B7A9E91004D29E9 /* ListUserProfile.swift in Sources */,
 				7B90E29F2B52C4FD0099FBA3 /* NetworkManager.swift in Sources */,
 				7B97B9D02B5451D300D489CB /* HomeCell.swift in Sources */,
 				7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */,
