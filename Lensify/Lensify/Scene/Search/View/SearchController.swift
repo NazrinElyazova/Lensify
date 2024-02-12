@@ -42,7 +42,7 @@ class SearchController: UIViewController, UITextFieldDelegate {
     
     func configureViewModel() {
         
-        //        viewModel.getSearchItems(searchText: searchTextFieldOutlet.text ?? "", limit: 10)
+//        viewModel.getSearchItems(searchText: searchTextFieldOutlet.text ?? "", limit: 10)
         guard searchTextFieldOutlet.text != nil else {return}
         
         viewModel.onError = {
@@ -50,8 +50,8 @@ class SearchController: UIViewController, UITextFieldDelegate {
             print("Search controllerde error var: \(errorMessage)")
         }
         viewModel.onSucces = {
-            self.collection.reloadData()
-            
+                self.collection.reloadData()
+        
         }
     }
     func presentSaveAndShareSheet(image: UIImage) {
@@ -62,13 +62,13 @@ class SearchController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        //        if ((viewModel.search.count - 1) != 0) {
-        viewModel.getSearchItems(searchText: textField.text ?? "", limit: 10)
-        
-        //        }
+          textField.resignFirstResponder()
+//        if ((viewModel.search.count - 1) != 0) {
+            viewModel.getSearchItems(searchText: textField.text ?? "", limit: 10)
+      
+//        }
         return true
-    }
+      }
 }
 extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
