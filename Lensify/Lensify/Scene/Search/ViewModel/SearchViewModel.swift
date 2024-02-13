@@ -12,7 +12,7 @@ class SearchViewModel {
 
     let manager = SearchManager()
     
-    var searchData: Search?
+//    var searchData: Search?
     
     var onSucces: (()->Void)?
     var onError: ((String)-> Void)?

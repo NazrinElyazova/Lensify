@@ -30,22 +30,32 @@ class HomeViewModel {
         }
     }
     
-    func getPhotos(id: String) {
+    func getPhotos(id: String, limit: Int) {
         /*manager.getHomeList(id: id, endpoint: HomeEndpoint.topics)*/
-        manager.getHomeList(id: id) {
+        let currentPage = (items.count / limit) + 1
+        manager.getHomeList(pageNumber: currentPage, limit: limit, id: id) {
             data, errorMessage in
             if let errorMessage = errorMessage {
                 self.onError?(errorMessage)
             } else if let data = data {
-                self.items = data
+                //                self.items = data
+                //                self.onSuccess?()
+                //            }
+                let existingId = Set(self.items.map {
+                    $0.id
+                })
+                let newResults = data.filter {
+                    !existingId.contains($0.id)
+                }
+                self.items += newResults
                 self.onSuccess?()
             }
         }
+        
     }
-    //    func pagination(index: Int) {
-    //        //current page < total page
-    //        if index == items.count-2 /*&& (wallpapersData.)*/{
-    ////            getHomePhotos()
-    //        }
-    //    }
+    func pagination(id: String) {
+        let limit = 10
+        getPhotos(id: id, limit: limit)
+    }
 }
+

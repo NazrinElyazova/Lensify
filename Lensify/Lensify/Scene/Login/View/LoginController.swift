@@ -27,7 +27,7 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Welcome"
         //        getUserInfo()
         //        adapterSave()
         self.navigationController?.navigationBar.topItem?.title = ""

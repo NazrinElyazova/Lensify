@@ -11,5 +11,5 @@ protocol HomeUseCase {
     
     func getTopics(completion: @escaping(([TopicElement]?, String?)->Void))
     
-    func getHomeList(id: String, completion: @escaping(([GetTopics]?, String?)->Void))
+    func getHomeList(pageNumber: Int, limit: Int, id: String, completion: @escaping(([GetTopics]?, String?)->Void))
 }

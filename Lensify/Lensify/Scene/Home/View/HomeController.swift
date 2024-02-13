@@ -11,11 +11,12 @@ import SkeletonView
 
 class HomeController: UIViewController {
     
+    let viewModel = HomeViewModel()
+    
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var topicView: UIView!
     
     private let topicHeaderView = TopicHeaderView.loadFromNib()
-    let viewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +39,7 @@ class HomeController: UIViewController {
         topicView.addSubview(topicHeaderView)
         topicHeaderView.callback = { id in
             self.viewModel.items.removeAll()
-            self.viewModel.getPhotos(id: id)
+            self.viewModel.getPhotos(id: id, limit: 10)
             //            print("getPhotos callback called")
         }
         
@@ -90,7 +91,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        //        viewModel.pagination(index: indexPath.item)
+        viewModel.pagination(id: "qPYsDzvJOYc")
     }
 }
 extension HomeController: SaveImageProtocol {
