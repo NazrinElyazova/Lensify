@@ -39,7 +39,7 @@ class HomeController: UIViewController {
         topicView.addSubview(topicHeaderView)
         topicHeaderView.callback = { id in
             self.viewModel.items.removeAll()
-            self.viewModel.getPhotos(id: id, limit: 10)
+            self.viewModel.getPhotos(id: id, limit: 2)
             //            print("getPhotos callback called")
         }
         
@@ -91,6 +91,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        
         viewModel.pagination(id: "qPYsDzvJOYc")
     }
 }
