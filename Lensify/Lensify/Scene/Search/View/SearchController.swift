@@ -39,7 +39,7 @@ class SearchController: UIViewController, UITextFieldDelegate {
     func configureUI() {
         self.collection.register(UINib(nibName: "\(SearchCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(SearchCell.self)")
     }
-    
+
     func configureViewModel() {
      
         guard searchTextFieldOutlet.text != nil else {return}
