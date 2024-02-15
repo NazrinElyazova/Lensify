@@ -23,8 +23,8 @@ class SearchController: UIViewController, UITextFieldDelegate {
         configureUI()
         configureViewModel()
         
-        title = "Search For New Lives"
-        self.navigationController?.navigationBar.topItem?.title = ""
+        title = "Search"
+//        self.navigationController?.navigationBar.topItem?.title = ""
         
     }
     override func viewWillAppear(_ animated: Bool) {

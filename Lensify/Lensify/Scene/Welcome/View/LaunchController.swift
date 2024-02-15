@@ -18,6 +18,7 @@ class LaunchController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.topItem?.title = ""
         lottieAnimation()
     }
     @IBAction func continueButtonAction(_ sender: Any) {

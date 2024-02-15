@@ -21,6 +21,7 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+//        self.navigationController?.navigationBar.topItem?.title = ""
         //        configureViewModel()
     }
     

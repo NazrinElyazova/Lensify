@@ -14,6 +14,7 @@ class ReadyForDownloadController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         readyForDownload()  
+        self.navigationController?.navigationBar.topItem?.title = ""
     }
     func readyForDownload() {
         navigationController?.navigationBar.isHidden = true

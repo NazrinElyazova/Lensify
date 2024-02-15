@@ -74,7 +74,7 @@ class LoginController: UIViewController {
         if !(passwordTextField.text?.isEmpty == true), !(userNameEmailTextField.text?.isEmpty == true),
            let email = userNameEmailTextField.text,
            let password = passwordTextField.text {
-            let controller = storyboard?.instantiateViewController(withIdentifier: "\(HomeController.self)") as! HomeController
+            let controller = storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
             navigationController?.show(controller, sender: nil)
             getUserInfo()
             adapterSave()
