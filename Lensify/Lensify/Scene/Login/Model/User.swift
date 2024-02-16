@@ -23,19 +23,26 @@ struct UserInfo: Codable {
 
 // Facebook
 // MARK: - Facebook
-struct FacebookLogin: Codable {
-    let code: Int?
-    let body: Body?
+struct FacebookLogin {
+    let email: String
+//    let password: String
+    let firstName: String
+    let lastName: String
+    
 }
-
-// MARK: - Body
-struct Body: Codable {
-    let error: Error?
-}
-
-// MARK: - Error
-struct Error: Codable {
-    let message, type: String?
-    let code: Int?
-}
+//struct FacebookLogin: Codable {
+//    let code: Int?
+//    let body: Body?
+//}
+//
+//// MARK: - Body
+//struct Body: Codable {
+//    let error: Error?
+//}
+//
+//// MARK: - Error
+//struct Error: Codable {
+//    let message, type: String?
+//    let code: Int?
+//}
 

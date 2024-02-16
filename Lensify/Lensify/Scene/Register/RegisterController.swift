@@ -16,23 +16,20 @@ class RegisterController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var fullnameTextField: UITextField!
-    
     @IBOutlet weak var stackView: UIStackView!
     
     var completion: ((String, String)-> Void)?
-    
-    var successLogin:((String, String)-> Void)?
-    
     var adapter: LoginAdapter?
+    
     let databaseAdapter = DatabaseAdapter()
     let facebookButton = FBLoginButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         title = "Register Now"
         adapterSave()
         faceButton()
-        
         self.navigationController?.navigationBar.topItem?.title = ""
     }
     
@@ -41,19 +38,33 @@ class RegisterController: UIViewController {
         adapter?.completion = { user in
             self.emailTextField.text = user.email
             self.passwordTextField.text = user.password
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(HomeController.self)") as! HomeController
+            self.navigationController?.show(controller, sender: nil)
+            
         }
     }
     func faceButton() {
         stackView.axis = .vertical
         stackView.addArrangedSubview(facebookButton)
-        facebookButton.permissions = ["public_profile", "email"]
+        
         facebookButton.layer.cornerRadius = 20
+        
+        facebookButton.addTarget(self, action: #selector(facebookButonTapped), for: .touchUpInside)
+        facebookButton.permissions = ["public_profile", "email"]
+    }
+    
+    @objc func facebookButonTapped() {
         adapter?.login(type: .facebook)
-        adapter?.completion = { user in
-            self.emailTextField.text = user.email
-            self.passwordTextField.text = user.password
-            
-        }
+        //        if UserDefaults.standard.bool(forKey: "loggedIn") {
+//        print(UserDefaults.standard.bool(forKey: "loggedIn"))
+        //            adapter?.facebookCompletion = { user in
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(HomeController.self)") as! HomeController
+        self.navigationController?.show(controller, sender: nil)
+        login()
+        
+    }
+    func login() {
+        UserDefaults.standard.set(true, forKey: "loggedIn")
     }
     @IBAction func loginActionButton(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
@@ -67,8 +78,6 @@ class RegisterController: UIViewController {
                 if let error = error {
                     print(error.localizedDescription)
                 } else if let user = result?.user {
-                    //                    print(user)
-                    //                    self?.credential()
                     self?.completion?(user.email ?? "", password)
                     self?.navigationController?.popViewController(animated: true)
                 }
@@ -82,31 +91,6 @@ class RegisterController: UIViewController {
             self.databaseAdapter.saveUserInfo(data: user)
             
             print(user)
-        }
-    }
-    //    func credential() {
-    //        NotificationCenter.default.addObserver(self, selector: #selector(handleGoogleSignIn(_:)), name: .AuthStateDidChange, object: nil)
-    //
-    ////        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: <#T##String#>)
-    //    }
-    //    @objc func handleGoogleSignIn(_ notification: Notification) {
-    //          guard let userInfo = notification.userInfo,
-    //              let user = Auth.auth().currentUser else {
-    //                  return
-    //          }
-    //    }
-    func singIn(email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            else if let _ = result?.user {
-                print("user movcuddur")
-                let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
-                self.singIn(email: email, password: password)
-                self.navigationController?.show(controller, sender: nil)
-            }
         }
     }
 }

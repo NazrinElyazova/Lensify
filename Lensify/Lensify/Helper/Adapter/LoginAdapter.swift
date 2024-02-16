@@ -17,6 +17,8 @@ class LoginAdapter {
     var success: (() -> Void)?
     var completion: ((UserData)->())?
     
+    var facebookCompletion: ((FacebookLogin)-> ())?
+    
     var fireBaseCompletion: ((UserInfo)-> ())?
     var controller: UIViewController  //Strong variable olmasi ucun init edirik. Controllerde set etmek yaddan cixsa app crash etmesin
     
@@ -39,7 +41,6 @@ class LoginAdapter {
     }
     
     fileprivate func googleLogin() {
-        //        let signInConfig = GIDConfiguration.init(clientID: clientID)
         GIDSignIn.sharedInstance.signIn(withPresenting: controller) { result, error in
             if let error = error {
                 print(error)
@@ -55,10 +56,21 @@ class LoginAdapter {
     }
     
     fileprivate  func facebookLogin() {
-//        
+        
         if let token = AccessToken.current,
            !token.isExpired {
-            // User qeydiyyatdan kecdi, do work such as go to next view controller.
+            GraphRequest(graphPath: "me", parameters: ["fields": "id,email,first_name,last_name"]).start { (connection, result, error) in
+                if let error = error {
+                    print("Facebook Graph API Error var: \(error.localizedDescription)")
+                } else if let result = result as? [String: Any] {
+                    let email = result["email"] as? String ?? ""
+                    let firstName = result["first_name"] as? String ?? ""
+                    let lastName = result["last_name"] as? String ?? ""
+                    
+                    let face = FacebookLogin(email: email, firstName: firstName, lastName: lastName)
+                    self.facebookCompletion?(face)
+                }
+            }
         }
     }
 }
