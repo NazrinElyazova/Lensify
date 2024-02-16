@@ -82,7 +82,6 @@ class LoginController: UIViewController {
             showAlert()
         }
     }
-    
     func showAlert() {
         let alertController = UIAlertController(title: "Warning !", message: "Please, fill your information.", preferredStyle: .alert)
         let okButton = UIAlertAction(title: "Ok", style: .default)
