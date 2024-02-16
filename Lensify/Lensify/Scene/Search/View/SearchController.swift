@@ -62,10 +62,7 @@ class SearchController: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        //        if ((viewModel.search.count - 1) != 0) {
         viewModel.getSearchItems(searchText: textField.text ?? "", limit: 10)
-        
-        //        }
         return true
     }
 }

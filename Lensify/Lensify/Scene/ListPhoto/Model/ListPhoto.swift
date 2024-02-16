@@ -12,10 +12,10 @@ import Foundation
 struct List: Codable {
     let url: Urls?
     let height: CGFloat?
-    //    let id: ListPhoto?
+//        let id: ListPhoto?
 }
 struct ListPhoto: Codable {
-    //    let id/*, slug*/: String?
+        let id/*, slug*/: String?
     //    let createdAt, updatedAt: String?
     //    let promotedAt: String?
     //    let width, height: Int?
@@ -31,7 +31,7 @@ struct ListPhoto: Codable {
     //    let user: User?
     
     enum CodingKeys: String, CodingKey {
-        //        case id
+                case id
         //        case slug
         //        case createdAt = "created_at"
         //        case updatedAt = "updated_at"

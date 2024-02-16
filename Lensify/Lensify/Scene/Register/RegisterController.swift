@@ -38,9 +38,6 @@ class RegisterController: UIViewController {
         adapter?.completion = { user in
             self.emailTextField.text = user.email
             self.passwordTextField.text = user.password
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(HomeController.self)") as! HomeController
-            self.navigationController?.show(controller, sender: nil)
-            
         }
     }
     func faceButton() {

@@ -11,14 +11,11 @@ import FirebaseAuth
 import FirebaseFirestore
 
 class DatabaseAdapter {
+    
     var keychain = KeychainSwift()
+    let db = Firestore.firestore()
+    
     func saveUserInfo(data: UserData) {
-        
-        //file manager
-        //keychain
-        //core data
-        //user defaults
-        
         UserDefaults.standard.setValue(data.firstName, forKey: "firstName")
         
         keychain.set(data.email, forKey: "email")
