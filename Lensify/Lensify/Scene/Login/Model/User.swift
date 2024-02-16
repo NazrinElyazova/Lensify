@@ -20,3 +20,22 @@ struct UserInfo: Codable {
     let password: String?
     let fullname: String?
 }
+
+// Facebook
+// MARK: - Facebook
+struct FacebookLogin: Codable {
+    let code: Int?
+    let body: Body?
+}
+
+// MARK: - Body
+struct Body: Codable {
+    let error: Error?
+}
+
+// MARK: - Error
+struct Error: Codable {
+    let message, type: String?
+    let code: Int?
+}
+

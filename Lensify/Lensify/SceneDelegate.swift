@@ -36,7 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             //            print("login deyil")
         }
         
-    } // MARK: men elave etdim
+    } // MARK: men elave etdim for Facebook
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         guard let url = URLContexts.first?.url else {
             return

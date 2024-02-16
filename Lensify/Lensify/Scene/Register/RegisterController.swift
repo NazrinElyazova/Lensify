@@ -29,7 +29,7 @@ class RegisterController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Register Now !"
+        title = "Register Now"
         adapterSave()
         faceButton()
         

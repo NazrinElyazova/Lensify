@@ -55,7 +55,7 @@ class LoginAdapter {
     }
     
     fileprivate  func facebookLogin() {
-        
+//        
         if let token = AccessToken.current,
            !token.isExpired {
             // User qeydiyyatdan kecdi, do work such as go to next view controller.
