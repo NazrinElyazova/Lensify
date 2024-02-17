@@ -35,11 +35,8 @@ class HomeCell: UICollectionViewCell {
     }
     
     func configure(data: GetTopics) {
-        //        homeLabel.text = data.title
         homeImage.loadImage(url: data.urls?.small ?? "")
-        
-        //        print(homeLabel.text = data.title)
-    }
+            }
     
 }
 

@@ -21,7 +21,7 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-//        self.navigationController?.navigationBar.topItem?.title = ""
+        //        self.navigationController?.navigationBar.topItem?.title = ""
         //        configureViewModel()
     }
     
@@ -40,8 +40,8 @@ class HomeController: UIViewController {
         topicView.addSubview(topicHeaderView)
         topicHeaderView.callback = { id in
             self.viewModel.items.removeAll()
-            self.viewModel.getPhotos(id: id, limit: 2)
-            //            print("getPhotos callback called")
+            self.viewModel.getPhotos(id: id, limit: 10)
+            
         }
         
         topicHeaderView.frame = topicView.bounds
@@ -51,7 +51,6 @@ class HomeController: UIViewController {
     func configureViewModel() {
         
         viewModel.getTopics()
-        
         viewModel.topicSuccess = {
             self.topicHeaderView.configure(data: self.viewModel.topicItems)
         }
@@ -79,12 +78,12 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
         let item = viewModel.items[indexPath.item]
         cell.configure(data: item)
         cell.delegate = self
         return cell
-        
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

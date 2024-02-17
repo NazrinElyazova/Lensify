@@ -32,7 +32,6 @@ extension TopicHeaderView: UICollectionViewDelegate, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(TopicCell.self)", for: indexPath) as! TopicCell
         cell.topicLabel.text = topic[indexPath.item].title
-        
         return cell
     }
     

@@ -15,7 +15,7 @@ class WelcomeToLensifyController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.topItem?.title = ""
-        
+        myLabel.adjustsFontSizeToFitWidth = true
         myLabel.text = "Welcome to Lensify"
         startWelcomeButton.layer.cornerRadius = 20
         
