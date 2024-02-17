@@ -14,6 +14,12 @@ class SearchController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var searchTextFieldOutlet: UITextField!
     
+    @IBAction func searchTextField(_ sender: Any) {
+        print("textimiz: \(searchTextFieldOutlet.text ?? "")")
+        textFieldDidEndEditing(searchTextFieldOutlet)
+//        viewModel.getSearchItems(searchText: searchTextFieldOutlet.text ?? "", limit: 10)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,18 +30,12 @@ class SearchController: UIViewController, UITextFieldDelegate {
         configureViewModel()
         
         title = "Search"
-//        self.navigationController?.navigationBar.topItem?.title = ""
-        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         searchTextFieldOutlet.becomeFirstResponder()
     }
-    
-    @IBAction func searchTextField(_ sender: Any) {
-        viewModel.getSearchItems(searchText: searchTextFieldOutlet.text ?? "", limit: 10)
-    }
-    
+
     func configureUI() {
         self.collection.register(UINib(nibName: "\(SearchCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(SearchCell.self)")
     }
@@ -48,10 +48,14 @@ class SearchController: UIViewController, UITextFieldDelegate {
             errorMessage in
             print("Search controllerde error var: \(errorMessage)")
         }
+        
         viewModel.onSucces = {
             self.collection.reloadData()
             
         }
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
     }
     func presentSaveAndShareSheet(image: UIImage) {
         let saveandshare = UIActivityViewController(
@@ -60,11 +64,12 @@ class SearchController: UIViewController, UITextFieldDelegate {
         present(saveandshare, animated: true)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
         viewModel.getSearchItems(searchText: textField.text ?? "", limit: 10)
-        return true
+//        collection.reloadData()
     }
+    
 }
 extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -78,12 +83,18 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
         cell.delegate = self
         return cell
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         .init(width: collectionView.frame.width, height: 200)
     }
+    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        if indexPath.item == viewModel.search.count - 1 {
+//               viewModel.pagination(searchText: searchTextFieldOutlet.text ?? "")
+//           }
         viewModel.pagination(searchText: searchTextFieldOutlet.text ?? "")
     }
+    
 }
 
 extension UIViewController {

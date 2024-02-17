@@ -29,7 +29,6 @@ class HomeViewModel {
             }
         }
     }
-    
     func getPhotos(id: String, limit: Int) {
         /*manager.getHomeList(id: id, endpoint: HomeEndpoint.topics)*/
         let currentPage = (items.count / limit) + 1
@@ -38,9 +37,6 @@ class HomeViewModel {
             if let errorMessage = errorMessage {
                 self.onError?(errorMessage)
             } else if let data = data {
-                //                self.items = data
-                //                self.onSuccess?()
-                //            }
                 let existingId = Set(self.items.map {
                     $0.id
                 })

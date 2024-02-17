@@ -37,11 +37,11 @@ class HomeController: UIViewController {
     }
     
     func configureUI() {
+        
         topicView.addSubview(topicHeaderView)
         topicHeaderView.callback = { id in
             self.viewModel.items.removeAll()
             self.viewModel.getPhotos(id: id, limit: 10)
-            
         }
         
         topicHeaderView.frame = topicView.bounds

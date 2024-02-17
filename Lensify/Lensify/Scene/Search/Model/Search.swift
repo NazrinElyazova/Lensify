@@ -24,16 +24,17 @@ struct SearchResult: Codable {
     let id, slug: String?
     //    let createdAt, updatedAt: String?
     //    let promotedAt: String?
-    let width, height: Int?
-    let color, blurHash, description, altDescription: String?
+//    let width, height: Int?
+//    let color, blurHash: String?
+    let description, altDescription: String?
     //    let breadcrumbs: [BreadcrumbSearch]?
     let urls: UrlsSearch?
     let links: ResultLinksSearch?
     let likes: Int?
-    let likedByUser: Bool?
+//    let likedByUser: Bool?
     //    let currentUserCollections: [String]?
-    let sponsorship: String?
-    let topicSubmissions: ResultTopicSubmissionsSearch?
+//    let sponsorship: String?
+//    let topicSubmissions: ResultTopicSubmissionsSearch?
     let user: UserSearch?
     let tags: [TagSearch]?
     
@@ -42,16 +43,16 @@ struct SearchResult: Codable {
         //        case createdAt = "created_at"
         //        case updatedAt = "updated_at"
         //        case promotedAt = "promoted_at"
-        case width, height, color
-        case blurHash = "blur_hash"
+//        case width, height, color
+//        case blurHash = "blur_hash"
         case description
         case altDescription = "alt_description"
         //        case breadcrumbs
         case urls, links, likes
-        case likedByUser = "liked_by_user"
+//        case likedByUser = "liked_by_user"
         //        case currentUserCollections = "current_user_collections"
-        case sponsorship
-        case topicSubmissions = "topic_submissions"
+//        case sponsorship
+//        case topicSubmissions = "topic_submissions"
         case user, tags
     }
 }

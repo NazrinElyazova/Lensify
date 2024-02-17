@@ -14,14 +14,23 @@ class SearchViewModel {
     var onSucces: (()->Void)?
     var onError: ((String)-> Void)?
     
+    var page = 1
+    var limit = 10
+    
+    var shouldMoreLoad: Bool = true {
+        didSet {
+            if shouldMoreLoad,  search.count > limit {
+                page += 1
+            }
+        }
+    }
+    
     func getSearchItems(searchText: String, limit: Int) {
-        //        let path = SearchEndpoint.search.rawValue + "?query=\(searchText)"
-        let currentPage = (search.count / limit) + 1
-//
-        manager.getSearchItems(limit: limit, pageNumber: currentPage, searchText: searchText) {
+        
+      manager.getSearchItems(limit: limit, pageNumber: page, searchText: searchText) {
        
             data, errorMessage in
-            print("==========")
+//            print("==========")
             if let errorMessage = errorMessage {
                 self.onError?(errorMessage)
             } else if let data = data {
@@ -36,8 +45,9 @@ class SearchViewModel {
             }
         }
     }
+    
     func pagination(searchText: String) {
-        let limit = 10
-        getSearchItems(searchText: searchText, limit: limit)
+        page = 1
+        getSearchItems(searchText: searchText,  limit: limit)
     }
 }
