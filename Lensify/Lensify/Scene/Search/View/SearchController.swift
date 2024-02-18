@@ -7,42 +7,68 @@
 
 import UIKit
 
-class SearchController: UIViewController, UITextFieldDelegate {
+class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelegate {
     
     let viewModel = SearchViewModel()
     
+    
     @IBOutlet weak var collection: UICollectionView!
-    @IBOutlet weak var searchTextFieldOutlet: UITextField!
-    
-    @IBAction func searchTextField(_ sender: Any) {
-        print("textimiz: \(searchTextFieldOutlet.text ?? "")")
-        textFieldDidEndEditing(searchTextFieldOutlet)
-//        viewModel.getSearchItems(searchText: searchTextFieldOutlet.text ?? "", limit: 10)
-    }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        searchTextFieldOutlet.delegate = self
-        
-        hideKeyboardWhenTappedAround()
+                
+//        hideKeyboardWhenTappedAround()
         configureUI()
         configureViewModel()
         
-        title = "Search"
+        navigationItem.hidesSearchBarWhenScrolling = true
+
+        let searchbar = UISearchBar()
+        searchbar.frame = CGRect(x: 10, y: 100, width: view.frame.size.width-10, height: 50)
+        searchbar.layer.cornerRadius = 20
+        searchbar.placeholder = "Search for new lives"
+//        searchbar.backgroundColor = .black
+        searchbar.translatesAutoresizingMaskIntoConstraints = true
+        searchbar.searchTextField.layer.cornerRadius = 20
+        searchbar.searchTextField.layer.masksToBounds = true
+        searchbar.delegate = self
+        view.addSubview(searchbar)
+
+        searchbar.delegate = self
+        searchbar.isUserInteractionEnabled = true
+//        title = "Search"
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        searchTextFieldOutlet.becomeFirstResponder()
-    }
+        navigationController?.setNavigationBarHidden(true, animated: animated)
 
+    }
+    // MARK: SEARCH BAR
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        if let text = searchBar.text {
+            viewModel.search = []
+            viewModel.pagination(searchText: text)
+            collection.reloadData()
+           
+        }
+    }
     func configureUI() {
         self.collection.register(UINib(nibName: "\(SearchCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(SearchCell.self)")
     }
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+
 
     func configureViewModel() {
      
-        guard searchTextFieldOutlet.text != nil else {return}
+//        guard searchTextFieldOutlet.text != nil else {return}
         
         viewModel.onError = {
             errorMessage in
@@ -54,22 +80,13 @@ class SearchController: UIViewController, UITextFieldDelegate {
             
         }
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return true
-    }
+
     func presentSaveAndShareSheet(image: UIImage) {
         let saveandshare = UIActivityViewController(
             activityItems: [image],
             applicationActivities: nil)
         present(saveandshare, animated: true)
     }
-    
-
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        viewModel.getSearchItems(searchText: textField.text ?? "", limit: 10)
-//        collection.reloadData()
-    }
-    
 }
 extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -92,22 +109,23 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
 //        if indexPath.item == viewModel.search.count - 1 {
 //               viewModel.pagination(searchText: searchTextFieldOutlet.text ?? "")
 //           }
-        viewModel.pagination(searchText: searchTextFieldOutlet.text ?? "")
+        let searchbar = UISearchBar()
+        viewModel.pagination(searchText: searchbar.text ?? "")
     }
     
 }
 
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}
+//extension UIViewController {
+//    func hideKeyboardWhenTappedAround() {
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+//        tap.cancelsTouchesInView = false
+//        view.addGestureRecognizer(tap)
+//    }
+//    
+//    @objc func dismissKeyboard() {
+//        view.endEditing(true)
+//    }
+//}
 extension SearchController: SaveImageProtocol {
     func didTApDownloadButton(image: UIImage) {
         if UserDefaults.standard.bool(forKey: "loggedIn") {
@@ -129,3 +147,4 @@ extension SearchController: SaveImageProtocol {
         present(alertController, animated: true)
     }
 }
+
