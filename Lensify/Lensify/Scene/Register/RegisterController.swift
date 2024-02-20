@@ -44,10 +44,12 @@ class RegisterController: UIViewController {
         stackView.axis = .vertical
         stackView.addArrangedSubview(facebookButton)
         
-        facebookButton.layer.cornerRadius = 20
+//        facebookButton.layer.cornerRadius = 20
         
         facebookButton.addTarget(self, action: #selector(facebookButonTapped), for: .touchUpInside)
         facebookButton.permissions = ["public_profile", "email"]
+        facebookButton.layer.cornerRadius = 20.0
+       facebookButton.layer.masksToBounds = true
     }
     
     @objc func facebookButonTapped() {

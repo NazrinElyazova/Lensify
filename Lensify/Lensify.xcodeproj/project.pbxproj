@@ -53,6 +53,7 @@
 		7B90E2AC2B52FB550099FBA3 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2AB2B52FB550099FBA3 /* Extension.swift */; };
 		7B90E2B22B5329550099FBA3 /* LaunchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2B12B5329550099FBA3 /* LaunchController.swift */; };
 		7B90E2B82B5332160099FBA3 /* lottieView.json in Resources */ = {isa = PBXBuildFile; fileRef = 7B90E2B72B5332160099FBA3 /* lottieView.json */; };
+		7B9258372B8537B100D3C212 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9258362B8537B100D3C212 /* ProfileController.swift */; };
 		7B9565322B64C64700044E58 /* TopicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9565302B64C64700044E58 /* TopicCell.swift */; };
 		7B9565332B64C64700044E58 /* TopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B9565312B64C64700044E58 /* TopicCell.xib */; };
 		7B95653E2B65025800044E58 /* TopicHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B95653D2B65025800044E58 /* TopicHeaderView.swift */; };
@@ -73,8 +74,6 @@
 		7BD600842B6ED58700B28661 /* ReadyForDownloadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD600832B6ED58700B28661 /* ReadyForDownloadController.swift */; };
 		7BDB91CA2B5B924B00002EAC /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */; };
 		7BFEFFDE2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEFFDD2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift */; };
-		7BFEFFF02B72A83800A1CCC7 /* CHTCollectionViewWaterfallLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 7BFEFFEF2B72A83700A1CCC7 /* CHTCollectionViewWaterfallLayout */; };
-		7BFEFFF22B72A83800A1CCC7 /* CHTCollectionViewWaterfallLayoutObjC in Frameworks */ = {isa = PBXBuildFile; productRef = 7BFEFFF12B72A83800A1CCC7 /* CHTCollectionViewWaterfallLayoutObjC */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +108,7 @@
 		7B90E2AB2B52FB550099FBA3 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7B90E2B12B5329550099FBA3 /* LaunchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchController.swift; sourceTree = "<group>"; };
 		7B90E2B72B5332160099FBA3 /* lottieView.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lottieView.json; sourceTree = "<group>"; };
+		7B9258362B8537B100D3C212 /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		7B9565302B64C64700044E58 /* TopicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicCell.swift; sourceTree = "<group>"; };
 		7B9565312B64C64700044E58 /* TopicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopicCell.xib; sourceTree = "<group>"; };
 		7B95653D2B65025800044E58 /* TopicHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicHeaderView.swift; sourceTree = "<group>"; };
@@ -149,11 +149,9 @@
 				7B1736752B7646FF0030DE63 /* FacebookAEM in Frameworks */,
 				7B90E28E2B52C4840099FBA3 /* KeychainSwift in Frameworks */,
 				7B90E29C2B52C4BF0099FBA3 /* Lottie in Frameworks */,
-				7BFEFFF02B72A83800A1CCC7 /* CHTCollectionViewWaterfallLayout in Frameworks */,
 				7B1736772B7646FF0030DE63 /* FacebookBasics in Frameworks */,
 				7B86F7712B764E68005755B0 /* FirebaseAuth in Frameworks */,
 				7B17367D2B7646FF0030DE63 /* FacebookLogin in Frameworks */,
-				7BFEFFF22B72A83800A1CCC7 /* CHTCollectionViewWaterfallLayoutObjC in Frameworks */,
 				7B1736532B763E520030DE63 /* GoogleSignIn in Frameworks */,
 				7B1736792B7646FF0030DE63 /* FacebookCore in Frameworks */,
 			);
@@ -166,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				7B0F42CD2B780E1A00785A37 /* Model */,
+				7B9258362B8537B100D3C212 /* ProfileController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -520,8 +519,6 @@
 				7B90E2902B52C4960099FBA3 /* Kingfisher */,
 				7B90E2932B52C4A00099FBA3 /* Alamofire */,
 				7B90E29B2B52C4BF0099FBA3 /* Lottie */,
-				7BFEFFEF2B72A83700A1CCC7 /* CHTCollectionViewWaterfallLayout */,
-				7BFEFFF12B72A83800A1CCC7 /* CHTCollectionViewWaterfallLayoutObjC */,
 				7B1736522B763E520030DE63 /* GoogleSignIn */,
 				7B1736542B763E520030DE63 /* GoogleSignInSwift */,
 				7B1736692B7646700030DE63 /* FirebaseAnalytics */,
@@ -570,7 +567,6 @@
 				7B90E28F2B52C4960099FBA3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				7B90E2922B52C4A00099FBA3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				7B90E29A2B52C4BF0099FBA3 /* XCRemoteSwiftPackageReference "lottie-ios" */,
-				7BFEFFEE2B72A83700A1CCC7 /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */,
 				7B1736512B763E520030DE63 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				7B1736682B7646700030DE63 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				7B1736732B7646FF0030DE63 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
@@ -632,6 +628,7 @@
 				7BC6AF1E2B6AAB1600694CD0 /* SearchEndpoint.swift in Sources */,
 				7B95653E2B65025800044E58 /* TopicHeaderView.swift in Sources */,
 				7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */,
+				7B9258372B8537B100D3C212 /* ProfileController.swift in Sources */,
 				7BD4FB282B698DB600B5EA3E /* LoginController.swift in Sources */,
 				7BFEFFDE2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift in Sources */,
 				7B90E2802B52C1FB0099FBA3 /* Lensify.xcdatamodeld in Sources */,
@@ -940,14 +937,6 @@
 				minimumVersion = 1.30.4;
 			};
 		};
-		7BFEFFEE2B72A83700A1CCC7 /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/chiahsien/CHTCollectionViewWaterfallLayout.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.9.10;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1040,16 +1029,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7BABCF732B77E2D3008FCDDE /* XCRemoteSwiftPackageReference "SkeletonView" */;
 			productName = SkeletonView;
-		};
-		7BFEFFEF2B72A83700A1CCC7 /* CHTCollectionViewWaterfallLayout */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7BFEFFEE2B72A83700A1CCC7 /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */;
-			productName = CHTCollectionViewWaterfallLayout;
-		};
-		7BFEFFF12B72A83800A1CCC7 /* CHTCollectionViewWaterfallLayoutObjC */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7BFEFFEE2B72A83700A1CCC7 /* XCRemoteSwiftPackageReference "CHTCollectionViewWaterfallLayout" */;
-			productName = CHTCollectionViewWaterfallLayoutObjC;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -37,15 +37,6 @@
       }
     },
     {
-      "identity" : "chtcollectionviewwaterfalllayout",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/chiahsien/CHTCollectionViewWaterfallLayout.git",
-      "state" : {
-        "revision" : "1fe42247efc8aea1ad03332d2b44f2d7fb1644bc",
-        "version" : "0.9.10"
-      }
-    },
-    {
       "identity" : "facebook-ios-sdk",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/facebook/facebook-ios-sdk",

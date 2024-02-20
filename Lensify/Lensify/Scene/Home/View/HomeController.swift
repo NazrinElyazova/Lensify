@@ -80,7 +80,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
-        let item = viewModel.items[indexPath.item]
+        let item = viewModel.items[indexPath.item] // index out of range
         cell.configure(data: item)
         cell.delegate = self
         return cell

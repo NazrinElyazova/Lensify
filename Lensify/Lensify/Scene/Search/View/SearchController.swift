@@ -40,7 +40,7 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
     func setupSearchbar() {
         
         let searchbar = UISearchBar()
-        searchbar.frame = CGRect(x: 20, y: 90, width: view.frame.size.width-40, height: 50)
+        searchbar.frame = CGRect(x: 20, y: 80, width: view.frame.size.width-40, height: 50)
         searchbar.layer.cornerRadius = 20.0
         searchbar.layer.masksToBounds = true
         searchbar.placeholder = "Search for new lives"
