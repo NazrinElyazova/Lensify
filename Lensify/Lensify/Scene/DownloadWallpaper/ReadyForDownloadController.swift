@@ -24,7 +24,7 @@ class ReadyForDownloadController: UIViewController {
         }
     }
     @IBAction func clickAction(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "\(ListPhotoController.self)") as! ListPhotoController
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(HomeController.self)") as! HomeController
         navigationController?.show(controller, sender: nil)
     }
 }

@@ -11,32 +11,16 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
     
     let viewModel = SearchViewModel()
     
-    
     @IBOutlet weak var collection: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-//        hideKeyboardWhenTappedAround()
+        hideKeyboardWhenTappedAround()
         configureUI()
         configureViewModel()
-        
-        navigationItem.hidesSearchBarWhenScrolling = true
+        setupSearchbar()
 
-        let searchbar = UISearchBar()
-        searchbar.frame = CGRect(x: 10, y: 100, width: view.frame.size.width-10, height: 50)
-        searchbar.layer.cornerRadius = 20
-        searchbar.placeholder = "Search for new lives"
-//        searchbar.backgroundColor = .black
-        searchbar.translatesAutoresizingMaskIntoConstraints = true
-        searchbar.searchTextField.layer.cornerRadius = 20
-        searchbar.searchTextField.layer.masksToBounds = true
-        searchbar.delegate = self
-        view.addSubview(searchbar)
-
-        searchbar.delegate = self
-        searchbar.isUserInteractionEnabled = true
-//        title = "Search"
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -53,6 +37,21 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
            
         }
     }
+    func setupSearchbar() {
+        
+        let searchbar = UISearchBar()
+        searchbar.frame = CGRect(x: 20, y: 90, width: view.frame.size.width-40, height: 50)
+        searchbar.layer.cornerRadius = 20.0
+        searchbar.layer.masksToBounds = true
+        searchbar.placeholder = "Search for new lives"
+        searchbar.translatesAutoresizingMaskIntoConstraints = true
+        searchbar.searchTextField.layer.cornerRadius = 20
+        searchbar.searchTextField.layer.masksToBounds = true
+        searchbar.delegate = self
+        searchbar.isUserInteractionEnabled = true
+        view.addSubview(searchbar)
+    
+    }
     func configureUI() {
         self.collection.register(UINib(nibName: "\(SearchCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(SearchCell.self)")
     }
@@ -65,19 +64,14 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
         searchBar.setShowsCancelButton(false, animated: true)
     }
 
-
     func configureViewModel() {
-     
-//        guard searchTextFieldOutlet.text != nil else {return}
-        
+            
         viewModel.onError = {
             errorMessage in
             print("Search controllerde error var: \(errorMessage)")
         }
-        
         viewModel.onSucces = {
             self.collection.reloadData()
-            
         }
     }
 
@@ -94,6 +88,7 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
         return  viewModel.search.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(SearchCell.self)", for: indexPath) as! SearchCell
         let item = viewModel.search[indexPath.item]
         cell.configure(data: item)
@@ -106,26 +101,24 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        if indexPath.item == viewModel.search.count - 1 {
-//               viewModel.pagination(searchText: searchTextFieldOutlet.text ?? "")
-//           }
+        
         let searchbar = UISearchBar()
         viewModel.pagination(searchText: searchbar.text ?? "")
     }
     
 }
 
-//extension UIViewController {
-//    func hideKeyboardWhenTappedAround() {
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-//        tap.cancelsTouchesInView = false
-//        view.addGestureRecognizer(tap)
-//    }
-//    
-//    @objc func dismissKeyboard() {
-//        view.endEditing(true)
-//    }
-//}
+extension SearchController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(SearchController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}
 extension SearchController: SaveImageProtocol {
     func didTApDownloadButton(image: UIImage) {
         if UserDefaults.standard.bool(forKey: "loggedIn") {
