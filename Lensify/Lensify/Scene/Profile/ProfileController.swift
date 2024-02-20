@@ -14,4 +14,9 @@ class ProfileController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func termsButton(_ sender: Any) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(TermsAndConditionsController.self)") as! TermsAndConditionsController
+        navigationController?.show(controller, sender: nil)
+    }
+    
 }
