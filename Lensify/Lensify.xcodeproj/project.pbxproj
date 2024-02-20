@@ -72,12 +72,7 @@
 		7BD600812B6ED4EB00B28661 /* downloadLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BD600802B6ED4EB00B28661 /* downloadLottie.json */; };
 		7BD600842B6ED58700B28661 /* ReadyForDownloadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD600832B6ED58700B28661 /* ReadyForDownloadController.swift */; };
 		7BDB91CA2B5B924B00002EAC /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */; };
-		7BFEFFDB2B72A39B00A1CCC7 /* ListPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEFFDA2B72A39B00A1CCC7 /* ListPhoto.swift */; };
 		7BFEFFDE2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEFFDD2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift */; };
-		7BFEFFE22B72A50300A1CCC7 /* ListPhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEFFE12B72A50300A1CCC7 /* ListPhotoController.swift */; };
-		7BFEFFE42B72A51700A1CCC7 /* ListPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEFFE32B72A51700A1CCC7 /* ListPhotoViewModel.swift */; };
-		7BFEFFE82B72A55A00A1CCC7 /* ListPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEFFE62B72A55A00A1CCC7 /* ListPhotoCell.swift */; };
-		7BFEFFE92B72A55A00A1CCC7 /* ListPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BFEFFE72B72A55A00A1CCC7 /* ListPhotoCell.xib */; };
 		7BFEFFEB2B72A5A300A1CCC7 /* ListPhotoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEFFEA2B72A5A300A1CCC7 /* ListPhotoManager.swift */; };
 		7BFEFFED2B72A5AF00A1CCC7 /* ListPhotoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEFFEC2B72A5AF00A1CCC7 /* ListPhotoUseCase.swift */; };
 		7BFEFFF02B72A83800A1CCC7 /* CHTCollectionViewWaterfallLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 7BFEFFEF2B72A83700A1CCC7 /* CHTCollectionViewWaterfallLayout */; };
@@ -134,12 +129,7 @@
 		7BD600802B6ED4EB00B28661 /* downloadLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = downloadLottie.json; sourceTree = "<group>"; };
 		7BD600832B6ED58700B28661 /* ReadyForDownloadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyForDownloadController.swift; sourceTree = "<group>"; };
 		7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
-		7BFEFFDA2B72A39B00A1CCC7 /* ListPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhoto.swift; sourceTree = "<group>"; };
 		7BFEFFDD2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoEndpoint.swift; sourceTree = "<group>"; };
-		7BFEFFE12B72A50300A1CCC7 /* ListPhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoController.swift; sourceTree = "<group>"; };
-		7BFEFFE32B72A51700A1CCC7 /* ListPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoViewModel.swift; sourceTree = "<group>"; };
-		7BFEFFE62B72A55A00A1CCC7 /* ListPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoCell.swift; sourceTree = "<group>"; };
-		7BFEFFE72B72A55A00A1CCC7 /* ListPhotoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListPhotoCell.xib; sourceTree = "<group>"; };
 		7BFEFFEA2B72A5A300A1CCC7 /* ListPhotoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoManager.swift; sourceTree = "<group>"; };
 		7BFEFFEC2B72A5AF00A1CCC7 /* ListPhotoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoUseCase.swift; sourceTree = "<group>"; };
 		7BFEFFF32B72C2F200A1CCC7 /* Lensify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lensify.entitlements; sourceTree = "<group>"; };
@@ -413,7 +403,6 @@
 			isa = PBXGroup;
 			children = (
 				7B0F42CC2B780DE200785A37 /* Profile */,
-				7BFEFFD92B72A38C00A1CCC7 /* ListPhoto */,
 				7B5A907C2B70C4D60025E18B /* Register */,
 				7BD600822B6ED55000B28661 /* DownloadWallpaper */,
 				7BD4FB262B6972C000B5EA3E /* Login */,
@@ -516,50 +505,6 @@
 			path = UseCase;
 			sourceTree = "<group>";
 		};
-		7BFEFFD92B72A38C00A1CCC7 /* ListPhoto */ = {
-			isa = PBXGroup;
-			children = (
-				7BFEFFDC2B72A3A100A1CCC7 /* Model */,
-				7BFEFFDF2B72A4DF00A1CCC7 /* View */,
-				7BFEFFE02B72A4E500A1CCC7 /* ViewModel */,
-			);
-			path = ListPhoto;
-			sourceTree = "<group>";
-		};
-		7BFEFFDC2B72A3A100A1CCC7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7BFEFFDA2B72A39B00A1CCC7 /* ListPhoto.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		7BFEFFDF2B72A4DF00A1CCC7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				7BFEFFE12B72A50300A1CCC7 /* ListPhotoController.swift */,
-				7BFEFFE52B72A54100A1CCC7 /* Cell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		7BFEFFE02B72A4E500A1CCC7 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				7BFEFFE32B72A51700A1CCC7 /* ListPhotoViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		7BFEFFE52B72A54100A1CCC7 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				7BFEFFE62B72A55A00A1CCC7 /* ListPhotoCell.swift */,
-				7BFEFFE72B72A55A00A1CCC7 /* ListPhotoCell.xib */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -651,7 +596,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BFEFFE92B72A55A00A1CCC7 /* ListPhotoCell.xib in Resources */,
 				7B97B9D12B5451D300D489CB /* HomeCell.xib in Resources */,
 				7B7967832B6D35A90032BB63 /* GoogleService-Info.plist in Resources */,
 				7B90E2852B52C1FE0099FBA3 /* LaunchScreen.storyboard in Resources */,
@@ -681,9 +625,7 @@
 				7B90E29F2B52C4FD0099FBA3 /* NetworkManager.swift in Sources */,
 				7B97B9D02B5451D300D489CB /* HomeCell.swift in Sources */,
 				7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */,
-				7BFEFFE82B72A55A00A1CCC7 /* ListPhotoCell.swift in Sources */,
 				7B90E2A32B52EC840099FBA3 /* WelcomeToLensifyController.swift in Sources */,
-				7BFEFFE22B72A50300A1CCC7 /* ListPhotoController.swift in Sources */,
 				7BDB91CA2B5B924B00002EAC /* HomeUseCase.swift in Sources */,
 				7BC6AEFA2B6A183400694CD0 /* User.swift in Sources */,
 				7B9565422B650C1800044E58 /* Topic.swift in Sources */,
@@ -706,14 +648,12 @@
 				7BFEFFED2B72A5AF00A1CCC7 /* ListPhotoUseCase.swift in Sources */,
 				7B42A0492B56EEF2003C5D34 /* SearchController.swift in Sources */,
 				7B0F42CF2B780E2B00785A37 /* Profile.swift in Sources */,
-				7BFEFFE42B72A51700A1CCC7 /* ListPhotoViewModel.swift in Sources */,
 				7B53E7CA2B53F1F5005D0CED /* TabBarController.swift in Sources */,
 				7BC6AEF82B6A0FD900694CD0 /* RegisterController.swift in Sources */,
 				7B42A0522B56F1F2003C5D34 /* Search.swift in Sources */,
 				7BFEFFEB2B72A5A300A1CCC7 /* ListPhotoManager.swift in Sources */,
 				7B90E2782B52C1FB0099FBA3 /* SceneDelegate.swift in Sources */,
 				7B42A04D2B56EF53003C5D34 /* SearchCell.swift in Sources */,
-				7BFEFFDB2B72A39B00A1CCC7 /* ListPhoto.swift in Sources */,
 				7BC6AEFD2B6A50CE00694CD0 /* LoginAdapter.swift in Sources */,
 				7BC6AF012B6A981E00694CD0 /* SearchManager.swift in Sources */,
 			);
