@@ -19,4 +19,8 @@ class ProfileController: UIViewController {
         navigationController?.show(controller, sender: nil)
     }
     
+    @IBAction func aboutLensifyAction(_ sender: Any) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(AboutLensifyController.self)") as! AboutLensifyController
+        navigationController?.show(controller, sender: nil)
+    }
 }

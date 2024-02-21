@@ -44,18 +44,16 @@ class RegisterController: UIViewController {
         stackView.axis = .vertical
         stackView.addArrangedSubview(facebookButton)
         
-//        facebookButton.layer.cornerRadius = 20
-        
         facebookButton.addTarget(self, action: #selector(facebookButonTapped), for: .touchUpInside)
         facebookButton.permissions = ["public_profile", "email"]
         facebookButton.layer.cornerRadius = 20.0
-       facebookButton.layer.masksToBounds = true
+        facebookButton.layer.masksToBounds = true
     }
     
     @objc func facebookButonTapped() {
         adapter?.login(type: .facebook)
         //        if UserDefaults.standard.bool(forKey: "loggedIn") {
-//        print(UserDefaults.standard.bool(forKey: "loggedIn"))
+        //        print(UserDefaults.standard.bool(forKey: "loggedIn"))
         //            adapter?.facebookCompletion = { user in
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(HomeController.self)") as! HomeController
         self.navigationController?.show(controller, sender: nil)

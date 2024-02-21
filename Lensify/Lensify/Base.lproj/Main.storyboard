@@ -89,7 +89,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every way to find FREE content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xP-fO-Ava">
-                                <rect key="frame" x="50" y="492.66666666666669" width="330" height="56.333333333333314"/>
+                                <rect key="frame" x="50" y="493.33333333333326" width="330" height="56"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover Lensify endless pool of images to serve your purpose." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbx-AE-aAU">
-                                <rect key="frame" x="20" y="601" width="390" height="40"/>
+                                <rect key="frame" x="20" y="601.33333333333337" width="390" height="39.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -702,6 +702,9 @@
                                         <buttonConfiguration key="configuration" style="tinted" title="About LENSIFY">
                                             <color key="baseForegroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="aboutLensifyAction:" destination="G86-Ki-fcM" eventType="touchUpInside" id="ujz-V6-x0n"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zey-s4-ZJ5">
                                         <rect key="frame" x="0.0" y="227.66666666666666" width="390" height="93.666666666666657"/>
@@ -769,7 +772,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="390" id="iTR-gJ-nTd"/>
                                                 </constraints>
-                                                <mutableString key="text">**Lensify App - Terms and Conditions**
+                                                <string key="text">**Lensify App - Terms and Conditions**
 
 Welcome to Lensify, a wallpaper application provided by Lensify. By accessing or using Lensify, you agree to comply with and be bound by the following terms and conditions. If you do not agree to these Terms, please do not use the App.
 
@@ -804,7 +807,7 @@ Welcome to Lensify, a wallpaper application provided by Lensify. By accessing or
 **9. Contact Information:**
     - If you have any questions about these Terms, please contact us at createYourWorldWithLensify@icloud.com.
 
-By using Lensify, you acknowledge that you have read, understood, and agree to be bound by these Terms.</mutableString>
+By using Lensify, you acknowledge that you have read, understood, and agree to be bound by these Terms.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -843,6 +846,74 @@ By using Lensify, you acknowledge that you have read, understood, and agree to b
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dVh-He-gLj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2511.6279069767443" y="2000.8583690987125"/>
+        </scene>
+        <!--About Lensify Controller-->
+        <scene sceneID="3r1-nT-FeZ">
+            <objects>
+                <viewController storyboardIdentifier="AboutLensifyController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4xv-dH-3AM" customClass="AboutLensifyController" customModule="Lensify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="387-o1-Tbe">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="1000"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bB6-9s-hG2">
+                                <rect key="frame" x="0.0" y="59" width="430" height="907"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Quc-IC-21t">
+                                        <rect key="frame" x="20" y="0.0" width="390" height="1000"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1000" id="MgN-PV-qHy"/>
+                                            <constraint firstAttribute="width" constant="390" id="gl5-cX-emU"/>
+                                        </constraints>
+                                        <mutableString key="text">Welcome to Lensify - Your Ultimate Wallpaper Experience!
+
+Lensify is the go-to app for transforming your device's screen into a visual masterpiece. Immerse yourself in a world of stunning wallpapers curated to suit every mood and style. With Lensify, your device will reflect your personality like never before.
+
+Key Features:
+
+Vast Collection: Explore a diverse collection of high-quality wallpapers, carefully curated to cater to various tastes and preferences.
+
+Categories: Find the perfect wallpaper quickly by browsing through categories such as nature, abstract, minimalistic, landscapes, and more.
+
+Daily Updates: Enjoy a fresh look for your device every day with our regularly updated selection of wallpapers.
+
+User Uploads: Share your creativity with the Lensify community by uploading your wallpapers. Your masterpiece could be the next favorite for users around the world!
+
+Customization: Easily crop and adjust wallpapers to fit your device perfectly. Personalize your screen with just a few taps.
+
+User Community:
+
+Lensify is not just an app; it's a community of creative individuals. Connect with fellow users, discover new artists, and share your thoughts on the latest wallpapers.
+
+Privacy and Security:
+
+We understand the importance of privacy. Lensify respects your data, and our app is designed with your security in mind. For details, please refer to our Privacy Policy.</mutableString>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Quc-IC-21t" firstAttribute="top" secondItem="bB6-9s-hG2" secondAttribute="top" id="Umg-GE-aSF"/>
+                                    <constraint firstAttribute="trailing" secondItem="Quc-IC-21t" secondAttribute="trailing" constant="20" id="Zxg-2u-0wc"/>
+                                    <constraint firstItem="Quc-IC-21t" firstAttribute="leading" secondItem="bB6-9s-hG2" secondAttribute="leading" constant="20" id="dOE-dg-FCn"/>
+                                    <constraint firstAttribute="bottom" secondItem="Quc-IC-21t" secondAttribute="bottom" constant="20" id="irx-1l-glf"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="umA-bH-hHk"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="umA-bH-hHk" firstAttribute="bottom" secondItem="bB6-9s-hG2" secondAttribute="bottom" id="0ez-aL-NqE"/>
+                            <constraint firstItem="bB6-9s-hG2" firstAttribute="top" secondItem="umA-bH-hHk" secondAttribute="top" id="74h-gs-NFm"/>
+                            <constraint firstItem="bB6-9s-hG2" firstAttribute="leading" secondItem="umA-bH-hHk" secondAttribute="leading" id="oBk-rg-Tzf"/>
+                            <constraint firstItem="umA-bH-hHk" firstAttribute="trailing" secondItem="bB6-9s-hG2" secondAttribute="trailing" id="xeC-Z2-aoa"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="430" height="1000"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uvE-Xo-pNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3394.8837209302324" y="1885.6223175965667"/>
         </scene>
         <!--Profile-->
         <scene sceneID="vDp-Be-iX2">
@@ -883,25 +954,25 @@ By using Lensify, you acknowledge that you have read, understood, and agree to b
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

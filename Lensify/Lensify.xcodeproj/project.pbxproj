@@ -19,6 +19,7 @@
 		7B1736772B7646FF0030DE63 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = 7B1736762B7646FF0030DE63 /* FacebookBasics */; };
 		7B1736792B7646FF0030DE63 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7B1736782B7646FF0030DE63 /* FacebookCore */; };
 		7B17367D2B7646FF0030DE63 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 7B17367C2B7646FF0030DE63 /* FacebookLogin */; };
+		7B1833052B867E5B00A1B89C /* AboutLensifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1833042B867E5B00A1B89C /* AboutLensifyController.swift */; };
 		7B42A0492B56EEF2003C5D34 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42A0482B56EEF2003C5D34 /* SearchController.swift */; };
 		7B42A04D2B56EF53003C5D34 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42A04B2B56EF53003C5D34 /* SearchCell.swift */; };
 		7B42A04E2B56EF53003C5D34 /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B42A04C2B56EF53003C5D34 /* SearchCell.xib */; };
@@ -79,6 +80,7 @@
 
 /* Begin PBXFileReference section */
 		7B0F42CE2B780E2B00785A37 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		7B1833042B867E5B00A1B89C /* AboutLensifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutLensifyController.swift; sourceTree = "<group>"; };
 		7B42A0482B56EEF2003C5D34 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		7B42A04B2B56EF53003C5D34 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		7B42A04C2B56EF53003C5D34 /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			children = (
 				7B0F42CD2B780E1A00785A37 /* Model */,
 				7B9258362B8537B100D3C212 /* ProfileController.swift */,
+				7B1833042B867E5B00A1B89C /* AboutLensifyController.swift */,
 				7B9258382B853BAF00D3C212 /* TermsAndConditionsController.swift */,
 			);
 			path = Profile;
@@ -626,6 +629,7 @@
 				7BC6AEFF2B6A72A700694CD0 /* DatabaseAdapter.swift in Sources */,
 				7B90E2762B52C1FB0099FBA3 /* AppDelegate.swift in Sources */,
 				7BC6AF032B6A999E00694CD0 /* SearchUseCase.swift in Sources */,
+				7B1833052B867E5B00A1B89C /* AboutLensifyController.swift in Sources */,
 				7B90E2B22B5329550099FBA3 /* LaunchController.swift in Sources */,
 				7B53E7A32B53E6C6005D0CED /* HomeViewModel.swift in Sources */,
 				7B4DE9B62B57F44B00F4C3AA /* HomeEndpoint.swift in Sources */,
