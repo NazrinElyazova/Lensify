@@ -14,7 +14,6 @@ class WelcomeToLensifyController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        translateTitle()
         self.navigationController?.navigationBar.topItem?.title = ""
         myLabel.adjustsFontSizeToFitWidth = true
 //        myLabel.text = "Welcome to Lensify"
@@ -41,7 +40,9 @@ class WelcomeToLensifyController: UIViewController {
         view.bringSubviewToFront(myLabel)
         view.bringSubviewToFront(startWelcomeButton)
         
-        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        translateTitle()
     }
     func translateTitle() {
         myLabel.text = "welcomeLabel".localize

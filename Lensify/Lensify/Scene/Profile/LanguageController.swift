@@ -9,21 +9,24 @@ import UIKit
 
 class LanguageController: UIViewController {
 
+    @IBOutlet weak var spanishButton: UIButton!
+    @IBOutlet weak var azeButton: UIButton!
+    @IBOutlet weak var engButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    func changeAppLanguage(language: String) {
+        UserDefaults.standard.setValue(language, forKey: "localizedLanguage")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func engTappedAction(_ sender: Any) {
+        changeAppLanguage(language: "en")
     }
-    */
-
+    @IBAction func azeTappedAction(_ sender: Any) {
+        changeAppLanguage(language: "az")
+    }
+    @IBAction func spanishTappedAction(_ sender: Any) {
+        changeAppLanguage(language:    "es")
+    }
 }

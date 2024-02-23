@@ -587,27 +587,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IDo-b5-jT4">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IDo-b5-jT4">
                                 <rect key="frame" x="130" y="279" width="170" height="330"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAM-cr-ws8">
-                                        <rect key="frame" x="0.0" y="0.0" width="170" height="96.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="100"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled">
                                             <backgroundConfiguration key="background" image="America "/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="engTappedAction:" destination="TzP-Db-WiG" eventType="touchUpInside" id="KYk-s7-JOx"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3I-Zk-lgJ">
-                                        <rect key="frame" x="0.0" y="116.66666666666669" width="170" height="96.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="115" width="170" height="100"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="flagAZ"/>
+                                        <connections>
+                                            <action selector="azeTappedAction:" destination="TzP-Db-WiG" eventType="touchUpInside" id="J4J-8o-y5U"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDy-hc-8sw">
-                                        <rect key="frame" x="0.0" y="233.33333333333334" width="170" height="96.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="230" width="170" height="100"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled">
                                             <backgroundConfiguration key="background" image="Spain"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="spanishTappedAction:" destination="TzP-Db-WiG" eventType="touchUpInside" id="Wtc-aX-f1a"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -623,6 +632,11 @@
                             <constraint firstItem="IDo-b5-jT4" firstAttribute="top" secondItem="NZy-k4-i2r" secondAttribute="top" constant="220" id="diI-mr-fgi"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="azeButton" destination="Y3I-Zk-lgJ" id="NSj-uQ-3XH"/>
+                        <outlet property="engButton" destination="GAM-cr-ws8" id="cxH-hb-a0P"/>
+                        <outlet property="spanishButton" destination="hDy-hc-8sw" id="dmO-06-iFH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PPH-fi-SSR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -761,6 +775,9 @@
                                         <buttonConfiguration key="configuration" style="tinted" title="Languages">
                                             <color key="baseForegroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="languagesAction:" destination="G86-Ki-fcM" eventType="touchUpInside" id="JdR-qm-Ybb"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uK-jF-pOG">
                                         <rect key="frame" x="0.0" y="341.33333333333337" width="390" height="93.666666666666686"/>

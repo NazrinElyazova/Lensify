@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B0F42CF2B780E2B00785A37 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0F42CE2B780E2B00785A37 /* Profile.swift */; };
 		7B1736532B763E520030DE63 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 7B1736522B763E520030DE63 /* GoogleSignIn */; };
 		7B1736552B763E520030DE63 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7B1736542B763E520030DE63 /* GoogleSignInSwift */; };
 		7B17366A2B7646700030DE63 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 7B1736692B7646700030DE63 /* FirebaseAnalytics */; };
@@ -30,7 +29,6 @@
 		7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7A02B53E6B3005D0CED /* HomeController.swift */; };
 		7B53E7A32B53E6C6005D0CED /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7A22B53E6C6005D0CED /* HomeViewModel.swift */; };
 		7B53E7CA2B53F1F5005D0CED /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E7C92B53F1F5005D0CED /* TabBarController.swift */; };
-		7B54A2D62B7A9E91004D29E9 /* ListUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B54A2D52B7A9E91004D29E9 /* ListUserProfile.swift */; };
 		7B5A90802B70E1860025E18B /* client_213676420665-klno39bjlv7ovpc11549egkoeei52usj.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B5A907F2B70E1860025E18B /* client_213676420665-klno39bjlv7ovpc11549egkoeei52usj.apps.googleusercontent.com.plist */; };
 		7B7967742B6D2C510032BB63 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7967732B6D2C510032BB63 /* LoginViewModel.swift */; };
 		7B7967762B6D2C9E0032BB63 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7967752B6D2C9E0032BB63 /* LoginManager.swift */; };
@@ -82,7 +80,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7B0F42CE2B780E2B00785A37 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		7B1833042B867E5B00A1B89C /* AboutLensifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutLensifyController.swift; sourceTree = "<group>"; };
 		7B42A0482B56EEF2003C5D34 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		7B42A04B2B56EF53003C5D34 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
@@ -94,7 +91,6 @@
 		7B53E7A02B53E6B3005D0CED /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		7B53E7A22B53E6C6005D0CED /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		7B53E7C92B53F1F5005D0CED /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
-		7B54A2D52B7A9E91004D29E9 /* ListUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListUserProfile.swift; sourceTree = "<group>"; };
 		7B5A907F2B70E1860025E18B /* client_213676420665-klno39bjlv7ovpc11549egkoeei52usj.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_213676420665-klno39bjlv7ovpc11549egkoeei52usj.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
 		7B7967732B6D2C510032BB63 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		7B7967752B6D2C9E0032BB63 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
@@ -129,6 +125,9 @@
 		7B9F3C8D2B8898FA002AA027 /* az */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = az; path = az.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7B9F3C912B889F3B002AA027 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		7B9F3C932B88A32D002AA027 /* LanguageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageController.swift; sourceTree = "<group>"; };
+		7BC24F242B88ACC100E8B654 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7BC24F252B88ACC100E8B654 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		7BC24F262B88ACC100E8B654 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7BC6AEF72B6A0FD900694CD0 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		7BC6AEF92B6A183400694CD0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		7BC6AEFC2B6A50CE00694CD0 /* LoginAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAdapter.swift; sourceTree = "<group>"; };
@@ -176,22 +175,12 @@
 		7B0F42CC2B780DE200785A37 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				7B0F42CD2B780E1A00785A37 /* Model */,
 				7B9258362B8537B100D3C212 /* ProfileController.swift */,
 				7B9F3C932B88A32D002AA027 /* LanguageController.swift */,
 				7B1833042B867E5B00A1B89C /* AboutLensifyController.swift */,
 				7B9258382B853BAF00D3C212 /* TermsAndConditionsController.swift */,
 			);
 			path = Profile;
-			sourceTree = "<group>";
-		};
-		7B0F42CD2B780E1A00785A37 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7B0F42CE2B780E2B00785A37 /* Profile.swift */,
-				7B54A2D52B7A9E91004D29E9 /* ListUserProfile.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		7B42A0472B56EEE1003C5D34 /* Search */ = {
@@ -587,6 +576,7 @@
 				en,
 				Base,
 				az,
+				es,
 			);
 			mainGroup = 7B90E2692B52C1FB0099FBA3;
 			packageReferences = (
@@ -639,7 +629,6 @@
 				7B90E2AC2B52FB550099FBA3 /* Extension.swift in Sources */,
 				7B9565322B64C64700044E58 /* TopicCell.swift in Sources */,
 				7B7967762B6D2C9E0032BB63 /* LoginManager.swift in Sources */,
-				7B54A2D62B7A9E91004D29E9 /* ListUserProfile.swift in Sources */,
 				7B90E29F2B52C4FD0099FBA3 /* NetworkManager.swift in Sources */,
 				7B97B9D02B5451D300D489CB /* HomeCell.swift in Sources */,
 				7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */,
@@ -667,7 +656,6 @@
 				7B42A0502B56EF85003C5D34 /* SearchViewModel.swift in Sources */,
 				7B90E2A92B52FB110099FBA3 /* GetTopics.swift in Sources */,
 				7B42A0492B56EEF2003C5D34 /* SearchController.swift in Sources */,
-				7B0F42CF2B780E2B00785A37 /* Profile.swift in Sources */,
 				7B53E7CA2B53F1F5005D0CED /* TabBarController.swift in Sources */,
 				7BC6AEF82B6A0FD900694CD0 /* RegisterController.swift in Sources */,
 				7B9F3C942B88A32D002AA027 /* LanguageController.swift in Sources */,
@@ -688,6 +676,7 @@
 			children = (
 				7B90E27C2B52C1FB0099FBA3 /* Base */,
 				7B9F3C872B889846002AA027 /* az */,
+				7BC24F252B88ACC100E8B654 /* es */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -697,6 +686,7 @@
 			children = (
 				7B90E2842B52C1FE0099FBA3 /* Base */,
 				7B9F3C862B889846002AA027 /* az */,
+				7BC24F242B88ACC100E8B654 /* es */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -706,6 +696,7 @@
 			children = (
 				7B9F3C8B2B8898F6002AA027 /* en */,
 				7B9F3C8D2B8898FA002AA027 /* az */,
+				7BC24F262B88ACC100E8B654 /* es */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

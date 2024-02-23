@@ -8,21 +8,26 @@
 import UIKit
 
 class ProfileController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
         translateTitle()
     }
     @IBAction func termsButton(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(TermsAndConditionsController.self)") as! TermsAndConditionsController
         navigationController?.show(controller, sender: nil)
     }
-    func translateTitle() {
-        navigationItem.title = NSLocalizedString("listTitle", comment: "")
-    }
-    
     @IBAction func aboutLensifyAction(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(AboutLensifyController.self)") as! AboutLensifyController
         navigationController?.show(controller, sender: nil)
+    }
+    @IBAction func languagesAction(_ sender: Any) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(LanguageController.self)") as! LanguageController
+        navigationController?.show(controller, sender: nil)
+    }
+    func translateTitle() {
+        navigationItem.title = NSLocalizedString("listTitle", comment: "")
     }
 }

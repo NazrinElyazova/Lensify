@@ -25,8 +25,8 @@ class HomeController: UIViewController {
         //        configureViewModel()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         skeletonConfigure()
         collection.isSkeletonable = true
         collection.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .darkClouds),
