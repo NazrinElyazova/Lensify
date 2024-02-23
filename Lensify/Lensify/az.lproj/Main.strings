@@ -1,0 +1,144 @@
+
+/* Class = "UIButton"; configuration.title = "Log out"; ObjectID = "135-NP-DJL"; */
+"135-NP-DJL.configuration.title" = "Log out";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "135-NP-DJL"; */
+"135-NP-DJL.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Privacy Policy"; ObjectID = "2uK-jF-pOG"; */
+"2uK-jF-pOG.configuration.title" = "Privacy Policy";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "2uK-jF-pOG"; */
+"2uK-jF-pOG.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Search"; ObjectID = "3aY-6J-dtf"; */
+"3aY-6J-dtf.title" = "Search";
+
+/* Class = "UILabel"; text = "Your Journey Begins with Creating an Account on Lensify 🌟"; ObjectID = "3jU-dU-yC2"; */
+"3jU-dU-yC2.text" = "Your Journey Begins with Creating an Account on Lensify 🌟";
+
+/* Class = "UIButton"; configuration.title = "Login"; ObjectID = "4hI-Rh-3eZ"; */
+"4hI-Rh-3eZ.configuration.title" = "Login";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "4hI-Rh-3eZ"; */
+"4hI-Rh-3eZ.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "74a-cp-uIE"; */
+"74a-cp-uIE.placeholder" = "Password";
+
+/* Class = "UITextField"; placeholder = "Email"; ObjectID = "8rz-Ka-w8u"; */
+"8rz-Ka-w8u.placeholder" = "Email";
+
+/* Class = "UILabel"; text = "Every way to find FREE content"; ObjectID = "8xP-fO-Ava"; */
+"8xP-fO-Ava.text" = "Every way to find FREE content";
+
+/* Class = "UILabel"; text = "Already have an account?"; ObjectID = "GWd-sm-t3I"; */
+"GWd-sm-t3I.text" = "Already have an account?";
+
+/* Class = "UILabel"; text = "Discover Lensify endless pool of images to serve your purpose."; ObjectID = "Hbx-AE-aAU"; */
+"Hbx-AE-aAU.text" = "Discover Lensify endless pool of images to serve your purpose.";
+
+/* Class = "UIButton"; configuration.title = "Start"; ObjectID = "IBD-lY-Ak7"; */
+"IBD-lY-Ak7.configuration.title" = "Start";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "IBD-lY-Ak7"; */
+"IBD-lY-Ak7.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Login"; ObjectID = "IFv-NM-rIL"; */
+"IFv-NM-rIL.configuration.title" = "Login";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "IFv-NM-rIL"; */
+"IFv-NM-rIL.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Terms & Conditions"; ObjectID = "IJt-kP-C6T"; */
+"IJt-kP-C6T.configuration.title" = "Terms & Conditions";
+
+/* Class = "UIButton"; configuration.title = "Click"; ObjectID = "Kb9-6J-kXl"; */
+"Kb9-6J-kXl.configuration.title" = "Click";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Kb9-6J-kXl"; */
+"Kb9-6J-kXl.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Register"; ObjectID = "Lf1-zH-y8j"; */
+"Lf1-zH-y8j.configuration.title" = "Register";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Lf1-zH-y8j"; */
+"Lf1-zH-y8j.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Fullname"; ObjectID = "MU6-wU-Xez"; */
+"MU6-wU-Xez.placeholder" = "Fullname";
+
+/* Class = "UILabel"; text = "Click for it "; ObjectID = "O3S-JS-dgZ"; */
+"O3S-JS-dgZ.text" = "Click for it ";
+
+/* Class = "UILabel"; text = "Welcome to Lensify"; ObjectID = "OZa-Qt-lmz"; */
+"OZa-Qt-lmz.text" = "Welcome to Lensify";
+
+/* Class = "UILabel"; text = "**Lensify App - Terms and Conditions**\n\nWelcome to Lensify, a wallpaper application provided by Lensify. By accessing or using Lensify, you agree to comply with and be bound by the following terms and conditions. If you do not agree to these Terms, please do not use the App.\n\n**1. License to Use Lensify:**\n   - Lensify grants you a limited, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes.\n\n**2. User Content:**\n   - You may upload, submit, store, send, or receive content through the App. By using Lensify, you grant Lensify a worldwide, royalty-free, perpetual, irrevocable, non-exclusive license to use, reproduce, modify, distribute, and display the User Content for the purpose of operating and improving the App.\n\n**3. Intellectual Property:**\n   - Lensify and its features are protected by copyright, trademark, and other laws. You agree not to remove, alter, or obscure any copyright, trademark, service mark, or other proprietary rights notices incorporated in or accompanying the App.\n\n**4. Prohibited Conduct:**\n   - You agree not to engage in any of the following prohibited activities:\n      - Violating any applicable laws or regulations.\n      - Uploading or transmitting viruses, worms, or any other destructive code.\n      - Attempting to interfere with, compromise the system integrity or security, or decipher any transmissions to or from the servers running Lensify.\n      - Using the App for any purpose that is illegal or prohibited by these Terms.\n\n**5. Termination:**\n   - Lensify reserves the right to terminate or suspend your access to the App at any time, without notice, for any reason.\n\n**6. Disclaimer of Warranties:**\n   - Lensify is provided \"as is\" and \"as available\" without any warranties, express or implied.\n\n**7. Limitation of Liability:**\n   - In no event shall Lensify or its affiliates be liable for any indirect, incidental, special, consequential, or punitive damages.\n\n**8. Governing Law:**\n   - These Terms are governed by and construed in accordance with the laws of the Republic of Azerbaijan.\n\n**9. Contact Information:**\n    - If you have any questions about these Terms, please contact us at createYourWorldWithLensify@icloud.com.\n\nBy using Lensify, you acknowledge that you have read, understood, and agree to be bound by these Terms."; ObjectID = "PoM-Ed-kUd"; */
+"PoM-Ed-kUd.text" = "**Lensify App - Terms and Conditions**\n\nWelcome to Lensify, a wallpaper application provided by Lensify. By accessing or using Lensify, you agree to comply with and be bound by the following terms and conditions. If you do not agree to these Terms, please do not use the App.\n\n**1. License to Use Lensify:**\n   - Lensify grants you a limited, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes.\n\n**2. User Content:**\n   - You may upload, submit, store, send, or receive content through the App. By using Lensify, you grant Lensify a worldwide, royalty-free, perpetual, irrevocable, non-exclusive license to use, reproduce, modify, distribute, and display the User Content for the purpose of operating and improving the App.\n\n**3. Intellectual Property:**\n   - Lensify and its features are protected by copyright, trademark, and other laws. You agree not to remove, alter, or obscure any copyright, trademark, service mark, or other proprietary rights notices incorporated in or accompanying the App.\n\n**4. Prohibited Conduct:**\n   - You agree not to engage in any of the following prohibited activities:\n      - Violating any applicable laws or regulations.\n      - Uploading or transmitting viruses, worms, or any other destructive code.\n      - Attempting to interfere with, compromise the system integrity or security, or decipher any transmissions to or from the servers running Lensify.\n      - Using the App for any purpose that is illegal or prohibited by these Terms.\n\n**5. Termination:**\n   - Lensify reserves the right to terminate or suspend your access to the App at any time, without notice, for any reason.\n\n**6. Disclaimer of Warranties:**\n   - Lensify is provided \"as is\" and \"as available\" without any warranties, express or implied.\n\n**7. Limitation of Liability:**\n   - In no event shall Lensify or its affiliates be liable for any indirect, incidental, special, consequential, or punitive damages.\n\n**8. Governing Law:**\n   - These Terms are governed by and construed in accordance with the laws of the Republic of Azerbaijan.\n\n**9. Contact Information:**\n    - If you have any questions about these Terms, please contact us at createYourWorldWithLensify@icloud.com.\n\nBy using Lensify, you acknowledge that you have read, understood, and agree to be bound by these Terms.";
+
+/* Class = "UILabel"; text = "Welcome to Lensify - Your Ultimate Wallpaper Experience!\n\nLensify is the go-to app for transforming your device's screen into a visual masterpiece. Immerse yourself in a world of stunning wallpapers curated to suit every mood and style. With Lensify, your device will reflect your personality like never before.\n\nKey Features:\n\nVast Collection: Explore a diverse collection of high-quality wallpapers, carefully curated to cater to various tastes and preferences.\n\nCategories: Find the perfect wallpaper quickly by browsing through categories such as nature, abstract, minimalistic, landscapes, and more.\n\nDaily Updates: Enjoy a fresh look for your device every day with our regularly updated selection of wallpapers.\n\nUser Uploads: Share your creativity with the Lensify community by uploading your wallpapers. Your masterpiece could be the next favorite for users around the world!\n\nCustomization: Easily crop and adjust wallpapers to fit your device perfectly. Personalize your screen with just a few taps.\n\nUser Community:\n\nLensify is not just an app; it's a community of creative individuals. Connect with fellow users, discover new artists, and share your thoughts on the latest wallpapers.\n\nPrivacy and Security:\n\nWe understand the importance of privacy. Lensify respects your data, and our app is designed with your security in mind. For details, please refer to our Privacy Policy."; ObjectID = "Quc-IC-21t"; */
+"Quc-IC-21t.text" = "Welcome to Lensify - Your Ultimate Wallpaper Experience!\n\nLensify is the go-to app for transforming your device's screen into a visual masterpiece. Immerse yourself in a world of stunning wallpapers curated to suit every mood and style. With Lensify, your device will reflect your personality like never before.\n\nKey Features:\n\nVast Collection: Explore a diverse collection of high-quality wallpapers, carefully curated to cater to various tastes and preferences.\n\nCategories: Find the perfect wallpaper quickly by browsing through categories such as nature, abstract, minimalistic, landscapes, and more.\n\nDaily Updates: Enjoy a fresh look for your device every day with our regularly updated selection of wallpapers.\n\nUser Uploads: Share your creativity with the Lensify community by uploading your wallpapers. Your masterpiece could be the next favorite for users around the world!\n\nCustomization: Easily crop and adjust wallpapers to fit your device perfectly. Personalize your screen with just a few taps.\n\nUser Community:\n\nLensify is not just an app; it's a community of creative individuals. Connect with fellow users, discover new artists, and share your thoughts on the latest wallpapers.\n\nPrivacy and Security:\n\nWe understand the importance of privacy. Lensify respects your data, and our app is designed with your security in mind. For details, please refer to our Privacy Policy.";
+
+/* Class = "UINavigationItem"; title = "Register"; ObjectID = "TVC-Ju-JlY"; */
+"TVC-Ju-JlY.title" = "Register";
+
+/* Class = "UIButton"; configuration.title = "        Sign in with Google"; ObjectID = "X75-Fk-aGJ"; */
+"X75-Fk-aGJ.configuration.title" = "        Sign in with Google";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "X75-Fk-aGJ"; */
+"X75-Fk-aGJ.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Languages"; ObjectID = "Zey-s4-ZJ5"; */
+"Zey-s4-ZJ5.configuration.title" = "Languages";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Zey-s4-ZJ5"; */
+"Zey-s4-ZJ5.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "About LENSIFY"; ObjectID = "aIq-bS-Sf6"; */
+"aIq-bS-Sf6.configuration.title" = "About LENSIFY";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "aIq-bS-Sf6"; */
+"aIq-bS-Sf6.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Don't you have an account still? "; ObjectID = "cNk-6p-u64"; */
+"cNk-6p-u64.text" = "Don't you have an account still? ";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "etm-zi-XA0"; */
+"etm-zi-XA0.placeholder" = "Password";
+
+/* Class = "UIButton"; configuration.title = "Continue"; ObjectID = "hkI-Uy-juF"; */
+"hkI-Uy-juF.configuration.title" = "Continue";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hkI-Uy-juF"; */
+"hkI-Uy-juF.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "k6e-S9-08x"; */
+"k6e-S9-08x.title" = "Profile";
+
+/* Class = "UITextField"; placeholder = "Username, Email & Phone Number"; ObjectID = "mcy-yL-lee"; */
+"mcy-yL-lee.placeholder" = "Username, Email & Phone Number";
+
+/* Class = "UIButton"; configuration.title = "Register"; ObjectID = "nqs-Re-MK0"; */
+"nqs-Re-MK0.configuration.title" = "Register";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "nqs-Re-MK0"; */
+"nqs-Re-MK0.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Or Sign Up With"; ObjectID = "rsP-TG-vK0"; */
+"rsP-TG-vK0.text" = "Or Sign Up With";
+
+/* Class = "UINavigationItem"; title = "Welcome Back"; ObjectID = "tKU-ah-x3N"; */
+"tKU-ah-x3N.title" = "Welcome Back";
+
+/* Class = "UINavigationItem"; title = "Lensify"; ObjectID = "tsT-QH-lTl"; */
+"tsT-QH-lTl.title" = "Lensify";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "u1w-uS-F6G"; */
+"u1w-uS-F6G.title" = "Home";
+
+/* Class = "UILabel"; text = "You are ready for download an image now..."; ObjectID = "wt4-W2-GE1"; */
+"wt4-W2-GE1.text" = "You are ready for download an image now...";
+
+/* Class = "UILabel"; text = "\"Unleash the beauty of endless wallpapers! 🌟 Log in to your account and dive into a world of stunning backgrounds. Your lens, your style – let's Lensify your device screen!  #LensifyMagic\"✨ "; ObjectID = "yn3-6p-5g9"; */
+"yn3-6p-5g9.text" = "\"Unleash the beauty of endless wallpapers! 🌟 Log in to your account and dive into a world of stunning backgrounds. Your lens, your style – let's Lensify your device screen!  #LensifyMagic\"✨ ";

@@ -11,10 +11,14 @@ class ProfileController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        translateTitle()
     }
     @IBAction func termsButton(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(TermsAndConditionsController.self)") as! TermsAndConditionsController
         navigationController?.show(controller, sender: nil)
+    }
+    func translateTitle() {
+        navigationItem.title = NSLocalizedString("listTitle", comment: "")
     }
     
     @IBAction func aboutLensifyAction(_ sender: Any) {

@@ -579,6 +579,55 @@
             </objects>
             <point key="canvasLocation" x="1740" y="578"/>
         </scene>
+        <!--Language Controller-->
+        <scene sceneID="dqS-yI-6fH">
+            <objects>
+                <viewController storyboardIdentifier="LanguageController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TzP-Db-WiG" customClass="LanguageController" customModule="Lensify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GSA-zF-1ji">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="IDo-b5-jT4">
+                                <rect key="frame" x="130" y="279" width="170" height="330"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAM-cr-ws8">
+                                        <rect key="frame" x="0.0" y="0.0" width="170" height="96.666666666666671"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled">
+                                            <backgroundConfiguration key="background" image="America "/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3I-Zk-lgJ">
+                                        <rect key="frame" x="0.0" y="116.66666666666669" width="170" height="96.666666666666686"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" backgroundImage="flagAZ"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDy-hc-8sw">
+                                        <rect key="frame" x="0.0" y="233.33333333333334" width="170" height="96.666666666666657"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled">
+                                            <backgroundConfiguration key="background" image="Spain"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="330" id="gZz-av-zxb"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NZy-k4-i2r"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NZy-k4-i2r" firstAttribute="trailing" secondItem="IDo-b5-jT4" secondAttribute="trailing" constant="130" id="35V-1U-TLI"/>
+                            <constraint firstItem="IDo-b5-jT4" firstAttribute="leading" secondItem="NZy-k4-i2r" secondAttribute="leading" constant="130" id="Q1g-o7-54q"/>
+                            <constraint firstItem="IDo-b5-jT4" firstAttribute="top" secondItem="NZy-k4-i2r" secondAttribute="top" constant="220" id="diI-mr-fgi"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PPH-fi-SSR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2733.4883720930234" y="576.82403433476395"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RQ9-qq-8qo">
             <objects>
@@ -864,7 +913,7 @@ By using Lensify, you acknowledge that you have read, understood, and agree to b
                                             <constraint firstAttribute="height" constant="1000" id="MgN-PV-qHy"/>
                                             <constraint firstAttribute="width" constant="390" id="gl5-cX-emU"/>
                                         </constraints>
-                                        <mutableString key="text">Welcome to Lensify - Your Ultimate Wallpaper Experience!
+                                        <string key="text">Welcome to Lensify - Your Ultimate Wallpaper Experience!
 
 Lensify is the go-to app for transforming your device's screen into a visual masterpiece. Immerse yourself in a world of stunning wallpapers curated to suit every mood and style. With Lensify, your device will reflect your personality like never before.
 
@@ -886,7 +935,7 @@ Lensify is not just an app; it's a community of creative individuals. Connect wi
 
 Privacy and Security:
 
-We understand the importance of privacy. Lensify respects your data, and our app is designed with your security in mind. For details, please refer to our Privacy Policy.</mutableString>
+We understand the importance of privacy. Lensify respects your data, and our app is designed with your security in mind. For details, please refer to our Privacy Policy.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -929,7 +978,7 @@ We understand the importance of privacy. Lensify respects your data, and our app
                         </imageReference>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JXb-q3-PYu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="JXb-q3-PYu">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -945,7 +994,10 @@ We understand the importance of privacy. Lensify respects your data, and our app
         </scene>
     </scenes>
     <resources>
+        <image name="America " width="820" height="501"/>
         <image name="Google logo" width="30" height="30"/>
+        <image name="Spain" width="2560" height="1707"/>
+        <image name="flagAZ" width="612" height="367"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="narrow" width="400" height="400"/>
