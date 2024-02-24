@@ -10,9 +10,9 @@ import Lottie
 
 class LaunchController: UIViewController {
     
+    @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var discoverLabel: UILabel!
     @IBOutlet weak var everyLabel: UILabel!
-    
     @IBOutlet weak var lottieView: LottieAnimationView!
     
     override func viewDidLoad() {
@@ -30,5 +30,14 @@ class LaunchController: UIViewController {
             self.lottieView.play()
             self.lottieView.loopMode = .loop
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        translateText()
+    }
+    func translateText() {
+        everyLabel.text = "everyWay".localize
+        discoverLabel.text = "discover".localize
+        continueButton.setTitle("continue".localize, for: .normal)
     }
 }

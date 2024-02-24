@@ -17,8 +17,7 @@ class ProfileController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        logoutButton.titleLabel?.font = UIFont(name: "Helvetica", size: 30)
-
+        configureButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,8 +43,13 @@ class ProfileController: UIViewController {
         navigationItem.title = "listTitle".localize
         languagesButton.setTitle("language".localize, for: .normal)
         privacyPolicyButton.setTitle("privacyPolicy".localize, for: .normal)
-        termsConditionsButton.setTitle("termsConditions".localize, for: .normal) 
+        termsConditionsButton.setTitle("termsConditions".localize, for: .normal)
         aboutLensifyButton.setTitle("aboutLensify".localize, for: .normal)
         logoutButton.setTitle("logout".localize, for: .normal)
+    }
+    func configureButton() {
+        logoutButton.titleLabel?.font = .systemFont(ofSize: 28.0, weight: .bold)
+        logoutButton.backgroundColor = .systemRed
+        logoutButton.layer.cornerRadius = 10
     }
 }

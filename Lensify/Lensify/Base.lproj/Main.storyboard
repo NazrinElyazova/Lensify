@@ -134,6 +134,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="continueButton" destination="hkI-Uy-juF" id="EPv-ro-vYQ"/>
                         <outlet property="discoverLabel" destination="Hbx-AE-aAU" id="hJY-LD-Ebr"/>
                         <outlet property="everyLabel" destination="8xP-fO-Ava" id="bBI-3h-GIq"/>
                         <outlet property="lottieView" destination="167-QH-Zjs" id="3g9-uw-WuF"/>
@@ -643,6 +644,7 @@
                     </view>
                     <connections>
                         <outlet property="azeButton" destination="Y3I-Zk-lgJ" id="NSj-uQ-3XH"/>
+                        <outlet property="chooseLanguageLabel" destination="DZq-nW-gnf" id="ybg-8k-Tag"/>
                         <outlet property="engButton" destination="GAM-cr-ws8" id="cxH-hb-a0P"/>
                         <outlet property="spanishButton" destination="hDy-hc-8sw" id="dmO-06-iFH"/>
                     </connections>
@@ -802,10 +804,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="tPI-Iq-naL"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled">
-                                    <color key="baseBackgroundColor" systemColor="systemRedColor"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Log out"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QeN-wv-LNK"/>
@@ -1057,9 +1058,6 @@ We understand the importance of privacy. Lensify respects your data, and our app
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
