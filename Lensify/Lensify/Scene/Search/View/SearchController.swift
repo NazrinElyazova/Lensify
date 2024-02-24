@@ -10,6 +10,7 @@ import UIKit
 class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelegate {
     
     let viewModel = SearchViewModel()
+    let searchbar = UISearchBar()
     
     @IBOutlet weak var collection: UICollectionView!
 
@@ -25,6 +26,7 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        searchbar.placeholder = "search".localize
 
     }
     // MARK: SEARCH BAR
@@ -39,11 +41,10 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
     }
     func setupSearchbar() {
         
-        let searchbar = UISearchBar()
         searchbar.frame = CGRect(x: 20, y: 80, width: view.frame.size.width-40, height: 50)
         searchbar.layer.cornerRadius = 20.0
         searchbar.layer.masksToBounds = true
-        searchbar.placeholder = "Search for new lives"
+//        searchbar.placeholder = "Search for new lives"
         searchbar.translatesAutoresizingMaskIntoConstraints = true
         searchbar.searchTextField.layer.cornerRadius = 20
         searchbar.searchTextField.layer.masksToBounds = true

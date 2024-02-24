@@ -89,7 +89,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every way to find FREE content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xP-fO-Ava">
-                                <rect key="frame" x="50" y="493.33333333333326" width="330" height="56"/>
+                                <rect key="frame" x="50" y="492.66666666666669" width="330" height="56.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover Lensify endless pool of images to serve your purpose." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbx-AE-aAU">
-                                <rect key="frame" x="20" y="601.33333333333337" width="390" height="39.666666666666629"/>
+                                <rect key="frame" x="20" y="601" width="390" height="40"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -813,6 +813,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vKi-om-vaA"/>
+                    <connections>
+                        <outlet property="aboutLensifyButton" destination="aIq-bS-Sf6" id="2cs-nO-ooe"/>
+                        <outlet property="languagesButton" destination="Zey-s4-ZJ5" id="qXd-Mi-d6P"/>
+                        <outlet property="privacyPolicyButton" destination="2uK-jF-pOG" id="luV-Sx-8tD"/>
+                        <outlet property="termsConditionsButton" destination="IJt-kP-C6T" id="bOE-Ke-WSd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Epm-lT-oJa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -908,6 +914,9 @@ By using Lensify, you acknowledge that you have read, understood, and agree to b
                         </constraints>
                     </view>
                     <size key="freeformSize" width="430" height="1450"/>
+                    <connections>
+                        <outlet property="termsConditionsLabel" destination="PoM-Ed-kUd" id="wzp-4v-Igh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dVh-He-gLj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -976,6 +985,9 @@ We understand the importance of privacy. Lensify respects your data, and our app
                         </constraints>
                     </view>
                     <size key="freeformSize" width="430" height="1000"/>
+                    <connections>
+                        <outlet property="aboutLensifyLabel" destination="Quc-IC-21t" id="2U6-4P-nMI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uvE-Xo-pNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

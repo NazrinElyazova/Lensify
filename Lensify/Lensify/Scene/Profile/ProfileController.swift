@@ -9,6 +9,11 @@ import UIKit
 
 class ProfileController: UIViewController {
     
+    @IBOutlet weak var languagesButton: UIButton!
+    @IBOutlet weak var privacyPolicyButton: UIButton!
+    @IBOutlet weak var aboutLensifyButton: UIButton!
+    @IBOutlet weak var termsConditionsButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -28,6 +33,10 @@ class ProfileController: UIViewController {
         navigationController?.show(controller, sender: nil)
     }
     func translateTitle() {
-        navigationItem.title = NSLocalizedString("listTitle", comment: "")
+        navigationItem.title = "listTitle".localize
+        languagesButton.titleLabel?.text = "language".localize
+        privacyPolicyButton.titleLabel?.text = "privacyPolicy".localize
+        termsConditionsButton.titleLabel?.text = "termsConditions".localize
+        aboutLensifyButton.titleLabel?.text = "aboutLensify".localize
     }
 }

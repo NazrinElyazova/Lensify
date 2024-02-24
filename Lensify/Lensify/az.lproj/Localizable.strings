@@ -2,3 +2,68 @@
 "listTitle" = "Hesab";
 "welcomeLabel" = "Lensify-a xoş gəlmişsiniz";
 "welcomeButton" = "Başla";
+"search" = "Axtarış edin";
+"language" = "Dillər";
+"termsConditions" = "Qaydalar & Şərtlər";
+"privacyPolicy" = "Məxfilik Siyasəti";
+"aboutLensify" = "Lensify Haqqında";
+"termsText" = "**Lensify Tətbiqi - Qaydalar və Şərtlər**
+    
+    Lensify tərəfindən təqdim olunan divar kağızı proqramı olan Lensify-a xoş gəlmisiniz. Lensify-ə daxil olmaq və ya istifadə etməklə, siz aşağıdakı şərtlərə əməl etməyə və onlara əməl etməyə razılaşırsınız. Bu Şərtlərlə razı deyilsinizsə, lütfən, Tətbiqdən istifadə etməyin.
+
+    **1. Lensify istifadə etmək üçün lisenziya:**
+        - Lensify sizə Tətbiqdən şəxsi, qeyri-kommersiya məqsədləri üçün istifadə etmək üçün məhdud, qeyri-eksklüziv, ötürülə bilməyən, geri alına bilən lisenziya verir.
+
+    **2. İstifadəçi məzmunu:**
+        - Tətbiq vasitəsilə məzmunu yükləyə, təqdim edə, saxlaya, göndərə və ya qəbul edə bilərsiniz. Lensify-dan istifadə etməklə siz Tətbiqi idarə etmək və təkmilləşdirmək məqsədilə İstifadəçi Məzmununu istifadə etmək, çoxaltmaq, dəyişdirmək, yaymaq və göstərmək üçün Lensify-a dünya miqyasında, royaltisiz, əbədi, geri alınmaz, qeyri-eksklüziv lisenziya verirsiniz.
+
+    **3. Əqli mülkiyyət:**
+        - Lensify və onun xüsusiyyətləri müəllif hüququ, ticarət nişanı və digər qanunlarla qorunur. Siz Tətbiqə daxil edilmiş və ya onu müşayiət edən hər hansı müəllif hüququ, ticarət nişanı, xidmət nişanı və ya digər mülkiyyət hüquqları bildirişlərini silməməyə, dəyişdirməməyə və ya gizlətməməyə razılaşırsınız.
+
+    **4. Qadağan olunmuş Davranış:**
+        - Aşağıdakı qadağan olunmuş fəaliyyətlərdən heç biri ilə məşğul olmamağa razılaşırsınız:
+           - Hər hansı qüvvədə olan qanun və ya qaydaların pozulması.
+           - Virusların, qurdların və ya hər hansı digər dağıdıcı kodun yüklənməsi və ya ötürülməsi.
+           - Lensify ilə işləyən serverlərə müdaxilə etmək, sistemin bütövlüyünü və ya təhlükəsizliyini pozmaq və ya hər hansı ötürülmələri deşifrə etmək cəhdi.
+           - Tətbiqdən bu Şərtlərlə qeyri-qanuni və ya qadağan olunmuş hər hansı məqsəd üçün istifadə.
+
+    **5. Xitam:**
+        - Lensify istənilən vaxt, xəbərdarlıq etmədən, hər hansı səbəbdən, Tətbiqə girişinizi dayandırmaq və ya dayandırmaq hüququnu özündə saxlayır.
+
+    **6. Zəmanətlərdən imtina:**
+        - Lensify açıq və ya nəzərdə tutulan heç bir zəmanət olmadan olduğu kimi və mövcud olduğu kimi təqdim olunur.
+
+    **7. Məsuliyyət məhdudiyyəti:**
+        - Heç bir halda Lensify və ya onun filialları hər hansı dolayı, təsadüfi, xüsusi, ardıcıl və ya cəza xarakterli zərərlərə görə məsuliyyət daşımır.
+
+    **8. İdarəetmə hüquq:**
+        - Bu Şərtlər Azərbaycan Respublikasının qanunları ilə tənzimlənir və təfsir edilir.
+
+    **9. Əlaqə məlumatı:**
+         - Bu Şərtlərlə bağlı hər hansı sualınız varsa, createYourWorldWithLensify@icloud.com ünvanında bizimlə əlaqə saxlayın.
+
+    Lensify-dan istifadə etməklə siz bu Şərtləri oxuduğunuzu, başa düşdüyünüzü və onlara əməl etməyə razı olduğunuzu qəbul edirsiniz.";
+
+"aboutText" = "Lensify-ə xoş gəlmisiniz - Sizin Son Divar kağızı Təcrübəniz!
+
+Lensify cihazınızın ekranını vizual şah əsərə çevirmək üçün əsas proqramdır. Hər əhval-ruhiyyə və üsluba uyğun hazırlanmış heyrətamiz divar kağızları dünyasına qərq olun. Lensify ilə cihazınız heç vaxt olmadığı kimi şəxsiyyətinizi əks etdirəcək.
+
+Əsas Xüsusiyyətlər:
+
+Geniş kolleksiya: Müxtəlif zövqlərə və seçimlərə uyğun olaraq diqqətlə seçilmiş yüksək keyfiyyətli divar kağızlarının müxtəlif kolleksiyasını araşdırın.
+
+Kateqoriyalar: Təbiət, abstrakt, minimalist, mənzərə və sair kimi kateqoriyalara göz ataraq mükəmməl divar kağızı tapın.
+
+Gündəlik Yeniləmələr: Mütəmadi olaraq yenilənən divar kağızları seçimimizlə hər gün cihazınız üçün yeni görünüşdən həzz alın.
+
+İstifadəçi Yükləmələri: Divar kağızlarınızı yükləyərək yaradıcılığınızı Lensify icması ilə paylaşın. Sizin şah əsəriniz bütün dünyada istifadəçilər üçün növbəti sevimli əsər ola bilər!
+
+Fərdiləşdirmə: Cihazınıza mükəmməl uyğunlaşmaq üçün divar kağızlarını asanlıqla kəsin və tənzimləyin. Bir neçə toxunuşla ekranınızı fərdiləşdirin.
+
+İstifadəçi İcması:
+
+Lensify sadəcə proqram deyil; yaradıcı fərdlərin birliyidir. Digər istifadəçilərlə əlaqə qurun, yeni rəssamlar kəşf edin və ən son divar kağızları haqqında fikirlərinizi bölüşün.
+
+Məxfilik və Təhlükəsizlik:
+
+Biz məxfiliyin vacibliyini başa düşürük. Lensify məlumatlarınıza hörmət edir və tətbiqimiz təhlükəsizliyinizi nəzərə alaraq hazırlanıb. Ətraflı məlumat üçün Məxfilik Siyasətimizə müraciət edin.";

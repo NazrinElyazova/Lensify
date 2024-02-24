@@ -9,13 +9,15 @@ import UIKit
 
 class AboutLensifyController: UIViewController {
 
+    @IBOutlet weak var aboutLensifyLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.navigationController?.navigationBar.topItem?.title = ""
+//        self.navigationController?.navigationBar.topItem?.title = ""
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+//        navigationController?.setNavigationBarHidden(true, animated: animated)
+        aboutLensifyLabel.text = "aboutText".localize
     }
 }

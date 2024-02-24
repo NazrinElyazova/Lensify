@@ -12,6 +12,7 @@ class LanguageController: UIViewController {
     @IBOutlet weak var spanishButton: UIButton!
     @IBOutlet weak var azeButton: UIButton!
     @IBOutlet weak var engButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

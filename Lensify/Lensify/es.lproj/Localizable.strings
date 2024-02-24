@@ -1,4 +1,68 @@
+"listTitle" = "Cuenta";
+"welcomeLabel" = "Bienvenido a Lensify";
+"welcomeButton" = "Comenzar";
+"search" = "Buscar nuevas vidas";
+"language" = "Idiomas";
+"termsConditions" = "Términos & condiciones";
+"privacyPolicy" = "Política de privacidad";
+"aboutLensify" = "Acerca de Lensify";
+"termsText" = "**Aplicación Lensify - Términos y condiciones**
+    
+    Bienvenido a Lensify, una aplicación de fondo de pantalla proporcionada por Lensify. Al acceder o utilizar Lensify, usted acepta cumplir y estar sujeto a los siguientes términos y condiciones. Si no está de acuerdo con estos Términos, no utilice la Aplicación.
 
-"listTitle" = "Profile";
-"welcomeLabel" = "Welcome to Lensify";
-"welcomeButton" = "Start";
+    **1. Licencia para usar Lensify:**
+       - Lensify le otorga una licencia limitada, no exclusiva, intransferible y revocable para utilizar la Aplicación con fines personales y no comerciales.
+
+    **2. Contenido de usuario:**
+       - Puede cargar, enviar, almacenar, enviar o recibir contenido a través de la Aplicación. Al utilizar Lensify, usted otorga a Lensify una licencia mundial, libre de regalías, perpetua, irrevocable y no exclusiva para usar, reproducir, modificar, distribuir y mostrar el Contenido del usuario con el fin de operar y mejorar la Aplicación.
+
+    **3. Propiedad intelectual:**
+       - Lensify y sus funciones están protegidas por derechos de autor, marcas registradas y otras leyes. Usted acepta no eliminar, alterar ni ocultar ningún derecho de autor, marca comercial, marca de servicio u otros avisos de derechos de propiedad incorporados o que acompañen a la Aplicación.
+
+    **4. Conducta prohibida:**
+       - Aceptas no participar en ninguna de las siguientes actividades prohibidas:
+          - Violar cualquier ley o reglamento aplicable.
+          - Cargar o transmitir virus, gusanos o cualquier otro código destructivo.
+          - Intentar interferir, comprometer la integridad o seguridad del sistema, o descifrar cualquier transmisión hacia o desde los servidores que ejecutan Lensify.
+          - Usar la Aplicación para cualquier propósito que sea ilegal o esté prohibido por estos Términos.
+
+    **5. Terminación:**
+       - Lensify se reserva el derecho de cancelar o suspender su acceso a la Aplicación en cualquier momento, sin previo aviso, por cualquier motivo.
+
+    **6. Renuncia de garantías:**
+       - Lensify se proporciona tal como está y según está disponible sin ninguna garantía, expresa o implícita.
+
+    **7. Limitación de responsabilidad:**
+       - En ningún caso Lensify o sus afiliados serán responsables de ningún daño indirecto, incidental, especial, consecuente o punitivo.
+
+    **8. Ley que rige:**
+       - Estos Términos se rigen e interpretan de conformidad con las leyes de la República de Azerbaiyán.
+
+    **9. Información del contacto:**
+        - Si tiene alguna pregunta sobre estos Términos, contáctenos en createYourWorldWithLensify@icloud.com.
+
+    Al utilizar Lensify, usted reconoce que ha leído, comprendido y aceptado regirse por estos Términos.";
+
+"aboutText" = "Bienvenido a Lensify: ¡tu experiencia definitiva con fondos de pantalla!
+
+Lensify es la aplicación ideal para transformar la pantalla de su dispositivo en una obra maestra visual. Sumérgete en un mundo de impresionantes fondos de pantalla seleccionados para adaptarse a cada estado de ánimo y estilo. Con Lensify, tu dispositivo reflejará tu personalidad como nunca antes.
+
+Características clave:
+
+Amplia colección: explore una colección diversa de fondos de pantalla de alta calidad, cuidadosamente seleccionados para satisfacer diversos gustos y preferencias.
+
+Categorías: encuentre rápidamente el fondo de pantalla perfecto navegando por categorías como naturaleza, abstracto, minimalista, paisajes y más.
+
+Actualizaciones diarias: disfrute de una apariencia nueva para su dispositivo todos los días con nuestra selección de fondos de pantalla actualizada periódicamente.
+
+Cargas de usuarios: comparta su creatividad con la comunidad Lensify cargando sus fondos de pantalla. ¡Tu obra maestra podría ser la próxima favorita de usuarios de todo el mundo!
+
+Personalización: recorte y ajuste fácilmente los fondos de pantalla para que se ajusten perfectamente a su dispositivo. Personaliza tu pantalla con solo unos pocos toques.
+
+Comunidad de usuarios:
+
+Lensify no es sólo una aplicación; es una comunidad de individuos creativos. Conéctese con otros usuarios, descubra nuevos artistas y comparta sus opiniones sobre los fondos de pantalla más recientes.
+
+Privacidad y seguridad:
+
+Entendemos la importancia de la privacidad. Lensify respeta sus datos y nuestra aplicación está diseñada pensando en su seguridad. Para obtener más información, consulte nuestra Política de privacidad.";

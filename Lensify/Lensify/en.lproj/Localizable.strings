@@ -2,3 +2,68 @@
 "listTitle" = "Profile";
 "welcomeLabel" = "Welcome to Lensify";
 "welcomeButton" = "Start";
+"search" = "Search for new lives";
+"language" = "Languages";
+"termsConditions" = "Terms & Conditions";
+"privacyPolicy" = "Privacy Policy";
+"aboutLensify" = "About Lensify";
+"termsText" = "**Lensify App - Terms and Conditions**
+   
+   Welcome to Lensify, a wallpaper application provided by Lensify. By accessing or using Lensify, you agree to comply with and be bound by the following terms and conditions. If you do not agree to these Terms, please do not use the App.
+
+   **1. License to Use Lensify:**
+      - Lensify grants you a limited, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes.
+
+   **2. User Content:**
+      - You may upload, submit, store, send, or receive content through the App. By using Lensify, you grant Lensify a worldwide, royalty-free, perpetual, irrevocable, non-exclusive license to use, reproduce, modify, distribute, and display the User Content for the purpose of operating and improving the App.
+
+   **3. Intellectual Property:**
+      - Lensify and its features are protected by copyright, trademark, and other laws. You agree not to remove, alter, or obscure any copyright, trademark, service mark, or other proprietary rights notices incorporated in or accompanying the App.
+
+   **4. Prohibited Conduct:**
+      - You agree not to engage in any of the following prohibited activities:
+         - Violating any applicable laws or regulations.
+         - Uploading or transmitting viruses, worms, or any other destructive code.
+         - Attempting to interfere with, compromise the system integrity or security, or decipher any transmissions to or from the servers running Lensify.
+         - Using the App for any purpose that is illegal or prohibited by these Terms.
+
+   **5. Termination:**
+      - Lensify reserves the right to terminate or suspend your access to the App at any time, without notice, for any reason.
+
+   **6. Disclaimer of Warranties:**
+      - Lensify is provided as is and as available without any warranties, express or implied.
+
+   **7. Limitation of Liability:**
+      - In no event shall Lensify or its affiliates be liable for any indirect, incidental, special, consequential, or punitive damages.
+
+   **8. Governing Law:**
+      - These Terms are governed by and construed in accordance with the laws of the Republic of Azerbaijan.
+
+   **9. Contact Information:**
+       - If you have any questions about these Terms, please contact us at createYourWorldWithLensify@icloud.com.
+
+   By using Lensify, you acknowledge that you have read, understood, and agree to be bound by these Terms.";
+
+"aboutText" = "Welcome to Lensify - Your Ultimate Wallpaper Experience!
+
+Lensify is the go-to app for transforming your device's screen into a visual masterpiece. Immerse yourself in a world of stunning wallpapers curated to suit every mood and style. With Lensify, your device will reflect your personality like never before.
+
+Key Features:
+
+Vast Collection: Explore a diverse collection of high-quality wallpapers, carefully curated to cater to various tastes and preferences.
+
+Categories: Find the perfect wallpaper quickly by browsing through categories such as nature, abstract, minimalistic, landscapes, and more.
+
+Daily Updates: Enjoy a fresh look for your device every day with our regularly updated selection of wallpapers.
+
+User Uploads: Share your creativity with the Lensify community by uploading your wallpapers. Your masterpiece could be the next favorite for users around the world!
+
+Customization: Easily crop and adjust wallpapers to fit your device perfectly. Personalize your screen with just a few taps.
+
+User Community:
+
+Lensify is not just an app; it's a community of creative individuals. Connect with fellow users, discover new artists, and share your thoughts on the latest wallpapers.
+
+Privacy and Security:
+
+We understand the importance of privacy. Lensify respects your data, and our app is designed with your security in mind. For details, please refer to our Privacy Policy.";
