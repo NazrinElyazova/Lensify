@@ -15,8 +15,8 @@ class LanguageController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
+    
     func changeAppLanguage(language: String) {
         UserDefaults.standard.setValue(language, forKey: "localizedLanguage")
     }
@@ -24,9 +24,11 @@ class LanguageController: UIViewController {
     @IBAction func engTappedAction(_ sender: Any) {
         changeAppLanguage(language: "en")
     }
+    
     @IBAction func azeTappedAction(_ sender: Any) {
         changeAppLanguage(language: "az")
     }
+    
     @IBAction func spanishTappedAction(_ sender: Any) {
         changeAppLanguage(language:    "es")
     }

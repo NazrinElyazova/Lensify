@@ -10,44 +10,35 @@ import Foundation
 class SearchViewModel {
     let manager = SearchManager()
     
+    var searchData: Search?
     var search = [SearchResult]()
+    
     var onSucces: (()->Void)?
     var onError: ((String)-> Void)?
     
     var page = 1
-    var limit = 10
-    
-    var shouldMoreLoad: Bool = true {
+    var searchText: String? {
         didSet {
-            if shouldMoreLoad,  search.count > limit {
-                page += 1
-            }
+            getSearchItems()
         }
     }
     
-    func getSearchItems(searchText: String, limit: Int) {
-        
-      manager.getSearchItems(limit: limit, pageNumber: page, searchText: searchText) {
-       
-            data, errorMessage in
-//            print("==========")
+    func getSearchItems() {
+        manager.getSearchItems(pageNumber: page, searchText: searchText ?? "") { data, errorMessage in
             if let errorMessage = errorMessage {
                 self.onError?(errorMessage)
             } else if let data = data {
-                let existingIds = Set(self.search.map {
-                    $0.id
-                })
-                let newResults = data.results?.filter {
-                    !existingIds.contains($0.id)
-                } ?? []
-                self.search += newResults
+                self.searchData = data
+                self.search.append(contentsOf: data.results ?? [])
                 self.onSucces?()
             }
         }
     }
     
-    func pagination(searchText: String) {
-        page = 1
-        getSearchItems(searchText: searchText,  limit: limit)
+    func pagination(index: Int) {
+        if index == search.count-1 && page <= (searchData?.totalPages ?? 0) {
+            page += 1
+            getSearchItems()
+        }
     }
 }

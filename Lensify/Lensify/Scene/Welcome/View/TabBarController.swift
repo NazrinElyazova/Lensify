@@ -18,5 +18,4 @@ class TabBarController: UITabBarController {
         navigationItem.hidesBackButton = true
 
     }
-
 }

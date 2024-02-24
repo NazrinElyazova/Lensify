@@ -20,6 +20,7 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureUI()
         //        self.navigationController?.navigationBar.topItem?.title = ""
         //        configureViewModel()
@@ -33,23 +34,21 @@ class HomeController: UIViewController {
                                                 animation: nil,
                                                 transition: .crossDissolve(0.10))
         configureViewModel()
-        
     }
     
     func configureUI() {
-        
         topicView.addSubview(topicHeaderView)
         topicHeaderView.callback = { id in
             self.viewModel.items.removeAll()
-            self.viewModel.getPhotos(id: id, limit: 10)
+            self.collection.reloadData()
+            self.viewModel.topicId = id
         }
         
         topicHeaderView.frame = topicView.bounds
         collection.register(UINib(nibName: "\(HomeCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HomeCell.self)")
     }
     
-    func configureViewModel() {
-        
+    func configureViewModel() {        
         viewModel.getTopics()
         viewModel.topicSuccess = {
             self.topicHeaderView.configure(data: self.viewModel.topicItems)
@@ -64,6 +63,7 @@ class HomeController: UIViewController {
             print("Home controllerde error var: \(errorMessage)")
         }
     }
+    
     func presentSaveAndShareSheet(image: UIImage) {
         let saveandshare = UIActivityViewController(
             activityItems: [image],
@@ -71,12 +71,12 @@ class HomeController: UIViewController {
         present(saveandshare, animated: true)
     }
 }
+
 extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.items.count
-        
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
@@ -90,9 +90,8 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         .init(width: collectionView.frame.width, height: 200)
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
-        viewModel.pagination(id: "qPYsDzvJOYc")
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {        
+        viewModel.pagination(index: indexPath.item)
     }
 }
 extension HomeController: SaveImageProtocol {

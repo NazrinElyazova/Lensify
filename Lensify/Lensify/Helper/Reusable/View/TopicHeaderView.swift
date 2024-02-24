@@ -20,7 +20,6 @@ class TopicHeaderView: UIView {
     func configure(data: [TopicElement]) {
         topic = data
         collection.reloadData()
-        callback?(topic.first?.id ?? "")
     }
 }
 extension TopicHeaderView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

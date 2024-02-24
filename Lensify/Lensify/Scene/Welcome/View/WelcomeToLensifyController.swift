@@ -46,7 +46,7 @@ class WelcomeToLensifyController: UIViewController {
     }
     func translateTitle() {
         myLabel.text = "welcomeLabel".localize
-        startWelcomeButton.titleLabel?.text = "welcomeButton".localize
+        startWelcomeButton.setTitle("welcomeButton".localize, for: .normal)
     }
 }
 //   gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.5)

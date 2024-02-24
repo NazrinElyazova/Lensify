@@ -7,9 +7,8 @@
 
 import Foundation
 
-class SearchManager: SearchUseCase {
-    
-    func getSearchItems(limit: Int, pageNumber: Int, searchText: String, completion: @escaping ((Search?, String?) -> Void)) {
+class SearchManager: SearchUseCase {    
+    func getSearchItems(pageNumber: Int, searchText: String, completion: @escaping ((Search?, String?) -> Void)) {
         
         //        let path = SearchEndpoint.search.rawValue + "?query=\(searchText)"
         

@@ -34,9 +34,9 @@ class ProfileController: UIViewController {
     }
     func translateTitle() {
         navigationItem.title = "listTitle".localize
-        languagesButton.titleLabel?.text = "language".localize
-        privacyPolicyButton.titleLabel?.text = "privacyPolicy".localize
-        termsConditionsButton.titleLabel?.text = "termsConditions".localize
-        aboutLensifyButton.titleLabel?.text = "aboutLensify".localize
+        languagesButton.setTitle("language".localize, for: .normal)
+        privacyPolicyButton.setTitle("privacyPolicy".localize, for: .normal)
+        termsConditionsButton.setTitle("termsConditions".localize, for: .normal) 
+        aboutLensifyButton.setTitle("aboutLensify".localize, for: .normal)
     }
 }

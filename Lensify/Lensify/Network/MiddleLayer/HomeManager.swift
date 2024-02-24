@@ -16,12 +16,9 @@ class HomeManager: HomeUseCase {
         
         NetworkManager.request(model: [TopicElement].self, endpoint: url, completion: completion)
     }
-    func getHomeList(pageNumber: Int, limit: Int, id: String, completion: @escaping (([GetTopics]?, String?) -> Void)) {
-        //        let url = endpoint.rawValue + "\(id)/photos"
-        //        NetworkManager.request(model: [Wallpapers].self,
-        //                               endpoint: url) {
+    
+    func getHomeList(pageNumber: Int, id: String, completion: @escaping (([GetTopics]?, String?) -> Void)) {
         let path = NetworkHelper.urlConfiguration(endpoint: "\(HomeEndpoint.topics.rawValue)\(id)/photos") + "&page=\(pageNumber)"
-        //        let path = url + "&\(id)/photos"
         
         NetworkManager.request(model: [GetTopics].self, endpoint: path) {
             data, errorMessage in

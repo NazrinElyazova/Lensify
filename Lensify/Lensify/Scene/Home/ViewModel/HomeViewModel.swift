@@ -8,16 +8,22 @@
 import Foundation
 
 class HomeViewModel {
-    
     var items = [GetTopics]()
-    
+    var currentItems = [GetTopics]()
     var topicItems = [TopicElement]()
+    
+    private let manager = HomeManager()
+    
+    var page = 1
+    var topicId: String? {
+        didSet {
+            getPhotos()
+        }
+    }
     
     var onSuccess: (()-> Void)?
     var topicSuccess: (()-> Void)?
     var onError: ((String)-> Void)?
-    
-    private let manager = HomeManager()
     
     func getTopics() {
         manager.getTopics { data, errorMessage in
@@ -25,33 +31,35 @@ class HomeViewModel {
                 self.onError?(errorMessage)
             } else if let data {
                 self.topicItems = data
+                self.topicId = data.first?.id
                 self.topicSuccess?()
             }
         }
     }
-    func getPhotos(id: String, limit: Int) {
-        /*manager.getHomeList(id: id, endpoint: HomeEndpoint.topics)*/
-        let currentPage = (items.count / limit) + 1
-        manager.getHomeList(pageNumber: currentPage, limit: limit, id: id) {
+    func getPhotos() {
+        manager.getHomeList(pageNumber: page, id: topicId ?? "") {
             data, errorMessage in
             if let errorMessage = errorMessage {
                 self.onError?(errorMessage)
             } else if let data = data {
-                let existingId = Set(self.items.map {
-                    $0.id
-                })
-                let newResults = data.filter {
-                    !existingId.contains($0.id)
-                }
-                self.items += newResults
+                self.currentItems = data
+                self.items.append(contentsOf: data)
                 self.onSuccess?()
             }
         }
         
     }
-    func pagination(id: String) {
-        let limit = 10
-        getPhotos(id: id, limit: limit)
+    
+    func pagination(index: Int) {
+        if index == items.count-1 && !currentItems.isEmpty {
+            page += 1
+            getPhotos()
+        }
     }
+    
+//    func pagination(id: String) {
+//        let limit = 10
+//        getPhotos()
+//    }
 }
 

@@ -13,60 +13,59 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
     let searchbar = UISearchBar()
     
     @IBOutlet weak var collection: UICollectionView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         hideKeyboardWhenTappedAround()
         configureUI()
         configureViewModel()
         setupSearchbar()
-
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
         searchbar.placeholder = "search".localize
-
+        
     }
+    
     // MARK: SEARCH BAR
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         if let text = searchBar.text {
             viewModel.search = []
-            viewModel.pagination(searchText: text)
+            viewModel.searchText = text
             collection.reloadData()
-           
         }
     }
+    
     func setupSearchbar() {
-        
         searchbar.frame = CGRect(x: 20, y: 80, width: view.frame.size.width-40, height: 50)
         searchbar.layer.cornerRadius = 20.0
         searchbar.layer.masksToBounds = true
-//        searchbar.placeholder = "Search for new lives"
         searchbar.translatesAutoresizingMaskIntoConstraints = true
         searchbar.searchTextField.layer.cornerRadius = 20
         searchbar.searchTextField.layer.masksToBounds = true
         searchbar.delegate = self
         searchbar.isUserInteractionEnabled = true
         view.addSubview(searchbar)
-    
     }
+    
     func configureUI() {
         self.collection.register(UINib(nibName: "\(SearchCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(SearchCell.self)")
     }
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.setShowsCancelButton(true, animated: true)
     }
-
+    
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.setShowsCancelButton(false, animated: true)
     }
-
+    
     func configureViewModel() {
-            
         viewModel.onError = {
             errorMessage in
             print("Search controllerde error var: \(errorMessage)")
@@ -75,7 +74,7 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
             self.collection.reloadData()
         }
     }
-
+    
     func presentSaveAndShareSheet(image: UIImage) {
         let saveandshare = UIActivityViewController(
             activityItems: [image],
@@ -102,11 +101,8 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        
-        let searchbar = UISearchBar()
-        viewModel.pagination(searchText: searchbar.text ?? "")
+        viewModel.pagination(index: indexPath.item)
     }
-    
 }
 
 extension SearchController {
