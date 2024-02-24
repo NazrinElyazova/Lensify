@@ -79,15 +79,7 @@ class LoginController: UIViewController {
             adapterSave()
             login()
         } else {
-            showAlert()
+            showAlert(title: "Warning!", message: "Please fill your information")
         }
-    }
-    func showAlert() {
-        let alertController = UIAlertController(title: "Warning !", message: "Please, fill your information.", preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "Ok", style: .default)
-        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
-        alertController.addAction(okButton)
-        alertController.addAction(cancelButton)
-        present(alertController, animated: true)
     }
 }

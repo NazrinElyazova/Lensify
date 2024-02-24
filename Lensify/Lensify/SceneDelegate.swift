@@ -28,12 +28,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window?.makeKeyAndVisible()
             
         } else {
-            //
             window = UIWindow(windowScene: windowScene)
             let navigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(WelcomeToLensifyController.self)")
             window?.rootViewController = UINavigationController(rootViewController: navigationController)
             window?.makeKeyAndVisible()
-            //            print("login deyil")
         }
         
     } // MARK: men elave etdim for Facebook

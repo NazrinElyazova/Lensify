@@ -28,14 +28,14 @@
                                 <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBD-lY-Ak7">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBD-lY-Ak7">
                                 <rect key="frame" x="20" y="778" width="390" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="lin-y5-A3z"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Start">
-                                    <fontDescription key="titleFontDescription" name="Roboto-Bold" family="Roboto" pointSize="28"/>
+                                    <fontDescription key="titleFontDescription" name="Roboto-Bold" family="Roboto" pointSize="35"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" red="0.97254901960784312" green="0.60392156862745094" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
@@ -522,7 +522,7 @@
             </objects>
             <point key="canvasLocation" x="2908" y="-220"/>
         </scene>
-        <!--Lensify-->
+        <!--Home Controller-->
         <scene sceneID="06g-cC-fBQ">
             <objects>
                 <viewController storyboardIdentifier="HomeController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="r3b-aP-90W" customClass="HomeController" customModule="Lensify" customModuleProvider="target" sceneMemberID="viewController">
@@ -569,7 +569,7 @@
                             <constraint firstItem="ZIa-Ll-dpe" firstAttribute="leading" secondItem="4HP-o0-Sea" secondAttribute="leading" id="ymB-06-MIR"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Lensify" id="tsT-QH-lTl"/>
+                    <navigationItem key="navigationItem" id="tsT-QH-lTl"/>
                     <connections>
                         <outlet property="collection" destination="ZIa-Ll-dpe" id="ijE-Bh-HQj"/>
                         <outlet property="topicView" destination="xeA-HI-V3x" id="ly2-dC-XND"/>
@@ -797,14 +797,13 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="135-NP-DJL">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="135-NP-DJL">
                                 <rect key="frame" x="100" y="679" width="230" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="tPI-Iq-naL"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Log out">
-                                    <fontDescription key="titleFontDescription" name="PingFangSC-Semibold" family="PingFang SC" pointSize="26"/>
+                                <buttonConfiguration key="configuration" style="filled">
                                     <color key="baseBackgroundColor" systemColor="systemRedColor"/>
                                 </buttonConfiguration>
                             </button>
@@ -825,6 +824,7 @@
                     <connections>
                         <outlet property="aboutLensifyButton" destination="aIq-bS-Sf6" id="2cs-nO-ooe"/>
                         <outlet property="languagesButton" destination="Zey-s4-ZJ5" id="qXd-Mi-d6P"/>
+                        <outlet property="logoutButton" destination="135-NP-DJL" id="yba-is-mZD"/>
                         <outlet property="privacyPolicyButton" destination="2uK-jF-pOG" id="luV-Sx-8tD"/>
                         <outlet property="termsConditionsButton" destination="IJt-kP-C6T" id="bOE-Ke-WSd"/>
                     </connections>

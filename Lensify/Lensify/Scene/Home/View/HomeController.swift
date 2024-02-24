@@ -11,19 +11,17 @@ import SkeletonView
 
 class HomeController: UIViewController {
     
-    let viewModel = HomeViewModel()
+    private let topicHeaderView = TopicHeaderView.loadFromNib()
+    private let viewModel = HomeViewModel()
     
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var topicView: UIView!
-    
-    private let topicHeaderView = TopicHeaderView.loadFromNib()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureUI()
         //        self.navigationController?.navigationBar.topItem?.title = ""
-        //        configureViewModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,6 +35,7 @@ class HomeController: UIViewController {
     }
     
     func configureUI() {
+        navigationItem.title = "Lensify"
         topicView.addSubview(topicHeaderView)
         topicHeaderView.callback = { id in
             self.viewModel.items.removeAll()
@@ -101,20 +100,20 @@ extension HomeController: SaveImageProtocol {
             //            print(UserDefaults.standard.bool(forKey: "loggedIn"))
             presentSaveAndShareSheet(image: image )
         } else {
-            showAlert()
+            showAlert(title: "Warning!", message: "You have no account. Please, login.")
         }
     }
-    func showAlert() {
-        let alertController = UIAlertController(title: "Warning!", message: "You have no account. Please, login.", preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "Ok", style: .default) {_ in
-            let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
-            self.navigationController?.show(controller, sender: nil)
-        }
-        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
-        alertController.addAction(okButton)
-        alertController.addAction(cancelButton)
-        present(alertController, animated: true)
-    }
+//    func showAlert() {
+//        let alertController = UIAlertController(title: "Warning!", message: "You have no account. Please, login.", preferredStyle: .alert)
+//        let okButton = UIAlertAction(title: "Ok", style: .default) {_ in
+//            let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
+//            self.navigationController?.show(controller, sender: nil)
+//        }
+//        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
+//        alertController.addAction(okButton)
+//        alertController.addAction(cancelButton)
+//        present(alertController, animated: true)
+//    }
 }
 extension HomeController: SkeletonCollectionViewDataSource {
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
