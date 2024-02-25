@@ -32,6 +32,7 @@ class RegisterController: UIViewController {
         adapterSave()
         faceButton()
         self.navigationController?.navigationBar.topItem?.title = ""
+        configureButton()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -101,5 +102,14 @@ class RegisterController: UIViewController {
         alreadyHaveAccountLabel.text = "alreadyHaveAccount".localize
         yourJourneyLabel.text = "yourJourney".localize
         loginButton.setTitle("loginButton".localize, for: .normal)
+    }
+    func configureButton() {
+        
+        //MARK: Blue
+        let customColor = UIColor(red: 0/255.0, green: 153/255.0, blue: 204/255.0, alpha: 1.0)
+
+        registerButton.titleLabel?.font = .systemFont(ofSize: 28.0, weight: .bold)
+        registerButton.backgroundColor = customColor
+        registerButton.layer.cornerRadius = 10
     }
 }

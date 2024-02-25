@@ -20,9 +20,10 @@ class LaunchController: UIViewController {
         
         self.navigationController?.navigationBar.topItem?.title = ""
         lottieAnimation()
+        configureExtensionButton(button: continueButton)
     }
     @IBAction func continueButtonAction(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(TabBarController.self)") as! TabBarController
         navigationController?.show(controller, sender: nil)
     }
     func lottieAnimation() {
@@ -40,4 +41,5 @@ class LaunchController: UIViewController {
         discoverLabel.text = "discover".localize
         continueButton.setTitle("continue".localize, for: .normal)
     }
+
 }

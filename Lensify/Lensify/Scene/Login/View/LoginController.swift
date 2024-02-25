@@ -32,9 +32,9 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        
-//        title = "Welcome"
+        
         self.navigationController?.navigationBar.topItem?.title = ""
+       configureExtensionButton(button: loginButton)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -54,18 +54,18 @@ class LoginController: UIViewController {
         navigationController?.show(controller, sender: nil)
     }
     func adapterSave() {
-        adapter = LoginAdapter(controller: self)
         
+        adapter = LoginAdapter(controller: self)
         adapter?.completion = {
             user in
             self.login()
             self.databaseAdapter.saveUserInfo(data: user)
             print(user)
             //save to firebase
-            
         }
     }
     func getUserInfo() {
+        
         database.collection("UserInfo").getDocuments { snapshot, error in
             
             for document in snapshot?.documents ?? [] {
@@ -88,7 +88,7 @@ class LoginController: UIViewController {
             adapterSave()
             login()
         } else {
-            showAlert(title: "Warning!", message: "Please fill your information")
+//            showAlert(title: "Warning!", message: "Please fill your information")
         }
     }
     func translateText() {

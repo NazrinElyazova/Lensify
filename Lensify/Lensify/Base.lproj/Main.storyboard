@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,20 +26,19 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Lensify" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZa-Qt-lmz">
                                 <rect key="frame" x="30" y="427.33333333333331" width="370" height="77.333333333333314"/>
                                 <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="65"/>
-                                <color key="textColor" systemColor="groupTableViewBackgroundColor"/>
+                                <color key="textColor" name="MainColors"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBD-lY-Ak7">
-                                <rect key="frame" x="20" y="778" width="390" height="60"/>
+                                <rect key="frame" x="20" y="758" width="390" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="lin-y5-A3z"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Start">
-                                    <fontDescription key="titleFontDescription" name="Roboto-Bold" family="Roboto" pointSize="35"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" red="0.97254901960784312" green="0.60392156862745094" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="35"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" name="MainColors"/>
+                                </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                         <integer key="value" value="20"/>
@@ -54,7 +54,7 @@
                         <constraints>
                             <constraint firstItem="OZa-Qt-lmz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5Nf-GY-cbk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IBD-lY-Ak7" secondAttribute="trailing" constant="20" id="PE9-Lh-pr0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IBD-lY-Ak7" secondAttribute="bottom" constant="60" id="Tsg-NK-oNE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="IBD-lY-Ak7" secondAttribute="bottom" constant="80" id="Tsg-NK-oNE"/>
                             <constraint firstItem="OZa-Qt-lmz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="XUi-Qj-Sim"/>
                             <constraint firstItem="IBD-lY-Ak7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="i1V-TG-76e"/>
                             <constraint firstItem="OZa-Qt-lmz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pue-XA-pIJ"/>
@@ -79,7 +79,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="167-QH-Zjs" customClass="LottieAnimationView" customModule="Lottie">
-                                <rect key="frame" x="30" y="79" width="370" height="250"/>
+                                <rect key="frame" x="30" y="59" width="370" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="PDu-2z-c4j"/>
@@ -89,28 +89,27 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every way to find FREE content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xP-fO-Ava">
-                                <rect key="frame" x="50" y="492.66666666666669" width="330" height="56.333333333333314"/>
+                                <rect key="frame" x="50" y="441.66666666666669" width="330" height="56.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkI-Uy-juF">
-                                <rect key="frame" x="20" y="778" width="390" height="60"/>
+                                <rect key="frame" x="20" y="758" width="390" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Y1w-OS-9mC"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Continue">
-                                    <fontDescription key="titleFontDescription" name="Roboto-Bold" family="Roboto" pointSize="28"/>
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <color key="baseBackgroundColor" red="0.97254901960784312" green="0.60392156862745094" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="28"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" name="MainColors"/>
+                                </state>
                                 <connections>
                                     <action selector="continueButtonAction:" destination="2Wj-R6-qXw" eventType="touchUpInside" id="74v-iv-h78"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover Lensify endless pool of images to serve your purpose." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbx-AE-aAU">
-                                <rect key="frame" x="20" y="601" width="390" height="40"/>
+                                <rect key="frame" x="20" y="598" width="390" height="40"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -119,17 +118,17 @@
                         <viewLayoutGuide key="safeArea" id="bFt-3f-RAM"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="hkI-Uy-juF" firstAttribute="top" secondItem="Hbx-AE-aAU" secondAttribute="bottom" constant="120" id="BRc-91-osX"/>
                             <constraint firstItem="8xP-fO-Ava" firstAttribute="leading" secondItem="bFt-3f-RAM" secondAttribute="leading" constant="50" id="BwW-8H-HuP"/>
                             <constraint firstItem="bFt-3f-RAM" firstAttribute="trailing" secondItem="Hbx-AE-aAU" secondAttribute="trailing" constant="20" id="FCG-Ms-jE8"/>
-                            <constraint firstItem="167-QH-Zjs" firstAttribute="top" secondItem="bFt-3f-RAM" secondAttribute="top" constant="20" id="Gji-C1-McD"/>
-                            <constraint firstItem="hkI-Uy-juF" firstAttribute="top" secondItem="Hbx-AE-aAU" secondAttribute="bottom" constant="137" id="PPt-m1-Dyi"/>
+                            <constraint firstItem="167-QH-Zjs" firstAttribute="top" secondItem="bFt-3f-RAM" secondAttribute="top" id="Gji-C1-McD"/>
                             <constraint firstItem="Hbx-AE-aAU" firstAttribute="leading" secondItem="bFt-3f-RAM" secondAttribute="leading" constant="20" id="SQi-8F-90F"/>
                             <constraint firstItem="bFt-3f-RAM" firstAttribute="trailing" secondItem="8xP-fO-Ava" secondAttribute="trailing" constant="50" id="TO8-zi-7Wo"/>
                             <constraint firstItem="bFt-3f-RAM" firstAttribute="trailing" secondItem="hkI-Uy-juF" secondAttribute="trailing" constant="20" id="Yio-Y1-iZd"/>
                             <constraint firstItem="bFt-3f-RAM" firstAttribute="trailing" secondItem="167-QH-Zjs" secondAttribute="trailing" constant="30" id="mOJ-Qm-3vr"/>
                             <constraint firstItem="hkI-Uy-juF" firstAttribute="leading" secondItem="bFt-3f-RAM" secondAttribute="leading" constant="20" id="qat-IQ-g42"/>
-                            <constraint firstItem="Hbx-AE-aAU" firstAttribute="top" secondItem="8xP-fO-Ava" secondAttribute="bottom" constant="52" id="tu0-RQ-llD"/>
-                            <constraint firstItem="bFt-3f-RAM" firstAttribute="bottom" secondItem="hkI-Uy-juF" secondAttribute="bottom" constant="60" id="uSm-wP-kj8"/>
+                            <constraint firstItem="Hbx-AE-aAU" firstAttribute="top" secondItem="8xP-fO-Ava" secondAttribute="bottom" constant="100" id="tu0-RQ-llD"/>
+                            <constraint firstItem="bFt-3f-RAM" firstAttribute="bottom" secondItem="hkI-Uy-juF" secondAttribute="bottom" constant="80" id="uSm-wP-kj8"/>
                             <constraint firstItem="167-QH-Zjs" firstAttribute="leading" secondItem="bFt-3f-RAM" secondAttribute="leading" constant="30" id="uvO-hC-sVk"/>
                         </constraints>
                     </view>
@@ -254,12 +253,11 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFv-NM-rIL">
                                         <rect key="frame" x="0.0" y="153.33333333333331" width="390" height="56.666666666666657"/>
                                         <color key="backgroundColor" red="0.97254901960784312" green="0.60392156862745094" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Login">
-                                            <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" red="0.97254901960784312" green="0.60392156862745094" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </buttonConfiguration>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" name="MainColors"/>
+                                        </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <integer key="value" value="20"/>
@@ -360,12 +358,11 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqs-Re-MK0">
                                         <rect key="frame" x="0.0" y="153.33333333333337" width="370" height="56.666666666666657"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Register">
-                                            <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="baseBackgroundColor" red="0.97254901959999995" green="0.60392156860000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </buttonConfiguration>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Register">
+                                            <color key="titleColor" name="MainColors"/>
+                                        </state>
                                         <connections>
                                             <action selector="registerAction:" destination="X9n-Cv-tYd" eventType="touchUpInside" id="1Op-uw-Add"/>
                                         </connections>
@@ -519,7 +516,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="clickForItLabel" destination="O3S-JS-dgZ" id="aNX-8i-icv"/>
+                        <outlet property="clickTapped" destination="Kb9-6J-kXl" id="WiW-3n-7g9"/>
                         <outlet property="downloadLottie" destination="W11-4a-9h9" id="I58-yN-BXb"/>
+                        <outlet property="readyForLabel" destination="wt4-W2-GE1" id="PlD-eZ-7ks"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2bL-9N-JHm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1047,9 +1047,9 @@ We understand the importance of privacy. Lensify respects your data, and our app
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="narrow" width="400" height="400"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
+        <namedColor name="MainColors">
+            <color red="0.99607843137254903" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

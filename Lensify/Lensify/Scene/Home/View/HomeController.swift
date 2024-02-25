@@ -100,7 +100,7 @@ extension HomeController: SaveImageProtocol {
             //            print(UserDefaults.standard.bool(forKey: "loggedIn"))
             presentSaveAndShareSheet(image: image )
         } else {
-            showAlert(title: "Warning!", message: "You have no account. Please, login.")
+            showAlert()
         }
     }
 //    func showAlert() {

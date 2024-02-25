@@ -19,6 +19,7 @@
 		7B1736792B7646FF0030DE63 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 7B1736782B7646FF0030DE63 /* FacebookCore */; };
 		7B17367D2B7646FF0030DE63 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 7B17367C2B7646FF0030DE63 /* FacebookLogin */; };
 		7B1833052B867E5B00A1B89C /* AboutLensifyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1833042B867E5B00A1B89C /* AboutLensifyController.swift */; };
+		7B425A1F2B8BC8DF00E5AC05 /* ConfigureButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B425A1E2B8BC8DF00E5AC05 /* ConfigureButtonExtension.swift */; };
 		7B42A0492B56EEF2003C5D34 /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42A0482B56EEF2003C5D34 /* SearchController.swift */; };
 		7B42A04D2B56EF53003C5D34 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B42A04B2B56EF53003C5D34 /* SearchCell.swift */; };
 		7B42A04E2B56EF53003C5D34 /* SearchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B42A04C2B56EF53003C5D34 /* SearchCell.xib */; };
@@ -82,6 +83,7 @@
 
 /* Begin PBXFileReference section */
 		7B1833042B867E5B00A1B89C /* AboutLensifyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutLensifyController.swift; sourceTree = "<group>"; };
+		7B425A1E2B8BC8DF00E5AC05 /* ConfigureButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureButtonExtension.swift; sourceTree = "<group>"; };
 		7B42A0482B56EEF2003C5D34 /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		7B42A04B2B56EF53003C5D34 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		7B42A04C2B56EF53003C5D34 /* SearchCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCell.xib; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 				7B90E2AB2B52FB550099FBA3 /* Extension.swift */,
 				7B9F3C912B889F3B002AA027 /* StringExtension.swift */,
 				7BCD82902B89EC6C00FE1877 /* AlertExtension.swift */,
+				7B425A1E2B8BC8DF00E5AC05 /* ConfigureButtonExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 				7B7967742B6D2C510032BB63 /* LoginViewModel.swift in Sources */,
 				7B4DE9B32B57E86A00F4C3AA /* HomeManager.swift in Sources */,
 				7B42A0502B56EF85003C5D34 /* SearchViewModel.swift in Sources */,
+				7B425A1F2B8BC8DF00E5AC05 /* ConfigureButtonExtension.swift in Sources */,
 				7B90E2A92B52FB110099FBA3 /* GetTopics.swift in Sources */,
 				7B42A0492B56EEF2003C5D34 /* SearchController.swift in Sources */,
 				7B53E7CA2B53F1F5005D0CED /* TabBarController.swift in Sources */,

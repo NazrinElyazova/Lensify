@@ -22,8 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if UserDefaults.standard.bool(forKey: "loggedIn") {
             //            print("loginnnn")
             self.loginApp(windowScene: windowScene)
-            
-            
         } else {
             self.logout(windowScene: windowScene)
         }
@@ -42,7 +40,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window?.makeKeyAndVisible()
         }
         
-     // MARK: men elave etdim for Facebook
+     // MARK: added for Facebook
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         guard let url = URLContexts.first?.url else {
             return
