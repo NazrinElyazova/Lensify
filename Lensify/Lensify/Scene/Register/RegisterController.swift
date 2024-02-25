@@ -59,10 +59,10 @@ class RegisterController: UIViewController {
         //        if UserDefaults.standard.bool(forKey: "loggedIn") {
         //        print(UserDefaults.standard.bool(forKey: "loggedIn"))
         //            adapter?.facebookCompletion = { user in
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(HomeController.self)") as! HomeController
-        self.navigationController?.show(controller, sender: nil)
+    
         login()
-        
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
+        self.navigationController?.show(controller, sender: nil)
     }
     func login() {
         UserDefaults.standard.set(true, forKey: "loggedIn")
