@@ -21,20 +21,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if UserDefaults.standard.bool(forKey: "loggedIn") {
             //            print("loginnnn")
-            window = UIWindow(windowScene: windowScene)
+            self.loginApp(windowScene: windowScene)
             
-            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(TabBarController.self)")
-            window?.rootViewController = UINavigationController(rootViewController: controller)
-            window?.makeKeyAndVisible()
             
         } else {
+            self.logout(windowScene: windowScene)
+        }
+    }
+        func loginApp(windowScene: UIWindowScene) {
             window = UIWindow(windowScene: windowScene)
-            let navigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(WelcomeToLensifyController.self)")
-            window?.rootViewController = UINavigationController(rootViewController: navigationController)
+            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(TabBarController.self)")
+            self.window?.rootViewController = UINavigationController(rootViewController: controller)
             window?.makeKeyAndVisible()
         }
         
-    } // MARK: men elave etdim for Facebook
+        func logout(windowScene: UIWindowScene) {
+            self.window = UIWindow(windowScene: windowScene)
+            let navigationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(WelcomeToLensifyController.self)")
+            self.window?.rootViewController = UINavigationController(rootViewController: navigationController)
+            self.window?.makeKeyAndVisible()
+        }
+        
+     // MARK: men elave etdim for Facebook
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         guard let url = URLContexts.first?.url else {
             return

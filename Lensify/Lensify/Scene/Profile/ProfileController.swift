@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class ProfileController: UIViewController {
     
@@ -22,6 +23,10 @@ class ProfileController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         translateTitle()
+    }
+    
+    @IBAction func logoutTapped(_ sender: Any) {
+        logout()
     }
     
     @IBAction func termsButton(_ sender: Any) {
@@ -52,4 +57,19 @@ class ProfileController: UIViewController {
         logoutButton.backgroundColor = .systemRed
         logoutButton.layer.cornerRadius = 10
     }
+    func logout() {
+        if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let sceneDelegate = scene.delegate as? SceneDelegate {
+            UserDefaults.standard.set(false, forKey: "loggedIn") // Setting the flag
+            sceneDelegate.logout(windowScene: scene)
+        }
+    }
 }
+    
+//let auth = Auth.auth()
+//do {
+//    try auth.signOut()
+//    self.dismiss(animated: true)
+//} catch {
+//    print(error.localizedDescription)
+//}
