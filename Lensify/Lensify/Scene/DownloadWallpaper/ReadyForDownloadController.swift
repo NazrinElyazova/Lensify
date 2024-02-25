@@ -21,6 +21,8 @@ class ReadyForDownloadController: UIViewController {
         translateText()
         readyForDownload()
         self.navigationController?.navigationBar.topItem?.title = ""
+        configureExtensionButton(button: clickTapped)
+
     }
     
     func readyForDownload() {
