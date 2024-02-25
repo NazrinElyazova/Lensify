@@ -13,7 +13,12 @@ import FirebaseFirestoreInternal
 import FBSDKLoginKit
 
 class LoginController: UIViewController {
+    @IBOutlet weak var dontHaveAccountLabel: UILabel!
+    @IBOutlet weak var orSignupWithLabel: UILabel!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var unleashLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var userNameEmailTextField: UITextField!
     
     var adapter: LoginAdapter?
@@ -27,9 +32,13 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "Welcome"
+//        
+//        title = "Welcome"
         self.navigationController?.navigationBar.topItem?.title = ""
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        translateText()
     }
     func login() {
         UserDefaults.standard.set(true, forKey: "loggedIn")
@@ -81,5 +90,14 @@ class LoginController: UIViewController {
         } else {
             showAlert(title: "Warning!", message: "Please fill your information")
         }
+    }
+    func translateText() {
+        unleashLabel.text = "unleashLabel".localize
+        loginButton.setTitle("loginButton".localize, for: .normal)
+        passwordTextField.placeholder = "passwordTextField".localize
+        userNameEmailTextField.placeholder = "emailTextField".localize
+        orSignupWithLabel.text = "orSignupWithLabel".localize
+        dontHaveAccountLabel.text = "dontHaveAccountLabel".localize
+        registerButton.setTitle("registerButton".localize, for: .normal)
     }
 }

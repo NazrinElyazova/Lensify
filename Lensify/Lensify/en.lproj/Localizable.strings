@@ -12,6 +12,15 @@
 "discover" = "Discover Lensify endless pool of images to serve your purpose.";
 "continue" = "Continue";
 "chooseLanguage" = "Choose Your App's Language";
+"passwordTextField" = "Password";
+"emailTextField" = "Email";
+"yourJourney" = "Your Journey Begins with Creating an Account on Lensify 🌟";
+"alreadyHaveAccount" = "Already have an account?";
+"loginButton" = "Login";
+"registerButton" = "Register";
+"unleashLabel" = "Unleash the beauty of endless wallpapers! 🌟 Log in to your account and dive into a world of stunning backgrounds. Your lens, your style – let's Lensify your device screen!  #LensifyMagic✨";
+"dontHaveAccountLabel" = "Don't you have an account yet?";
+"orSignupWithLabel" = "Or Sign Up With";
 
 "termsText" = "**Lensify App - Terms and Conditions**
    

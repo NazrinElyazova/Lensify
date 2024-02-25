@@ -13,9 +13,12 @@ import FirebaseFirestoreInternal
 
 class RegisterController: UIViewController {
     
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var alreadyHaveAccountLabel: UILabel!
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var yourJourneyLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    @IBOutlet weak var fullnameTextField: UITextField!
     @IBOutlet weak var stackView: UIStackView!
     
     var completion: ((String, String)-> Void)?
@@ -26,13 +29,14 @@ class RegisterController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "Register Now"
         adapterSave()
         faceButton()
         self.navigationController?.navigationBar.topItem?.title = ""
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        translateText()
+    }
     @IBAction func googleButtonAction(_ sender: Any) {
         adapter?.login(type: .google)
         adapter?.completion = { user in
@@ -89,5 +93,13 @@ class RegisterController: UIViewController {
             
             print(user)
         }
+    }
+    func translateText() {
+        passwordTextField.placeholder = "passwordTextField".localize
+        emailTextField.placeholder = "emailTextField".localize
+        registerButton.setTitle("registerButton".localize, for: .normal)
+        alreadyHaveAccountLabel.text = "alreadyHaveAccount".localize
+        yourJourneyLabel.text = "yourJourney".localize
+        loginButton.setTitle("loginButton".localize, for: .normal)
     }
 }

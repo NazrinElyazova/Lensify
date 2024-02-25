@@ -12,6 +12,15 @@
 "discover" = "Xəyallarınızı gerçəkləşdirmək üçün Lensify-ın sonsuz şəkillər dünyasını kəşf edin.";
 "continue" = "Davam edin";
 "chooseLanguage" = "Tətbiqinizin Dilini Seçin";
+"passwordTextField" = "Şifrə";
+"emailTextField" = "Email";
+"yourJourney" = "Səyahətiniz Lensify-da Hesab Yaratmaqla Başlayır 🌟";
+"alreadyHaveAccount" = "Artıq hesabınız var?";
+"loginButton" = "Daxil ol";
+"registerButton" = "Qeydiyyat";
+"unleashLabel" = "Sonsuz divar kağızlarının gözəlliyini üzə çıxarın! 🌟 Hesabınıza daxil olun və heyrətamiz fonlar dünyasına dalın. Obyektiviniz, tərziniz – gəlin cihazınızın ekranını obyektivləşdirək! #LensifyMagic✨";
+"dontHaveAccountLabel" = "Hələ də hesabınız yoxdur?";
+"orSignupWithLabel" = "Və ya Qeydiyyatdan Keçin";
 
 "termsText" = "**Lensify Tətbiqi - Qaydalar və Şərtlər**
     

@@ -11,6 +11,15 @@
 "discover" = "Descubra el conjunto interminable de imágenes de Lensify para cumplir su propósito.";
 "continue" = "Continuar";
 "chooseLanguage" = "Elija el idioma de su aplicación";
+"passwordTextField" = "Contraseña";
+"emailTextField" = "Correo electrónico";
+"yourJourney" = "Su viaje comienza con la creación de una cuenta en Lensify 🌟";
+"alreadyHaveAccount" = "¿Ya tienes una cuenta?";
+"loginButton" = "Acceso";
+"registerButton" = "Registro";
+"unleashLabel" = "¡Libera la belleza de fondos de pantalla infinitos! 🌟 Inicia sesión en tu cuenta y sumérgete en un mundo de fondos impresionantes. Tu lente, tu estilo: ¡Lensifiquemos la pantalla de tu dispositivo! #LensifyMagic✨";
+"dontHaveAccountLabel" = "¿Aún no tienes una cuenta?";
+"orSignupWithLabel" = "O regístrate con";
 
 "termsText" = "**Aplicación Lensify - Términos y condiciones**
     

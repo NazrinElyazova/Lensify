@@ -18,7 +18,7 @@ struct UserData: Codable {
 struct UserInfo: Codable {
     let email: String?
     let password: String?
-    let fullname: String?
+//    let fullname: String?
 }
 
 // Facebook
@@ -30,19 +30,3 @@ struct FacebookLogin {
     let lastName: String
     
 }
-//struct FacebookLogin: Codable {
-//    let code: Int?
-//    let body: Body?
-//}
-//
-//// MARK: - Body
-//struct Body: Codable {
-//    let error: Error?
-//}
-//
-//// MARK: - Error
-//struct Error: Codable {
-//    let message, type: String?
-//    let code: Int?
-//}
-

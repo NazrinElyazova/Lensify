@@ -22,7 +22,7 @@ class LaunchController: UIViewController {
         lottieAnimation()
     }
     @IBAction func continueButtonAction(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "\(TabBarController.self)") as! TabBarController
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
         navigationController?.show(controller, sender: nil)
     }
     func lottieAnimation() {
