@@ -22,7 +22,7 @@ class LanguageController: UIViewController {
         super.viewWillAppear(animated)
         chooseLanguageLabel.text = "chooseLanguage".localize
     }
-    
+ 
     func changeAppLanguage(language: String) {
         UserDefaults.standard.setValue(language, forKey: "localizedLanguage")
     }
@@ -49,14 +49,17 @@ class LanguageController: UIViewController {
             
         }, cancelButton: UIAlertAction(title: "Cancelar", style: .cancel))
     }
+    
     func showLanguageAlert(title: String, message: String, okButton: UIAlertAction, cancelButton: UIAlertAction) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(okButton)
         alertController.addAction(cancelButton)
         self.present(alertController, animated: true, completion: nil)
     }
+    
     func goToController() {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "\(ProfileController.self)") as! ProfileController
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
         navigationController?.show(controller, sender: nil)
+
     }
 }

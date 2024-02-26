@@ -273,7 +273,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or Sign Up With" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rsP-TG-vK0">
-                                <rect key="frame" x="120" y="569" width="190" height="23"/>
+                                <rect key="frame" x="80" y="569" width="270" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -285,7 +285,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lf1-zH-y8j">
-                                <rect key="frame" x="298.33333333333331" y="679" width="111.66666666666669" height="37.333333333333371"/>
+                                <rect key="frame" x="298.33333333333331" y="684" width="111.66666666666669" height="37.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Register">
                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
@@ -301,7 +301,7 @@
                         <constraints>
                             <constraint firstItem="KY8-Ju-H3k" firstAttribute="trailing" secondItem="IJ5-yr-1L7" secondAttribute="trailing" constant="20" id="6Ot-Ik-wJ4"/>
                             <constraint firstItem="rsP-TG-vK0" firstAttribute="top" secondItem="IJ5-yr-1L7" secondAttribute="bottom" constant="50" id="8Hz-WP-frt"/>
-                            <constraint firstItem="KY8-Ju-H3k" firstAttribute="trailing" secondItem="rsP-TG-vK0" secondAttribute="trailing" constant="120" id="AYw-k2-sN4"/>
+                            <constraint firstItem="KY8-Ju-H3k" firstAttribute="trailing" secondItem="rsP-TG-vK0" secondAttribute="trailing" constant="80" id="AYw-k2-sN4"/>
                             <constraint firstItem="KY8-Ju-H3k" firstAttribute="trailing" secondItem="Lf1-zH-y8j" secondAttribute="trailing" constant="20" id="DvJ-zm-dqj"/>
                             <constraint firstItem="cNk-6p-u64" firstAttribute="top" secondItem="rsP-TG-vK0" secondAttribute="bottom" constant="100" id="EqP-5k-hqW"/>
                             <constraint firstItem="IJ5-yr-1L7" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="20" id="Knr-W6-DBK"/>
@@ -309,8 +309,8 @@
                             <constraint firstItem="KY8-Ju-H3k" firstAttribute="trailing" secondItem="yn3-6p-5g9" secondAttribute="trailing" constant="20" id="ZVe-K4-8bc"/>
                             <constraint firstItem="cNk-6p-u64" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="20" id="ckS-Lb-kD3"/>
                             <constraint firstItem="yn3-6p-5g9" firstAttribute="top" secondItem="KY8-Ju-H3k" secondAttribute="top" constant="80" id="eRH-sA-5ly"/>
-                            <constraint firstItem="Lf1-zH-y8j" firstAttribute="top" secondItem="IJ5-yr-1L7" secondAttribute="bottom" constant="160" id="f4h-1e-Ia2"/>
-                            <constraint firstItem="rsP-TG-vK0" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="120" id="k1n-By-zck"/>
+                            <constraint firstItem="Lf1-zH-y8j" firstAttribute="top" secondItem="IJ5-yr-1L7" secondAttribute="bottom" constant="165" id="f4h-1e-Ia2"/>
+                            <constraint firstItem="rsP-TG-vK0" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="80" id="k1n-By-zck"/>
                             <constraint firstItem="yn3-6p-5g9" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="20" id="kwd-qx-TJw"/>
                             <constraint firstItem="IJ5-yr-1L7" firstAttribute="top" secondItem="yn3-6p-5g9" secondAttribute="bottom" constant="50" id="s8B-P0-h8f"/>
                         </constraints>
@@ -593,7 +593,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IDo-b5-jT4">
-                                <rect key="frame" x="130" y="229.66666666666663" width="170" height="330"/>
+                                <rect key="frame" x="130" y="264.66666666666669" width="170" height="330.00000000000006"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GAM-cr-ws8">
                                         <rect key="frame" x="0.0" y="0.0" width="170" height="100"/>
@@ -606,7 +606,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3I-Zk-lgJ">
-                                        <rect key="frame" x="0.0" y="115.00000000000003" width="170" height="100"/>
+                                        <rect key="frame" x="0.0" y="115" width="170" height="100"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" backgroundImage="flagAZ"/>
                                         <connections>
@@ -629,8 +629,8 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your App's Language" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZq-nW-gnf">
-                                <rect key="frame" x="50" y="132" width="330" height="27.666666666666657"/>
-                                <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="21"/>
+                                <rect key="frame" x="20" y="132" width="390" height="62.666666666666657"/>
+                                <fontDescription key="fontDescription" name="NotoNastaliqUrdu-Bold" family="Noto Nastaliq Urdu" pointSize="25"/>
                                 <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -638,12 +638,12 @@
                         <viewLayoutGuide key="safeArea" id="NZy-k4-i2r"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="NZy-k4-i2r" firstAttribute="trailing" secondItem="DZq-nW-gnf" secondAttribute="trailing" constant="50" id="0P4-BV-N5o"/>
+                            <constraint firstItem="NZy-k4-i2r" firstAttribute="trailing" secondItem="DZq-nW-gnf" secondAttribute="trailing" constant="20" id="0P4-BV-N5o"/>
                             <constraint firstItem="NZy-k4-i2r" firstAttribute="trailing" secondItem="IDo-b5-jT4" secondAttribute="trailing" constant="130" id="35V-1U-TLI"/>
                             <constraint firstItem="IDo-b5-jT4" firstAttribute="top" secondItem="DZq-nW-gnf" secondAttribute="bottom" constant="70" id="ERp-D5-oPS"/>
                             <constraint firstItem="DZq-nW-gnf" firstAttribute="top" secondItem="NZy-k4-i2r" secondAttribute="top" constant="73" id="Ojj-zx-xDz"/>
                             <constraint firstItem="IDo-b5-jT4" firstAttribute="leading" secondItem="NZy-k4-i2r" secondAttribute="leading" constant="130" id="Q1g-o7-54q"/>
-                            <constraint firstItem="DZq-nW-gnf" firstAttribute="leading" secondItem="NZy-k4-i2r" secondAttribute="leading" constant="50" id="r6o-HD-xQb"/>
+                            <constraint firstItem="DZq-nW-gnf" firstAttribute="leading" secondItem="NZy-k4-i2r" secondAttribute="leading" constant="20" id="r6o-HD-xQb"/>
                         </constraints>
                     </view>
                     <connections>
@@ -763,10 +763,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hlf-mb-eiq">
-                                <rect key="frame" x="20" y="174" width="390" height="435"/>
+                                <rect key="frame" x="20" y="203" width="390" height="406"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJt-kP-C6T">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="93.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="122"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="Terms &amp; Conditions">
                                             <color key="baseForegroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
@@ -775,7 +775,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIq-bS-Sf6">
-                                        <rect key="frame" x="0.0" y="113.66666666666669" width="390" height="94"/>
+                                        <rect key="frame" x="0.0" y="142" width="390" height="122"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="About LENSIFY">
                                             <color key="baseForegroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -784,18 +784,8 @@
                                             <action selector="aboutLensifyAction:" destination="G86-Ki-fcM" eventType="touchUpInside" id="ujz-V6-x0n"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zey-s4-ZJ5">
-                                        <rect key="frame" x="0.0" y="227.66666666666666" width="390" height="93.666666666666657"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="tinted" title="Languages">
-                                            <color key="baseForegroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="languagesAction:" destination="G86-Ki-fcM" eventType="touchUpInside" id="JdR-qm-Ybb"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uK-jF-pOG">
-                                        <rect key="frame" x="0.0" y="341.33333333333337" width="390" height="93.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="284" width="390" height="122"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="Privacy Policy">
                                             <color key="baseForegroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -825,13 +815,12 @@
                             <constraint firstItem="QeN-wv-LNK" firstAttribute="trailing" secondItem="hlf-mb-eiq" secondAttribute="trailing" constant="20" id="VFv-nu-qZg"/>
                             <constraint firstItem="135-NP-DJL" firstAttribute="top" secondItem="hlf-mb-eiq" secondAttribute="bottom" constant="70" id="dy9-Ka-J5d"/>
                             <constraint firstItem="hlf-mb-eiq" firstAttribute="leading" secondItem="QeN-wv-LNK" secondAttribute="leading" constant="20" id="nBT-cN-ZWL"/>
-                            <constraint firstItem="hlf-mb-eiq" firstAttribute="top" secondItem="QeN-wv-LNK" secondAttribute="top" constant="71" id="qm2-RN-EN4"/>
+                            <constraint firstItem="hlf-mb-eiq" firstAttribute="top" secondItem="QeN-wv-LNK" secondAttribute="top" constant="100" id="qm2-RN-EN4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vKi-om-vaA"/>
                     <connections>
                         <outlet property="aboutLensifyButton" destination="aIq-bS-Sf6" id="2cs-nO-ooe"/>
-                        <outlet property="languagesButton" destination="Zey-s4-ZJ5" id="qXd-Mi-d6P"/>
                         <outlet property="logoutButton" destination="135-NP-DJL" id="yba-is-mZD"/>
                         <outlet property="privacyPolicyButton" destination="2uK-jF-pOG" id="luV-Sx-8tD"/>
                         <outlet property="termsConditionsButton" destination="IJt-kP-C6T" id="bOE-Ke-WSd"/>
@@ -1052,22 +1041,22 @@ We understand the importance of privacy. Lensify respects your data, and our app
             <color red="0.99607843137254903" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray2Color">
-            <color red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray5Color">
-            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

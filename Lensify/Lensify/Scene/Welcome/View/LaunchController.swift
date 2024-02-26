@@ -23,7 +23,7 @@ class LaunchController: UIViewController {
         configureExtensionButton(button: continueButton)
     }
     @IBAction func continueButtonAction(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "\(TabBarController.self)") as! TabBarController
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(LanguageController.self)") as! LanguageController
         navigationController?.show(controller, sender: nil)
     }
     func lottieAnimation() {

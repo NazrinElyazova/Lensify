@@ -19,7 +19,6 @@ class HomeController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureUI()
         //        self.navigationController?.navigationBar.topItem?.title = ""
     }
@@ -46,8 +45,8 @@ class HomeController: UIViewController {
         topicHeaderView.frame = topicView.bounds
         collection.register(UINib(nibName: "\(HomeCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HomeCell.self)")
     }
-    
-    func configureViewModel() {        
+
+    func configureViewModel() {
         viewModel.getTopics()
         viewModel.topicSuccess = {
             self.topicHeaderView.configure(data: self.viewModel.topicItems)
@@ -79,7 +78,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
-        let item = viewModel.items[indexPath.item] // index out of range
+        let item = viewModel.items[indexPath.item]
         cell.configure(data: item)
         cell.delegate = self
         return cell
