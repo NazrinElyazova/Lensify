@@ -32,18 +32,18 @@ class RegisterController: UIViewController {
         adapterSave()
         faceButton()
         self.navigationController?.navigationBar.topItem?.title = ""
-        configureButton()
+        configureExtensionButton(button: registerButton)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         translateText()
     }
     @IBAction func googleButtonAction(_ sender: Any) {
+        
         adapter?.login(type: .google)
-        adapter?.completion = { user in
-            self.emailTextField.text = user.email
-            self.passwordTextField.text = user.password
-        }
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
+        self.navigationController?.show(controller, sender: nil)
+        login()
     }
     func faceButton() {
         stackView.axis = .vertical
@@ -61,9 +61,10 @@ class RegisterController: UIViewController {
         //        print(UserDefaults.standard.bool(forKey: "loggedIn"))
         //            adapter?.facebookCompletion = { user in
     
-        login()
+        
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
         self.navigationController?.show(controller, sender: nil)
+        login()
     }
     func login() {
         UserDefaults.standard.set(true, forKey: "loggedIn")
@@ -92,7 +93,7 @@ class RegisterController: UIViewController {
             user in
             self.databaseAdapter.saveUserInfo(data: user)
             
-            print(user)
+//            print(user)
         }
     }
     func translateText() {
@@ -102,14 +103,5 @@ class RegisterController: UIViewController {
         alreadyHaveAccountLabel.text = "alreadyHaveAccount".localize
         yourJourneyLabel.text = "yourJourney".localize
         loginButton.setTitle("loginButton".localize, for: .normal)
-    }
-    func configureButton() {
-        
-        //MARK: Blue
-        let customColor = UIColor(red: 0/255.0, green: 153/255.0, blue: 204/255.0, alpha: 1.0)
-
-        registerButton.titleLabel?.font = .systemFont(ofSize: 28.0, weight: .bold)
-        registerButton.backgroundColor = customColor
-        registerButton.layer.cornerRadius = 10
     }
 }

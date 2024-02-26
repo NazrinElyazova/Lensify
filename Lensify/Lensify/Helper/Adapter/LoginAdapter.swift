@@ -16,10 +16,6 @@ class LoginAdapter {
     
     var success: (() -> Void)?
     var completion: ((UserData)->())?
-    
-    var facebookCompletion: ((FacebookLogin)-> ())?
-    
-    var fireBaseCompletion: ((UserInfo)-> ())?
     var controller: UIViewController  //Strong variable olmasi ucun init edirik. Controllerde set etmek yaddan cixsa app crash etmesin
     
     init(controller: UIViewController) {
@@ -47,9 +43,8 @@ class LoginAdapter {
             }
             else if let result = result {
                 let user = UserData(email: result.user.profile?.email ?? "",
-                                    password: "Nezrin123",
+                                    password: "",
                                     firstName: result.user.profile?.name ?? "")
-                //                                    lastName: result.user.profile?.familyName ?? "")
                 self.completion?(user)
             }
         }
@@ -66,9 +61,9 @@ class LoginAdapter {
                     let email = result["email"] as? String ?? ""
                     let firstName = result["first_name"] as? String ?? ""
                     let lastName = result["last_name"] as? String ?? ""
-                    
-                    let face = FacebookLogin(email: email, firstName: firstName, lastName: lastName)
-                    self.facebookCompletion?(face)
+//                    
+//                    let face = FacebookLogin(email: email, firstName: firstName, lastName: lastName)
+//                    self.facebookCompletion?(face)
                 }
             }
         }

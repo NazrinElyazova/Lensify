@@ -94,25 +94,13 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
 }
 extension HomeController: SaveImageProtocol {
     
-    func didTApDownloadButton(image: UIImage) {
+    func didTapDownloadButton(image: UIImage) {
         if UserDefaults.standard.bool(forKey: "loggedIn") {
-            //            print(UserDefaults.standard.bool(forKey: "loggedIn"))
             presentSaveAndShareSheet(image: image )
-        } else {
-            showAlert()
+//        } else {
+//            showAlert()
         }
     }
-//    func showAlert() {
-//        let alertController = UIAlertController(title: "Warning!", message: "You have no account. Please, login.", preferredStyle: .alert)
-//        let okButton = UIAlertAction(title: "Ok", style: .default) {_ in
-//            let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
-//            self.navigationController?.show(controller, sender: nil)
-//        }
-//        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
-//        alertController.addAction(okButton)
-//        alertController.addAction(cancelButton)
-//        present(alertController, animated: true)
-//    }
 }
 extension HomeController: SkeletonCollectionViewDataSource {
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {

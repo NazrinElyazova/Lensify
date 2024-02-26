@@ -8,14 +8,8 @@
 import UIKit
 import Photos
 
-//
-//protocol HomeCellProtocol {
-//    var titleLabel: String { get }
-//    var imagePath: String { get }
-//}
-
 protocol SaveImageProtocol: AnyObject {
-    func didTApDownloadButton(image: UIImage)
+    func didTapDownloadButton(image: UIImage)
 }
 
 class HomeCell: UICollectionViewCell {
@@ -31,12 +25,11 @@ class HomeCell: UICollectionViewCell {
     
     @IBAction func saveOrShareButtonAction(_ sender: Any) {
         guard let image = homeImage.image else {return}
-        delegate?.didTApDownloadButton(image: image)
+        delegate?.didTapDownloadButton(image: image)
     }
     
     func configure(data: GetTopics) {
         homeImage.loadImage(url: data.urls?.small ?? "")
-            }
-    
+    }
 }
 
