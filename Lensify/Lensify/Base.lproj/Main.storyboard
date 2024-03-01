@@ -199,7 +199,7 @@
                                     <constraint firstAttribute="height" constant="120" id="JRL-4Z-7xr"/>
                                 </constraints>
                                 <string key="text">"Unleash the beauty of endless wallpapers! 🌟 Log in to your account and dive into a world of stunning backgrounds. Your lens, your style – let's Lensify your device screen!  #LensifyMagic"✨ </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -453,7 +453,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="W11-4a-9h9" customClass="LottieAnimationView" customModule="Lottie">
-                                <rect key="frame" x="40" y="99" width="350" height="200"/>
+                                <rect key="frame" x="40" y="129" width="350" height="200"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="8ZV-qH-Hrz"/>
@@ -463,34 +463,33 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are ready for download an image now..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wt4-W2-GE1">
-                                <rect key="frame" x="40" y="349" width="350" height="55"/>
+                                <rect key="frame" x="40" y="379" width="350" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click for it " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3S-JS-dgZ">
-                                <rect key="frame" x="110" y="454" width="210" height="44.333333333333314"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="37"/>
+                                <rect key="frame" x="20" y="484" width="390" height="40.666666666666629"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="narrow" translatesAutoresizingMaskIntoConstraints="NO" id="W2r-7N-Jpc">
-                                <rect key="frame" x="130" y="548.33333333333337" width="170" height="60"/>
+                                <rect key="frame" x="130" y="574.66666666666663" width="170" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="TXa-oA-Atw"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kb9-6J-kXl">
-                                <rect key="frame" x="40" y="638.33333333333337" width="350" height="60"/>
+                                <rect key="frame" x="40" y="664.66666666666663" width="350" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Zm0-Q4-a2s"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Click">
-                                    <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
-                                    <color key="baseForegroundColor" name="MainColors"/>
-                                    <color key="baseBackgroundColor" red="0.97254901959999995" green="0.60392156860000001" blue="0.93333333330000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="28"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Click">
+                                    <color key="titleColor" name="MainColors"/>
+                                </state>
                                 <connections>
                                     <action selector="clickAction:" destination="Apc-lb-ZoK" eventType="touchUpInside" id="3XU-HW-LuT"/>
                                 </connections>
@@ -502,14 +501,14 @@
                             <constraint firstItem="W2r-7N-Jpc" firstAttribute="leading" secondItem="qvr-AB-YUj" secondAttribute="leading" constant="130" id="54s-Oq-cc6"/>
                             <constraint firstItem="W2r-7N-Jpc" firstAttribute="top" secondItem="O3S-JS-dgZ" secondAttribute="bottom" constant="50" id="6rG-Wc-NFV"/>
                             <constraint firstItem="wt4-W2-GE1" firstAttribute="leading" secondItem="qvr-AB-YUj" secondAttribute="leading" constant="40" id="Bvg-Gb-CS9"/>
-                            <constraint firstItem="W11-4a-9h9" firstAttribute="top" secondItem="qvr-AB-YUj" secondAttribute="top" constant="40" id="Die-zU-cFg"/>
+                            <constraint firstItem="W11-4a-9h9" firstAttribute="top" secondItem="qvr-AB-YUj" secondAttribute="top" constant="70" id="Die-zU-cFg"/>
                             <constraint firstItem="W11-4a-9h9" firstAttribute="leading" secondItem="qvr-AB-YUj" secondAttribute="leading" constant="40" id="F6b-Ma-zLL"/>
                             <constraint firstItem="Kb9-6J-kXl" firstAttribute="leading" secondItem="qvr-AB-YUj" secondAttribute="leading" constant="40" id="H88-Og-pIY"/>
                             <constraint firstItem="Kb9-6J-kXl" firstAttribute="top" secondItem="W2r-7N-Jpc" secondAttribute="bottom" constant="30" id="Nn1-At-zMi"/>
                             <constraint firstItem="qvr-AB-YUj" firstAttribute="trailing" secondItem="Kb9-6J-kXl" secondAttribute="trailing" constant="40" id="SJX-14-PPj"/>
-                            <constraint firstItem="O3S-JS-dgZ" firstAttribute="leading" secondItem="qvr-AB-YUj" secondAttribute="leading" constant="110" id="g0L-Rt-qwp"/>
+                            <constraint firstItem="O3S-JS-dgZ" firstAttribute="leading" secondItem="qvr-AB-YUj" secondAttribute="leading" constant="20" id="g0L-Rt-qwp"/>
                             <constraint firstItem="qvr-AB-YUj" firstAttribute="trailing" secondItem="W11-4a-9h9" secondAttribute="trailing" constant="40" id="iyI-p7-c1c"/>
-                            <constraint firstItem="qvr-AB-YUj" firstAttribute="trailing" secondItem="O3S-JS-dgZ" secondAttribute="trailing" constant="110" id="ojc-CR-lCe"/>
+                            <constraint firstItem="qvr-AB-YUj" firstAttribute="trailing" secondItem="O3S-JS-dgZ" secondAttribute="trailing" constant="20" id="ojc-CR-lCe"/>
                             <constraint firstItem="qvr-AB-YUj" firstAttribute="trailing" secondItem="W2r-7N-Jpc" secondAttribute="trailing" constant="130" id="qwn-Hw-09B"/>
                             <constraint firstItem="qvr-AB-YUj" firstAttribute="trailing" secondItem="wt4-W2-GE1" secondAttribute="trailing" constant="40" id="snI-eV-r09"/>
                             <constraint firstItem="O3S-JS-dgZ" firstAttribute="top" secondItem="wt4-W2-GE1" secondAttribute="bottom" constant="50" id="vxB-vj-pwN"/>

@@ -117,7 +117,7 @@ extension SearchController {
     }
 }
 extension SearchController: SaveImageProtocol {
-    func didTApDownloadButton(image: UIImage) {
+    func didTapDownloadButton(image: UIImage) {
         if UserDefaults.standard.bool(forKey: "loggedIn") {
             presentSaveAndShareSheet(image: image)
         }
