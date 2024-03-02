@@ -21,12 +21,12 @@ struct UserInfo: Codable {
 //    let fullname: String?
 }
 
-// Facebook
-// MARK: - Facebook
-struct FacebookLogin {
-    let email: String
-//    let password: String
-    let firstName: String
-    let lastName: String
-    
-}
+//// Facebook
+//// MARK: - Facebook
+//struct FacebookLogin {
+//    let email: String
+////    let password: String
+//    let firstName: String
+//    let lastName: String
+//    
+//}

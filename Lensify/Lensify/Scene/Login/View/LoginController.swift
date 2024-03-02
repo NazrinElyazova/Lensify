@@ -36,10 +36,12 @@ class LoginController: UIViewController {
         self.navigationController?.navigationBar.topItem?.title = ""
        configureExtensionButton(button: loginButton)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         translateText()
     }
+    
     func login() {
         UserDefaults.standard.set(true, forKey: "loggedIn")
     }
@@ -53,19 +55,19 @@ class LoginController: UIViewController {
         }
         navigationController?.show(controller, sender: nil)
     }
+    
     func adapterSave() {
-        
         adapter = LoginAdapter(controller: self)
         adapter?.completion = {
             user in
-            self.login()
             self.databaseAdapter.saveUserInfo(data: user)
+            self.login()
             print(user)
             //save to firebase
         }
     }
+    
     func getUserInfo() {
-        
         database.collection("UserInfo").getDocuments { snapshot, error in
             
             for document in snapshot?.documents ?? [] {
@@ -78,6 +80,7 @@ class LoginController: UIViewController {
             }
         }
     }
+    
     @IBAction func loginButtonAction(_ sender: Any) {
         if !(passwordTextField.text?.isEmpty == true), !(userNameEmailTextField.text?.isEmpty == true),
            let email = userNameEmailTextField.text,
@@ -91,6 +94,7 @@ class LoginController: UIViewController {
 //            showAlert(title: "Warning!", message: "Please fill your information")
         }
     }
+    
     func translateText() {
         unleashLabel.text = "unleashLabel".localize
         loginButton.setTitle("loginButton".localize, for: .normal)

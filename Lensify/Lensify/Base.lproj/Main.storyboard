@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8dE-IW-uNY">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -89,7 +90,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every way to find FREE content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xP-fO-Ava">
-                                <rect key="frame" x="50" y="481.66666666666669" width="330" height="56.333333333333314"/>
+                                <rect key="frame" x="50" y="482.33333333333331" width="330" height="55.999999999999943"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -109,7 +110,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover Lensify endless pool of images to serve your purpose." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbx-AE-aAU">
-                                <rect key="frame" x="20" y="598" width="390" height="40"/>
+                                <rect key="frame" x="20" y="598.33333333333337" width="390" height="39.666666666666629"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -656,6 +657,49 @@
             </objects>
             <point key="canvasLocation" x="2733.4883720930234" y="576.82403433476395"/>
         </scene>
+        <!--Detail Controller-->
+        <scene sceneID="i6U-7A-nQK">
+            <objects>
+                <viewController storyboardIdentifier="DetailController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qRp-1C-4HP" customClass="DetailController" customModule="Lensify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cz4-gM-Jpt">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B44-5D-KDF">
+                                <rect key="frame" x="20" y="159" width="390" height="360"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIb-7S-1F0">
+                                <rect key="frame" x="20" y="708" width="390" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="4yM-Us-ppa"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Download"/>
+                                <connections>
+                                    <action selector="downloadButtonTapped:" destination="qRp-1C-4HP" eventType="touchUpInside" id="uw1-ai-3oN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="3z3-mZ-ypC"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3z3-mZ-ypC" firstAttribute="trailing" secondItem="B44-5D-KDF" secondAttribute="trailing" constant="20" id="42d-gi-hMU"/>
+                            <constraint firstItem="B44-5D-KDF" firstAttribute="top" secondItem="3z3-mZ-ypC" secondAttribute="top" constant="100" id="BJT-nW-3v0"/>
+                            <constraint firstItem="3z3-mZ-ypC" firstAttribute="bottom" secondItem="zIb-7S-1F0" secondAttribute="bottom" constant="120" id="J9b-Px-Fji"/>
+                            <constraint firstItem="B44-5D-KDF" firstAttribute="leading" secondItem="3z3-mZ-ypC" secondAttribute="leading" constant="20" id="O2f-eS-Fob"/>
+                            <constraint firstItem="zIb-7S-1F0" firstAttribute="top" secondItem="B44-5D-KDF" secondAttribute="bottom" constant="189" id="U4C-Xw-S17"/>
+                            <constraint firstItem="3z3-mZ-ypC" firstAttribute="trailing" secondItem="zIb-7S-1F0" secondAttribute="trailing" constant="20" id="ltJ-Sp-9dU"/>
+                            <constraint firstItem="zIb-7S-1F0" firstAttribute="leading" secondItem="3z3-mZ-ypC" secondAttribute="leading" constant="20" id="sEh-8S-7zm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="detailPhoto" destination="B44-5D-KDF" id="ZYO-dV-rbJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dIf-pa-B9o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3732.5581395348836" y="576.82403433476395"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RQ9-qq-8qo">
             <objects>
@@ -997,6 +1041,46 @@ We understand the importance of privacy. Lensify respects your data, and our app
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uvE-Xo-pNV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3394.8837209302324" y="1885.6223175965667"/>
+        </scene>
+        <!--Privacy Controller-->
+        <scene sceneID="s4o-a8-kiX">
+            <objects>
+                <viewController storyboardIdentifier="PrivacyController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fhw-Va-zti" customClass="PrivacyController" customModule="Lensify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dzd-fd-xhX">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ky-Xd-Ood">
+                                <rect key="frame" x="0.0" y="59" width="430" height="839"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="McM-83-VcG">
+                                        <rect key="frame" x="20.000000000000004" y="20" width="41.333333333333343" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="McM-83-VcG" firstAttribute="top" secondItem="7Ky-Xd-Ood" secondAttribute="top" constant="20" id="QAf-2O-TvZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="McM-83-VcG" secondAttribute="trailing" constant="20" id="VHA-z8-m5t"/>
+                                    <constraint firstAttribute="bottom" secondItem="McM-83-VcG" secondAttribute="bottom" constant="20" id="VO1-GB-K65"/>
+                                    <constraint firstItem="McM-83-VcG" firstAttribute="leading" secondItem="7Ky-Xd-Ood" secondAttribute="leading" constant="20" id="W6a-Pz-EYM"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="odj-da-VTm"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="odj-da-VTm" firstAttribute="trailing" secondItem="7Ky-Xd-Ood" secondAttribute="trailing" id="Ihr-vK-G72"/>
+                            <constraint firstItem="7Ky-Xd-Ood" firstAttribute="top" secondItem="odj-da-VTm" secondAttribute="top" id="lJw-Qh-vOP"/>
+                            <constraint firstItem="7Ky-Xd-Ood" firstAttribute="bottom" secondItem="odj-da-VTm" secondAttribute="bottom" id="sCX-GD-ODu"/>
+                            <constraint firstItem="7Ky-Xd-Ood" firstAttribute="leading" secondItem="odj-da-VTm" secondAttribute="leading" id="wE6-0B-tc1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ptl-GY-lBk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4363.2558139534885" y="1874.678111587983"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vDp-Be-iX2">

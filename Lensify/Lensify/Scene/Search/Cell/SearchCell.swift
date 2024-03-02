@@ -25,6 +25,6 @@ class SearchCell: UICollectionViewCell {
     }
     @IBAction func saveButtonAction(_ sender: Any) {
         guard let image = searchImageview.image else {return}
-        delegate?.didTApDownloadButton(image: image)
+        delegate?.didTapDownloadButton(image: image)
     }
 }

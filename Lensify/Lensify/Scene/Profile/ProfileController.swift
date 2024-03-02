@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 
+
 class ProfileController: UIViewController {
     
     @IBOutlet weak var logoutButton: UIButton!

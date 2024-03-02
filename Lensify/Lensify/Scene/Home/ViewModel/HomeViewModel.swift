@@ -26,7 +26,7 @@ class HomeViewModel {
     var onError: ((String)-> Void)?
     
     func getTopics() {
-        manager.getTopics { data, errorMessage in
+        manager.getTopics() { data, errorMessage in
             if let errorMessage {
                 self.onError?(errorMessage)
             } else if let data {
@@ -36,6 +36,7 @@ class HomeViewModel {
             }
         }
     }
+    
     func getPhotos() {
         manager.getHomeList(pageNumber: page, id: topicId ?? "") {
             data, errorMessage in

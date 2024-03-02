@@ -74,6 +74,13 @@
 		7BC6AF032B6A999E00694CD0 /* SearchUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AF022B6A999E00694CD0 /* SearchUseCase.swift */; };
 		7BC6AF1E2B6AAB1600694CD0 /* SearchEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AF1D2B6AAB1600694CD0 /* SearchEndpoint.swift */; };
 		7BCD82912B89EC6C00FE1877 /* AlertExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCD82902B89EC6C00FE1877 /* AlertExtension.swift */; };
+		7BCF88F82B9319DB00645CEA /* PrivacyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF88F72B9319DB00645CEA /* PrivacyController.swift */; };
+		7BCF88FB2B9355DC00645CEA /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF88FA2B9355DC00645CEA /* DetailController.swift */; };
+		7BCF89002B93592600645CEA /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF88FF2B93592600645CEA /* DetailViewModel.swift */; };
+		7BCF89022B93596C00645CEA /* DetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF89012B93596C00645CEA /* DetailManager.swift */; };
+		7BCF89042B93599E00645CEA /* DetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF89032B93599E00645CEA /* DetailUseCase.swift */; };
+		7BCF89072B937C6200645CEA /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF89062B937C6200645CEA /* HomeCoordinator.swift */; };
+		7BCF89092B937C7D00645CEA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCF89082B937C7D00645CEA /* Coordinator.swift */; };
 		7BD4FB282B698DB600B5EA3E /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD4FB272B698DB600B5EA3E /* LoginController.swift */; };
 		7BD600812B6ED4EB00B28661 /* downloadLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BD600802B6ED4EB00B28661 /* downloadLottie.json */; };
 		7BD600842B6ED58700B28661 /* ReadyForDownloadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD600832B6ED58700B28661 /* ReadyForDownloadController.swift */; };
@@ -139,6 +146,13 @@
 		7BC6AF022B6A999E00694CD0 /* SearchUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUseCase.swift; sourceTree = "<group>"; };
 		7BC6AF1D2B6AAB1600694CD0 /* SearchEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEndpoint.swift; sourceTree = "<group>"; };
 		7BCD82902B89EC6C00FE1877 /* AlertExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertExtension.swift; sourceTree = "<group>"; };
+		7BCF88F72B9319DB00645CEA /* PrivacyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyController.swift; sourceTree = "<group>"; };
+		7BCF88FA2B9355DC00645CEA /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		7BCF88FF2B93592600645CEA /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		7BCF89012B93596C00645CEA /* DetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailManager.swift; sourceTree = "<group>"; };
+		7BCF89032B93599E00645CEA /* DetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailUseCase.swift; sourceTree = "<group>"; };
+		7BCF89062B937C6200645CEA /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		7BCF89082B937C7D00645CEA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7BD4FB272B698DB600B5EA3E /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		7BD600802B6ED4EB00B28661 /* downloadLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = downloadLottie.json; sourceTree = "<group>"; };
 		7BD600832B6ED58700B28661 /* ReadyForDownloadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyForDownloadController.swift; sourceTree = "<group>"; };
@@ -183,6 +197,7 @@
 				7B9F3C932B88A32D002AA027 /* LanguageController.swift */,
 				7B1833042B867E5B00A1B89C /* AboutLensifyController.swift */,
 				7B9258382B853BAF00D3C212 /* TermsAndConditionsController.swift */,
+				7BCF88F72B9319DB00645CEA /* PrivacyController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -222,6 +237,7 @@
 				7B4DE9B22B57E86A00F4C3AA /* HomeManager.swift */,
 				7BC6AF002B6A981E00694CD0 /* SearchManager.swift */,
 				7B7967752B6D2C9E0032BB63 /* LoginManager.swift */,
+				7BCF89012B93596C00645CEA /* DetailManager.swift */,
 			);
 			path = MiddleLayer;
 			sourceTree = "<group>";
@@ -395,6 +411,7 @@
 		7B90E29D2B52C4E70099FBA3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				7BCF89052B937C4400645CEA /* Coordinator */,
 				7BDB91C82B5B923800002EAC /* UseCase */,
 				7B4DE9B42B57F43A00F4C3AA /* Endpoints */,
 				7B4DE9B12B57E84C00F4C3AA /* MiddleLayer */,
@@ -406,6 +423,7 @@
 		7B90E2A62B52FAD60099FBA3 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7BCF88F92B9355CD00645CEA /* Detail */,
 				7B0F42CC2B780DE200785A37 /* Profile */,
 				7B5A907C2B70C4D60025E18B /* Register */,
 				7BD600822B6ED55000B28661 /* DownloadWallpaper */,
@@ -483,6 +501,40 @@
 			path = Adapter;
 			sourceTree = "<group>";
 		};
+		7BCF88F92B9355CD00645CEA /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				7BCF88FD2B93590E00645CEA /* ViewModel */,
+				7BCF88FC2B93590500645CEA /* View */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		7BCF88FC2B93590500645CEA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7BCF88FA2B9355DC00645CEA /* DetailController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7BCF88FD2B93590E00645CEA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7BCF88FF2B93592600645CEA /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7BCF89052B937C4400645CEA /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				7BCF89062B937C6200645CEA /* HomeCoordinator.swift */,
+				7BCF89082B937C7D00645CEA /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		7BD4FB262B6972C000B5EA3E /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,6 +566,7 @@
 			isa = PBXGroup;
 			children = (
 				7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */,
+				7BCF89032B93599E00645CEA /* DetailUseCase.swift */,
 				7BC6AF022B6A999E00694CD0 /* SearchUseCase.swift */,
 			);
 			path = UseCase;
@@ -641,9 +694,11 @@
 				7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */,
 				7B90E2A32B52EC840099FBA3 /* WelcomeToLensifyController.swift in Sources */,
 				7BDB91CA2B5B924B00002EAC /* HomeUseCase.swift in Sources */,
+				7BCF89022B93596C00645CEA /* DetailManager.swift in Sources */,
 				7BC6AEFA2B6A183400694CD0 /* User.swift in Sources */,
 				7B9565422B650C1800044E58 /* Topic.swift in Sources */,
 				7B9258392B853BAF00D3C212 /* TermsAndConditionsController.swift in Sources */,
+				7BCF89002B93592600645CEA /* DetailViewModel.swift in Sources */,
 				7BC6AEFF2B6A72A700694CD0 /* DatabaseAdapter.swift in Sources */,
 				7B90E2762B52C1FB0099FBA3 /* AppDelegate.swift in Sources */,
 				7BC6AF032B6A999E00694CD0 /* SearchUseCase.swift in Sources */,
@@ -655,11 +710,15 @@
 				7B95653E2B65025800044E58 /* TopicHeaderView.swift in Sources */,
 				7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */,
 				7B9258372B8537B100D3C212 /* ProfileController.swift in Sources */,
+				7BCF89042B93599E00645CEA /* DetailUseCase.swift in Sources */,
+				7BCF88FB2B9355DC00645CEA /* DetailController.swift in Sources */,
 				7BD4FB282B698DB600B5EA3E /* LoginController.swift in Sources */,
+				7BCF89072B937C6200645CEA /* HomeCoordinator.swift in Sources */,
 				7BFEFFDE2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift in Sources */,
 				7B90E2802B52C1FB0099FBA3 /* Lensify.xcdatamodeld in Sources */,
 				7B7967742B6D2C510032BB63 /* LoginViewModel.swift in Sources */,
 				7B4DE9B32B57E86A00F4C3AA /* HomeManager.swift in Sources */,
+				7BCF89092B937C7D00645CEA /* Coordinator.swift in Sources */,
 				7B42A0502B56EF85003C5D34 /* SearchViewModel.swift in Sources */,
 				7B425A1F2B8BC8DF00E5AC05 /* ConfigureButtonExtension.swift in Sources */,
 				7B90E2A92B52FB110099FBA3 /* GetTopics.swift in Sources */,
@@ -672,6 +731,7 @@
 				7B9F3C922B889F3B002AA027 /* StringExtension.swift in Sources */,
 				7B42A04D2B56EF53003C5D34 /* SearchCell.swift in Sources */,
 				7BC6AEFD2B6A50CE00694CD0 /* LoginAdapter.swift in Sources */,
+				7BCF88F82B9319DB00645CEA /* PrivacyController.swift in Sources */,
 				7BC6AF012B6A981E00694CD0 /* SearchManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -849,7 +909,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -879,7 +939,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
