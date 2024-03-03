@@ -665,11 +665,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B44-5D-KDF">
-                                <rect key="frame" x="20" y="159" width="390" height="360"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B44-5D-KDF">
+                                <rect key="frame" x="20" y="99" width="390" height="649"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIb-7S-1F0">
-                                <rect key="frame" x="20" y="708" width="390" height="70"/>
+                                <rect key="frame" x="20" y="788" width="390" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="4yM-Us-ppa"/>
                                 </constraints>
@@ -679,16 +684,30 @@
                                     <action selector="downloadButtonTapped:" destination="qRp-1C-4HP" eventType="touchUpInside" id="uw1-ai-3oN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0y-1k-t6j">
+                                <rect key="frame" x="359.33333333333331" y="46" width="50.666666666666686" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Wjs-NQ-Njz"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="addFavoriteButton:" destination="qRp-1C-4HP" eventType="touchUpInside" id="E5s-77-q34"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3z3-mZ-ypC"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Y0y-1k-t6j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3z3-mZ-ypC" secondAttribute="leading" symbolic="YES" id="1sF-i9-0w9"/>
                             <constraint firstItem="3z3-mZ-ypC" firstAttribute="trailing" secondItem="B44-5D-KDF" secondAttribute="trailing" constant="20" id="42d-gi-hMU"/>
-                            <constraint firstItem="B44-5D-KDF" firstAttribute="top" secondItem="3z3-mZ-ypC" secondAttribute="top" constant="100" id="BJT-nW-3v0"/>
-                            <constraint firstItem="3z3-mZ-ypC" firstAttribute="bottom" secondItem="zIb-7S-1F0" secondAttribute="bottom" constant="120" id="J9b-Px-Fji"/>
+                            <constraint firstItem="B44-5D-KDF" firstAttribute="top" secondItem="3z3-mZ-ypC" secondAttribute="top" constant="40" id="BJT-nW-3v0"/>
+                            <constraint firstItem="3z3-mZ-ypC" firstAttribute="bottom" secondItem="zIb-7S-1F0" secondAttribute="bottom" constant="40" id="J9b-Px-Fji"/>
                             <constraint firstItem="B44-5D-KDF" firstAttribute="leading" secondItem="3z3-mZ-ypC" secondAttribute="leading" constant="20" id="O2f-eS-Fob"/>
-                            <constraint firstItem="zIb-7S-1F0" firstAttribute="top" secondItem="B44-5D-KDF" secondAttribute="bottom" constant="189" id="U4C-Xw-S17"/>
+                            <constraint firstItem="zIb-7S-1F0" firstAttribute="top" secondItem="B44-5D-KDF" secondAttribute="bottom" constant="40" id="U4C-Xw-S17"/>
+                            <constraint firstItem="3z3-mZ-ypC" firstAttribute="trailing" secondItem="Y0y-1k-t6j" secondAttribute="trailing" constant="20" id="dI5-VD-Rjf"/>
                             <constraint firstItem="3z3-mZ-ypC" firstAttribute="trailing" secondItem="zIb-7S-1F0" secondAttribute="trailing" constant="20" id="ltJ-Sp-9dU"/>
+                            <constraint firstItem="B44-5D-KDF" firstAttribute="top" secondItem="Y0y-1k-t6j" secondAttribute="bottom" constant="8" symbolic="YES" id="r57-sY-V9J"/>
                             <constraint firstItem="zIb-7S-1F0" firstAttribute="leading" secondItem="3z3-mZ-ypC" secondAttribute="leading" constant="20" id="sEh-8S-7zm"/>
                         </constraints>
                     </view>
@@ -699,6 +718,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIf-pa-B9o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3732.5581395348836" y="576.82403433476395"/>
+        </scene>
+        <!--Sheet Controller-->
+        <scene sceneID="Ub6-gE-ub2">
+            <objects>
+                <viewController storyboardIdentifier="SheetController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="49b-lt-ncc" customClass="SheetController" customModule="Lensify" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fdc-tg-Dwk">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OtE-WJ-AuO">
+                                <rect key="frame" x="20" y="528" width="390" height="300"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HQi-rf-6V7">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="86.666666666666671"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Full"/>
+                                        <connections>
+                                            <action selector="fullDownloadButton:" destination="49b-lt-ncc" eventType="touchUpInside" id="em9-6h-tY6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsS-5r-BMg">
+                                        <rect key="frame" x="0.0" y="106.66666666666663" width="390" height="86.666666666666686"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Medium"/>
+                                        <connections>
+                                            <action selector="mediumDownloadButton:" destination="49b-lt-ncc" eventType="touchUpInside" id="vS6-c2-5yk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmn-pl-Fll">
+                                        <rect key="frame" x="0.0" y="213.33333333333334" width="390" height="86.666666666666657"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Small"/>
+                                        <connections>
+                                            <action selector="smallDownloadButton:" destination="49b-lt-ncc" eventType="touchUpInside" id="Fwz-38-x5h"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="BFQ-1F-ZyX"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DxD-uO-2j7"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OtE-WJ-AuO" firstAttribute="leading" secondItem="DxD-uO-2j7" secondAttribute="leading" constant="20" id="88z-a6-GVU"/>
+                            <constraint firstItem="DxD-uO-2j7" firstAttribute="bottom" secondItem="OtE-WJ-AuO" secondAttribute="bottom" constant="70" id="K0e-6c-w9n"/>
+                            <constraint firstItem="DxD-uO-2j7" firstAttribute="trailing" secondItem="OtE-WJ-AuO" secondAttribute="trailing" constant="20" id="gdm-es-4Bg"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="klP-fq-2we" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4512.5581395348836" y="577.46781115879833"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RQ9-qq-8qo">
@@ -714,6 +787,7 @@
                     <connections>
                         <segue destination="dRk-cZ-btW" kind="relationship" relationship="viewControllers" id="OR9-fo-J0u"/>
                         <segue destination="Rdg-Nv-4on" kind="relationship" relationship="viewControllers" id="GxV-NZ-B3d"/>
+                        <segue destination="qnV-sD-udR" kind="relationship" relationship="viewControllers" id="NfE-Nd-uYx"/>
                         <segue destination="rsD-MT-LhX" kind="relationship" relationship="viewControllers" id="Php-AP-V3k"/>
                     </connections>
                 </tabBarController>
@@ -873,6 +947,22 @@
             </objects>
             <point key="canvasLocation" x="1740" y="2000.8583690987125"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="zF9-qK-eAj">
+            <objects>
+                <viewController id="TAk-kZ-TUt" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N3C-iU-QkA">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="w1d-bO-WWj"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hjm-kL-uVa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Nq-RL-PAv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1741" y="2761"/>
+        </scene>
         <!--Terms And Conditions Controller-->
         <scene sceneID="FYM-sT-Pni">
             <objects>
@@ -969,7 +1059,7 @@ By using Lensify, you acknowledge that you have read, understood, and agree to b
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dVh-He-gLj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2511.6279069767443" y="2000.8583690987125"/>
+            <point key="canvasLocation" x="3410.2325581395348" y="2000.8583690987125"/>
         </scene>
         <!--About Lensify Controller-->
         <scene sceneID="3r1-nT-FeZ">
@@ -1110,12 +1200,32 @@ We understand the importance of privacy. Lensify respects your data, and our app
             </objects>
             <point key="canvasLocation" x="843" y="2001"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="vIp-2s-NKh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qnV-sD-udR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="fzV-f9-VE8"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mTu-6G-Arz">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TAk-kZ-TUt" kind="relationship" relationship="rootViewController" id="LSS-MB-oI6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4dd-Vh-CBj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="843" y="2761"/>
+        </scene>
     </scenes>
     <resources>
         <image name="America " width="820" height="501"/>
         <image name="Google logo" width="30" height="30"/>
         <image name="Spain" width="2560" height="1707"/>
         <image name="flagAZ" width="612" height="367"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="narrow" width="400" height="400"/>

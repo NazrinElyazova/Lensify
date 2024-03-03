@@ -10,10 +10,8 @@ import UIKit
 class DetailController: UIViewController {
     
     var viewModel: DetailViewModel?
-    
     var item: GetTopics?
-
-//    var img = UIImage()
+    
     
     @IBOutlet weak var detailPhoto: UIImageView!
     
@@ -23,15 +21,13 @@ class DetailController: UIViewController {
         configureViewModel()
         detailPhoto.loadImage(url: item?.urls?.small ?? "")
     }
-    
-    func showDetailPhoto(id: String) {
-//        detailPhoto.loadImage(url: data.coverPhoto?.urls?.small ?? "")
-        let coordinator = HomeCoordinator(navigationController: navigationController ?? UINavigationController(), coordinatorID: id)
-        coordinator.start()
+   
+    @IBAction func addFavoriteButton(_ sender: Any) {
     }
     
     @IBAction func downloadButtonTapped(_ sender: Any) {
-        
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(SheetController.self)") as! SheetController
+        self.present(controller, animated: true)
     }
     func configureViewModel() {
         viewModel?.getDetailPhoto()
@@ -39,14 +35,5 @@ class DetailController: UIViewController {
             errorMessage in
             print("Errorrr var: \(errorMessage)")
         }
-//        viewModel?.onSuccess = {  image in
-//                    self.detailPhoto.image = image
-//        }
     }
 }
-//extension DetailController: HomeProtocol {
-//    func detailPhotoSelection(detailID: String) {
-//        
-//        showDetailPhoto(id: detailID)
-//    }
-//}
