@@ -71,11 +71,13 @@ struct HealthWallpapers: Codable {
 
 // MARK: - Urls
 struct UrlsWallpapers: Codable {
-    let /*raw, full, regular,*/ small: String?
+//    let raw: String?
+         let full, regular, small: String?
     //    let thumb, smallS3: String?
     
     enum CodingKeys: String, CodingKey {
-        //        case raw, full, regular,
+//                case raw,
+        case full, regular
         case small
         //        case thumb
         //        case smallS3 = "small_s3"

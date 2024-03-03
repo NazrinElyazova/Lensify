@@ -17,8 +17,8 @@ class HomeCell: UICollectionViewCell {
     weak var delegate: SaveImageProtocol?
     
     @IBOutlet weak var homeImage: UIImageView!
-    
     @IBOutlet weak var saveButton: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
