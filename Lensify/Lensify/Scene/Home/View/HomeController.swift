@@ -9,10 +9,6 @@ import UIKit
 import Photos
 import SkeletonView
 
-protocol HomeProtocol {
-    func detailPhotoSelection(detailID: String)
-}
-
 class HomeController: UIViewController {
     
     private let topicHeaderView = TopicHeaderView.loadFromNib()
@@ -20,9 +16,7 @@ class HomeController: UIViewController {
     
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var topicView: UIView!
-        
-    var delegate: HomeProtocol?
-    
+            
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -98,9 +92,10 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         viewModel.pagination(index: indexPath.item)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let controller = storyboard?.instantiateViewController(withIdentifier: "\(DetailController.self)") as! DetailController
-//        navigationController?.show(controller, sender: nil)
-        delegate?.detailPhotoSelection(detailID: viewModel.items[indexPath.item].id ?? "")
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(DetailController.self)") as! DetailController
+        controller.viewModel = DetailViewModel(movieId: viewModel.items[indexPath.item].id ?? "")
+        controller.item = viewModel.items[indexPath.item]
+        navigationController?.show(controller, sender: nil)
     }
 }
 extension HomeController: SaveImageProtocol {

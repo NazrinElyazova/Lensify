@@ -8,5 +8,5 @@
 import Foundation
 
 protocol DetailUseCase {
-    func getPhotoDetail(endpoint: HomeEndpoint, photoID: Int?, completion: @escaping(([TopicElement]?, String?)-> Void))
+    func getPhotoDetail(photoID: String?, completion: @escaping(([TopicElement]?, String?)-> Void))
 }

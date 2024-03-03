@@ -19,7 +19,7 @@ class HomeCoordinator: Coordinator {
     
     func start() {
         let controller = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "\(DetailController.self)") as! DetailController
-        controller.viewModel = HomeViewModel()
+//        controller.viewModel = DetailViewModel(movieId: <#String#>)
         navigationController.show(controller, sender: nil)
     }
 }

@@ -7,8 +7,10 @@
 
 import Foundation
 
-//class DetailManager: DetailUseCase {
-//    func getPhotoDetail(endpoint: HomeEndpoint, photoID: Int?, completion: @escaping (([TopicElement]?, String?) -> Void)) {
-//        NetworkManager.request(model: [TopicElement].self, endpoint: <#T##String#>, completion: <#T##(((Decodable & Encodable)?, String?) -> Void)##(((Decodable & Encodable)?, String?) -> Void)##((Decodable & Encodable)?, String?) -> Void#>)
-//    }
-//}
+class DetailManager: DetailUseCase {
+    func getPhotoDetail(photoID: String?, completion: @escaping (([TopicElement]?, String?) -> Void)) {
+        
+        let url =  NetworkHelper.urlConfiguration(endpoint: HomeEndpoint.topics.rawValue)
+        NetworkManager.request(model: [TopicElement].self, endpoint: url, completion: completion)
+    }
+}
