@@ -90,7 +90,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every way to find FREE content" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xP-fO-Ava">
-                                <rect key="frame" x="50" y="482.33333333333331" width="330" height="55.999999999999943"/>
+                                <rect key="frame" x="50" y="481.66666666666669" width="330" height="56.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover Lensify endless pool of images to serve your purpose." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hbx-AE-aAU">
-                                <rect key="frame" x="20" y="598.33333333333337" width="390" height="39.666666666666629"/>
+                                <rect key="frame" x="20" y="598" width="390" height="40"/>
                                 <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -684,30 +684,16 @@
                                     <action selector="downloadButtonTapped:" destination="qRp-1C-4HP" eventType="touchUpInside" id="uw1-ai-3oN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0y-1k-t6j">
-                                <rect key="frame" x="359.33333333333331" y="46" width="50.666666666666686" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="Wjs-NQ-Njz"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
-                                <connections>
-                                    <action selector="addFavoriteButton:" destination="qRp-1C-4HP" eventType="touchUpInside" id="E5s-77-q34"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3z3-mZ-ypC"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Y0y-1k-t6j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3z3-mZ-ypC" secondAttribute="leading" symbolic="YES" id="1sF-i9-0w9"/>
                             <constraint firstItem="3z3-mZ-ypC" firstAttribute="trailing" secondItem="B44-5D-KDF" secondAttribute="trailing" constant="20" id="42d-gi-hMU"/>
                             <constraint firstItem="B44-5D-KDF" firstAttribute="top" secondItem="3z3-mZ-ypC" secondAttribute="top" constant="40" id="BJT-nW-3v0"/>
                             <constraint firstItem="3z3-mZ-ypC" firstAttribute="bottom" secondItem="zIb-7S-1F0" secondAttribute="bottom" constant="40" id="J9b-Px-Fji"/>
                             <constraint firstItem="B44-5D-KDF" firstAttribute="leading" secondItem="3z3-mZ-ypC" secondAttribute="leading" constant="20" id="O2f-eS-Fob"/>
                             <constraint firstItem="zIb-7S-1F0" firstAttribute="top" secondItem="B44-5D-KDF" secondAttribute="bottom" constant="40" id="U4C-Xw-S17"/>
-                            <constraint firstItem="3z3-mZ-ypC" firstAttribute="trailing" secondItem="Y0y-1k-t6j" secondAttribute="trailing" constant="20" id="dI5-VD-Rjf"/>
                             <constraint firstItem="3z3-mZ-ypC" firstAttribute="trailing" secondItem="zIb-7S-1F0" secondAttribute="trailing" constant="20" id="ltJ-Sp-9dU"/>
-                            <constraint firstItem="B44-5D-KDF" firstAttribute="top" secondItem="Y0y-1k-t6j" secondAttribute="bottom" constant="8" symbolic="YES" id="r57-sY-V9J"/>
                             <constraint firstItem="zIb-7S-1F0" firstAttribute="leading" secondItem="3z3-mZ-ypC" secondAttribute="leading" constant="20" id="sEh-8S-7zm"/>
                         </constraints>
                     </view>
@@ -947,15 +933,38 @@
             </objects>
             <point key="canvasLocation" x="1740" y="2000.8583690987125"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorite Controller-->
         <scene sceneID="zF9-qK-eAj">
             <objects>
-                <viewController id="TAk-kZ-TUt" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FavoriteController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TAk-kZ-TUt" customClass="FavoriteController" customModule="Lensify" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N3C-iU-QkA">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="u3D-Ox-VfC">
+                                <rect key="frame" x="0.0" y="103" width="430" height="746"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FUP-2e-wee">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="TAk-kZ-TUt" id="9OX-RP-0bj"/>
+                                    <outlet property="delegate" destination="TAk-kZ-TUt" id="SCZ-Fa-VkZ"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="w1d-bO-WWj"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="w1d-bO-WWj" firstAttribute="trailing" secondItem="u3D-Ox-VfC" secondAttribute="trailing" id="200-bj-ItJ"/>
+                            <constraint firstItem="u3D-Ox-VfC" firstAttribute="leading" secondItem="w1d-bO-WWj" secondAttribute="leading" id="3ao-st-UB9"/>
+                            <constraint firstItem="w1d-bO-WWj" firstAttribute="bottom" secondItem="u3D-Ox-VfC" secondAttribute="bottom" id="edV-Ng-bDt"/>
+                            <constraint firstItem="u3D-Ox-VfC" firstAttribute="top" secondItem="w1d-bO-WWj" secondAttribute="top" id="rio-gf-WhE"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hjm-kL-uVa"/>
                 </viewController>
@@ -1200,11 +1209,19 @@ We understand the importance of privacy. Lensify respects your data, and our app
             </objects>
             <point key="canvasLocation" x="843" y="2001"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="vIp-2s-NKh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qnV-sD-udR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="fzV-f9-VE8"/>
+                    <tabBarItem key="tabBarItem" title="" id="fzV-f9-VE8">
+                        <imageReference key="image" image="heart" catalog="system" renderingMode="hierarchical">
+                            <hierarchicalColors>
+                                <color systemColor="systemGray2Color"/>
+                                <color systemColor="secondaryLabelColor"/>
+                                <color systemColor="tertiaryLabelColor"/>
+                            </hierarchicalColors>
+                        </imageReference>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mTu-6G-Arz">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>

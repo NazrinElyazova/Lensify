@@ -13,6 +13,10 @@ class DetailController: UIViewController {
     
     var item: GetTopics?
     var homeController: HomeController?
+    
+    var favoriteButtonItem: UIBarButtonItem?
+       var isFavorite: Bool = false
+
 
     var coreModel = CoreDataViewModel()
     
@@ -22,11 +26,22 @@ class DetailController: UIViewController {
         super.viewDidLoad()
         configureViewModel()
         detailPhoto.loadImage(url: item?.urls?.regular ?? "")
+        
+        var favoriteImage: UIImage {
+            return (UIImage(systemName: "heart" + (isFavorite ? ".fill" : "")) ?? UIImage())
+        }
+        favoriteButtonItem = UIBarButtonItem(image: favoriteImage,
+                                             style: .plain,
+                                             target: self,
+                                             action: #selector(toggleFavorite))
+        
+        navigationItem.rightBarButtonItem = favoriteButtonItem
     }
-   
-    @IBAction func addFavoriteButton(_ sender: Any) {
-        coreModel.fetchData()
-    }
+    @objc private func toggleFavorite()
+        {
+            isFavorite = !isFavorite
+            print("heart")
+        }
     
     @IBAction func downloadButtonTapped(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(SheetController.self)") as! SheetController
@@ -39,9 +54,11 @@ class DetailController: UIViewController {
             errorMessage in
             print("Errorrr var: \(errorMessage)")
         }
-        
+        coreModel.fetchData()
+
         coreModel.completion = {
            //print something
+            print("comp success")
         }
     }
     func save(image: UIImage) {
