@@ -12,6 +12,7 @@ import SkeletonView
 class HomeController: UIViewController {
     
     private let topicHeaderView = TopicHeaderView.loadFromNib()
+    
     private let viewModel = HomeViewModel()
     
     @IBOutlet weak var collection: UICollectionView!
@@ -93,7 +94,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(DetailController.self)") as! DetailController
-        controller.viewModel = DetailViewModel(movieId: viewModel.items[indexPath.item].id ?? "")
+        controller.viewModel = DetailViewModel(id: viewModel.items[indexPath.item].id ?? "")
         controller.item = viewModel.items[indexPath.item]
         navigationController?.show(controller, sender: nil)
     }

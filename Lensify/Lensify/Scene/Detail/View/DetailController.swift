@@ -10,6 +10,7 @@ import UIKit
 class DetailController: UIViewController {
     
     var viewModel: DetailViewModel?
+    
     var item: GetTopics?
     var homeController: HomeController?
 
@@ -19,7 +20,7 @@ class DetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewModel()
-        detailPhoto.loadImage(url: item?.urls?.small ?? "")
+        detailPhoto.loadImage(url: item?.urls?.regular ?? "")
     }
    
     @IBAction func addFavoriteButton(_ sender: Any) {
@@ -45,6 +46,7 @@ class DetailController: UIViewController {
             present(saveandshare, animated: true)
         }
     }
+    
 }
 extension DetailController: SaveImageProtocol {
     

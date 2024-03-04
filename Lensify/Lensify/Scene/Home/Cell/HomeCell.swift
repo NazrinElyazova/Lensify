@@ -18,18 +18,14 @@ class HomeCell: UICollectionViewCell {
     
     @IBOutlet weak var homeImage: UIImageView!
     @IBOutlet weak var saveButton: UIButton!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
+  
     @IBAction func saveOrShareButtonAction(_ sender: Any) {
         guard let image = homeImage.image else {return}
         delegate?.didTapDownloadButton(image: image)
     }
     
     func configure(data: GetTopics) {
-        homeImage.loadImage(url: data.urls?.small ?? "")
+        homeImage.loadImage(url: data.urls?.regular ?? "")
     }
 }
 

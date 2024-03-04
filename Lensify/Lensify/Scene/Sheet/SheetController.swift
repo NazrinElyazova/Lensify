@@ -11,7 +11,10 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
     
     var model = [GetTopics]()
     weak var delegate: SaveImageProtocol?
+    
     var controller: DetailController?
+    
+    var test: GetTopics?
     
     override var sheetPresentationController: UISheetPresentationController? {
         presentationController as? UISheetPresentationController
@@ -19,20 +22,32 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         createSheet()
+        
     }
+    // Dependency injection for DetailController
+    init(detailController: DetailController) {
+        self.controller = detailController
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    
     @IBAction func fullDownloadButton(_ sender: Any) {
-     
+        
         load(resolution: "full")
     }
     @IBAction func mediumDownloadButton(_ sender: Any) {
-      
+        
         load(resolution: "medium")
-
+        
     }
     @IBAction func smallDownloadButton(_ sender: Any) {
-       
+        
         load(resolution: "small")
-
+        
     }
     
     func createSheet() {
@@ -43,28 +58,58 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
             .medium(),
             .large()]
     }
+    
+    //    func load(resolution: String) {
+    //
+    //        switch resolution {
+    //        case "full":
+    //            guard let image = controller?.detailPhoto.image else {return}
+    //            delegate?.didTapDownloadButton(image: image)
+    //            controller?.detailPhoto.loadImage(url: test?.urls?.full ?? "")
+    //
+    //        case "medium":
+    //            guard let image = controller?.detailPhoto.image else {return}
+    //            delegate?.didTapDownloadButton(image: image)
+    //            controller?.detailPhoto.loadImage(url: test?.urls?.regular ?? "")
+    //
+    //        case "small":
+    //            guard let image = controller?.detailPhoto.image else {return}
+    //            delegate?.didTapDownloadButton(image: image)
+    //            controller?.detailPhoto.loadImage(url: test?.urls?.small ?? "")
+    //
+    //        default:
+    //            break
+    //        }
+    //    }
     func load(resolution: String) {
-//        var test: GetTopics?
-        var url: String = ""
+    
         switch resolution {
         case "full":
-//            controller?.detailPhoto.loadImage(url: test?.urls?.full ?? "")
-            guard let image = controller?.detailPhoto.image else {return}
-            delegate?.didTapDownloadButton(image: image)
-            url = "https://images.unsplash.com/photo-1662516108520-e5a1171dfa43?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"
-           case "medium":
-            guard let image = controller?.detailPhoto.image else {return}
-            delegate?.didTapDownloadButton(image: image)
-//            controller?.detailPhoto.loadImage(url: test?.urls?.regular ?? "")
-            url = "https://images.unsplash.com/photo-1662516108520-e5a1171dfa43?ixlib=rb-4.0.3"
-           case "small":
-            guard let image = controller?.detailPhoto.image else {return}
-            delegate?.didTapDownloadButton(image: image)
-//            controller?.detailPhoto.loadImage(url: test?.urls?.small ?? "")
-            url = "https://images.unsplash.com/photo-1662516108520-e5a1171dfa43?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max"
-           default:
-               break
-           }
+            if let image = controller?.detailPhoto.image {
+                delegate?.didTapDownloadButton(image: image)
+                controller?.detailPhoto.loadImage(url: test?.urls?.full ?? "")
+            } else {
+                print("Error: Full image is nil.")
+            }
+            
+        case "medium":
+            if let image = controller?.detailPhoto.image {
+                delegate?.didTapDownloadButton(image: image)
+                controller?.detailPhoto.loadImage(url: test?.urls?.regular ?? "")
+            } else {
+                print("Error: Medium image is nil.")
+            }
+            
+        case "small":
+            if let image = controller?.detailPhoto.image {
+                delegate?.didTapDownloadButton(image: image)
+                controller?.detailPhoto.loadImage(url: test?.urls?.small ?? "")
+            } else {
+                print("Error: Small image is nil.")
+            }
+            
+        default:
+            print("Error: Unknown resolution.")
+        }
     }
 }
-

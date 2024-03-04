@@ -9,6 +9,7 @@ import Foundation
 
 class HomeViewModel {
     var items = [GetTopics]()
+    
     var currentItems = [GetTopics]()
     var topicItems = [TopicElement]()
     

@@ -17,8 +17,8 @@ class DetailViewModel {
     
     var id: String
     
-    init(movieId: String) {
-        self.id = movieId
+    init(id: String) {
+        self.id = id
     }
     
     func getDetailPhoto() {
