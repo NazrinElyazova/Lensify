@@ -14,6 +14,7 @@ class DetailController: UIViewController {
     var item: GetTopics?
     var homeController: HomeController?
 
+    var coreModel = CoreDataViewModel()
     
     @IBOutlet weak var detailPhoto: UIImageView!
     
@@ -24,6 +25,7 @@ class DetailController: UIViewController {
     }
    
     @IBAction func addFavoriteButton(_ sender: Any) {
+        coreModel.fetchData()
     }
     
     @IBAction func downloadButtonTapped(_ sender: Any) {
@@ -36,6 +38,10 @@ class DetailController: UIViewController {
         viewModel?.onError = {
             errorMessage in
             print("Errorrr var: \(errorMessage)")
+        }
+        
+        coreModel.completion = {
+           //print something
         }
     }
     func save(image: UIImage) {
