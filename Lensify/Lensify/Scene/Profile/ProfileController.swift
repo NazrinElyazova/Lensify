@@ -6,9 +6,6 @@
 //
 
 import UIKit
-//import Firebase
-import SafariServices
-
 
 class ProfileController: UIViewController {
     
@@ -17,9 +14,9 @@ class ProfileController: UIViewController {
     @IBOutlet weak var aboutLensifyButton: UIButton!
     @IBOutlet weak var termsConditionsButton: UIButton!
     
-    let customText = "Welcome to Lensify, a wallpaper application provided by Lensify. By accessing or using Lensify, you agree to comply with and be bound by the following terms and conditions. If you do not agree to these Terms, please do not use the App"
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureButton()
     }
     
@@ -30,18 +27,18 @@ class ProfileController: UIViewController {
     @IBAction func logoutTapped(_ sender: Any) {
         logout()
     }
+    @IBAction func privacyButton(_ sender: Any) {
+     goToSafariViewController(url: "https://www.livintis.com/wallpapers-privacy-policy")
+    }
     
     @IBAction func termsButton(_ sender: Any) {
-        guard let url = URL(string: "https://www.lensifyapp.com/terms-and-conditions") else { return }
-        let safariVC = SFSafariViewController(url: url)
-        present(safariVC, animated: true)
+        goToSafariViewController(url: "https://wallpapers-app-terms.nethouse.ru/")
     }
     
     @IBAction func aboutLensifyAction(_ sender: Any) {
+       goToSafariViewController(url: "https://unsplash.com/wallpapers/apps")
     }
-    
-  
-    
+
     func translateTitle() {
         navigationItem.title = "listTitle".localize
         privacyPolicyButton.setTitle("privacyPolicy".localize, for: .normal)
@@ -49,11 +46,13 @@ class ProfileController: UIViewController {
         aboutLensifyButton.setTitle("aboutLensify".localize, for: .normal)
         logoutButton.setTitle("logout".localize, for: .normal)
     }
+    
     func configureButton() {
         logoutButton.titleLabel?.font = .systemFont(ofSize: 28.0, weight: .bold)
         logoutButton.backgroundColor = .systemRed
         logoutButton.layer.cornerRadius = 10
     }
+    
     func logout() {
         if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let sceneDelegate = scene.delegate as? SceneDelegate {
@@ -62,3 +61,4 @@ class ProfileController: UIViewController {
         }
     }
 }
+

@@ -8,22 +8,17 @@
 import UIKit
 import CoreData
 
-protocol BookmarkDelegate {
-    func addButtonAction(index: Int)
-}
-
 class DetailController: UIViewController {
     
     var viewModel: DetailViewModel?
-    
     var item: GetTopics?
-    var homeController: HomeController?
+    var fav = [GetTopics]()
+    var onUpdate: (([GetTopics]) -> Void)?
     
-    var fav = [TopicElement]()
-    var delegate: BookmarkDelegate?
-    
-    var test = [TopicElement]()
+    var test = [GetTopics]()
 
+    let manager = SaveFileManager()
+    
     @IBOutlet weak var detailPhoto: UIImageView!
     
     override func viewDidLoad() {
@@ -31,30 +26,38 @@ class DetailController: UIViewController {
         
         configureViewModel()
         detailPhoto.loadImage(url: item?.urls?.regular ?? "")
-    }
-    func callback() {
 
-        if let detailController = storyboard?.instantiateViewController(withIdentifier: "FavoriteController") as? FavoriteController {
-                 detailController.onUpdate = { item in
-                     self.fav = item
-                     detailController.collection.reloadData()
-                 }
-                 navigationController?.pushViewController(detailController, animated: true)
-             }
+    }
+    func saveFile() {
+        manager.readJsonFile { bookmarkItems in
+            self.fav = bookmarkItems
+        }
+//        self.fav.append(test[index])
+        fav.append(contentsOf: self.test)
+        manager.writeJsonData(items: fav)
+        onUpdate?(fav)
     }
     
     @IBAction func addToFavButton(_ sender: Any) {
-        
-//        delegate?.addButtonAction(index: self.tag)
-//        print(delegate?.addButtonAction(index: self.detailPhoto.tag)
+        self.saveFile()
 
+        showLanguageAlert(title: "Great", message: "You have already added the image to Favorities", okButton: UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            if let favoriteController = self.storyboard?.instantiateViewController(withIdentifier: "FavoriteController") as? FavoriteController {
+                favoriteController.onUpdate = { items in
+                    self.fav = items
+                    favoriteController.collection.reloadData()
+                }
+                self.navigationController?.pushViewController(favoriteController, animated: true)
+            }
+        }), cancelButton: UIAlertAction(title: "Cancel", style: .cancel))
     }
-
+    
     @IBAction func downloadButtonTapped(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(SheetController.self)") as! SheetController
         controller.delegate = self
         self.present(controller, animated: true)
     }
+    
     func configureViewModel() {
         viewModel?.getDetailPhoto()
         viewModel?.onError = {
@@ -62,6 +65,7 @@ class DetailController: UIViewController {
             print("Errorrr var: \(errorMessage)")
         }
     }
+    
     func save(image: UIImage) {
         func presentSaveAndShareSheet(image: UIImage) {
             let saveandshare = UIActivityViewController(
@@ -70,12 +74,11 @@ class DetailController: UIViewController {
             present(saveandshare, animated: true)
         }
     }
-    
 }
+
 extension DetailController: SaveImageProtocol {
     
     func didTapDownloadButton(image: UIImage) {
-           
         save(image: image)
     }
 }

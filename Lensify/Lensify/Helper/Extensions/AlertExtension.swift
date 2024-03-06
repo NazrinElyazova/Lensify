@@ -22,4 +22,11 @@ extension UIViewController {
         self.present(alertController, animated: true, completion: nil)
     }
 }
-
+extension UIViewController {
+    func showLanguageAlert(title: String, message: String, okButton: UIAlertAction, cancelButton: UIAlertAction) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(okButton)
+        alertController.addAction(cancelButton)
+        self.present(alertController, animated: true, completion: nil)
+    }
+}

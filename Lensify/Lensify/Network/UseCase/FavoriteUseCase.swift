@@ -8,5 +8,5 @@
 import Foundation
 
 protocol FavoriteUseCase {
-    func getPhotoDetail(completion: @escaping(([TopicElement]?, String?)-> Void))
+    func getPhotoDetail(photoID: String?, completion: @escaping(([GetTopics]?, String?)-> Void))
 }

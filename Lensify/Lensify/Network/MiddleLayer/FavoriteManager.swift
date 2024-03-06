@@ -7,9 +7,9 @@
 
 import Foundation
 class FavoriteManager: FavoriteUseCase {
-    func getPhotoDetail(completion: @escaping (([TopicElement]?, String?) -> Void)) {
+    func getPhotoDetail(photoID: String?,completion: @escaping (([GetTopics]?, String?) -> Void)) {
         
         let url =  NetworkHelper.urlConfiguration(endpoint: HomeEndpoint.topics.rawValue)
-        NetworkManager.request(model: [TopicElement].self, endpoint: url, completion: completion)
+        NetworkManager.request(model: [GetTopics].self, endpoint: url, completion: completion)
     }
 }

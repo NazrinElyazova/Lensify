@@ -7,7 +7,7 @@
 
 import Foundation
 class FavoriteViewModel {
-    var detail1 = [TopicElement]()
+//    var detail1 = [TopicElement]()
     
     var detail = [GetTopics]()
 
@@ -17,18 +17,18 @@ class FavoriteViewModel {
     var onSuccess: (()-> Void)?
     var onError: ((String)-> Void)?
     
-//    var id: String
-//    
-//    init(id: String) {
-//        self.id = id
-//    }
-//    
+    var id: String
+    
+    init(id: String) {
+        self.id = id
+    }
+    
     func getDetailPhoto() {
-        manager.getPhotoDetail(/*photoID: id*/) { data, errorMessage in
+        manager.getPhotoDetail(photoID: id) { data, errorMessage in
             if let errorMessage {
                 self.onError?(errorMessage)
             } else if let data {
-                self.detail1 = data
+                self.detail = data
                 self.onSuccess?()
             }
         }
