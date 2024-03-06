@@ -69,6 +69,9 @@
 		7BA58EB42B96E77A00422749 /* FavPhoto+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EB22B96E77A00422749 /* FavPhoto+CoreDataProperties.swift */; };
 		7BA58EB72B96EB1700422749 /* SaveFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EB62B96EB1700422749 /* SaveFileManager.swift */; };
 		7BA58EB92B96EB4200422749 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EB82B96EB4200422749 /* Favorite.swift */; };
+		7BA58EBF2B983CC200422749 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EBE2B983CC200422749 /* FavoriteViewModel.swift */; };
+		7BA58EC12B983CE400422749 /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC02B983CE400422749 /* FavoriteManager.swift */; };
+		7BA58EC32B983EE200422749 /* FavoriteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC22B983EE200422749 /* FavoriteUseCase.swift */; };
 		7BABCF752B77E2D3008FCDDE /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 7BABCF742B77E2D3008FCDDE /* SkeletonView */; };
 		7BC6AEF82B6A0FD900694CD0 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AEF72B6A0FD900694CD0 /* RegisterController.swift */; };
 		7BC6AEFA2B6A183400694CD0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AEF92B6A183400694CD0 /* User.swift */; };
@@ -147,6 +150,9 @@
 		7BA58EB22B96E77A00422749 /* FavPhoto+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FavPhoto+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7BA58EB62B96EB1700422749 /* SaveFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFileManager.swift; sourceTree = "<group>"; };
 		7BA58EB82B96EB4200422749 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		7BA58EBE2B983CC200422749 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
+		7BA58EC02B983CE400422749 /* FavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
+		7BA58EC22B983EE200422749 /* FavoriteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteUseCase.swift; sourceTree = "<group>"; };
 		7BC24F242B88ACC100E8B654 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7BC24F252B88ACC100E8B654 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		7BC24F262B88ACC100E8B654 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -256,6 +262,7 @@
 				7BC6AF002B6A981E00694CD0 /* SearchManager.swift */,
 				7B7967752B6D2C9E0032BB63 /* LoginManager.swift */,
 				7BCF89012B93596C00645CEA /* DetailManager.swift */,
+				7BA58EC02B983CE400422749 /* FavoriteManager.swift */,
 			);
 			path = MiddleLayer;
 			sourceTree = "<group>";
@@ -595,6 +602,7 @@
 			children = (
 				7BA58EAC2B96E4F800422749 /* Cell */,
 				7BD285492B9655A00075B31E /* FavoriteController.swift */,
+				7BA58EBE2B983CC200422749 /* FavoriteViewModel.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -632,6 +640,7 @@
 				7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */,
 				7BCF89032B93599E00645CEA /* DetailUseCase.swift */,
 				7BC6AF022B6A999E00694CD0 /* SearchUseCase.swift */,
+				7BA58EC22B983EE200422749 /* FavoriteUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -761,6 +770,7 @@
 				7BD2854A2B9655A00075B31E /* FavoriteController.swift in Sources */,
 				7BDB91CA2B5B924B00002EAC /* HomeUseCase.swift in Sources */,
 				7BCF89022B93596C00645CEA /* DetailManager.swift in Sources */,
+				7BA58EC32B983EE200422749 /* FavoriteUseCase.swift in Sources */,
 				7BC6AEFA2B6A183400694CD0 /* User.swift in Sources */,
 				7B9565422B650C1800044E58 /* Topic.swift in Sources */,
 				7B9258392B853BAF00D3C212 /* TermsAndConditionsController.swift in Sources */,
@@ -768,12 +778,14 @@
 				7BC6AEFF2B6A72A700694CD0 /* DatabaseAdapter.swift in Sources */,
 				7B90E2762B52C1FB0099FBA3 /* AppDelegate.swift in Sources */,
 				7BC6AF032B6A999E00694CD0 /* SearchUseCase.swift in Sources */,
+				7BA58EC12B983CE400422749 /* FavoriteManager.swift in Sources */,
 				7B1833052B867E5B00A1B89C /* AboutLensifyController.swift in Sources */,
 				7B90E2B22B5329550099FBA3 /* LaunchController.swift in Sources */,
 				7B53E7A32B53E6C6005D0CED /* HomeViewModel.swift in Sources */,
 				7BD285402B9650080075B31E /* CoreDataManager.swift in Sources */,
 				7B4DE9B62B57F44B00F4C3AA /* HomeEndpoint.swift in Sources */,
 				7BC6AF1E2B6AAB1600694CD0 /* SearchEndpoint.swift in Sources */,
+				7BA58EBF2B983CC200422749 /* FavoriteViewModel.swift in Sources */,
 				7B95653E2B65025800044E58 /* TopicHeaderView.swift in Sources */,
 				7BA58EB72B96EB1700422749 /* SaveFileManager.swift in Sources */,
 				7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */,

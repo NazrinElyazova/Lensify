@@ -16,33 +16,24 @@ class DetailController: UIViewController {
     
     var viewModel: DetailViewModel?
     
-//    let manager = SaveFileManager()
-
     var item: GetTopics?
     var homeController: HomeController?
     
-    var fav = [Favorite]()
+    var fav = [TopicElement]()
     var delegate: BookmarkDelegate?
     
-    var test = [Favorite]()
-    
+    var test = [TopicElement]()
+
     @IBOutlet weak var detailPhoto: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureViewModel()
         detailPhoto.loadImage(url: item?.urls?.regular ?? "")
-        
-//        manager.readJsonFile { favItems in
-//            self.fav = favItems
-//        }
     }
     func callback() {
-//        let controller = storyboard?.instantiateViewController(withIdentifier: "DetailController") as! DetailController
-//        controller.onUpdate = { item in
-//            self.model = item
-//            self.collection.reloadData()
-//        }
+
         if let detailController = storyboard?.instantiateViewController(withIdentifier: "FavoriteController") as? FavoriteController {
                  detailController.onUpdate = { item in
                      self.fav = item
@@ -53,17 +44,10 @@ class DetailController: UIViewController {
     }
     
     @IBAction func addToFavButton(_ sender: Any) {
-        let fav2 = Favorite(image: "\(String(describing: detailPhoto.image))")
-        fav.append(fav2)
-//        manager.writeJsonData(items: fav)
+        
+//        delegate?.addButtonAction(index: self.tag)
+//        print(delegate?.addButtonAction(index: self.detailPhoto.tag)
 
-//        manager.readJsonFile { bookmarkItems in
-//            self.fav = bookmarkItems
-////            collection.reloadData()
-//            
-//        }
-        delegate?.addButtonAction(index: 1)
-        print("saved")
     }
 
     @IBAction func downloadButtonTapped(_ sender: Any) {
@@ -95,3 +79,4 @@ extension DetailController: SaveImageProtocol {
         save(image: image)
     }
 }
+

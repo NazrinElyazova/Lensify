@@ -16,6 +16,8 @@ class HomeCell: UICollectionViewCell {
     
     weak var delegate: SaveImageProtocol?
     
+    var delegateBookmark: BookmarkDelegate?
+    
     @IBOutlet weak var homeImage: UIImageView!
     @IBOutlet weak var saveButton: UIButton!
   
@@ -27,8 +29,8 @@ class HomeCell: UICollectionViewCell {
     func configure(data: GetTopics) {
         homeImage.loadImage(url: data.urls?.regular ?? "")
     }
-    func configureFav(data: Favorite) {
-        homeImage.loadImage(url: data.image ?? "")
+    func configureFav(data: TopicElement) {
+        homeImage.loadImage(url: data.coverPhoto?.urls?.small ?? "")
     }
 }
 

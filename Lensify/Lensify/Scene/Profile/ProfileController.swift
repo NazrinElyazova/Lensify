@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import Firebase
+//import Firebase
+import SafariServices
 
 
 class ProfileController: UIViewController {
@@ -16,6 +17,7 @@ class ProfileController: UIViewController {
     @IBOutlet weak var aboutLensifyButton: UIButton!
     @IBOutlet weak var termsConditionsButton: UIButton!
     
+    let customText = "Welcome to Lensify, a wallpaper application provided by Lensify. By accessing or using Lensify, you agree to comply with and be bound by the following terms and conditions. If you do not agree to these Terms, please do not use the App"
     override func viewDidLoad() {
         super.viewDidLoad()
         configureButton()
@@ -30,13 +32,12 @@ class ProfileController: UIViewController {
     }
     
     @IBAction func termsButton(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "\(TermsAndConditionsController.self)") as! TermsAndConditionsController
-        navigationController?.show(controller, sender: nil)
+        guard let url = URL(string: "https://www.lensifyapp.com/terms-and-conditions") else { return }
+        let safariVC = SFSafariViewController(url: url)
+        present(safariVC, animated: true)
     }
     
     @IBAction func aboutLensifyAction(_ sender: Any) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "\(AboutLensifyController.self)") as! AboutLensifyController
-        navigationController?.show(controller, sender: nil)
     }
     
   

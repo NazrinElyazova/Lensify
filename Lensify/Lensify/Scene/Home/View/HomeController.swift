@@ -12,7 +12,6 @@ import SkeletonView
 class HomeController: UIViewController {
     
     private let topicHeaderView = TopicHeaderView.loadFromNib()
-    
     private let viewModel = HomeViewModel()
     
     @IBOutlet weak var collection: UICollectionView!
@@ -27,10 +26,6 @@ class HomeController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         skeletonConfigure()
-        collection.isSkeletonable = true
-        collection.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .darkClouds),
-                                                animation: nil,
-                                                transition: .crossDissolve(0.10))
         configureViewModel()
     }
     
@@ -92,6 +87,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {        
         viewModel.pagination(index: indexPath.item)
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(DetailController.self)") as! DetailController
         controller.viewModel = DetailViewModel(id: viewModel.items[indexPath.item].id ?? "")
@@ -117,5 +113,9 @@ extension HomeController: SkeletonCollectionViewDataSource {
             self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
             self.collection.reloadData()
         })
+        collection.isSkeletonable = true
+        collection.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .darkClouds),
+                                                animation: nil,
+                                                transition: .crossDissolve(0.10))
     }
 }
