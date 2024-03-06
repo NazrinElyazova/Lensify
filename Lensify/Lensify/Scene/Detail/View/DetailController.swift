@@ -6,19 +6,25 @@
 //
 
 import UIKit
+import CoreData
+
+protocol BookmarkDelegate {
+    func addButtonAction(index: Int)
+}
 
 class DetailController: UIViewController {
     
     var viewModel: DetailViewModel?
     
+//    let manager = SaveFileManager()
+
     var item: GetTopics?
     var homeController: HomeController?
     
-    var favoriteButtonItem: UIBarButtonItem?
-       var isFavorite: Bool = false
-
-
-    var coreModel = CoreDataViewModel()
+    var fav = [Favorite]()
+    var delegate: BookmarkDelegate?
+    
+    var test = [Favorite]()
     
     @IBOutlet weak var detailPhoto: UIImageView!
     
@@ -27,22 +33,39 @@ class DetailController: UIViewController {
         configureViewModel()
         detailPhoto.loadImage(url: item?.urls?.regular ?? "")
         
-        var favoriteImage: UIImage {
-            return (UIImage(systemName: "heart" + (isFavorite ? ".fill" : "")) ?? UIImage())
-        }
-        favoriteButtonItem = UIBarButtonItem(image: favoriteImage,
-                                             style: .plain,
-                                             target: self,
-                                             action: #selector(toggleFavorite))
-        
-        navigationItem.rightBarButtonItem = favoriteButtonItem
+//        manager.readJsonFile { favItems in
+//            self.fav = favItems
+//        }
     }
-    @objc private func toggleFavorite()
-        {
-            isFavorite = !isFavorite
-            print("heart")
-        }
+    func callback() {
+//        let controller = storyboard?.instantiateViewController(withIdentifier: "DetailController") as! DetailController
+//        controller.onUpdate = { item in
+//            self.model = item
+//            self.collection.reloadData()
+//        }
+        if let detailController = storyboard?.instantiateViewController(withIdentifier: "FavoriteController") as? FavoriteController {
+                 detailController.onUpdate = { item in
+                     self.fav = item
+                     detailController.collection.reloadData()
+                 }
+                 navigationController?.pushViewController(detailController, animated: true)
+             }
+    }
     
+    @IBAction func addToFavButton(_ sender: Any) {
+        let fav2 = Favorite(image: "\(String(describing: detailPhoto.image))")
+        fav.append(fav2)
+//        manager.writeJsonData(items: fav)
+
+//        manager.readJsonFile { bookmarkItems in
+//            self.fav = bookmarkItems
+////            collection.reloadData()
+//            
+//        }
+        delegate?.addButtonAction(index: 1)
+        print("saved")
+    }
+
     @IBAction func downloadButtonTapped(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(SheetController.self)") as! SheetController
         controller.delegate = self
@@ -53,12 +76,6 @@ class DetailController: UIViewController {
         viewModel?.onError = {
             errorMessage in
             print("Errorrr var: \(errorMessage)")
-        }
-        coreModel.fetchData()
-
-        coreModel.completion = {
-           //print something
-            print("comp success")
         }
     }
     func save(image: UIImage) {

@@ -2,7 +2,7 @@
 //  FavPhoto+CoreDataProperties.swift
 //  Lensify
 //
-//  Created by Nazrin on 04.03.24.
+//  Created by Nazrin on 05.03.24.
 //
 //
 
@@ -16,7 +16,7 @@ extension FavPhoto {
         return NSFetchRequest<FavPhoto>(entityName: "FavPhoto")
     }
 
-    @NSManaged public var image: String?
+    @NSManaged public var image: Data?
 
 }
 

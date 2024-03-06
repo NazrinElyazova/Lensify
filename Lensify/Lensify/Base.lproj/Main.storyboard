@@ -684,17 +684,29 @@
                                     <action selector="downloadButtonTapped:" destination="qRp-1C-4HP" eventType="touchUpInside" id="uw1-ai-3oN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Oz-oM-1xw">
+                                <rect key="frame" x="359.33333333333331" y="67" width="50.666666666666686" height="28"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                <connections>
+                                    <action selector="addToFavButton:" destination="qRp-1C-4HP" eventType="touchUpInside" id="KGW-Yi-zac"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3z3-mZ-ypC"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3z3-mZ-ypC" firstAttribute="trailing" secondItem="B44-5D-KDF" secondAttribute="trailing" constant="20" id="42d-gi-hMU"/>
+                            <constraint firstItem="9Oz-oM-1xw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3z3-mZ-ypC" secondAttribute="leading" symbolic="YES" id="5Rt-EI-lvo"/>
+                            <constraint firstItem="9Oz-oM-1xw" firstAttribute="top" secondItem="3z3-mZ-ypC" secondAttribute="top" constant="8" id="8xD-D6-rMU"/>
                             <constraint firstItem="B44-5D-KDF" firstAttribute="top" secondItem="3z3-mZ-ypC" secondAttribute="top" constant="40" id="BJT-nW-3v0"/>
                             <constraint firstItem="3z3-mZ-ypC" firstAttribute="bottom" secondItem="zIb-7S-1F0" secondAttribute="bottom" constant="40" id="J9b-Px-Fji"/>
                             <constraint firstItem="B44-5D-KDF" firstAttribute="leading" secondItem="3z3-mZ-ypC" secondAttribute="leading" constant="20" id="O2f-eS-Fob"/>
                             <constraint firstItem="zIb-7S-1F0" firstAttribute="top" secondItem="B44-5D-KDF" secondAttribute="bottom" constant="40" id="U4C-Xw-S17"/>
                             <constraint firstItem="3z3-mZ-ypC" firstAttribute="trailing" secondItem="zIb-7S-1F0" secondAttribute="trailing" constant="20" id="ltJ-Sp-9dU"/>
+                            <constraint firstItem="3z3-mZ-ypC" firstAttribute="trailing" secondItem="9Oz-oM-1xw" secondAttribute="trailing" constant="20" id="qzC-1U-0Ea"/>
                             <constraint firstItem="zIb-7S-1F0" firstAttribute="leading" secondItem="3z3-mZ-ypC" secondAttribute="leading" constant="20" id="sEh-8S-7zm"/>
+                            <constraint firstItem="B44-5D-KDF" firstAttribute="top" secondItem="9Oz-oM-1xw" secondAttribute="bottom" constant="4" id="wtF-Yu-Cre"/>
                         </constraints>
                     </view>
                     <connections>
@@ -941,10 +953,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="u3D-Ox-VfC">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7X1-Jp-Zag">
                                 <rect key="frame" x="0.0" y="103" width="430" height="746"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FUP-2e-wee">
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jnh-qJ-gKc">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -952,21 +964,24 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                                 <connections>
-                                    <outlet property="dataSource" destination="TAk-kZ-TUt" id="9OX-RP-0bj"/>
-                                    <outlet property="delegate" destination="TAk-kZ-TUt" id="SCZ-Fa-VkZ"/>
+                                    <outlet property="dataSource" destination="TAk-kZ-TUt" id="dCM-73-p4n"/>
+                                    <outlet property="delegate" destination="TAk-kZ-TUt" id="KUs-FB-33E"/>
                                 </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="w1d-bO-WWj"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="w1d-bO-WWj" firstAttribute="trailing" secondItem="u3D-Ox-VfC" secondAttribute="trailing" id="200-bj-ItJ"/>
-                            <constraint firstItem="u3D-Ox-VfC" firstAttribute="leading" secondItem="w1d-bO-WWj" secondAttribute="leading" id="3ao-st-UB9"/>
-                            <constraint firstItem="w1d-bO-WWj" firstAttribute="bottom" secondItem="u3D-Ox-VfC" secondAttribute="bottom" id="edV-Ng-bDt"/>
-                            <constraint firstItem="u3D-Ox-VfC" firstAttribute="top" secondItem="w1d-bO-WWj" secondAttribute="top" id="rio-gf-WhE"/>
+                            <constraint firstItem="w1d-bO-WWj" firstAttribute="trailing" secondItem="7X1-Jp-Zag" secondAttribute="trailing" id="50w-lB-nOI"/>
+                            <constraint firstItem="w1d-bO-WWj" firstAttribute="bottom" secondItem="7X1-Jp-Zag" secondAttribute="bottom" id="73y-sg-tyJ"/>
+                            <constraint firstItem="7X1-Jp-Zag" firstAttribute="top" secondItem="w1d-bO-WWj" secondAttribute="top" id="aTc-wL-Ni1"/>
+                            <constraint firstItem="7X1-Jp-Zag" firstAttribute="leading" secondItem="w1d-bO-WWj" secondAttribute="leading" id="sTH-qO-FAp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hjm-kL-uVa"/>
+                    <connections>
+                        <outlet property="collection" destination="7X1-Jp-Zag" id="XON-ue-TFg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Nq-RL-PAv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

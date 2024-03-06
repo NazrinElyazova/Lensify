@@ -27,5 +27,8 @@ class HomeCell: UICollectionViewCell {
     func configure(data: GetTopics) {
         homeImage.loadImage(url: data.urls?.regular ?? "")
     }
+    func configureFav(data: Favorite) {
+        homeImage.loadImage(url: data.image ?? "")
+    }
 }
 
