@@ -25,6 +25,7 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         navigationController?.setNavigationBarHidden(true, animated: animated)
         searchbar.placeholder = "search".localize
         
@@ -120,6 +121,7 @@ extension SearchController {
     }
 }
 extension SearchController: SaveImageProtocol {
+    
     func didTapDownloadButton(image: UIImage) {
         if UserDefaults.standard.bool(forKey: "loggedIn") {
             presentSaveAndShareSheet(image: image)
@@ -128,16 +130,5 @@ extension SearchController: SaveImageProtocol {
             showAlert()
         }
     }
-//    func showAlert() {
-//        let alertController = UIAlertController(title: "Warning!", message: "You have no account. Please, login.", preferredStyle: .alert)
-//        let okButton = UIAlertAction(title: "Ok", style: .default) {_ in
-//            let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
-//            self.navigationController?.show(controller, sender: nil)
-//        }
-//        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel)
-//        alertController.addAction(okButton)
-//        alertController.addAction(cancelButton)
-//        present(alertController, animated: true)
-//    }
 }
 

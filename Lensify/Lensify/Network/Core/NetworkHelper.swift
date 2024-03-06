@@ -10,6 +10,7 @@ import Alamofire
 import UIKit
 
 class NetworkHelper {
+    
     static let baseURL = "https://api.unsplash.com/"
     static let clientId = "QDkrKxHnXw5_P5WcTxtWfeEbf-XZSntir16cfzE9YSE"
     

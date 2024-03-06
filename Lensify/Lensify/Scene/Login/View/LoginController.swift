@@ -13,6 +13,15 @@ import FirebaseFirestoreInternal
 import FBSDKLoginKit
 
 class LoginController: UIViewController {
+    
+    let facebookButton = FBLoginButton()
+    let database = Firestore.firestore()
+    
+    var adapter: LoginAdapter?
+    var databaseAdapter = DatabaseAdapter()
+    var info = [UserInfo]()
+    var success: (() -> Void)?
+    
     @IBOutlet weak var dontHaveAccountLabel: UILabel!
     @IBOutlet weak var orSignupWithLabel: UILabel!
     @IBOutlet weak var loginButton: UIButton!
@@ -21,19 +30,9 @@ class LoginController: UIViewController {
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var userNameEmailTextField: UITextField!
     
-    var adapter: LoginAdapter?
-    var databaseAdapter = DatabaseAdapter()
-    
-    let facebookButton = FBLoginButton()
-    let database = Firestore.firestore()
-    
-    var info = [UserInfo]()
-    var success: (() -> Void)?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.navigationController?.navigationBar.topItem?.title = ""
+        hideTitle()
        configureExtensionButton(button: loginButton)
     }
     
@@ -63,7 +62,6 @@ class LoginController: UIViewController {
             self.databaseAdapter.saveUserInfo(data: user)
             self.login()
             print(user)
-            //save to firebase
         }
     }
     

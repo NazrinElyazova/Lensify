@@ -8,14 +8,14 @@
 import UIKit
 
 class WelcomeToLensifyController: UIViewController {
-
+    
     @IBOutlet weak var myLabel: UILabel!
     @IBOutlet weak var startWelcomeButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.topItem?.title = ""
+        hideTitle()
         myLabel.adjustsFontSizeToFitWidth = true
         configureExtensionButton(button: startWelcomeButton)
     }
@@ -26,8 +26,13 @@ class WelcomeToLensifyController: UIViewController {
         navigationController?.show(controller, sender: nil)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        translateTitle()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = view.bounds
         gradientLayer.colors = [UIColor.purple.cgColor,  UIColor.systemPink.cgColor, UIColor.blue.cgColor, UIColor.yellow.cgColor, UIColor.red.cgColor, UIColor.green.cgColor]
@@ -35,16 +40,11 @@ class WelcomeToLensifyController: UIViewController {
         gradientLayer.startPoint = CGPoint(x: 0.7, y: 0.3)
         gradientLayer.endPoint = CGPoint(x: 0.2, y: 1.3)
         
-        //        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0.5)
-        //      gradientLayer.endPoint = CGPoint(x: 0, y: 1)
         view.layer.addSublayer(gradientLayer)
         view.bringSubviewToFront(myLabel)
         view.bringSubviewToFront(startWelcomeButton)
     }
-    override func viewWillAppear(_ animated: Bool) {
-        translateTitle()
-    }
-
+    
     func translateTitle() {
         myLabel.text = "welcomeLabel".localize
         startWelcomeButton.setTitle("welcomeButton".localize, for: .normal)

@@ -20,7 +20,7 @@ class ReadyForDownloadController: UIViewController {
         
         translateText()
         readyForDownload()
-        self.navigationController?.navigationBar.topItem?.title = ""
+        hideTitle()
         configureExtensionButton(button: clickTapped)
 
     }

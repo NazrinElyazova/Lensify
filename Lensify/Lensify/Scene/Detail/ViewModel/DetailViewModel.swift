@@ -8,10 +8,10 @@
 import Foundation
 
 class DetailViewModel {
-    var detail = [TopicElement]()
     
     private let manager = DetailManager()
-    
+
+    var detail = [TopicElement]()
     var onSuccess: (()-> Void)?
     var onError: ((String)-> Void)?
     

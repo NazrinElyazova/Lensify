@@ -18,24 +18,28 @@ class LaunchController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.topItem?.title = ""
+        hideTitle()
         lottieAnimation()
         configureExtensionButton(button: continueButton)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        translateText()
+    }
+    
     @IBAction func continueButtonAction(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(LanguageController.self)") as! LanguageController
         navigationController?.show(controller, sender: nil)
     }
+    
     func lottieAnimation() {
         DispatchQueue.main.async {
             self.lottieView.play()
             self.lottieView.loopMode = .loop
         }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        translateText()
-    }
+  
     func translateText() {
         everyLabel.text = "everyWay".localize
         discoverLabel.text = "discover".localize

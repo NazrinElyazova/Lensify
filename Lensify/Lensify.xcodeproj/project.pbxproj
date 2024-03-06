@@ -69,6 +69,7 @@
 		7BA58EC12B983CE400422749 /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC02B983CE400422749 /* FavoriteManager.swift */; };
 		7BA58EC32B983EE200422749 /* FavoriteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC22B983EE200422749 /* FavoriteUseCase.swift */; };
 		7BA58EC52B98875300422749 /* SafariExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC42B98875300422749 /* SafariExtension.swift */; };
+		7BA58EC72B98A5EC00422749 /* HideTitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC62B98A5EC00422749 /* HideTitleExtension.swift */; };
 		7BABCF752B77E2D3008FCDDE /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 7BABCF742B77E2D3008FCDDE /* SkeletonView */; };
 		7BC6AEF82B6A0FD900694CD0 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AEF72B6A0FD900694CD0 /* RegisterController.swift */; };
 		7BC6AEFA2B6A183400694CD0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AEF92B6A183400694CD0 /* User.swift */; };
@@ -144,6 +145,7 @@
 		7BA58EC02B983CE400422749 /* FavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
 		7BA58EC22B983EE200422749 /* FavoriteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteUseCase.swift; sourceTree = "<group>"; };
 		7BA58EC42B98875300422749 /* SafariExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtension.swift; sourceTree = "<group>"; };
+		7BA58EC62B98A5EC00422749 /* HideTitleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideTitleExtension.swift; sourceTree = "<group>"; };
 		7BC24F242B88ACC100E8B654 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7BC24F252B88ACC100E8B654 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		7BC24F262B88ACC100E8B654 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 				7BCD82902B89EC6C00FE1877 /* AlertExtension.swift */,
 				7B425A1E2B8BC8DF00E5AC05 /* ConfigureButtonExtension.swift */,
 				7BA58EC42B98875300422749 /* SafariExtension.swift */,
+				7BA58EC62B98A5EC00422749 /* HideTitleExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -736,6 +739,7 @@
 				7B9565322B64C64700044E58 /* TopicCell.swift in Sources */,
 				7BA58EB92B96EB4200422749 /* Favorite.swift in Sources */,
 				7B7967762B6D2C9E0032BB63 /* LoginManager.swift in Sources */,
+				7BA58EC72B98A5EC00422749 /* HideTitleExtension.swift in Sources */,
 				7B90E29F2B52C4FD0099FBA3 /* NetworkManager.swift in Sources */,
 				7B97B9D02B5451D300D489CB /* HomeCell.swift in Sources */,
 				7BCD82912B89EC6C00FE1877 /* AlertExtension.swift in Sources */,

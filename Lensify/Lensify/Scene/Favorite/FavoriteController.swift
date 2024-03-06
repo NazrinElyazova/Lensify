@@ -12,12 +12,13 @@ class FavoriteController: UIViewController {
     var onUpdate: (([GetTopics]) -> Void)?
     var cont: DetailController?
     var viewModel = FavoriteViewModel(id: "QV5S1rtoUJ0")
-
+    
     @IBOutlet weak var collection: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.topItem?.title = ""
         configureViewModel()
         self.collection.register(UINib(nibName: "\(HomeCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HomeCell.self)")
     }
@@ -33,12 +34,14 @@ class FavoriteController: UIViewController {
 extension FavoriteController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.detail.count
+        print(viewModel.detail.count)
+        
+        return  viewModel.detail.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
-             cell.configure(data: viewModel.detail[indexPath.item])
+        cell.configure(data: viewModel.detail[indexPath.item])
         return cell
     }
     

@@ -13,6 +13,12 @@ import FirebaseFirestoreInternal
 
 class RegisterController: UIViewController {
     
+    let databaseAdapter = DatabaseAdapter()
+    let facebookButton = FBLoginButton()
+    
+    var completion: ((String, String)-> Void)?
+    var adapter: LoginAdapter?
+    
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var alreadyHaveAccountLabel: UILabel!
     @IBOutlet weak var registerButton: UIButton!
@@ -21,23 +27,19 @@ class RegisterController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var stackView: UIStackView!
     
-    var completion: ((String, String)-> Void)?
-    var adapter: LoginAdapter?
-    
-    let databaseAdapter = DatabaseAdapter()
-    let facebookButton = FBLoginButton()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         adapterSave()
         faceButton()
-        self.navigationController?.navigationBar.topItem?.title = ""
+        hideTitle()
         configureExtensionButton(button: registerButton)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         translateText()
     }
+    
     @IBAction func googleButtonAction(_ sender: Any) {
         
         adapter?.login(type: .google)
@@ -45,6 +47,7 @@ class RegisterController: UIViewController {
         self.navigationController?.show(controller, sender: nil)
         login()
     }
+    
     func faceButton() {
         stackView.axis = .vertical
         stackView.addArrangedSubview(facebookButton)
@@ -57,22 +60,20 @@ class RegisterController: UIViewController {
     
     @objc func facebookButonTapped() {
         adapter?.login(type: .facebook)
-        //        if UserDefaults.standard.bool(forKey: "loggedIn") {
-        //        print(UserDefaults.standard.bool(forKey: "loggedIn"))
-        //            adapter?.facebookCompletion = { user in
-    
-        
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
         self.navigationController?.show(controller, sender: nil)
         login()
     }
+    
     func login() {
         UserDefaults.standard.set(true, forKey: "loggedIn")
     }
+    
     @IBAction func loginActionButton(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
         navigationController?.show(controller, sender: nil)
     }
+    
     @IBAction func registerAction(_ sender: Any) {
         if let email = emailTextField.text,
            let password = passwordTextField.text {
@@ -87,15 +88,15 @@ class RegisterController: UIViewController {
             }
         }
     }
+    
     func adapterSave() {
         adapter = LoginAdapter(controller: self)
         adapter?.completion = {
             user in
             self.databaseAdapter.saveUserInfo(data: user)
-            
-//            print(user)
         }
     }
+    
     func translateText() {
         passwordTextField.placeholder = "passwordTextField".localize
         emailTextField.placeholder = "emailTextField".localize

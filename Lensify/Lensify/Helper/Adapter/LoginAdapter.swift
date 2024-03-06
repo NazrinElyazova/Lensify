@@ -51,7 +51,6 @@ class LoginAdapter {
     }
     
     fileprivate  func facebookLogin() {
-        
         if let token = AccessToken.current,
            !token.isExpired {
             GraphRequest(graphPath: "me", parameters: ["fields": "id,email,first_name,last_name"]).start { (connection, result, error) in
@@ -61,9 +60,6 @@ class LoginAdapter {
                     let email = result["email"] as? String ?? ""
                     let firstName = result["first_name"] as? String ?? ""
                     let lastName = result["last_name"] as? String ?? ""
-//                    
-//                    let face = FacebookLogin(email: email, firstName: firstName, lastName: lastName)
-//                    self.facebookCompletion?(face)
                 }
             }
         }

@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 
 class NetworkManager {
-    // Alamofire bizden isteyir url + endpoint, method, model, header, parameter, completion, encoding
+
     static func request<T: Codable>(
         model: T.Type,
         endpoint: String,
@@ -18,9 +18,8 @@ class NetworkManager {
         encoding: ParameterEncoding = URLEncoding.default,
         parameters: Parameters? = nil,
         completion: @escaping((T?, String?)-> Void)) {
-            //                        print("url: \(NetworkHelper.baseURL)\(endpoint))")
+
             AF.request(
-                /* "\(NetworkHelper.baseURL)\(endpoint)?client_id=QDkrKxHnXw5_P5WcTxtWfeEbf-XZSntir16cfzE9YSE"*/
                 endpoint,
                 method: method,
                 parameters: parameters,

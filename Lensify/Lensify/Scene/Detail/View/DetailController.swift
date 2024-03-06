@@ -10,14 +10,13 @@ import CoreData
 
 class DetailController: UIViewController {
     
+    let manager = SaveFileManager()
+    
     var viewModel: DetailViewModel?
     var item: GetTopics?
     var fav = [GetTopics]()
     var onUpdate: (([GetTopics]) -> Void)?
-    
     var test = [GetTopics]()
-
-    let manager = SaveFileManager()
     
     @IBOutlet weak var detailPhoto: UIImageView!
     
@@ -28,17 +27,18 @@ class DetailController: UIViewController {
         detailPhoto.loadImage(url: item?.urls?.regular ?? "")
 
     }
+    
     func saveFile() {
         manager.readJsonFile { bookmarkItems in
             self.fav = bookmarkItems
         }
-//        self.fav.append(test[index])
         fav.append(contentsOf: self.test)
         manager.writeJsonData(items: fav)
         onUpdate?(fav)
     }
     
     @IBAction func addToFavButton(_ sender: Any) {
+        
         self.saveFile()
 
         showLanguageAlert(title: "Great", message: "You have already added the image to Favorities", okButton: UIAlertAction(title: "Ok", style: .default, handler: { _ in

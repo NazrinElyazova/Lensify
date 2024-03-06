@@ -16,11 +16,12 @@ class HomeController: UIViewController {
     
     @IBOutlet weak var collection: UICollectionView!
     @IBOutlet weak var topicView: UIView!
-            
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         configureUI()
-        //        self.navigationController?.navigationBar.topItem?.title = ""
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +42,7 @@ class HomeController: UIViewController {
         topicHeaderView.frame = topicView.bounds
         collection.register(UINib(nibName: "\(HomeCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HomeCell.self)")
     }
-
+    
     func configureViewModel() {
         viewModel.getTopics()
         viewModel.topicSuccess = {
@@ -84,7 +85,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         .init(width: collectionView.frame.width, height: 200)
     }
     
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {        
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         viewModel.pagination(index: indexPath.item)
     }
     

@@ -7,13 +7,10 @@
 
 import Foundation
 class FavoriteViewModel {
-//    var detail1 = [TopicElement]()
-    
-    var detail = [GetTopics]()
-
     
     private let manager = FavoriteManager()
     
+    var detail = [GetTopics]()
     var onSuccess: (()-> Void)?
     var onError: ((String)-> Void)?
     
