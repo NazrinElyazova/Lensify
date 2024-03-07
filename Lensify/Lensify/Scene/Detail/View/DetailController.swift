@@ -66,6 +66,7 @@ class DetailController: UIViewController {
     @IBAction func downloadButtonTapped(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(SheetController.self)") as! SheetController
         controller.delegate = self
+        controller.delegate2 = self
         self.present(controller, animated: true)
     }
     

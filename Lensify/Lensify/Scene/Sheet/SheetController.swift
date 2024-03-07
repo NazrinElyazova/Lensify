@@ -34,7 +34,10 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
     
     @IBAction func fullDownloadButton(_ sender: Any) {
         
-        controller?.load(resolution: "full")
+//        controller?.load(resolution: "full")
+//        delegate2?.saveImage(imageURL: test?.urls?.full ?? "")
+        delegate2?.saveImage(imageURL: "https://images.unsplash.com/photo-1703145217889-6deedc5f63c9?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb")
+        print(delegate2?.saveImage(imageURL: "https://images.unsplash.com/photo-1703145217889-6deedc5f63c9?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"))
         
     }
     
