@@ -57,9 +57,9 @@ class LoginAdapter {
                 if let error = error {
                     print("Facebook Graph API Error var: \(error.localizedDescription)")
                 } else if let result = result as? [String: Any] {
-                    let email = result["email"] as? String ?? ""
-                    let firstName = result["first_name"] as? String ?? ""
-                    let lastName = result["last_name"] as? String ?? ""
+//                    let email = result["email"] as? String ?? ""
+//                    let firstName = result["first_name"] as? String ?? ""
+//                    let lastName = result["last_name"] as? String ?? ""
                 }
             }
         }

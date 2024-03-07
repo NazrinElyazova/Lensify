@@ -21,7 +21,7 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
         configureUI()
         configureViewModel()
         setupSearchbar()
-        
+        navigationItem.hidesBackButton = false
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -105,7 +105,10 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
         viewModel.pagination(index: indexPath.item)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(DetailController.self)") as! DetailController
+        controller.viewModel = DetailViewModel(id: viewModel.search[indexPath.item].id ?? "")
+        controller.searchItem = viewModel.search[indexPath.item]
+        navigationController?.show(controller, sender: nil)
     }
 }
 

@@ -23,6 +23,8 @@
 "readyFor" = "Estás listo para descargar una imagen ahora...";
 "clickForIt" = "Haga clic para ello";
 "click" = "Hacer clic";
+"downloadButton" = "Descargar";
+
 
 "termsText" = "**Aplicación Lensify - Términos y condiciones**
     

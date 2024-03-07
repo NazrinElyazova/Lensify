@@ -454,7 +454,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="W11-4a-9h9" customClass="LottieAnimationView" customModule="Lottie">
-                                <rect key="frame" x="40" y="129" width="350" height="200"/>
+                                <rect key="frame" x="40" y="159" width="350" height="200"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="8ZV-qH-Hrz"/>
@@ -464,25 +464,25 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are ready for download an image now..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wt4-W2-GE1">
-                                <rect key="frame" x="40" y="379" width="350" height="55"/>
+                                <rect key="frame" x="40" y="409" width="350" height="55"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click for it " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3S-JS-dgZ">
-                                <rect key="frame" x="20" y="484" width="390" height="40.666666666666629"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
+                                <rect key="frame" x="20" y="514" width="390" height="37"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="31"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="narrow" translatesAutoresizingMaskIntoConstraints="NO" id="W2r-7N-Jpc">
-                                <rect key="frame" x="130" y="574.66666666666663" width="170" height="60"/>
+                                <rect key="frame" x="130" y="601" width="170" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="TXa-oA-Atw"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kb9-6J-kXl">
-                                <rect key="frame" x="40" y="664.66666666666663" width="350" height="60"/>
+                                <rect key="frame" x="40" y="691" width="350" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Zm0-Q4-a2s"/>
                                 </constraints>
@@ -502,7 +502,7 @@
                             <constraint firstItem="W2r-7N-Jpc" firstAttribute="leading" secondItem="qvr-AB-YUj" secondAttribute="leading" constant="130" id="54s-Oq-cc6"/>
                             <constraint firstItem="W2r-7N-Jpc" firstAttribute="top" secondItem="O3S-JS-dgZ" secondAttribute="bottom" constant="50" id="6rG-Wc-NFV"/>
                             <constraint firstItem="wt4-W2-GE1" firstAttribute="leading" secondItem="qvr-AB-YUj" secondAttribute="leading" constant="40" id="Bvg-Gb-CS9"/>
-                            <constraint firstItem="W11-4a-9h9" firstAttribute="top" secondItem="qvr-AB-YUj" secondAttribute="top" constant="70" id="Die-zU-cFg"/>
+                            <constraint firstItem="W11-4a-9h9" firstAttribute="top" secondItem="qvr-AB-YUj" secondAttribute="top" constant="100" id="Die-zU-cFg"/>
                             <constraint firstItem="W11-4a-9h9" firstAttribute="leading" secondItem="qvr-AB-YUj" secondAttribute="leading" constant="40" id="F6b-Ma-zLL"/>
                             <constraint firstItem="Kb9-6J-kXl" firstAttribute="leading" secondItem="qvr-AB-YUj" secondAttribute="leading" constant="40" id="H88-Og-pIY"/>
                             <constraint firstItem="Kb9-6J-kXl" firstAttribute="top" secondItem="W2r-7N-Jpc" secondAttribute="bottom" constant="30" id="Nn1-At-zMi"/>
@@ -678,8 +678,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="4yM-Us-ppa"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Download"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Download">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="downloadButtonTapped:" destination="qRp-1C-4HP" eventType="touchUpInside" id="uw1-ai-3oN"/>
                                 </connections>
@@ -711,6 +713,7 @@
                     </view>
                     <connections>
                         <outlet property="detailPhoto" destination="B44-5D-KDF" id="ZYO-dV-rbJ"/>
+                        <outlet property="downloadButton" destination="zIb-7S-1F0" id="R0O-2B-s2q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dIf-pa-B9o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

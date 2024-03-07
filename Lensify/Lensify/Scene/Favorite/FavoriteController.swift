@@ -18,8 +18,12 @@ class FavoriteController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.topItem?.title = ""
+        hideTitle()
         configureViewModel()
+        configureUI()
+    }
+    
+    func configureUI() {
         self.collection.register(UINib(nibName: "\(HomeCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HomeCell.self)")
     }
     
@@ -34,8 +38,7 @@ class FavoriteController: UIViewController {
 extension FavoriteController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(viewModel.detail.count)
-        
+//        print(viewModel.detail.count)
         return  viewModel.detail.count
     }
     

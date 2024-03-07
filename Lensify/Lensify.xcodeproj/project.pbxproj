@@ -439,7 +439,7 @@
 				7BCF88F92B9355CD00645CEA /* Detail */,
 				7B0F42CC2B780DE200785A37 /* Profile */,
 				7B5A907C2B70C4D60025E18B /* Register */,
-				7BD600822B6ED55000B28661 /* DownloadWallpaper */,
+				7BD600822B6ED55000B28661 /* Download */,
 				7BD4FB262B6972C000B5EA3E /* Login */,
 				7B42A0472B56EEE1003C5D34 /* Search */,
 				7B53E79F2B53E6A0005D0CED /* Home */,
@@ -594,12 +594,12 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		7BD600822B6ED55000B28661 /* DownloadWallpaper */ = {
+		7BD600822B6ED55000B28661 /* Download */ = {
 			isa = PBXGroup;
 			children = (
 				7BD600832B6ED58700B28661 /* ReadyForDownloadController.swift */,
 			);
-			path = DownloadWallpaper;
+			path = Download;
 			sourceTree = "<group>";
 		};
 		7BD600852B6EDC1100B28661 /* LottieFiles */ = {
