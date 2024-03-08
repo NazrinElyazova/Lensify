@@ -93,6 +93,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(DetailController.self)") as! DetailController
         controller.viewModel = DetailViewModel(id: viewModel.items[indexPath.item].id ?? "")
         controller.item = viewModel.items[indexPath.item]
+//        controller.delegate = self
         navigationController?.show(controller, sender: nil)
     }
 }

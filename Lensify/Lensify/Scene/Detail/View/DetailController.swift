@@ -18,6 +18,9 @@ class DetailController: UIViewController {
     var onUpdate: (([GetTopics]) -> Void)?
     var test = [GetTopics]()
     
+    
+    var homeCont: HomeController?
+    
     weak var delegate: SaveImageProtocol?
     var delegate2: DetailProtocol?
     
@@ -78,65 +81,34 @@ class DetailController: UIViewController {
         }
     }
     
-    func save(image: UIImage) {
         func presentSaveAndShareSheet(image: UIImage) {
             let saveandshare = UIActivityViewController(
                 activityItems: [image],
                 applicationActivities: nil)
             present(saveandshare, animated: true)
         }
-    }
-    
-    func load(resolution: String) {
-        
-        switch resolution {
-            
-        case "full":
-            //            if let image =  controller?.detailPhoto.image {
-            //                delegate?.didTapDownloadButton(image: image)
-            //                controller?.detailPhoto.loadImage(url: test?.urls?.full ?? "")
-            //            } else {
-            //                print("Error: Full image is nil.")
-            //            }
-            delegate2?.saveImage(imageURL: item?.urls?.full ?? "")
-            
-        case "medium":
-            //            if let image = controller?.detailPhoto.image {
-            //                delegate?.didTapDownloadButton(image: image)
-            ////                controller?.detailPhoto.loadImage(url: test?.urls?.regular ?? "")
-            //            } else {
-            //                print("Error: Medium image is nil.")
-            //            }
-            delegate2?.saveImage(imageURL: item?.urls?.regular ?? "")
-            
-        case "small":
-            //            if let image = controller?.detailPhoto.image {
-            //                delegate?.didTapDownloadButton(image: image)
-            //                controller?.detailPhoto.loadImage(url: test?.urls?.small ?? "")
-            //            } else {
-            //                print("Error: Small image is nil.")
-            //            }
-            delegate2?.saveImage(imageURL: item?.urls?.small ?? "")
-            
-            
-        default:
-            print("Error: Unknown resolution.")
-        }
-    }
-    
+
+//    func save2(image: String) {
+//            let saveandshare = UIActivityViewController(
+//                activityItems: [image],
+//                applicationActivities: nil)
+//            present(saveandshare, animated: true)
+//        }
     func save2(image: String) {
-        func presentSaveAndShareSheet(image: UIImage) {
-            let saveandshare = UIActivityViewController(
-                activityItems: [image],
-                applicationActivities: nil)
-            present(saveandshare, animated: true)
-        }
+//        detailPhoto.loadImage(url: item?.urls?.full ?? "")
+//        detailPhoto.loadImage(url: item?.urls?.regular ?? "")
+        detailPhoto.loadImage(url: item?.urls?.small ?? "")
+
     }
 }
 
 extension DetailController: SaveImageProtocol {
     func didTapDownloadButton(image: UIImage) {
-        save(image: image)
+        
+//        guard let image = detailPhoto.image else {return}
+//        delegate?.didTapDownloadButton(image: image)
+        presentSaveAndShareSheet(image: image)
+
     }
 }
 

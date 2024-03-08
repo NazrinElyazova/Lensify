@@ -34,22 +34,31 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
     
     @IBAction func fullDownloadButton(_ sender: Any) {
         
-//        controller?.load(resolution: "full")
-//        delegate2?.saveImage(imageURL: test?.urls?.full ?? "")
-        delegate2?.saveImage(imageURL: "https://images.unsplash.com/photo-1703145217889-6deedc5f63c9?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb")
-        print(delegate2?.saveImage(imageURL: "https://images.unsplash.com/photo-1703145217889-6deedc5f63c9?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb"))
+//        delegate?.didTapDownloadButton(image: controller?.detailPhoto.image ?? UIImage())
+        
+        delegate2?.saveImage(imageURL: test?.urls?.full ?? "")
         
     }
     
     @IBAction func mediumDownloadButton(_ sender: Any) {
         
-        controller?.load(resolution: "medium")
+//        delegate?.didTapDownloadButton(image: controller?.detailPhoto.image ?? UIImage())
+        
+        delegate2?.saveImage(imageURL: test?.urls?.regular ?? "")
+        
     }
     
     @IBAction func smallDownloadButton(_ sender: Any) {
         
-        controller?.load(resolution: "small")
+        delegate?.didTapDownloadButton(image: controller?.detailPhoto.image ?? UIImage())
+        delegate2?.saveImage(imageURL: test?.urls?.small ?? "")
         
+    }
+    func presentSaveAndShareSheet(image: UIImage) {
+        let saveandshare = UIActivityViewController(
+            activityItems: [image],
+            applicationActivities: nil)
+        present(saveandshare, animated: true)
     }
     
     func createSheet() {
@@ -60,42 +69,4 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
             .medium(),
             .large()]
     }
-
-//    func load(resolution: String) {
-//    
-//        switch resolution {
-//            
-//        case "full":
-////            if let image =  controller?.detailPhoto.image {
-////                delegate?.didTapDownloadButton(image: image)
-////                controller?.detailPhoto.loadImage(url: test?.urls?.full ?? "")
-////            } else {
-////                print("Error: Full image is nil.")
-////            }
-//            delegate2?.saveImage(imageURL: test?.urls?.full ?? "")
-//            
-//        case "medium":
-////            if let image = controller?.detailPhoto.image {
-////                delegate?.didTapDownloadButton(image: image)
-//////                controller?.detailPhoto.loadImage(url: test?.urls?.regular ?? "")
-////            } else {
-////                print("Error: Medium image is nil.")
-////            }
-//            delegate2?.saveImage(imageURL: test?.urls?.regular ?? "")
-//
-//            
-//        case "small":
-////            if let image = controller?.detailPhoto.image {
-////                delegate?.didTapDownloadButton(image: image)
-////                controller?.detailPhoto.loadImage(url: test?.urls?.small ?? "")
-////            } else {
-////                print("Error: Small image is nil.")
-////            }
-//            delegate2?.saveImage(imageURL: test?.urls?.small ?? "")
-//
-//            
-//        default:
-//            print("Error: Unknown resolution.")
-//        }
-//    }
 }
