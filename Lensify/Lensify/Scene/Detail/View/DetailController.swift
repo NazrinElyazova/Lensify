@@ -87,6 +87,8 @@ class DetailController: UIViewController {
                 applicationActivities: nil)
             present(saveandshare, animated: true)
         }
+    
+    
 
 //    func save2(image: String) {
 //            let saveandshare = UIActivityViewController(
@@ -110,6 +112,7 @@ extension DetailController: SaveImageProtocol {
         presentSaveAndShareSheet(image: image)
 
     }
+    
 }
 
 extension DetailController: DetailProtocol {
