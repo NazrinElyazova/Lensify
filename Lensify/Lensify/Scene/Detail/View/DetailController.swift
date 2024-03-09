@@ -18,7 +18,8 @@ class DetailController: UIViewController {
     var onUpdate: (([GetTopics]) -> Void)?
     var test = [GetTopics]()
     
-    
+    weak var controller: SheetController?
+
     var homeCont: HomeController?
     
     weak var delegate: SaveImageProtocol?
@@ -81,16 +82,19 @@ class DetailController: UIViewController {
         }
     }
 
-    func presentSaveAndShareSheet() {
-        
-        guard let image = UIImage(named: "purple"), let url = URL(string: "https://unsplash.com/") else {return}
-        let saveandshare = UIActivityViewController(
-                 activityItems: [
-                     url, image
-                 ],
-                 applicationActivities: nil)
-             present(saveandshare, animated: true)
-         }
+//    func presentSaveAndShareSheet() {
+//        
+//        guard let image = UIImage(named: "purple"), let url = URL(string: "https://unsplash.com/") else {return}
+//        let saveandshare = UIActivityViewController(
+//                 activityItems: [
+//                     url, image
+//                 ],
+//                 applicationActivities: nil)
+//             present(saveandshare, animated: true)
+//         }
+    
+  
+    
 
     func save2(image: String) {
         detailPhoto.loadImage(url: item?.urls?.full ?? "")
@@ -102,7 +106,8 @@ class DetailController: UIViewController {
 
 extension DetailController: SaveImageProtocol {
     func didTapDownloadButton(image: UIImage) {
-        
+//       presentSaveAndShareSheet()
+
     }
 }
 

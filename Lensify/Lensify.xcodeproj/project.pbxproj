@@ -507,13 +507,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		7BA58EAC2B96E4F800422749 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		7BA58EB52B96EB0000422749 /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -577,7 +570,6 @@
 		7BD285482B9655880075B31E /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
-				7BA58EAC2B96E4F800422749 /* Cell */,
 				7BD285492B9655A00075B31E /* FavoriteController.swift */,
 				7BA58EBE2B983CC200422749 /* FavoriteViewModel.swift */,
 			);

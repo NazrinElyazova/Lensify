@@ -20,6 +20,8 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
     weak var controller: DetailController?
     var test: GetTopics?
     
+    var urlsss: UrlsWallpapers?
+    
     var delegate2: DetailProtocol?
     
     override var sheetPresentationController: UISheetPresentationController? {
@@ -33,34 +35,55 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
     
     @IBAction func fullDownloadButton(_ sender: Any) {
         
-        presentSaveAndShareSheet()
+//        presentSaveAndShareSheet()
+//        delegate?.didTapDownloadButton(image: image)
+//        presentSaveAndShareSheet(image: (controller?.detailPhoto.image ?? UIImage(named: "flagAZ"))!)
         delegate2?.saveImage(imageURL: test?.urls?.full ?? "")
+//        loadImageAndPresentShareSheet(urls: urlsss?.full ?? "")
+        self.dismiss(animated: true)
+
     }
     
     @IBAction func mediumDownloadButton(_ sender: Any) {
         
-        presentSaveAndShareSheet()
+//        presentSaveAndShareSheet()
         delegate2?.saveImage(imageURL: test?.urls?.regular ?? "")
     }
     
     @IBAction func smallDownloadButton(_ sender: Any) {
         
-        presentSaveAndShareSheet()
+//        presentSaveAndShareSheet()
         delegate2?.saveImage(imageURL: test?.urls?.small ?? "")
     }
-    
-    
-    func presentSaveAndShareSheet() {
-        if let image = UIImage(named: "flagAZ") {
+    func presentSaveAndShareSheet(image: UIImage) {
             let saveandshare = UIActivityViewController(
                 activityItems: [image],
                 applicationActivities: nil)
             present(saveandshare, animated: true)
-        } else {
             print("nothing")
-        }
     }
+    func loadImageAndPresentShareSheet(urls: UrlsWallpapers) {
+        guard let url = URL(string: urls.full ?? "") else {
+            print("Invalid URL")
+            return
+        }
+        self.presentSaveAndShareSheet(image: UIImage(named: "Rainbow")!)
+
+    }
+
     
+    
+//    func presentSaveAndShareSheet() {
+//        if let image = UIImage(named: "flagAZ") {
+//            let saveandshare = UIActivityViewController(
+//                activityItems: [image],
+//                applicationActivities: nil)
+//            present(saveandshare, animated: true)
+//        } else {
+//            print("nothing")
+//        }
+//    }
+//    
     
     func createSheet() {
         sheetPresentationController?.prefersGrabberVisible = true
