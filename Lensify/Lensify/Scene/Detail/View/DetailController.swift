@@ -42,9 +42,9 @@ class DetailController: UIViewController {
     }
     
     func saveFile() {
-        manager.readJsonFile { bookmarkItems in
-            self.fav = bookmarkItems
-        }
+//        manager.readJsonFile { bookmarkItems in
+//            self.fav = bookmarkItems
+//        }
         
         fav.append(contentsOf: test)
         manager.writeJsonData(items: fav)
@@ -80,25 +80,21 @@ class DetailController: UIViewController {
             print("Errorrr var: \(errorMessage)")
         }
     }
-    
-        func presentSaveAndShareSheet(image: UIImage) {
-            let saveandshare = UIActivityViewController(
-                activityItems: [image],
-                applicationActivities: nil)
-            present(saveandshare, animated: true)
-        }
-    
-    
 
-//    func save2(image: String) {
-//            let saveandshare = UIActivityViewController(
-//                activityItems: [image],
-//                applicationActivities: nil)
-//            present(saveandshare, animated: true)
-//        }
+    func presentSaveAndShareSheet() {
+        
+        guard let image = UIImage(named: "purple"), let url = URL(string: "https://unsplash.com/") else {return}
+        let saveandshare = UIActivityViewController(
+                 activityItems: [
+                     url, image
+                 ],
+                 applicationActivities: nil)
+             present(saveandshare, animated: true)
+         }
+
     func save2(image: String) {
-//        detailPhoto.loadImage(url: item?.urls?.full ?? "")
-//        detailPhoto.loadImage(url: item?.urls?.regular ?? "")
+        detailPhoto.loadImage(url: item?.urls?.full ?? "")
+        detailPhoto.loadImage(url: item?.urls?.regular ?? "")
         detailPhoto.loadImage(url: item?.urls?.small ?? "")
 
     }
@@ -107,12 +103,7 @@ class DetailController: UIViewController {
 extension DetailController: SaveImageProtocol {
     func didTapDownloadButton(image: UIImage) {
         
-//        guard let image = detailPhoto.image else {return}
-//        delegate?.didTapDownloadButton(image: image)
-        presentSaveAndShareSheet(image: image)
-
     }
-    
 }
 
 extension DetailController: DetailProtocol {

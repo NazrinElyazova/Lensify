@@ -9,6 +9,9 @@ import UIKit
 
 class FavoriteController: UIViewController {
     
+    let manager = SaveFileManager()
+    var fav = [GetTopics]()
+
     var onUpdate: (([GetTopics]) -> Void)?
     var cont: DetailController?
     var viewModel = FavoriteViewModel(id: "QV5S1rtoUJ0")
@@ -22,7 +25,13 @@ class FavoriteController: UIViewController {
         configureViewModel()
         configureUI()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        manager.readJsonFile { bookmarkItems in
+            self.fav = bookmarkItems
+        }
+        
+    }
     func configureUI() {
         self.collection.register(UINib(nibName: "\(HomeCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HomeCell.self)")
     }
