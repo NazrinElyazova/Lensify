@@ -9,16 +9,16 @@ import UIKit
 
 class DetailController: UIViewController {
     
-    let manager = SaveFileManager()
+    private let manager = SaveFileManager.saveFile
     
     var viewModel: DetailViewModel?
     var item: GetTopics?
     var searchItem: SearchResult?
-    var fav = [GetTopics]()
-    var onUpdate: (([GetTopics]) -> Void)?
-    var testFile = [GetTopics]()
-
     
+    var image: UIImage? = nil
+
+    private let folderName = "detail_images"
+    var fav = [GetTopics]()
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var detailPhoto: UIImageView!
     
@@ -26,36 +26,38 @@ class DetailController: UIViewController {
         super.viewDidLoad()
 
         configureViewModel()
-        detailPhoto.loadImage(url: item?.urls?.regular ?? "")
-        detailPhoto.loadImage(url: searchItem?.urls?.small ?? "")
         configureExtensionButton(button: downloadButton)
         translateText()
+        downloaddd()
+        getDetailPhoto()
+    }
+    func downloaddd() {
+        detailPhoto.loadImage(url: item?.urls?.regular ?? "")
+    }
+    private func getDetailPhoto() {
+        if let savedImage = manager.getImge(imageName: item?.id ?? "", folderName: folderName) {
+            image = savedImage
+            print("image saveddd")
+        }
     }
     
     func translateText() {
         downloadButton.setTitle("downloadButton".localize, for: .normal)
     }
     
-    func saveFile() {
-//        manager.readJsonFile { bookmarkItems in
-//            self.fav = bookmarkItems
-//        }
-        
-        fav.append(contentsOf: testFile)
-        manager.writeJsonData(items: fav)
-        onUpdate?(fav)
-    }
-    
     @IBAction func addToFavButton(_ sender: Any) {
+        guard let image = detailPhoto.image else { print("sorryy")
+            return}
+
+        manager.saveImage(image: image, imageName: item?.id ?? "", folderName: folderName)
         
-        self.saveFile()
-        
+
         showLanguageAlert(title: "Great", message: "You have already added the image to Favorities", okButton: UIAlertAction(title: "Ok", style: .default, handler: { _ in
             if let favoriteController = self.storyboard?.instantiateViewController(withIdentifier: "FavoriteController") as? FavoriteController {
-                favoriteController.onUpdate = { items in
-                    self.fav = items
-                    favoriteController.collection.reloadData()
-                }
+//                favoriteController.onUpdate = { items in
+//                    self.fav = items
+//                    favoriteController.collection.reloadData()
+//                }
                 self.navigationController?.pushViewController(favoriteController, animated: true)
             }
         }), cancelButton: UIAlertAction(title: "Cancel", style: .cancel))
@@ -73,12 +75,5 @@ class DetailController: UIViewController {
             errorMessage in
             print("Errorrr var: \(errorMessage)")
         }
-    }
-    
-    func save2(image: String) {
-        detailPhoto.loadImage(url: item?.urls?.full ?? "")
-        detailPhoto.loadImage(url: item?.urls?.regular ?? "")
-        detailPhoto.loadImage(url: item?.urls?.small ?? "")
-
     }
 }

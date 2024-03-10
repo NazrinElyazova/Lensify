@@ -14,6 +14,8 @@ class FavoriteViewModel {
     var onSuccess: (()-> Void)?
     var onError: ((String)-> Void)?
     
+    var test = [GetTopics]()
+    
     var id: String
     
     init(id: String) {

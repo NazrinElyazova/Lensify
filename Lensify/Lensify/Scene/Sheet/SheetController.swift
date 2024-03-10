@@ -27,12 +27,10 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
         
         guard let fullURL = item?.urls?.full,
               let full = URL(string: fullURL) else {
-            print("No image found or invalid URL")
             return
         }
         guard let imageData = try? Data(contentsOf: full),
               let image = UIImage(data: imageData) else {
-            print("Unable to download and create image from URL")
             return
         }
         
@@ -43,12 +41,10 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
         
         guard let regularURLString = item?.urls?.regular,
               let regularURL = URL(string: regularURLString) else {
-            print("No image found or invalid URL")
             return
         }
         guard let imageData = try? Data(contentsOf: regularURL),
               let image = UIImage(data: imageData) else {
-            print("Unable to download and create image from URL")
             return
         }
         
@@ -59,12 +55,10 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
         
         guard let smallURL = item?.urls?.small,
               let small = URL(string: smallURL) else {
-            print("No image found or invalid URL")
             return
         }
         guard let imageData = try? Data(contentsOf: small),
               let image = UIImage(data: imageData) else {
-            print("Unable to download and create image from URL")
             return
         }
         
@@ -76,7 +70,6 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
         let saveandshare = UIActivityViewController(
             activityItems: [
                 image, url
-                
             ],
             applicationActivities: nil)
         present(saveandshare, animated: true)

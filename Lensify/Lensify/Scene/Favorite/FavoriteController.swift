@@ -8,13 +8,9 @@
 import UIKit
 
 class FavoriteController: UIViewController {
+ 
     
-    let manager = SaveFileManager()
-    var fav = [GetTopics]()
-
-    var onUpdate: (([GetTopics]) -> Void)?
-    var cont: DetailController?
-    var viewModel = FavoriteViewModel(id: "QV5S1rtoUJ0")
+    var viewModel: FavoriteViewModel?
     
     @IBOutlet weak var collection: UICollectionView!
     
@@ -25,20 +21,14 @@ class FavoriteController: UIViewController {
         configureViewModel()
         configureUI()
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        manager.readJsonFile { bookmarkItems in
-            self.fav = bookmarkItems
-        }
-        
-    }
+
     func configureUI() {
         self.collection.register(UINib(nibName: "\(HomeCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HomeCell.self)")
     }
     
     func configureViewModel() {
-        viewModel.getDetailPhoto()
-        viewModel.onSuccess = {
+        viewModel?.getDetailPhoto()
+        viewModel?.onSuccess = {
             self.collection.reloadData()
         }
     }
@@ -47,14 +37,17 @@ class FavoriteController: UIViewController {
 extension FavoriteController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        print(viewModel.detail.count)
-        return  viewModel.detail.count
+        //        print(viewModel.detail.count)
+        return  viewModel?.detail.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
-        cell.configure(data: viewModel.detail[indexPath.item])
+        if let model = viewModel?.detail[indexPath.item] {
+            cell.configure(data: model)
+        }
         return cell
+
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

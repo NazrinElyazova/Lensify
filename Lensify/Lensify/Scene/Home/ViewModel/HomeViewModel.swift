@@ -58,10 +58,5 @@ class HomeViewModel {
             getPhotos()
         }
     }
-    
-//    func pagination(id: String) {
-//        let limit = 10
-//        getPhotos()
-//    }
 }
 

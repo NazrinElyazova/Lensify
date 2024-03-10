@@ -4,35 +4,53 @@
 //
 //  Created by Nazrin on 05.03.24.
 //
-
+import UIKit
 import Foundation
 
-class SaveFileManager {
-    
-    func getJsonFilePath() -> URL {
-        let files = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let path = files [0].appendingPathComponent("favorite.json")
-        print(path)
-        return path
-    }
-    
-    func writeJsonData(items: [GetTopics]) {
-        do {
-            let data = try JSONEncoder().encode(items)
-            try data.write(to: getJsonFilePath())
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
-    
-    func readJsonFile(complete: (([GetTopics]) -> Void)) {
-        if let data = try? Data(contentsOf: getJsonFilePath()) {
+    class SaveFileManager {
+        var item: GetTopics?
+        static let saveFile = SaveFileManager()
+        private init() {}
+
+        func saveImage(image: UIImage, imageName: String, folderName: String) {
+            createFolder(folderName: folderName)
+            guard let data = image.jpegData(compressionQuality: 0.5),
+                let url = getUrlForImage(imageName: imageName, folderName: folderName)
+                else { return }
             do {
-                let items = try JSONDecoder().decode([GetTopics].self, from: data)
-                complete(items)
+                try data.write(to: url)
             } catch {
                 print(error.localizedDescription)
             }
         }
+
+        private func createFolder(folderName: String) {
+            guard let url = getURLForFolder(folderName: folderName) else {return}
+            if !FileManager.default.fileExists(atPath: url.path) {
+                do {
+                    try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
+                    print("Folder URL: \(url)")
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+
+        func getImge(imageName: String, folderName: String) -> UIImage? {
+            guard let url = getUrlForImage(imageName: imageName, folderName: folderName),
+                  FileManager.default.fileExists(atPath: url.path) else { return nil }
+            return UIImage(contentsOfFile: url.path)
+        }
+
+        private func getURLForFolder(folderName: String) -> URL? {
+            guard let url = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else {return nil}
+
+            return url.appendingPathComponent(folderName)
+        }
+
+        private func getUrlForImage(imageName: String, folderName: String) -> URL? {
+            guard let folderUrl = getURLForFolder(folderName: folderName) else {return nil}
+            return folderUrl.appendingPathComponent(imageName + ".jpg") 
+        }
     }
-}
+
