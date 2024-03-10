@@ -16,21 +16,15 @@ class DetailController: UIViewController {
     var searchItem: SearchResult?
     var fav = [GetTopics]()
     var onUpdate: (([GetTopics]) -> Void)?
-    var test = [GetTopics]()
-    
-    weak var controller: SheetController?
+    var testFile = [GetTopics]()
 
-    var homeCont: HomeController?
-    
-    weak var delegate: SaveImageProtocol?
-    var delegate2: DetailProtocol?
     
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var detailPhoto: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         configureViewModel()
         detailPhoto.loadImage(url: item?.urls?.regular ?? "")
         detailPhoto.loadImage(url: searchItem?.urls?.small ?? "")
@@ -47,7 +41,7 @@ class DetailController: UIViewController {
 //            self.fav = bookmarkItems
 //        }
         
-        fav.append(contentsOf: test)
+        fav.append(contentsOf: testFile)
         manager.writeJsonData(items: fav)
         onUpdate?(fav)
     }
@@ -69,8 +63,7 @@ class DetailController: UIViewController {
     
     @IBAction func downloadButtonTapped(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(SheetController.self)") as! SheetController
-        controller.delegate = self
-        controller.delegate2 = self
+        controller.item = item
         self.present(controller, animated: true)
     }
     
@@ -81,38 +74,11 @@ class DetailController: UIViewController {
             print("Errorrr var: \(errorMessage)")
         }
     }
-
-//    func presentSaveAndShareSheet() {
-//        
-//        guard let image = UIImage(named: "purple"), let url = URL(string: "https://unsplash.com/") else {return}
-//        let saveandshare = UIActivityViewController(
-//                 activityItems: [
-//                     url, image
-//                 ],
-//                 applicationActivities: nil)
-//             present(saveandshare, animated: true)
-//         }
     
-  
-    
-
     func save2(image: String) {
         detailPhoto.loadImage(url: item?.urls?.full ?? "")
         detailPhoto.loadImage(url: item?.urls?.regular ?? "")
         detailPhoto.loadImage(url: item?.urls?.small ?? "")
 
-    }
-}
-
-extension DetailController: SaveImageProtocol {
-    func didTapDownloadButton(image: UIImage) {
-//       presentSaveAndShareSheet()
-
-    }
-}
-
-extension DetailController: DetailProtocol {
-    func saveImage(imageURL: String) {
-        save2(image: imageURL)
     }
 }

@@ -8,82 +8,79 @@
 import UIKit
 import Photos
 
-protocol DetailProtocol {
-    func saveImage(imageURL: String)
-}
-
 class SheetController: UIViewController, UISheetPresentationControllerDelegate {
     
-    weak var delegate: SaveImageProtocol?
     var model = [GetTopics]()
-    
-    weak var controller: DetailController?
-    var test: GetTopics?
-    
-    var urlsss: UrlsWallpapers?
-    
-    var delegate2: DetailProtocol?
-    
+    var item: GetTopics?
+ 
     override var sheetPresentationController: UISheetPresentationController? {
         presentationController as? UISheetPresentationController
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         createSheet()
     }
     
     @IBAction func fullDownloadButton(_ sender: Any) {
         
-//        presentSaveAndShareSheet()
-//        delegate?.didTapDownloadButton(image: image)
-//        presentSaveAndShareSheet(image: (controller?.detailPhoto.image ?? UIImage(named: "flagAZ"))!)
-        delegate2?.saveImage(imageURL: test?.urls?.full ?? "")
-//        loadImageAndPresentShareSheet(urls: urlsss?.full ?? "")
-        self.dismiss(animated: true)
-
+        guard let fullURL = item?.urls?.full,
+              let full = URL(string: fullURL) else {
+            print("No image found or invalid URL")
+            return
+        }
+        guard let imageData = try? Data(contentsOf: full),
+              let image = UIImage(data: imageData) else {
+            print("Unable to download and create image from URL")
+            return
+        }
+        
+        presentSaveAndShareSheet(image: image, url: item?.urls?.full ?? "")
     }
     
     @IBAction func mediumDownloadButton(_ sender: Any) {
         
-//        presentSaveAndShareSheet()
-        delegate2?.saveImage(imageURL: test?.urls?.regular ?? "")
+        guard let regularURLString = item?.urls?.regular,
+              let regularURL = URL(string: regularURLString) else {
+            print("No image found or invalid URL")
+            return
+        }
+        guard let imageData = try? Data(contentsOf: regularURL),
+              let image = UIImage(data: imageData) else {
+            print("Unable to download and create image from URL")
+            return
+        }
+        
+        presentSaveAndShareSheet(image: image, url: item?.urls?.regular ?? "")
     }
     
     @IBAction func smallDownloadButton(_ sender: Any) {
         
-//        presentSaveAndShareSheet()
-        delegate2?.saveImage(imageURL: test?.urls?.small ?? "")
-    }
-    func presentSaveAndShareSheet(image: UIImage) {
-            let saveandshare = UIActivityViewController(
-                activityItems: [image],
-                applicationActivities: nil)
-            present(saveandshare, animated: true)
-            print("nothing")
-    }
-    func loadImageAndPresentShareSheet(urls: UrlsWallpapers) {
-        guard let url = URL(string: urls.full ?? "") else {
-            print("Invalid URL")
+        guard let smallURL = item?.urls?.small,
+              let small = URL(string: smallURL) else {
+            print("No image found or invalid URL")
             return
         }
-        self.presentSaveAndShareSheet(image: UIImage(named: "Rainbow")!)
-
+        guard let imageData = try? Data(contentsOf: small),
+              let image = UIImage(data: imageData) else {
+            print("Unable to download and create image from URL")
+            return
+        }
+        
+        presentSaveAndShareSheet(image: image, url: item?.urls?.small ?? "")
+        
     }
-
     
-    
-//    func presentSaveAndShareSheet() {
-//        if let image = UIImage(named: "flagAZ") {
-//            let saveandshare = UIActivityViewController(
-//                activityItems: [image],
-//                applicationActivities: nil)
-//            present(saveandshare, animated: true)
-//        } else {
-//            print("nothing")
-//        }
-//    }
-//    
+    func presentSaveAndShareSheet(image: UIImage, url: String) {
+        let saveandshare = UIActivityViewController(
+            activityItems: [
+                image, url
+                
+            ],
+            applicationActivities: nil)
+        present(saveandshare, animated: true)
+    }
     
     func createSheet() {
         sheetPresentationController?.prefersGrabberVisible = true

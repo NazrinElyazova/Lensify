@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Photos
 import SkeletonView
 
 class HomeController: UIViewController {
@@ -21,7 +20,6 @@ class HomeController: UIViewController {
         super.viewDidLoad()
         
         configureUI()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,8 +90,7 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(DetailController.self)") as! DetailController
         controller.viewModel = DetailViewModel(id: viewModel.items[indexPath.item].id ?? "")
-        controller.item = viewModel.items[indexPath.item]
-//        controller.delegate = self
+        controller.item = viewModel.items[indexPath.item]        
         navigationController?.show(controller, sender: nil)
     }
 }
