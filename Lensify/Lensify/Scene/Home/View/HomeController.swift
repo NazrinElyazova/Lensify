@@ -85,14 +85,15 @@ extension HomeController: UICollectionViewDelegate, UICollectionViewDataSource, 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         viewModel.pagination(index: indexPath.item)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(DetailController.self)") as! DetailController
         controller.viewModel = DetailViewModel(id: viewModel.items[indexPath.item].id ?? "")
-        controller.item = viewModel.items[indexPath.item]        
+        controller.item = viewModel.items[indexPath.item]
         navigationController?.show(controller, sender: nil)
     }
 }
+
 extension HomeController: SaveImageProtocol {
     func didTapDownloadButton(image: UIImage) {
         if UserDefaults.standard.bool(forKey: "loggedIn") {
@@ -100,10 +101,12 @@ extension HomeController: SaveImageProtocol {
         }
     }
 }
+
 extension HomeController: SkeletonCollectionViewDataSource {
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
         return "\(HomeCell.self)"
     }
+    
     func skeletonConfigure() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
             

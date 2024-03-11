@@ -41,7 +41,6 @@ class RegisterController: UIViewController {
     }
     
     @IBAction func googleButtonAction(_ sender: Any) {
-        
         adapter?.login(type: .google)
         let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
         self.navigationController?.show(controller, sender: nil)
@@ -58,11 +57,12 @@ class RegisterController: UIViewController {
            let password = passwordTextField.text {
             Auth.auth().createUser(withEmail: email, password: password) { [weak self]
                 result, error in
+                guard let self else {return}
                 if let error = error {
                     print(error.localizedDescription)
                 } else if let user = result?.user {
-                    self?.completion?(user.email ?? "", password)
-                    self?.navigationController?.popViewController(animated: true)
+                    completion?(user.email ?? "", password)
+                  navigationController?.popViewController(animated: true)
                 }
             }
         }

@@ -22,6 +22,7 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
         configureViewModel()
         setupSearchbar()
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -75,13 +76,6 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
             self.collection.reloadData()
         }
     }
-    
-    func presentSaveAndShareSheet(image: UIImage) {
-        let saveandshare = UIActivityViewController(
-            activityItems: [image],
-            applicationActivities: nil)
-        present(saveandshare, animated: true)
-    }
 }
 extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -93,7 +87,6 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(SearchCell.self)", for: indexPath) as! SearchCell
         let item = viewModel.search[indexPath.item]
         cell.configure(data: item)
-        cell.delegate = self
         return cell
     }
     
@@ -108,6 +101,7 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(DetailController.self)") as! DetailController
         controller.viewModel = DetailViewModel(id: viewModel.search[indexPath.item].id ?? "")
         controller.searchItem = viewModel.search[indexPath.item]
+        print(controller.searchItem = viewModel.search[indexPath.item])
         navigationController?.show(controller, sender: nil)
     }
 }
@@ -123,15 +117,5 @@ extension SearchController {
         view.endEditing(true)
     }
 }
-extension SearchController: SaveImageProtocol {
-    
-    func didTapDownloadButton(image: UIImage) {
-        if UserDefaults.standard.bool(forKey: "loggedIn") {
-            presentSaveAndShareSheet(image: image)
-        }
-        else {
-            showAlert()
-        }
-    }
-}
+
 

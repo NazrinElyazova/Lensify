@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseStorage
+import FirebaseFirestore
 
 class DetailController: UIViewController {
     
@@ -15,7 +17,7 @@ class DetailController: UIViewController {
     var viewModel: DetailViewModel?
     var item: GetTopics?
     var searchItem: SearchResult?
-    var image: UIImage?
+//    var image: UIImage?
     
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var detailPhoto: UIImageView!
@@ -27,27 +29,59 @@ class DetailController: UIViewController {
         configureExtensionButton(button: downloadButton)
         translateText()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         downloadDetailPhoto()
         getDetailImage()
     }
     
-    @IBAction func addToFavButton(_ sender: Any) {
+    // MARK: CREATE STORAGE REFERENCE
+    func uploadPhoto() {
+        let storageReference = Storage.storage().reference()
         
-        guard let image = detailPhoto.image else { return
+        // MARK: TURN IMAGE INTO DATA
+        
+        guard let image = detailPhoto.image else { print("detail photo nildir")
+                  return
+            }
+        let imageData = image.jpegData(compressionQuality: 0.8)
+                
+        // MARK: SPECIFY THE FILE PATH AND NAME
+        let path = "images/\(UUID().uuidString).jpg"
+        let filePath = storageReference.child(path)
+        
+        // MARK: UPLOAD THAT DATA
+        let uploadData = filePath.putData(imageData!, metadata: nil) {
+            metadata, error in
+            
+            if error == nil && metadata != nil {
+                let db = Firestore.firestore()
+                db.collection("images").document().setData(["url":path])
+            }
         }
-        if manager.saveImage(image: image, imageName: item?.id ?? "", folderName: folderName) {
-            print("Image added to favorites")
-        } else {
-            print("Failed to add image to favorites")
-        }
+        
+        // MARK: SAVE A REFERENCE TO THE FILE IN FIRESTORE DB
+        
     }
+    
+    @IBAction func addToFavButton(_ sender: Any) {
+//        guard let image = detailPhoto.image else { print("detail photo nildir")
+//            return
+            //        }
+            //        if manager.saveImage(image: image, imageName: item?.id ?? "", folderName: folderName) {
+            //            print("Image added to favorites")
+            //        } else {
+            //            print("Failed to add image to favorites")
+            //        }
+            uploadPhoto()
+        }
+
     
     @IBAction func downloadButtonTapped(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(SheetController.self)") as! SheetController
         controller.item = item
+        controller.searchItem = searchItem
         self.present(controller, animated: true)
     }
     
@@ -60,12 +94,16 @@ class DetailController: UIViewController {
     }
     
     func downloadDetailPhoto() {
+        detailPhoto?.loadImage(url: searchItem?.urls?.regular ?? "")
         detailPhoto.loadImage(url: item?.urls?.regular ?? "")
     }
     
     private func getDetailImage() {
-        if let savedImage = manager.getImage(imageName: item?.id ?? "", folderName: folderName) {
-            image = savedImage
+        if let savedImage = manager.getImage(imageName: item?.id ?? "", folderName: folderName),
+           let searchImage =
+            manager.getImage(imageName: searchItem?.id ?? "", folderName: folderName) {
+//            image = savedImage
+//            image = searchImage
             print("image saved")
         }
     }

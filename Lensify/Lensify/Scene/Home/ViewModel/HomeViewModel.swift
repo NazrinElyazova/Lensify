@@ -9,7 +9,7 @@ import Foundation
 
 class HomeViewModel {
     private let manager = HomeManager()
-
+    
     var items = [GetTopics]()
     var onSuccess: (()-> Void)?
     var topicSuccess: (()-> Void)?
@@ -47,7 +47,6 @@ class HomeViewModel {
                 self.onSuccess?()
             }
         }
-        
     }
     
     func pagination(index: Int) {

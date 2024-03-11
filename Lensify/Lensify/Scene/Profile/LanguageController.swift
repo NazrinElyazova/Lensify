@@ -26,14 +26,14 @@ class LanguageController: UIViewController {
     @IBAction func engTappedAction(_ sender: Any) {
         changeAppLanguage(language: "en")
         showLanguageAlert(title: "", message: "You changed your app's language to English.", okButton: UIAlertAction(title: "Ok", style: .default) { _ in
-            self.goToController()
+            self.goToLoginController()
         }, cancelButton: UIAlertAction(title: "Cancel", style: .cancel))
     }
     
     @IBAction func azeTappedAction(_ sender: Any) {
         changeAppLanguage(language: "az")
         showLanguageAlert(title: "", message: "Tətbiqin dilini Azərbaycan dilinə dəyişdiniz.", okButton: UIAlertAction(title: "Tamam", style: .default) { _ in
-            self.goToController()
+            self.goToLoginController()
             
         }, cancelButton: UIAlertAction(title: "Ləğv et", style: .cancel))
     }
@@ -41,7 +41,7 @@ class LanguageController: UIViewController {
     @IBAction func spanishTappedAction(_ sender: Any) {
         changeAppLanguage(language: "es")
         showLanguageAlert(title: "", message: "Cambiaste el idioma de tu aplicación a español.", okButton: UIAlertAction(title: "De acuerdo", style: .default) { _ in
-            self.goToController()
+            self.goToLoginController()
             
         }, cancelButton: UIAlertAction(title: "Cancelar", style: .cancel))
     }
@@ -50,9 +50,10 @@ class LanguageController: UIViewController {
         UserDefaults.standard.setValue(language, forKey: "localizedLanguage")
     }
     
-    func goToController() {
+    func goToLoginController() {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
-        navigationController?.show(controller, sender: nil)
-
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .fullScreen
+        present(UINavigationController(rootViewController: controller), animated: true)
     }
 }
