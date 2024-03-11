@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Photos
 
 class SheetController: UIViewController, UISheetPresentationControllerDelegate {
     
@@ -19,12 +18,10 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         createSheet()
     }
     
     @IBAction func fullDownloadButton(_ sender: Any) {
-        
         guard let fullURL = item?.urls?.full,
               let full = URL(string: fullURL) else {
             return
@@ -33,12 +30,10 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
               let image = UIImage(data: imageData) else {
             return
         }
-        
         presentSaveAndShareSheet(image: image, url: item?.urls?.full ?? "")
     }
     
     @IBAction func mediumDownloadButton(_ sender: Any) {
-        
         guard let regularURLString = item?.urls?.regular,
               let regularURL = URL(string: regularURLString) else {
             return
@@ -47,12 +42,10 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
               let image = UIImage(data: imageData) else {
             return
         }
-        
         presentSaveAndShareSheet(image: image, url: item?.urls?.regular ?? "")
     }
     
     @IBAction func smallDownloadButton(_ sender: Any) {
-        
         guard let smallURL = item?.urls?.small,
               let small = URL(string: smallURL) else {
             return
@@ -61,9 +54,7 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
               let image = UIImage(data: imageData) else {
             return
         }
-        
         presentSaveAndShareSheet(image: image, url: item?.urls?.small ?? "")
-        
     }
     
     func presentSaveAndShareSheet(image: UIImage, url: String) {

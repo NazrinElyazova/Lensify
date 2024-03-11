@@ -7,7 +7,6 @@
 
 import Foundation
 import GoogleSignIn
-import FBSDKCoreKit
 import FBSDKLoginKit
 
 class LoginAdapter {
@@ -56,10 +55,6 @@ class LoginAdapter {
             GraphRequest(graphPath: "me", parameters: ["fields": "id,email,first_name,last_name"]).start { (connection, result, error) in
                 if let error = error {
                     print("Facebook Graph API Error var: \(error.localizedDescription)")
-                } else if let result = result as? [String: Any] {
-//                    let email = result["email"] as? String ?? ""
-//                    let firstName = result["first_name"] as? String ?? ""
-//                    let lastName = result["last_name"] as? String ?? ""
                 }
             }
         }

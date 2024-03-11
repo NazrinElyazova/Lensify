@@ -17,7 +17,6 @@ class LaunchController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         hideTitle()
         lottieAnimation()
         configureExtensionButton(button: continueButton)
@@ -39,11 +38,11 @@ class LaunchController: UIViewController {
             self.lottieView.loopMode = .loop
         }
     }
-  
+    
     func translateText() {
         everyLabel.text = "everyWay".localize
         discoverLabel.text = "discover".localize
         continueButton.setTitle("continue".localize, for: .normal)
     }
-
+    
 }

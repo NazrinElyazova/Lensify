@@ -12,7 +12,6 @@ class SearchViewModel {
     
     var searchData: Search?
     var search = [SearchResult]()
-    
     var onSucces: (()->Void)?
     var onError: ((String)-> Void)?
     

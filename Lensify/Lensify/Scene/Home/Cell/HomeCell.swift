@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Photos
+//import Photos
 
 protocol SaveImageProtocol: AnyObject {
     func didTapDownloadButton(image: UIImage)
@@ -25,7 +25,7 @@ class HomeCell: UICollectionViewCell {
     }
     
     func configure(data: GetTopics) {
-        homeImage.loadImage(url: data.urls?.regular ?? "")
+        homeImage.loadImage(url: data.urls?.small ?? "")
     }
 }
 

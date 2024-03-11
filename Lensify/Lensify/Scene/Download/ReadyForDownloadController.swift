@@ -17,20 +17,10 @@ class ReadyForDownloadController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         translateText()
         readyForDownload()
         hideTitle()
         configureExtensionButton(button: clickTapped)
-
-    }
-    
-    func readyForDownload() {
-        navigationController?.navigationBar.isHidden = true
-        DispatchQueue.main.async {
-            self.downloadLottie.play()
-            self.downloadLottie.loopMode = .loop
-        }
     }
     
     @IBAction func clickAction(_ sender: Any) {
@@ -42,5 +32,13 @@ class ReadyForDownloadController: UIViewController {
         clickTapped.setTitle("click".localize, for: .normal)
         readyForLabel.text = "readyFor".localize
         clickForItLabel.text = "clickForIt".localize
+    }
+    
+    func readyForDownload() {
+        navigationController?.navigationBar.isHidden = true
+        DispatchQueue.main.async {
+            self.downloadLottie.play()
+            self.downloadLottie.loopMode = .loop
+        }
     }
 }

@@ -5,9 +5,7 @@
 //  Created by Nazrin on 31.01.24.
 //
 
-import GoogleSignIn
 import UIKit
-import Firebase
 import FirebaseAuth
 import FirebaseFirestoreInternal
 import FBSDKLoginKit
@@ -33,16 +31,12 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideTitle()
-       configureExtensionButton(button: loginButton)
+        configureExtensionButton(button: loginButton)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         translateText()
-    }
-    
-    func login() {
-        UserDefaults.standard.set(true, forKey: "loggedIn")
     }
     
     @IBAction func registerButtonAction(_ sender: Any) {
@@ -55,13 +49,23 @@ class LoginController: UIViewController {
         navigationController?.show(controller, sender: nil)
     }
     
+    @IBAction func loginButtonAction(_ sender: Any) {
+        if !(passwordTextField.text?.isEmpty == true), !(userNameEmailTextField.text?.isEmpty == true),
+           let email = userNameEmailTextField.text,
+           let password = passwordTextField.text {
+            let controller = storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
+            navigationController?.show(controller, sender: nil)
+            getUserInfo()
+            adapterSave()
+        }
+    }
+    
     func adapterSave() {
         adapter = LoginAdapter(controller: self)
         adapter?.completion = {
             user in
             self.databaseAdapter.saveUserInfo(data: user)
             self.login()
-            print(user)
         }
     }
     
@@ -76,20 +80,6 @@ class LoginController: UIViewController {
                     self.info.append(info)
                 }
             }
-        }
-    }
-    
-    @IBAction func loginButtonAction(_ sender: Any) {
-        if !(passwordTextField.text?.isEmpty == true), !(userNameEmailTextField.text?.isEmpty == true),
-           let email = userNameEmailTextField.text,
-           let password = passwordTextField.text {
-            let controller = storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
-            navigationController?.show(controller, sender: nil)
-            getUserInfo()
-            adapterSave()
-            login()
-        } else {
-//            showAlert(title: "Warning!", message: "Please fill your information")
         }
     }
     

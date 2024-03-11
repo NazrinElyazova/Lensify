@@ -8,23 +8,21 @@
 import Foundation
 
 class HomeViewModel {
+    private let manager = HomeManager()
+
     var items = [GetTopics]()
-    
+    var onSuccess: (()-> Void)?
+    var topicSuccess: (()-> Void)?
+    var onError: ((String)-> Void)?
     var currentItems = [GetTopics]()
     var topicItems = [TopicElement]()
-    
-    private let manager = HomeManager()
-    
+        
     var page = 1
     var topicId: String? {
         didSet {
             getPhotos()
         }
     }
-    
-    var onSuccess: (()-> Void)?
-    var topicSuccess: (()-> Void)?
-    var onError: ((String)-> Void)?
     
     func getTopics() {
         manager.getTopics() { data, errorMessage in

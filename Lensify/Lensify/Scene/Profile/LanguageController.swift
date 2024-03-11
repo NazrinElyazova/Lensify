@@ -22,10 +22,6 @@ class LanguageController: UIViewController {
         super.viewWillAppear(animated)
         chooseLanguageLabel.text = "chooseLanguage".localize
     }
- 
-    func changeAppLanguage(language: String) {
-        UserDefaults.standard.setValue(language, forKey: "localizedLanguage")
-    }
     
     @IBAction func engTappedAction(_ sender: Any) {
         changeAppLanguage(language: "en")
@@ -48,6 +44,10 @@ class LanguageController: UIViewController {
             self.goToController()
             
         }, cancelButton: UIAlertAction(title: "Cancelar", style: .cancel))
+    }
+    
+    func changeAppLanguage(language: String) {
+        UserDefaults.standard.setValue(language, forKey: "localizedLanguage")
     }
     
     func goToController() {

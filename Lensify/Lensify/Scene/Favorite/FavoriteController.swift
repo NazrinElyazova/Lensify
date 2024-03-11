@@ -8,8 +8,7 @@
 import UIKit
 
 class FavoriteController: UIViewController {
- 
-    
+
     var viewModel: FavoriteViewModel?
     
     @IBOutlet weak var collection: UICollectionView!
@@ -37,7 +36,6 @@ class FavoriteController: UIViewController {
 extension FavoriteController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //        print(viewModel.detail.count)
         return  viewModel?.detail.count ?? 0
     }
     
@@ -47,7 +45,6 @@ extension FavoriteController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.configure(data: model)
         }
         return cell
-
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

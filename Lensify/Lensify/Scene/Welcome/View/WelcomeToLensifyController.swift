@@ -14,16 +14,9 @@ class WelcomeToLensifyController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         hideTitle()
         myLabel.adjustsFontSizeToFitWidth = true
         configureExtensionButton(button: startWelcomeButton)
-    }
-    
-    @IBAction func startActionButton(_ sender: UIButton) {
-        
-        let controller = storyboard?.instantiateViewController(withIdentifier: "\(LaunchController.self)") as! LaunchController
-        navigationController?.show(controller, sender: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,6 +36,12 @@ class WelcomeToLensifyController: UIViewController {
         view.layer.addSublayer(gradientLayer)
         view.bringSubviewToFront(myLabel)
         view.bringSubviewToFront(startWelcomeButton)
+    }
+    
+    @IBAction func startActionButton(_ sender: UIButton) {
+        
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(LaunchController.self)") as! LaunchController
+        navigationController?.show(controller, sender: nil)
     }
     
     func translateTitle() {

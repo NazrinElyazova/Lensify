@@ -48,27 +48,6 @@ class RegisterController: UIViewController {
         login()
     }
     
-    func faceButton() {
-        stackView.axis = .vertical
-        stackView.addArrangedSubview(facebookButton)
-        
-        facebookButton.addTarget(self, action: #selector(facebookButonTapped), for: .touchUpInside)
-        facebookButton.permissions = ["public_profile", "email"]
-        facebookButton.layer.cornerRadius = 20.0
-        facebookButton.layer.masksToBounds = true
-    }
-    
-    @objc func facebookButonTapped() {
-        adapter?.login(type: .facebook)
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
-        self.navigationController?.show(controller, sender: nil)
-        login()
-    }
-    
-    func login() {
-        UserDefaults.standard.set(true, forKey: "loggedIn")
-    }
-    
     @IBAction func loginActionButton(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
         navigationController?.show(controller, sender: nil)
@@ -87,6 +66,23 @@ class RegisterController: UIViewController {
                 }
             }
         }
+    }
+    
+    func faceButton() {
+        stackView.axis = .vertical
+        stackView.addArrangedSubview(facebookButton)
+        
+        facebookButton.addTarget(self, action: #selector(facebookButonTapped), for: .touchUpInside)
+        facebookButton.permissions = ["public_profile", "email"]
+        facebookButton.layer.cornerRadius = 20.0
+        facebookButton.layer.masksToBounds = true
+    }
+    
+    @objc func facebookButonTapped() {
+        adapter?.login(type: .facebook)
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
+        self.navigationController?.show(controller, sender: nil)
+        login()
     }
     
     func adapterSave() {

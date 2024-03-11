@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 extension String {
     var localize: String {
         let language = UserDefaults.standard.string(forKey: "localizedLanguage")

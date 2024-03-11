@@ -16,7 +16,6 @@ class ProfileController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configureButton()
     }
     
@@ -56,7 +55,7 @@ class ProfileController: UIViewController {
     func logout() {
         if let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
            let sceneDelegate = scene.delegate as? SceneDelegate {
-            UserDefaults.standard.set(false, forKey: "loggedIn") // Setting the flag
+            UserDefaults.standard.set(false, forKey: "loggedIn")
             sceneDelegate.logout(windowScene: scene)
         }
     }

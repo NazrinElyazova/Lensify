@@ -21,11 +21,11 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
         configureUI()
         configureViewModel()
         setupSearchbar()
-        navigationItem.hidesBackButton = false
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationItem.hidesBackButton = false
         navigationController?.setNavigationBarHidden(true, animated: animated)
         searchbar.placeholder = "search".localize
         

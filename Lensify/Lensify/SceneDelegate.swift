@@ -20,7 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         if UserDefaults.standard.bool(forKey: "loggedIn") {
-            //            print("loginnnn")
             self.loginApp(windowScene: windowScene)
         } else {
             self.logout(windowScene: windowScene)
