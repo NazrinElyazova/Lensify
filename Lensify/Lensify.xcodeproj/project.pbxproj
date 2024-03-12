@@ -66,6 +66,8 @@
 		7B9F3C8A2B8898F6002AA027 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B9F3C8C2B8898F6002AA027 /* Localizable.strings */; };
 		7B9F3C922B889F3B002AA027 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F3C912B889F3B002AA027 /* StringExtension.swift */; };
 		7B9F3C942B88A32D002AA027 /* LanguageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F3C932B88A32D002AA027 /* LanguageController.swift */; };
+		7BA324F42BA0D8F3002A1259 /* CoreDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA324F32BA0D8F3002A1259 /* CoreDataViewModel.swift */; };
+		7BA324F62BA0D8FD002A1259 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA324F52BA0D8FD002A1259 /* CoreDataManager.swift */; };
 		7BA58EB72B96EB1700422749 /* SaveFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EB62B96EB1700422749 /* SaveFileManager.swift */; };
 		7BA58EBF2B983CC200422749 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EBE2B983CC200422749 /* FavoriteViewModel.swift */; };
 		7BA58EC12B983CE400422749 /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC02B983CE400422749 /* FavoriteManager.swift */; };
@@ -139,6 +141,8 @@
 		7B9F3C8D2B8898FA002AA027 /* az */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = az; path = az.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7B9F3C912B889F3B002AA027 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		7B9F3C932B88A32D002AA027 /* LanguageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageController.swift; sourceTree = "<group>"; };
+		7BA324F32BA0D8F3002A1259 /* CoreDataViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataViewModel.swift; sourceTree = "<group>"; };
+		7BA324F52BA0D8FD002A1259 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		7BA58EB62B96EB1700422749 /* SaveFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFileManager.swift; sourceTree = "<group>"; };
 		7BA58EBE2B983CC200422749 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		7BA58EC02B983CE400422749 /* FavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
@@ -448,6 +452,8 @@
 		7B90E2AA2B52FB490099FBA3 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				7BA324F52BA0D8FD002A1259 /* CoreDataManager.swift */,
+				7BA324F32BA0D8F3002A1259 /* CoreDataViewModel.swift */,
 				7B9F3C8E2B889F16002AA027 /* Extensions */,
 				7BD600852B6EDC1100B28661 /* LottieFiles */,
 				7BC6AEFB2B6A50BE00694CD0 /* Adapter */,
@@ -721,6 +727,7 @@
 				7B7967762B6D2C9E0032BB63 /* LoginManager.swift in Sources */,
 				7BA58EC72B98A5EC00422749 /* HideTitleExtension.swift in Sources */,
 				7B90E29F2B52C4FD0099FBA3 /* NetworkManager.swift in Sources */,
+				7BA324F62BA0D8FD002A1259 /* CoreDataManager.swift in Sources */,
 				7B97B9D02B5451D300D489CB /* HomeCell.swift in Sources */,
 				7BCD82912B89EC6C00FE1877 /* AlertExtension.swift in Sources */,
 				7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */,
@@ -760,6 +767,7 @@
 				7B53E7CA2B53F1F5005D0CED /* TabBarController.swift in Sources */,
 				7BC6AEF82B6A0FD900694CD0 /* RegisterController.swift in Sources */,
 				7B9F3C942B88A32D002AA027 /* LanguageController.swift in Sources */,
+				7BA324F42BA0D8F3002A1259 /* CoreDataViewModel.swift in Sources */,
 				7B42A0522B56F1F2003C5D34 /* Search.swift in Sources */,
 				7B90E2782B52C1FB0099FBA3 /* SceneDelegate.swift in Sources */,
 				7B9F3C922B889F3B002AA027 /* StringExtension.swift in Sources */,

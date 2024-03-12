@@ -8,8 +8,10 @@
 import UIKit
 
 class FavoriteController: UIViewController {
-
+    
     var viewModel: FavoriteViewModel?
+    
+    var detail = [UserInfo]()
     
     @IBOutlet weak var collection: UICollectionView!
     
@@ -20,7 +22,7 @@ class FavoriteController: UIViewController {
         configureViewModel()
         configureUI()
     }
-
+    
     func configureUI() {
         self.collection.register(UINib(nibName: "\(HomeCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HomeCell.self)")
     }
@@ -41,9 +43,11 @@ extension FavoriteController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
-        if let model = viewModel?.detail[indexPath.item] {
-            cell.configure(data: model)
-        }
+        //        if let model = viewModel?.detail[indexPath.item] {
+        //            cell.configure(data: model)
+        //        }
+//        let path = "photo/\(detail[indexPath.item].favoritePhoto ?? "")"
+        
         return cell
     }
     

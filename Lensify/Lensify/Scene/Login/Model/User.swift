@@ -17,4 +17,5 @@ struct UserData: Codable {
 struct UserInfo: Codable {
     let email: String?
     let password: String?
+    let favoritePhoto: String?
 }

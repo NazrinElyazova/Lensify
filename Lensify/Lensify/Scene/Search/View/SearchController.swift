@@ -101,7 +101,6 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(DetailController.self)") as! DetailController
         controller.viewModel = DetailViewModel(id: viewModel.search[indexPath.item].id ?? "")
         controller.searchItem = viewModel.search[indexPath.item]
-        print(controller.searchItem = viewModel.search[indexPath.item])
         navigationController?.show(controller, sender: nil)
     }
 }
