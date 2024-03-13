@@ -9,7 +9,6 @@ import UIKit
 
 class SheetController: UIViewController, UISheetPresentationControllerDelegate {
     
-    var model = [GetTopics]()
     var item: GetTopics?
     var searchItem: SearchResult?
     
@@ -22,93 +21,48 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
         createSheet()
     }
     
-    func setFullURLGetTopicsModel() {
-        guard let fullURL = item?.urls?.full,
-              let full = URL(string: fullURL)
-        else { print("fullUrl nildir")
-            return }
-        
-        guard let imageData = try? Data(contentsOf: full),
-              let image = UIImage(data: imageData) else { return }
-        presentSaveAndShareSheet(image: image, url: item?.urls?.full ?? "")
-        
-    }
-    
-    func setFullURLSearchModel() {
-        guard let searchFull = searchItem?.urls?.full,
-              let search = URL(string: searchFull) else {
-            print("searchfull nildir")
-            return }
-        
-        guard let fullImage = try? Data(contentsOf: search),
-              let photo = UIImage(data: fullImage) else {
-            print("search image nildir")
-            return }
-        presentSaveAndShareSheet(image: photo, url: searchItem?.urls?.full ?? "")
-    }
-    
-    func setRegularURLGetTopicsModel() {
-        guard let regularURL = item?.urls?.regular,
-              let regular = URL(string: regularURL)
-        else { print("Regular url nildir")
-            return }
-        
-        guard let imageData = try? Data(contentsOf: regular),
-              let image = UIImage(data: imageData) else { return }
-        presentSaveAndShareSheet(image: image, url: item?.urls?.regular ?? "")
-        
-    }
-    
-    func setRegularURLSearchModel() {
-        guard let searchRegular = searchItem?.urls?.regular,
-              let search = URL(string: searchRegular) else {
-            print("searchfull nildir")
-            return }
-        
-        guard let regularImage = try? Data(contentsOf: search),
-              let photo = UIImage(data: regularImage) else {
-            print("search regular image nildir")
-            return }
-        presentSaveAndShareSheet(image: photo, url: searchItem?.urls?.regular ?? "")
-    }
-    func setSmallURLGetTopicsModel() {
-        guard let smallURL = item?.urls?.small,
-              let small = URL(string: smallURL)
-        else { print("Small url nildir")
-            return }
-        
-        guard let imageData = try? Data(contentsOf: small),
-              let image = UIImage(data: imageData) else { return }
-        presentSaveAndShareSheet(image: image, url: item?.urls?.small ?? "")
-        
-    }
-    
-    func setSmallURLSearchModel() {
-        guard let searchSmall = searchItem?.urls?.small,
-              let smallSearch = URL(string: searchSmall) else {
-            print("searchfull nildir")
-            return }
-        
-        guard let regularImage = try? Data(contentsOf: smallSearch),
-              let photo = UIImage(data: regularImage) else {
-            print("search regular image nildir")
-            return }
-        presentSaveAndShareSheet(image: photo, url: searchItem?.urls?.small ?? "")
-    }
-    
     @IBAction func fullDownloadButton(_ sender: Any) {
-        setFullURLGetTopicsModel()
-        setFullURLSearchModel()
+        setURL(model: .getTopics, size: "full")
+        setURL(model: .search, size: "full")
     }
     
     @IBAction func mediumDownloadButton(_ sender: Any) {
-        setRegularURLGetTopicsModel()
-        setRegularURLSearchModel()
+        setURL(model: .getTopics, size: "regular")
+        setURL(model: .search, size: "regular")
     }
     
     @IBAction func smallDownloadButton(_ sender: Any) {
-        setSmallURLGetTopicsModel()
-        setSmallURLGetTopicsModel()
+        setURL(model: .getTopics, size: "small")
+        setURL(model: .search, size: "small")
+    }
+    
+    enum ModelType {
+        case getTopics
+        case search
+    }
+    
+    func setImageWithURL(_ url: String?, size: String) {
+        guard let urlString = url, let imageURL = URL(string: urlString) else { return }
+        
+        guard let imageData = try? Data(contentsOf: imageURL),
+              let image = UIImage(data: imageData) else { return }
+        
+        presentSaveAndShareSheet(image: image, url: urlString)
+    }
+    
+    func setURL(model: ModelType, size: String) {
+        let url: String?
+        switch model {
+        case .getTopics:
+            url = size == "full" ? item?.urls?.full :
+            size == "regular" ? item?.urls?.regular :
+            item?.urls?.small
+        case .search:
+            url = size == "full" ? searchItem?.urls?.full :
+            size == "regular" ? searchItem?.urls?.regular :
+            searchItem?.urls?.small
+        }
+        setImageWithURL(url, size: size)
     }
     
     func presentSaveAndShareSheet(image: UIImage, url: String) {

@@ -9,27 +9,29 @@ import UIKit
 
 class FavoriteController: UIViewController {
     
-    var viewModel: FavoriteViewModel?
+    var star = [GetTopics]()
     
-    var detail = [UserInfo]()
-    
+    var onUpdate: (([GetTopics]) -> Void)?
+
+    private let manager = SaveFileManager.saveFile
+
     @IBOutlet weak var collection: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        hideTitle()
-        configureViewModel()
+//        hideTitle()
         configureUI()
     }
     
     func configureUI() {
-        self.collection.register(UINib(nibName: "\(HomeCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(HomeCell.self)")
+        self.collection.register(UINib(nibName: "\(FavoriteCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(FavoriteCell.self)")
     }
-    
-    func configureViewModel() {
-        viewModel?.getDetailPhoto()
-        viewModel?.onSuccess = {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        manager.readJsonFile { star in
+            self.star.append(contentsOf: star)
             self.collection.reloadData()
         }
     }
@@ -38,20 +40,18 @@ class FavoriteController: UIViewController {
 extension FavoriteController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  viewModel?.detail.count ?? 0
+        print(star.count)
+        return  star.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(HomeCell.self)", for: indexPath) as! HomeCell
-        //        if let model = viewModel?.detail[indexPath.item] {
-        //            cell.configure(data: model)
-        //        }
-//        let path = "photo/\(detail[indexPath.item].favoritePhoto ?? "")"
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(FavoriteCell.self)", for: indexPath) as! FavoriteCell
+        cell.configureFav(data: star[indexPath.item])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: collectionView.frame.width, height: 200)
+        .init(width: collectionView.frame.width, height: 250)
     }
 }
+

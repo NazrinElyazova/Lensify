@@ -6,7 +6,6 @@
 //
 
 import UIKit
-//import Photos
 
 protocol SaveImageProtocol: AnyObject {
     func didTapDownloadButton(image: UIImage)
@@ -15,10 +14,10 @@ protocol SaveImageProtocol: AnyObject {
 class HomeCell: UICollectionViewCell {
     
     weak var delegate: SaveImageProtocol?
-        
+    
     @IBOutlet weak var homeImage: UIImageView!
     @IBOutlet weak var saveButton: UIButton!
-  
+    
     @IBAction func saveOrShareButtonAction(_ sender: Any) {
         guard let image = homeImage.image else {return}
         delegate?.didTapDownloadButton(image: image)
@@ -26,6 +25,10 @@ class HomeCell: UICollectionViewCell {
     
     func configure(data: GetTopics) {
         homeImage.loadImage(url: data.urls?.small ?? "")
+    }   
+    
+    func configure(img: UIImage) {
+        homeImage.image = img
     }
 }
 
