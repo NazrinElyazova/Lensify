@@ -9,17 +9,15 @@ import UIKit
 
 class FavoriteController: UIViewController {
     
-    var star = [GetTopics]()
-    
-    var onUpdate: (([GetTopics]) -> Void)?
-
     private let manager = SaveFileManager.saveFile
+    
+    var star = [GetTopics]()
+    var onUpdate: (([GetTopics]) -> Void)?
 
     @IBOutlet weak var collection: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 //        hideTitle()
         configureUI()
     }
@@ -40,7 +38,6 @@ class FavoriteController: UIViewController {
 extension FavoriteController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(star.count)
         return  star.count
     }
     

@@ -41,7 +41,10 @@ class WelcomeToLensifyController: UIViewController {
     @IBAction func startActionButton(_ sender: UIButton) {
         
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(LaunchController.self)") as! LaunchController
-        navigationController?.show(controller, sender: nil)
+//        controller.modalTransitionStyle = .crossDissolve
+        controller.modalTransitionStyle = .flipHorizontal
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true)
     }
     
     func translateTitle() {

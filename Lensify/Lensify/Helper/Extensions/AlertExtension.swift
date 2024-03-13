@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    
     func showAlert() {
         let alertController = UIAlertController(title: "Warning!", message: "You have no account. Please, login.", preferredStyle: .alert)
         let okButton = UIAlertAction(title: "Ok", style: .default) { _ in

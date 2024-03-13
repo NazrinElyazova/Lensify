@@ -42,6 +42,11 @@ class DetailController: UIViewController {
         let test = GetTopics(id: item?.id, urls: item?.urls)
         star.append(test)
         manager.writeJsonData(items: star)
+        
+        showLanguageAlert(title: "Congratulations", message: "You have already added image to your Favorites ❤️", okButton: UIAlertAction(title: "Ok", style: .default) {_ in 
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(FavoriteController.self)") as! FavoriteController
+            self.navigationController?.pushViewController(controller, animated: true)
+        }, cancelButton: UIAlertAction(title: "Cancel", style: .cancel))
     }
     
     func downloadDetailPhoto() {

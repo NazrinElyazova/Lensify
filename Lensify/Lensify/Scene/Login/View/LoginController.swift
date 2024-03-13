@@ -46,7 +46,10 @@ class LoginController: UIViewController {
             self?.passwordTextField.text = password
             self?.userNameEmailTextField.text = email
         }
-        navigationController?.show(controller, sender: nil)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .fullScreen
+        present(UINavigationController(rootViewController: controller), animated: true)
+        
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {

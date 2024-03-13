@@ -29,7 +29,9 @@ class LaunchController: UIViewController {
     
     @IBAction func continueButtonAction(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(LanguageController.self)") as! LanguageController
-        navigationController?.show(controller, sender: nil)
+        controller.modalTransitionStyle = .partialCurl
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true)
     }
     
     func lottieAnimation() {

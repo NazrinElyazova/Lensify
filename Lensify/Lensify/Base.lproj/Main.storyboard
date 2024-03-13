@@ -951,7 +951,7 @@
             </objects>
             <point key="canvasLocation" x="1740" y="2000.8583690987125"/>
         </scene>
-        <!--Favorite Controller-->
+        <!--Favorites-->
         <scene sceneID="zF9-qK-eAj">
             <objects>
                 <viewController storyboardIdentifier="FavoriteController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TAk-kZ-TUt" customClass="FavoriteController" customModule="Lensify" customModuleProvider="target" sceneMemberID="viewController">
@@ -984,7 +984,7 @@
                             <constraint firstItem="7X1-Jp-Zag" firstAttribute="leading" secondItem="w1d-bO-WWj" secondAttribute="leading" id="sTH-qO-FAp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="hjm-kL-uVa"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="hjm-kL-uVa"/>
                     <connections>
                         <outlet property="collection" destination="7X1-Jp-Zag" id="XON-ue-TFg"/>
                     </connections>
@@ -1035,7 +1035,7 @@
                         </imageReference>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mTu-6G-Arz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="mTu-6G-Arz">
                         <rect key="frame" x="0.0" y="59" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

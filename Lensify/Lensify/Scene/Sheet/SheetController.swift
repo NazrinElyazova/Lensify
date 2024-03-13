@@ -12,6 +12,11 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
     var item: GetTopics?
     var searchItem: SearchResult?
     
+    enum ModelType {
+        case getTopics
+        case search
+    }
+    
     override var sheetPresentationController: UISheetPresentationController? {
         presentationController as? UISheetPresentationController
     }
@@ -34,11 +39,6 @@ class SheetController: UIViewController, UISheetPresentationControllerDelegate {
     @IBAction func smallDownloadButton(_ sender: Any) {
         setURL(model: .getTopics, size: "small")
         setURL(model: .search, size: "small")
-    }
-    
-    enum ModelType {
-        case getTopics
-        case search
     }
     
     func setImageWithURL(_ url: String?, size: String) {
