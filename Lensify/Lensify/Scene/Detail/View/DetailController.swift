@@ -40,10 +40,19 @@ class DetailController: UIViewController {
     
     @IBAction func addToFavButton(_ sender: Any) {
         let test = GetTopics(id: item?.id, urls: item?.urls)
-        star.append(test)
-        manager.writeJsonData(items: star)
         
-        showLanguageAlert(title: "Congratulations", message: "You have already added image to your Favorites ❤️", okButton: UIAlertAction(title: "Ok", style: .default) {_ in 
+        star.append(test)
+        manager.readJsonFile { data in
+            
+            var previousStars : [GetTopics] = data
+            if !previousStars.contains(where: {$0.id == test.id}) {
+                previousStars.append(contentsOf: star)
+                manager.writeJsonData(items: previousStars)
+            }
+            
+        }
+        
+        showLanguageAlert(title: "Congratulations", message: "You have already added image to your Favorites ❤️", okButton: UIAlertAction(title: "Ok", style: .default) {_ in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(FavoriteController.self)") as! FavoriteController
             self.navigationController?.pushViewController(controller, animated: true)
         }, cancelButton: UIAlertAction(title: "Cancel", style: .cancel))

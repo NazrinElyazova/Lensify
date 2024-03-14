@@ -11,16 +11,17 @@ class SaveFileManager {
     
     static let saveFile = SaveFileManager()
     private init() {}
-
+    
     func getJsonFilePath() -> URL {
         let files = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        let path = files [0].appendingPathComponent("favority.json")
+        let path = files[0].appendingPathComponent("favority.json")
         print(path)
         return path
     }
     
     func writeJsonData(items: [GetTopics]) {
         do {
+            print(items)
             let data = try JSONEncoder().encode(items)
             try data.write(to: getJsonFilePath())
         } catch {
@@ -29,6 +30,7 @@ class SaveFileManager {
     }
     
     func readJsonFile(complete: (([GetTopics]) -> Void)) {
+        
         if let data = try? Data(contentsOf: getJsonFilePath()) {
             do {
                 let items = try JSONDecoder().decode([GetTopics].self, from: data)
@@ -36,6 +38,8 @@ class SaveFileManager {
             } catch {
                 print(error.localizedDescription)
             }
+        } else {
+            complete([])
         }
     }
 }

@@ -13,27 +13,28 @@ class FavoriteController: UIViewController {
     
     var star = [GetTopics]()
     var onUpdate: (([GetTopics]) -> Void)?
-
+    
     @IBOutlet weak var collection: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        hideTitle()
+                hideTitle()
         configureUI()
     }
     
     func configureUI() {
         self.collection.register(UINib(nibName: "\(FavoriteCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(FavoriteCell.self)")
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        manager.readJsonFile { star in
-            self.star.append(contentsOf: star)
-            self.collection.reloadData()
+   
+            manager.readJsonFile { star in
+                self.star = star
+                self.collection.reloadData()
+            }
         }
     }
-}
 
 extension FavoriteController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     

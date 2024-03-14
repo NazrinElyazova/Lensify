@@ -11,7 +11,6 @@ class TabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hideTitle()
         tabBar.backgroundColor = .black
         tabBar.barTintColor = UIColor.black
     }

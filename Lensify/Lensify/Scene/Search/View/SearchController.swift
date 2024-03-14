@@ -25,7 +25,6 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationItem.hidesBackButton = false
         navigationController?.setNavigationBarHidden(true, animated: animated)
         searchbar.placeholder = "search".localize
@@ -77,13 +76,13 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
         }
     }
 }
+
 extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return  viewModel.search.count
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(SearchCell.self)", for: indexPath) as! SearchCell
         let item = viewModel.search[indexPath.item]
         cell.configure(data: item)
@@ -97,6 +96,7 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         viewModel.pagination(index: indexPath.item)
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(DetailController.self)") as! DetailController
         controller.viewModel = DetailViewModel(id: viewModel.search[indexPath.item].id ?? "")

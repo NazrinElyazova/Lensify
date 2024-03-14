@@ -10,12 +10,11 @@ import Foundation
 class DetailViewModel {
     
     private let manager = DetailManager()
-
+    
     var detail = [TopicElement]()
     var onSuccess: (()-> Void)?
     var onError: ((String)-> Void)?
     
-    var test = [GetTopics]()
     var id: String
     
     init(id: String) {

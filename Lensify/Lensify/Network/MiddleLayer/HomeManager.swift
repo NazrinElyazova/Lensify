@@ -8,12 +8,9 @@
 import Foundation
 
 class HomeManager: HomeUseCase {
+    
     func getTopics(completion: @escaping (([TopicElement]?, String?) -> Void)) {
-        //        NetworkManager.request(model: [TopicElement].self,
-        //                               endpoint: HomeEndpoint.topics.rawValue,
-        //                               completion: completion)
         let url =  NetworkHelper.urlConfiguration(endpoint: HomeEndpoint.topics.rawValue)
-        
         NetworkManager.request(model: [TopicElement].self, endpoint: url, completion: completion)
     }
     
@@ -30,6 +27,4 @@ class HomeManager: HomeUseCase {
             }
         }
     }
-    // COOOX VACIBDIRRR ID
-    //        let url = HomeEndpoint.topics.rawValue + "\(id)/photos"
 }

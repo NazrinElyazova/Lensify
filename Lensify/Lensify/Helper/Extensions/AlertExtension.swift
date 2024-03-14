@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    
     func showAlert() {
         let alertController = UIAlertController(title: "Warning!", message: "You have no account. Please, login.", preferredStyle: .alert)
         let okButton = UIAlertAction(title: "Ok", style: .default) { _ in
@@ -23,6 +24,7 @@ extension UIViewController {
 }
 
 extension UIViewController {
+    
     func showLanguageAlert(title: String, message: String, okButton: UIAlertAction, cancelButton: UIAlertAction) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(okButton)

@@ -38,7 +38,6 @@
 		7B66CF022BA1922800A109D1 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7B66CF012BA1922800A109D1 /* FirebaseDatabaseSwift */; };
 		7B66CF052BA1A42D00A109D1 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B66CF032BA1A42D00A109D1 /* FavoriteCell.swift */; };
 		7B66CF062BA1A42D00A109D1 /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B66CF042BA1A42D00A109D1 /* FavoriteCell.xib */; };
-		7B7967762B6D2C9E0032BB63 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7967752B6D2C9E0032BB63 /* LoginManager.swift */; };
 		7B7967832B6D35A90032BB63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B7967822B6D35A90032BB63 /* GoogleService-Info.plist */; };
 		7B86F7712B764E68005755B0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7B86F7702B764E68005755B0 /* FirebaseAuth */; };
 		7B86F7732B764E80005755B0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 7B86F7722B764E80005755B0 /* FirebaseFirestore */; };
@@ -71,8 +70,6 @@
 		7B9F3C922B889F3B002AA027 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F3C912B889F3B002AA027 /* StringExtension.swift */; };
 		7B9F3C942B88A32D002AA027 /* LanguageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F3C932B88A32D002AA027 /* LanguageController.swift */; };
 		7BA58EB72B96EB1700422749 /* SaveFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EB62B96EB1700422749 /* SaveFileManager.swift */; };
-		7BA58EC12B983CE400422749 /* FavoriteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC02B983CE400422749 /* FavoriteManager.swift */; };
-		7BA58EC32B983EE200422749 /* FavoriteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC22B983EE200422749 /* FavoriteUseCase.swift */; };
 		7BA58EC52B98875300422749 /* SafariExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC42B98875300422749 /* SafariExtension.swift */; };
 		7BA58EC72B98A5EC00422749 /* HideTitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC62B98A5EC00422749 /* HideTitleExtension.swift */; };
 		7BABCF752B77E2D3008FCDDE /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 7BABCF742B77E2D3008FCDDE /* SkeletonView */; };
@@ -93,7 +90,6 @@
 		7BD600812B6ED4EB00B28661 /* downloadLottie.json in Resources */ = {isa = PBXBuildFile; fileRef = 7BD600802B6ED4EB00B28661 /* downloadLottie.json */; };
 		7BD600842B6ED58700B28661 /* ReadyForDownloadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD600832B6ED58700B28661 /* ReadyForDownloadController.swift */; };
 		7BDB91CA2B5B924B00002EAC /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */; };
-		7BFEFFDE2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFEFFDD2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,7 +109,6 @@
 		7B63A9802B9EDDA700C641DE /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		7B66CF032BA1A42D00A109D1 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		7B66CF042BA1A42D00A109D1 /* FavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
-		7B7967752B6D2C9E0032BB63 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		7B7967822B6D35A90032BB63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7B90E2722B52C1FB0099FBA3 /* Lensify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lensify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B90E2752B52C1FB0099FBA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,8 +140,6 @@
 		7B9F3C912B889F3B002AA027 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		7B9F3C932B88A32D002AA027 /* LanguageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageController.swift; sourceTree = "<group>"; };
 		7BA58EB62B96EB1700422749 /* SaveFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFileManager.swift; sourceTree = "<group>"; };
-		7BA58EC02B983CE400422749 /* FavoriteManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteManager.swift; sourceTree = "<group>"; };
-		7BA58EC22B983EE200422749 /* FavoriteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteUseCase.swift; sourceTree = "<group>"; };
 		7BA58EC42B98875300422749 /* SafariExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtension.swift; sourceTree = "<group>"; };
 		7BA58EC62B98A5EC00422749 /* HideTitleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideTitleExtension.swift; sourceTree = "<group>"; };
 		7BC24F242B88ACC100E8B654 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -169,7 +162,6 @@
 		7BD600802B6ED4EB00B28661 /* downloadLottie.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = downloadLottie.json; sourceTree = "<group>"; };
 		7BD600832B6ED58700B28661 /* ReadyForDownloadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadyForDownloadController.swift; sourceTree = "<group>"; };
 		7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
-		7BFEFFDD2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoEndpoint.swift; sourceTree = "<group>"; };
 		7BFEFFF32B72C2F200A1CCC7 /* Lensify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lensify.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,9 +241,7 @@
 			children = (
 				7B4DE9B22B57E86A00F4C3AA /* HomeManager.swift */,
 				7BC6AF002B6A981E00694CD0 /* SearchManager.swift */,
-				7B7967752B6D2C9E0032BB63 /* LoginManager.swift */,
 				7BCF89012B93596C00645CEA /* DetailManager.swift */,
-				7BA58EC02B983CE400422749 /* FavoriteManager.swift */,
 			);
 			path = MiddleLayer;
 			sourceTree = "<group>";
@@ -261,7 +251,6 @@
 			children = (
 				7B4DE9B52B57F44B00F4C3AA /* HomeEndpoint.swift */,
 				7BC6AF1D2B6AAB1600694CD0 /* SearchEndpoint.swift */,
-				7BFEFFDD2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -595,7 +584,6 @@
 				7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */,
 				7BCF89032B93599E00645CEA /* DetailUseCase.swift */,
 				7BC6AF022B6A999E00694CD0 /* SearchUseCase.swift */,
-				7BA58EC22B983EE200422749 /* FavoriteUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -720,7 +708,6 @@
 				7BD600842B6ED58700B28661 /* ReadyForDownloadController.swift in Sources */,
 				7B90E2AC2B52FB550099FBA3 /* KingfisherExtension.swift in Sources */,
 				7B9565322B64C64700044E58 /* TopicCell.swift in Sources */,
-				7B7967762B6D2C9E0032BB63 /* LoginManager.swift in Sources */,
 				7BA58EC72B98A5EC00422749 /* HideTitleExtension.swift in Sources */,
 				7B90E29F2B52C4FD0099FBA3 /* NetworkManager.swift in Sources */,
 				7B97B9D02B5451D300D489CB /* HomeCell.swift in Sources */,
@@ -732,14 +719,12 @@
 				7B63A9812B9EDDA700C641DE /* LoginController.swift in Sources */,
 				7B66CF052BA1A42D00A109D1 /* FavoriteCell.swift in Sources */,
 				7BCF89022B93596C00645CEA /* DetailManager.swift in Sources */,
-				7BA58EC32B983EE200422749 /* FavoriteUseCase.swift in Sources */,
 				7BC6AEFA2B6A183400694CD0 /* User.swift in Sources */,
 				7B9565422B650C1800044E58 /* Topic.swift in Sources */,
 				7BCF89002B93592600645CEA /* DetailViewModel.swift in Sources */,
 				7BC6AEFF2B6A72A700694CD0 /* DatabaseAdapter.swift in Sources */,
 				7B90E2762B52C1FB0099FBA3 /* AppDelegate.swift in Sources */,
 				7BC6AF032B6A999E00694CD0 /* SearchUseCase.swift in Sources */,
-				7BA58EC12B983CE400422749 /* FavoriteManager.swift in Sources */,
 				7B90E2B22B5329550099FBA3 /* LaunchController.swift in Sources */,
 				7B53E7A32B53E6C6005D0CED /* HomeViewModel.swift in Sources */,
 				7B4DE9B62B57F44B00F4C3AA /* HomeEndpoint.swift in Sources */,
@@ -751,7 +736,6 @@
 				7B9258372B8537B100D3C212 /* ProfileController.swift in Sources */,
 				7BCF89042B93599E00645CEA /* DetailUseCase.swift in Sources */,
 				7BCF88FB2B9355DC00645CEA /* DetailController.swift in Sources */,
-				7BFEFFDE2B72A4A300A1CCC7 /* ListPhotoEndpoint.swift in Sources */,
 				7B90E2802B52C1FB0099FBA3 /* Lensify.xcdatamodeld in Sources */,
 				7B4DE9B32B57E86A00F4C3AA /* HomeManager.swift in Sources */,
 				7BD2853E2B94F1FB0075B31E /* SheetController.swift in Sources */,

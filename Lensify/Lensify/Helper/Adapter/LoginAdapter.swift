@@ -15,7 +15,7 @@ class LoginAdapter {
     
     var success: (() -> Void)?
     var completion: ((UserData)->())?
-    var controller: UIViewController  //Strong variable olmasi ucun init edirik. Controllerde set etmek yaddan cixsa app crash etmesin
+    var controller: UIViewController 
     
     init(controller: UIViewController) {
         self.controller = controller

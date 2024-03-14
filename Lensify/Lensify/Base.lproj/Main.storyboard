@@ -40,11 +40,6 @@
                                 <state key="normal" title="Start">
                                     <color key="titleColor" name="MainColors"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="startActionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="muq-e8-0hq"/>
                                 </connections>
@@ -80,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="167-QH-Zjs" customClass="LottieAnimationView" customModule="Lottie">
-                                <rect key="frame" x="30" y="59" width="370" height="250"/>
+                                <rect key="frame" x="30" y="109" width="370" height="250"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="PDu-2z-c4j"/>
@@ -95,16 +90,21 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkI-Uy-juF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkI-Uy-juF">
                                 <rect key="frame" x="20" y="758" width="390" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Y1w-OS-9mC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="28"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="35"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" name="MainColors"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="continueButtonAction:" destination="2Wj-R6-qXw" eventType="touchUpInside" id="74v-iv-h78"/>
                                 </connections>
@@ -122,7 +122,7 @@
                             <constraint firstItem="hkI-Uy-juF" firstAttribute="top" secondItem="Hbx-AE-aAU" secondAttribute="bottom" constant="120" id="BRc-91-osX"/>
                             <constraint firstItem="8xP-fO-Ava" firstAttribute="leading" secondItem="bFt-3f-RAM" secondAttribute="leading" constant="50" id="BwW-8H-HuP"/>
                             <constraint firstItem="bFt-3f-RAM" firstAttribute="trailing" secondItem="Hbx-AE-aAU" secondAttribute="trailing" constant="20" id="FCG-Ms-jE8"/>
-                            <constraint firstItem="167-QH-Zjs" firstAttribute="top" secondItem="bFt-3f-RAM" secondAttribute="top" id="Gji-C1-McD"/>
+                            <constraint firstItem="167-QH-Zjs" firstAttribute="top" secondItem="bFt-3f-RAM" secondAttribute="top" constant="50" id="Gji-C1-McD"/>
                             <constraint firstItem="Hbx-AE-aAU" firstAttribute="leading" secondItem="bFt-3f-RAM" secondAttribute="leading" constant="20" id="SQi-8F-90F"/>
                             <constraint firstItem="bFt-3f-RAM" firstAttribute="trailing" secondItem="8xP-fO-Ava" secondAttribute="trailing" constant="50" id="TO8-zi-7Wo"/>
                             <constraint firstItem="bFt-3f-RAM" firstAttribute="trailing" secondItem="hkI-Uy-juF" secondAttribute="trailing" constant="20" id="Yio-Y1-iZd"/>
@@ -254,16 +254,11 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IFv-NM-rIL">
                                         <rect key="frame" x="0.0" y="153.33333333333331" width="390" height="56.666666666666657"/>
                                         <color key="backgroundColor" red="0.97254901960784312" green="0.60392156862745094" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                                        <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="35"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" name="MainColors"/>
                                         </state>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="loginButtonAction:" destination="QS7-fi-ds4" eventType="touchUpInside" id="NoT-o9-dGn"/>
                                         </connections>
@@ -279,40 +274,48 @@
                                 <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't you have an account still? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNk-6p-u64">
-                                <rect key="frame" x="20" y="662" width="258.33333333333331" height="21.666666666666629"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lf1-zH-y8j">
-                                <rect key="frame" x="311.66666666666669" y="654" width="98.333333333333314" height="37.333333333333371"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Register">
-                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                    <color key="baseForegroundColor" systemColor="systemBlueColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="registerButtonAction:" destination="QS7-fi-ds4" eventType="touchUpInside" id="gVR-e5-d3S"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="5p1-yy-ChA">
+                                <rect key="frame" x="20" y="662" width="390" height="37.333333333333371"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't you have an account still? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cNk-6p-u64">
+                                        <rect key="frame" x="0.0" y="0.0" width="258.33333333333331" height="37.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lf1-zH-y8j">
+                                        <rect key="frame" x="291.33333333333331" y="0.0" width="98.666666666666686" height="37.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Register">
+                                            <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                            <color key="baseForegroundColor" systemColor="systemBlueColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="registerButtonAction:" destination="QS7-fi-ds4" eventType="touchUpInside" id="gVR-e5-d3S"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KY8-Ju-H3k"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="5p1-yy-ChA" firstAttribute="top" secondItem="rsP-TG-vK0" secondAttribute="bottom" constant="100" id="0Ww-FF-rgE"/>
                             <constraint firstItem="KY8-Ju-H3k" firstAttribute="trailing" secondItem="IJ5-yr-1L7" secondAttribute="trailing" constant="20" id="6Ot-Ik-wJ4"/>
                             <constraint firstItem="rsP-TG-vK0" firstAttribute="top" secondItem="IJ5-yr-1L7" secondAttribute="bottom" constant="50" id="8Hz-WP-frt"/>
                             <constraint firstItem="KY8-Ju-H3k" firstAttribute="trailing" secondItem="rsP-TG-vK0" secondAttribute="trailing" constant="80" id="AYw-k2-sN4"/>
-                            <constraint firstItem="KY8-Ju-H3k" firstAttribute="trailing" secondItem="Lf1-zH-y8j" secondAttribute="trailing" constant="20" id="DvJ-zm-dqj"/>
-                            <constraint firstItem="cNk-6p-u64" firstAttribute="top" secondItem="rsP-TG-vK0" secondAttribute="bottom" constant="100" id="EqP-5k-hqW"/>
                             <constraint firstItem="IJ5-yr-1L7" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="20" id="Knr-W6-DBK"/>
+                            <constraint firstItem="5p1-yy-ChA" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="20" id="UVf-DO-MYF"/>
                             <constraint firstItem="KY8-Ju-H3k" firstAttribute="trailing" secondItem="yn3-6p-5g9" secondAttribute="trailing" constant="20" id="ZVe-K4-8bc"/>
-                            <constraint firstItem="cNk-6p-u64" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="20" id="ckS-Lb-kD3"/>
                             <constraint firstItem="yn3-6p-5g9" firstAttribute="top" secondItem="KY8-Ju-H3k" secondAttribute="top" constant="50" id="eRH-sA-5ly"/>
-                            <constraint firstItem="Lf1-zH-y8j" firstAttribute="top" secondItem="IJ5-yr-1L7" secondAttribute="bottom" constant="165" id="f4h-1e-Ia2"/>
                             <constraint firstItem="rsP-TG-vK0" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="80" id="k1n-By-zck"/>
                             <constraint firstItem="yn3-6p-5g9" firstAttribute="leading" secondItem="KY8-Ju-H3k" secondAttribute="leading" constant="20" id="kwd-qx-TJw"/>
-                            <constraint firstItem="Lf1-zH-y8j" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cNk-6p-u64" secondAttribute="trailing" constant="8" symbolic="YES" id="nSS-QY-sNh"/>
+                            <constraint firstItem="KY8-Ju-H3k" firstAttribute="trailing" secondItem="5p1-yy-ChA" secondAttribute="trailing" constant="20" id="lHo-lX-uqh"/>
                             <constraint firstItem="IJ5-yr-1L7" firstAttribute="top" secondItem="yn3-6p-5g9" secondAttribute="bottom" constant="50" id="s8B-P0-h8f"/>
                         </constraints>
                     </view>
@@ -356,7 +359,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="74a-cp-uIE">
                                         <rect key="frame" x="0.0" y="76.666666666666657" width="390" height="56.666666666666657"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqs-Re-MK0">
                                         <rect key="frame" x="0.0" y="153.33333333333334" width="390" height="56.666666666666657"/>
@@ -374,28 +377,35 @@
                                     <constraint firstAttribute="height" constant="210" id="zGJ-cI-EFX"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWd-sm-t3I">
-                                <rect key="frame" x="30" y="626.33333333333337" width="195" height="20.333333333333371"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hI-Rh-3eZ">
-                                <rect key="frame" x="344.33333333333331" y="622.33333333333337" width="65.666666666666686" height="34.333333333333371"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login"/>
-                                <connections>
-                                    <action selector="loginActionButton:" destination="X9n-Cv-tYd" eventType="touchUpInside" id="Qm2-F2-rd9"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vqX-ki-mIv">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="119" translatesAutoresizingMaskIntoConstraints="NO" id="p7A-hj-VWi">
+                                <rect key="frame" x="20" y="646.33333333333337" width="390" height="34.333333333333371"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWd-sm-t3I">
+                                        <rect key="frame" x="0.0" y="0.0" width="195" height="34.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4hI-Rh-3eZ">
+                                        <rect key="frame" x="314" y="0.0" width="76" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                        <connections>
+                                            <action selector="loginActionButton:" destination="X9n-Cv-tYd" eventType="touchUpInside" id="Qm2-F2-rd9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="vqX-ki-mIv">
                                 <rect key="frame" x="50" y="466.33333333333326" width="330" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X75-Fk-aGJ">
                                         <rect key="frame" x="0.0" y="0.0" width="330" height="100"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="Google logo" title="        Sign in with Google"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Sign in with Google">
+                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" systemColor="systemRedColor"/>
+                                        </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <integer key="value" value="20"/>
@@ -414,19 +424,17 @@
                         <viewLayoutGuide key="safeArea" id="P54-Ky-Go6"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="P54-Ky-Go6" firstAttribute="trailing" secondItem="p7A-hj-VWi" secondAttribute="trailing" constant="20" id="0QL-6s-Nop"/>
                             <constraint firstItem="DSE-9V-LkV" firstAttribute="top" secondItem="3jU-dU-yC2" secondAttribute="bottom" constant="50" id="51r-xk-a07"/>
-                            <constraint firstItem="GWd-sm-t3I" firstAttribute="leading" secondItem="P54-Ky-Go6" secondAttribute="leading" constant="30" id="Eoa-UD-cPc"/>
+                            <constraint firstItem="p7A-hj-VWi" firstAttribute="top" secondItem="vqX-ki-mIv" secondAttribute="bottom" constant="80" id="6aJ-sd-qyK"/>
                             <constraint firstItem="3jU-dU-yC2" firstAttribute="top" secondItem="P54-Ky-Go6" secondAttribute="top" constant="50" id="NtV-Rw-Bgx"/>
                             <constraint firstItem="DSE-9V-LkV" firstAttribute="leading" secondItem="P54-Ky-Go6" secondAttribute="leading" constant="20" id="Qtu-fY-QcQ"/>
-                            <constraint firstItem="4hI-Rh-3eZ" firstAttribute="top" secondItem="vqX-ki-mIv" secondAttribute="bottom" constant="56" id="T5N-WB-YSV"/>
                             <constraint firstItem="P54-Ky-Go6" firstAttribute="trailing" secondItem="DSE-9V-LkV" secondAttribute="trailing" constant="20" id="XRd-Dc-R3M"/>
-                            <constraint firstItem="4hI-Rh-3eZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GWd-sm-t3I" secondAttribute="trailing" constant="8" symbolic="YES" id="d1C-5w-jz4"/>
+                            <constraint firstItem="p7A-hj-VWi" firstAttribute="leading" secondItem="P54-Ky-Go6" secondAttribute="leading" constant="20" id="enl-Ri-28Z"/>
                             <constraint firstItem="3jU-dU-yC2" firstAttribute="leading" secondItem="P54-Ky-Go6" secondAttribute="leading" constant="30" id="f9j-iW-8xe"/>
                             <constraint firstItem="vqX-ki-mIv" firstAttribute="top" secondItem="DSE-9V-LkV" secondAttribute="bottom" constant="40" id="kKG-6j-0bf"/>
                             <constraint firstItem="vqX-ki-mIv" firstAttribute="leading" secondItem="P54-Ky-Go6" secondAttribute="leading" constant="50" id="n4r-Zd-FzO"/>
-                            <constraint firstItem="P54-Ky-Go6" firstAttribute="trailing" secondItem="4hI-Rh-3eZ" secondAttribute="trailing" constant="20" id="qZG-Lj-Rtq"/>
                             <constraint firstItem="P54-Ky-Go6" firstAttribute="trailing" secondItem="3jU-dU-yC2" secondAttribute="trailing" constant="30" id="vfK-MJ-tk4"/>
-                            <constraint firstItem="GWd-sm-t3I" firstAttribute="top" secondItem="vqX-ki-mIv" secondAttribute="bottom" constant="60" id="zK5-Gd-Kht"/>
                             <constraint firstItem="P54-Ky-Go6" firstAttribute="trailing" secondItem="vqX-ki-mIv" secondAttribute="trailing" constant="50" id="za9-Ti-sNX"/>
                         </constraints>
                     </view>
@@ -434,6 +442,7 @@
                     <connections>
                         <outlet property="alreadyHaveAccountLabel" destination="GWd-sm-t3I" id="Wzr-yH-7ZF"/>
                         <outlet property="emailTextField" destination="8rz-Ka-w8u" id="UJ4-dR-Yev"/>
+                        <outlet property="googleButton" destination="X75-Fk-aGJ" id="kui-V2-4DD"/>
                         <outlet property="loginButton" destination="4hI-Rh-3eZ" id="M5W-bH-ARM"/>
                         <outlet property="passwordTextField" destination="74a-cp-uIE" id="MX7-I8-3pV"/>
                         <outlet property="registerButton" destination="nqs-Re-MK0" id="ByT-PQ-8Lx"/>
@@ -1051,7 +1060,6 @@
     </scenes>
     <resources>
         <image name="America " width="820" height="501"/>
-        <image name="Google logo" width="30" height="30"/>
         <image name="Spain" width="2560" height="1707"/>
         <image name="flagAZ" width="612" height="367"/>
         <image name="heart" catalog="system" width="128" height="107"/>
@@ -1076,6 +1084,9 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
             <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>

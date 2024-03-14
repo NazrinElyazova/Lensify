@@ -17,6 +17,7 @@ class LaunchController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         hideTitle()
         lottieAnimation()
         configureExtensionButton(button: continueButton)
@@ -32,6 +33,11 @@ class LaunchController: UIViewController {
         controller.modalTransitionStyle = .partialCurl
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
+    }
+    
+    func configureUI() {
+        continueButton.clipsToBounds = true
+        continueButton.layer.cornerRadius = 20.0
     }
     
     func lottieAnimation() {

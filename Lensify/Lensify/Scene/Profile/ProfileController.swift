@@ -26,8 +26,9 @@ class ProfileController: UIViewController {
     @IBAction func logoutTapped(_ sender: Any) {
         logout()
     }
+    
     @IBAction func privacyButton(_ sender: Any) {
-     goToSafariViewController(url: "https://www.livintis.com/wallpapers-privacy-policy")
+        goToSafariViewController(url: "https://www.livintis.com/wallpapers-privacy-policy")
     }
     
     @IBAction func termsButton(_ sender: Any) {
@@ -35,9 +36,9 @@ class ProfileController: UIViewController {
     }
     
     @IBAction func aboutLensifyAction(_ sender: Any) {
-       goToSafariViewController(url: "https://unsplash.com/wallpapers/apps")
+        goToSafariViewController(url: "https://unsplash.com/wallpapers/apps")
     }
-
+    
     func translateTitle() {
         navigationItem.title = "listTitle".localize
         privacyPolicyButton.setTitle("privacyPolicy".localize, for: .normal)

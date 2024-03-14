@@ -15,8 +15,8 @@ class WelcomeToLensifyController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideTitle()
-        myLabel.adjustsFontSizeToFitWidth = true
         configureExtensionButton(button: startWelcomeButton)
+        configureUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,12 +39,17 @@ class WelcomeToLensifyController: UIViewController {
     }
     
     @IBAction func startActionButton(_ sender: UIButton) {
-        
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(LaunchController.self)") as! LaunchController
-//        controller.modalTransitionStyle = .crossDissolve
         controller.modalTransitionStyle = .flipHorizontal
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
+        
+    }
+    
+    func configureUI() {
+        myLabel.adjustsFontSizeToFitWidth = true
+        startWelcomeButton.clipsToBounds = true
+        startWelcomeButton.layer.cornerRadius = 20
     }
     
     func translateTitle() {

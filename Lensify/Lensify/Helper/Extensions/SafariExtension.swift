@@ -10,6 +10,7 @@ import UIKit
 import SafariServices
 
 extension UIViewController {
+    
     func goToSafariViewController(url: String) {
         guard let url = URL(string: url) else { return }
         let safariVC = SFSafariViewController(url: url)

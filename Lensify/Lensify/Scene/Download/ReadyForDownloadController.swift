@@ -25,7 +25,9 @@ class ReadyForDownloadController: UIViewController {
     
     @IBAction func clickAction(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(TabBarController.self)") as! TabBarController
-        navigationController?.show(controller, sender: nil)
+        controller.modalTransitionStyle = .crossDissolve
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true)
     }
     
     func translateText() {

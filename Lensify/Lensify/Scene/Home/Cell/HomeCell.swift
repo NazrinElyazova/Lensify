@@ -25,10 +25,6 @@ class HomeCell: UICollectionViewCell {
     
     func configure(data: GetTopics) {
         homeImage.loadImage(url: data.urls?.small ?? "")
-    }   
-    
-    func configure(img: UIImage) {
-        homeImage.image = img
     }
 }
 

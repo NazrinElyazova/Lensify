@@ -16,7 +16,7 @@ class HomeViewModel {
     var onError: ((String)-> Void)?
     var currentItems = [GetTopics]()
     var topicItems = [TopicElement]()
-        
+    
     var page = 1
     var topicId: String? {
         didSet {

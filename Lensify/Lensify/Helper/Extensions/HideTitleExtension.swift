@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    
     func hideTitle() {
         self.navigationController?.navigationBar.topItem?.title = ""
     }

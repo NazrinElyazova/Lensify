@@ -31,6 +31,7 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         hideTitle()
+        configureUI()
         configureExtensionButton(button: loginButton)
     }
     
@@ -46,9 +47,7 @@ class LoginController: UIViewController {
             self?.passwordTextField.text = password
             self?.userNameEmailTextField.text = email
         }
-        controller.modalTransitionStyle = .crossDissolve
-        controller.modalPresentationStyle = .fullScreen
-        present(UINavigationController(rootViewController: controller), animated: true)
+        navigationController?.show(controller, sender: nil)
         
     }
     
@@ -84,6 +83,15 @@ class LoginController: UIViewController {
                 }
             }
         }
+    }
+    
+    func configureUI() {
+        userNameEmailTextField.clipsToBounds = true
+        userNameEmailTextField.layer.cornerRadius = 20
+        passwordTextField.layer.cornerRadius = 20
+        passwordTextField.clipsToBounds = true
+        loginButton.clipsToBounds = true
+        loginButton.layer.cornerRadius = 70.0
     }
     
     func translateText() {

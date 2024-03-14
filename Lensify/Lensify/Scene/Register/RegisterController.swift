@@ -19,6 +19,7 @@ class RegisterController: UIViewController {
     var completion: ((String, String)-> Void)?
     var adapter: LoginAdapter?
     
+    @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var alreadyHaveAccountLabel: UILabel!
     @IBOutlet weak var registerButton: UIButton!
@@ -33,6 +34,7 @@ class RegisterController: UIViewController {
         faceButton()
         hideTitle()
         configureExtensionButton(button: registerButton)
+        configureUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,10 +64,21 @@ class RegisterController: UIViewController {
                     print(error.localizedDescription)
                 } else if let user = result?.user {
                     completion?(user.email ?? "", password)
-                  navigationController?.popViewController(animated: true)
+                    navigationController?.popViewController(animated: true)
                 }
             }
         }
+    }
+    
+    func configureUI() {
+        googleButton.clipsToBounds = true
+        googleButton.layer.cornerRadius = 20
+        registerButton.clipsToBounds = true
+        emailTextField.clipsToBounds = true
+        passwordTextField.clipsToBounds = true
+        registerButton.layer.cornerRadius = 20
+        emailTextField.layer.cornerRadius = 20
+        passwordTextField.layer.cornerRadius = 20
     }
     
     func faceButton() {

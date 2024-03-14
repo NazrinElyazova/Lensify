@@ -8,7 +8,7 @@
 import UIKit
 
 class LanguageController: UIViewController {
-
+    
     @IBOutlet weak var chooseLanguageLabel: UILabel!
     @IBOutlet weak var spanishButton: UIButton!
     @IBOutlet weak var azeButton: UIButton!
@@ -52,8 +52,6 @@ class LanguageController: UIViewController {
     
     func goToLoginController() {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
-        controller.modalTransitionStyle = .crossDissolve
-        controller.modalPresentationStyle = .fullScreen
         present(UINavigationController(rootViewController: controller), animated: true)
     }
 }
