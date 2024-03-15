@@ -13,7 +13,11 @@ extension UIViewController {
         //MARK: Blue Color
         let customColor = UIColor(red: 0/255.0, green: 153/255.0, blue: 204/255.0, alpha: 1.0)
 
-        button.titleLabel?.font = .systemFont(ofSize: 25.0, weight: .bold)
+        if let customFont = UIFont(name: "Roboto-Bold", size: 25.0) {
+            button.titleLabel?.font = customFont
+        } else {
+            button.titleLabel?.font = UIFont.systemFont(ofSize: 25.0, weight: .bold)
+        }
         button.backgroundColor = customColor
         button.layer.cornerRadius = 10
     }
