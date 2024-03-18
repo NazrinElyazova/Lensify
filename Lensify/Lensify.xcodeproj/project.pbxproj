@@ -45,9 +45,9 @@
 		7B63A9892B9F326800C641DE /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 7B63A9882B9F326800C641DE /* FirebaseStorageCombine-Community */; };
 		7B66CF002BA1922800A109D1 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 7B66CEFF2BA1922800A109D1 /* FirebaseDatabase */; };
 		7B66CF022BA1922800A109D1 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7B66CF012BA1922800A109D1 /* FirebaseDatabaseSwift */; };
-		7B66CF052BA1A42D00A109D1 /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B66CF032BA1A42D00A109D1 /* FavoriteCell.swift */; };
-		7B66CF062BA1A42D00A109D1 /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B66CF042BA1A42D00A109D1 /* FavoriteCell.xib */; };
 		7B7967832B6D35A90032BB63 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B7967822B6D35A90032BB63 /* GoogleService-Info.plist */; };
+		7B79A5FB2BA86CD000775CEB /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B79A5F92BA86CD000775CEB /* FavoriteCell.swift */; };
+		7B79A5FC2BA86CD000775CEB /* FavoriteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B79A5FA2BA86CD000775CEB /* FavoriteCell.xib */; };
 		7B86F7712B764E68005755B0 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 7B86F7702B764E68005755B0 /* FirebaseAuth */; };
 		7B86F7732B764E80005755B0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 7B86F7722B764E80005755B0 /* FirebaseFirestore */; };
 		7B90E2762B52C1FB0099FBA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B90E2752B52C1FB0099FBA3 /* AppDelegate.swift */; };
@@ -127,9 +127,9 @@
 		7B5CEC962BA4C316007F8313 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		7B63A97E2B9EDA4D00C641DE /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		7B63A9802B9EDDA700C641DE /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		7B66CF032BA1A42D00A109D1 /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
-		7B66CF042BA1A42D00A109D1 /* FavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
 		7B7967822B6D35A90032BB63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7B79A5F92BA86CD000775CEB /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
+		7B79A5FA2BA86CD000775CEB /* FavoriteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteCell.xib; sourceTree = "<group>"; };
 		7B90E2722B52C1FB0099FBA3 /* Lensify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lensify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B90E2752B52C1FB0099FBA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B90E2772B52C1FB0099FBA3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -594,8 +594,8 @@
 			isa = PBXGroup;
 			children = (
 				7BD285492B9655A00075B31E /* FavoriteController.swift */,
-				7B66CF032BA1A42D00A109D1 /* FavoriteCell.swift */,
-				7B66CF042BA1A42D00A109D1 /* FavoriteCell.xib */,
+				7B79A5F92BA86CD000775CEB /* FavoriteCell.swift */,
+				7B79A5FA2BA86CD000775CEB /* FavoriteCell.xib */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -744,6 +744,7 @@
 				7B97B9D12B5451D300D489CB /* HomeCell.xib in Resources */,
 				7B5CEC9F2BA4C316007F8313 /* Roboto-LightItalic.ttf in Resources */,
 				7B9F3C8A2B8898F6002AA027 /* Localizable.strings in Resources */,
+				7B79A5FC2BA86CD000775CEB /* FavoriteCell.xib in Resources */,
 				7B5CECA02BA4C316007F8313 /* Roboto-Italic.ttf in Resources */,
 				7B5CEC9B2BA4C316007F8313 /* Roboto-Regular.ttf in Resources */,
 				7B5CEC9A2BA4C316007F8313 /* Roboto-Light.ttf in Resources */,
@@ -752,7 +753,6 @@
 				7B5A90802B70E1860025E18B /* client_213676420665-klno39bjlv7ovpc11549egkoeei52usj.apps.googleusercontent.com.plist in Resources */,
 				7B90E2822B52C1FE0099FBA3 /* Assets.xcassets in Resources */,
 				7B5CECA32BA4C316007F8313 /* Roboto-Bold.ttf in Resources */,
-				7B66CF062BA1A42D00A109D1 /* FavoriteCell.xib in Resources */,
 				7B9565332B64C64700044E58 /* TopicCell.xib in Resources */,
 				7B5CEC9E2BA4C316007F8313 /* Roboto-BoldItalic.ttf in Resources */,
 				7B42A04E2B56EF53003C5D34 /* SearchCell.xib in Resources */,
@@ -783,7 +783,6 @@
 				7BD2854A2B9655A00075B31E /* FavoriteController.swift in Sources */,
 				7BDB91CA2B5B924B00002EAC /* HomeUseCase.swift in Sources */,
 				7B63A9812B9EDDA700C641DE /* LoginController.swift in Sources */,
-				7B66CF052BA1A42D00A109D1 /* FavoriteCell.swift in Sources */,
 				7BCF89022B93596C00645CEA /* DetailManager.swift in Sources */,
 				7BC6AEFA2B6A183400694CD0 /* User.swift in Sources */,
 				7B9565422B650C1800044E58 /* Topic.swift in Sources */,
@@ -799,6 +798,7 @@
 				7B95653E2B65025800044E58 /* TopicHeaderView.swift in Sources */,
 				7BA58EB72B96EB1700422749 /* SaveFileManager.swift in Sources */,
 				7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */,
+				7B79A5FB2BA86CD000775CEB /* FavoriteCell.swift in Sources */,
 				7B9258372B8537B100D3C212 /* ProfileController.swift in Sources */,
 				7BCF89042B93599E00645CEA /* DetailUseCase.swift in Sources */,
 				7BCF88FB2B9355DC00645CEA /* DetailController.swift in Sources */,

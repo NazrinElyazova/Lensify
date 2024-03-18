@@ -27,10 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             screen.overrideUserInterfaceStyle = .dark
         }
         
-        //MARK: GOOGLE REGISTER
-        
-        //        GIDSignIn.sharedInstance.clientID = FirebaseApp.app()?.options.clientID
-        
         return true
     }
     
