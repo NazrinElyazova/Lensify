@@ -18,7 +18,7 @@ class FavoriteController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                hideTitle()
+        //                hideTitle()
         configureUI()
     }
     
@@ -28,13 +28,13 @@ class FavoriteController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-   
-            manager.readJsonFile { star in
-                self.star = star
-                self.collection.reloadData()
-            }
+        
+        manager.readJsonFile { star in
+            self.star = star
+            self.collection.reloadData()
         }
     }
+}
 
 extension FavoriteController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
