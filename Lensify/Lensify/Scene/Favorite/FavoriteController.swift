@@ -15,7 +15,7 @@ class FavoriteController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.table.backgroundColor = UIColor.black
+        //                hideTitle()
         configureUI()
     }
     
@@ -25,10 +25,10 @@ class FavoriteController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-            manager.fetchImage()
-            manager.success = { item in
-                self.items = item
-            self.table.reloadData()
+        
+        manager.readJsonFile { star in
+            self.star = star
+            self.collection.reloadData()
         }
     }
 }
