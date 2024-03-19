@@ -82,6 +82,7 @@
 		7BA58EC52B98875300422749 /* SafariExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC42B98875300422749 /* SafariExtension.swift */; };
 		7BA58EC72B98A5EC00422749 /* HideTitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC62B98A5EC00422749 /* HideTitleExtension.swift */; };
 		7BABCF752B77E2D3008FCDDE /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 7BABCF742B77E2D3008FCDDE /* SkeletonView */; };
+		7BB91CF22BA96B610075E9D5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB91CF12BA96B610075E9D5 /* CoreDataManager.swift */; };
 		7BC6AEF82B6A0FD900694CD0 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AEF72B6A0FD900694CD0 /* RegisterController.swift */; };
 		7BC6AEFA2B6A183400694CD0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AEF92B6A183400694CD0 /* User.swift */; };
 		7BC6AEFD2B6A50CE00694CD0 /* LoginAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AEFC2B6A50CE00694CD0 /* LoginAdapter.swift */; };
@@ -162,6 +163,7 @@
 		7BA58EB62B96EB1700422749 /* SaveFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFileManager.swift; sourceTree = "<group>"; };
 		7BA58EC42B98875300422749 /* SafariExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtension.swift; sourceTree = "<group>"; };
 		7BA58EC62B98A5EC00422749 /* HideTitleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideTitleExtension.swift; sourceTree = "<group>"; };
+		7BB91CF12BA96B610075E9D5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		7BC24F242B88ACC100E8B654 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7BC24F252B88ACC100E8B654 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		7BC24F262B88ACC100E8B654 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -596,6 +598,7 @@
 				7BD285492B9655A00075B31E /* FavoriteController.swift */,
 				7B79A5F92BA86CD000775CEB /* FavoriteCell.swift */,
 				7B79A5FA2BA86CD000775CEB /* FavoriteCell.xib */,
+				7BB91CF12BA96B610075E9D5 /* CoreDataManager.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 				7BC6AF032B6A999E00694CD0 /* SearchUseCase.swift in Sources */,
 				7B90E2B22B5329550099FBA3 /* LaunchController.swift in Sources */,
 				7B53E7A32B53E6C6005D0CED /* HomeViewModel.swift in Sources */,
+				7BB91CF22BA96B610075E9D5 /* CoreDataManager.swift in Sources */,
 				7B4DE9B62B57F44B00F4C3AA /* HomeEndpoint.swift in Sources */,
 				7BC6AF1E2B6AAB1600694CD0 /* SearchEndpoint.swift in Sources */,
 				7B63A97F2B9EDA4D00C641DE /* UserDefaultsExtension.swift in Sources */,

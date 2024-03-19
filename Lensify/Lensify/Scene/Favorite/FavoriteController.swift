@@ -8,16 +8,15 @@
 import UIKit
 
 class FavoriteController: UIViewController {
-
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
+    let manager = CoreDataManager()
     @IBOutlet weak var table: UITableView!
     var items: [Detail]?
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.table.backgroundColor = UIColor.black
-//        hideTitle()
         configureUI()
     }
     
@@ -27,17 +26,10 @@ class FavoriteController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchImage()
-    }
-    
-    func fetchImage() {
-        do {
-            self.items = try context.fetch(Detail.fetchRequest())
-            DispatchQueue.main.async {
-                self.table.reloadData()
-            }
-        } catch {
-            
+            manager.fetchImage()
+            manager.success = { item in
+                self.items = item
+            self.table.reloadData()
         }
     }
 }
@@ -45,6 +37,7 @@ class FavoriteController: UIViewController {
 extension FavoriteController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(items?.count ?? 0)
         return  items?.count ?? 0
     }
     
@@ -56,7 +49,24 @@ extension FavoriteController: UITableViewDelegate, UITableViewDataSource {
         }
         return cell
     }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.contentView.backgroundColor = UIColor.black
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") {
+            (action, view, completionHandler) in
+            
+            let photoToRemove = self.items![indexPath.row]
+            self.context.delete(photoToRemove)
+            self.manager.deleteAction()
+            self.manager.fetchImage()
+        }
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 230
     }
 }

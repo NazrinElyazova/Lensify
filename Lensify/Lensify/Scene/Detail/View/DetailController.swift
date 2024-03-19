@@ -10,7 +10,8 @@ import UIKit
 class DetailController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    private let manager = SaveFileManager.saveFile
+
+    let manager = CoreDataManager()
     
     var viewModel: DetailViewModel?
     var item: GetTopics?
@@ -18,7 +19,6 @@ class DetailController: UIViewController {
     var star = [GetTopics]()
  
     var items: [Detail]?
-    var cont: FavoriteController?
     
     @IBOutlet weak var downloadButton: UIButton!
     @IBOutlet weak var detailPhoto: UIImageView!
@@ -58,7 +58,7 @@ class DetailController: UIViewController {
         catch {
             print(error.localizedDescription)
         }
-        cont?.fetchImage()
+        manager.fetchImage()
         //MARK: FILE MANAGER
 //                let test = GetTopics(id: item?.id, urls: item?.urls)
         //        star.append(test)
@@ -78,7 +78,7 @@ class DetailController: UIViewController {
     }
     
     func downloadDetailPhoto() {
-        detailPhoto?.loadImage(url: searchItem?.urls?.regular ?? "")
+        detailPhoto?.loadImage(url: searchItem?.urls?.small ?? "")
         detailPhoto.loadImage(url: item?.urls?.regular ?? "")
     }
     
