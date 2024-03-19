@@ -9,7 +9,6 @@ import UIKit
 
 class FavoriteController: UIViewController {
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let manager = CoreDataManager()
     @IBOutlet weak var table: UITableView!
     var items: [Detail]?
@@ -37,7 +36,6 @@ class FavoriteController: UIViewController {
 extension FavoriteController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(items?.count ?? 0)
         return  items?.count ?? 0
     }
     
@@ -59,7 +57,7 @@ extension FavoriteController: UITableViewDelegate, UITableViewDataSource {
             (action, view, completionHandler) in
             
             let photoToRemove = self.items![indexPath.row]
-            self.context.delete(photoToRemove)
+            self.manager.context.delete(photoToRemove)
             self.manager.deleteAction()
             self.manager.fetchImage()
         }

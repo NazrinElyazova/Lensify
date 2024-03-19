@@ -9,15 +9,11 @@ import UIKit
 
 class DetailController: UIViewController {
     
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
     let manager = CoreDataManager()
     
     var viewModel: DetailViewModel?
     var item: GetTopics?
     var searchItem: SearchResult?
-    var star = [GetTopics]()
- 
     var items: [Detail]?
     
     @IBOutlet weak var downloadButton: UIButton!
@@ -44,32 +40,16 @@ class DetailController: UIViewController {
     
     @IBAction func addToFavButton(_ sender: Any) {
         //MARK: CORE DATA
-        let new = Detail(context: self.context)
-
+        let new = Detail(context: self.manager.context)
         if let imageData = detailPhoto.image?.jpegData(compressionQuality: 1.0) {
             new.detailPhoto = imageData
-        } else {
+        } 
+        else {
             print("Error converting image to data")
         }
         
-        do {
-            try self.context.save()
-        }
-        catch {
-            print(error.localizedDescription)
-        }
+        self.manager.deleteAction()
         manager.fetchImage()
-        //MARK: FILE MANAGER
-//                let test = GetTopics(id: item?.id, urls: item?.urls)
-        //        star.append(test)
-//        manager.readJsonFile { data in
-//            
-//            var previousStars : [GetTopics] = data
-//            if !previousStars.contains(where: {$0.id == test.id}) {
-//                previousStars.append(contentsOf: star)
-//                manager.writeJsonData(items: previousStars)
-//            }
-//        }
         
         showLanguageAlert(title: "Congratulations", message: "You have already added image to your Favorites ❤️", okButton: UIAlertAction(title: "Ok", style: .default) {_ in
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(FavoriteController.self)") as! FavoriteController

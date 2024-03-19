@@ -78,7 +78,6 @@
 		7B9F3C8A2B8898F6002AA027 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7B9F3C8C2B8898F6002AA027 /* Localizable.strings */; };
 		7B9F3C922B889F3B002AA027 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F3C912B889F3B002AA027 /* StringExtension.swift */; };
 		7B9F3C942B88A32D002AA027 /* LanguageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F3C932B88A32D002AA027 /* LanguageController.swift */; };
-		7BA58EB72B96EB1700422749 /* SaveFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EB62B96EB1700422749 /* SaveFileManager.swift */; };
 		7BA58EC52B98875300422749 /* SafariExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC42B98875300422749 /* SafariExtension.swift */; };
 		7BA58EC72B98A5EC00422749 /* HideTitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC62B98A5EC00422749 /* HideTitleExtension.swift */; };
 		7BABCF752B77E2D3008FCDDE /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 7BABCF742B77E2D3008FCDDE /* SkeletonView */; };
@@ -160,7 +159,6 @@
 		7B9F3C8D2B8898FA002AA027 /* az */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = az; path = az.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7B9F3C912B889F3B002AA027 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		7B9F3C932B88A32D002AA027 /* LanguageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageController.swift; sourceTree = "<group>"; };
-		7BA58EB62B96EB1700422749 /* SaveFileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveFileManager.swift; sourceTree = "<group>"; };
 		7BA58EC42B98875300422749 /* SafariExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtension.swift; sourceTree = "<group>"; };
 		7BA58EC62B98A5EC00422749 /* HideTitleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideTitleExtension.swift; sourceTree = "<group>"; };
 		7BB91CF12BA96B610075E9D5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -484,7 +482,6 @@
 			children = (
 				7BE672772BA8535D00497F29 /* CoreData */,
 				7B5CEC8A2BA4C2F6007F8313 /* Fonts */,
-				7BA58EB52B96EB0000422749 /* FileManager */,
 				7B9F3C8E2B889F16002AA027 /* Extensions */,
 				7BD600852B6EDC1100B28661 /* LottieFiles */,
 				7BC6AEFB2B6A50BE00694CD0 /* Adapter */,
@@ -542,14 +539,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		7BA58EB52B96EB0000422749 /* FileManager */ = {
-			isa = PBXGroup;
-			children = (
-				7BA58EB62B96EB1700422749 /* SaveFileManager.swift */,
-			);
-			path = FileManager;
-			sourceTree = "<group>";
-		};
 		7BC6AEFB2B6A50BE00694CD0 /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
@@ -598,7 +587,6 @@
 				7BD285492B9655A00075B31E /* FavoriteController.swift */,
 				7B79A5F92BA86CD000775CEB /* FavoriteCell.swift */,
 				7B79A5FA2BA86CD000775CEB /* FavoriteCell.xib */,
-				7BB91CF12BA96B610075E9D5 /* CoreDataManager.swift */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";
@@ -642,6 +630,7 @@
 		7BE672772BA8535D00497F29 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				7BB91CF12BA96B610075E9D5 /* CoreDataManager.swift */,
 				7BE672732BA8531800497F29 /* Detail+CoreDataClass.swift */,
 				7BE672742BA8531800497F29 /* Detail+CoreDataProperties.swift */,
 			);
@@ -800,7 +789,6 @@
 				7BC6AF1E2B6AAB1600694CD0 /* SearchEndpoint.swift in Sources */,
 				7B63A97F2B9EDA4D00C641DE /* UserDefaultsExtension.swift in Sources */,
 				7B95653E2B65025800044E58 /* TopicHeaderView.swift in Sources */,
-				7BA58EB72B96EB1700422749 /* SaveFileManager.swift in Sources */,
 				7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */,
 				7B79A5FB2BA86CD000775CEB /* FavoriteCell.swift in Sources */,
 				7B9258372B8537B100D3C212 /* ProfileController.swift in Sources */,
