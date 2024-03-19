@@ -17,7 +17,6 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         hideKeyboardWhenTappedAround()
         configureUI()
         configureViewModel()
@@ -30,6 +29,10 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
         navigationController?.setNavigationBarHidden(true, animated: animated)
         searchbar.placeholder = "search".localize
         
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     // MARK: SEARCH BAR
