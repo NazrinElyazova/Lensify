@@ -539,6 +539,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		7BB91CF52BA98AC40075E9D5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7BD285492B9655A00075B31E /* FavoriteController.swift */,
+				7B79A5F92BA86CD000775CEB /* FavoriteCell.swift */,
+				7B79A5FA2BA86CD000775CEB /* FavoriteCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7BC6AEFB2B6A50BE00694CD0 /* Adapter */ = {
 			isa = PBXGroup;
 			children = (
@@ -584,9 +594,7 @@
 		7BD285482B9655880075B31E /* Favorite */ = {
 			isa = PBXGroup;
 			children = (
-				7BD285492B9655A00075B31E /* FavoriteController.swift */,
-				7B79A5F92BA86CD000775CEB /* FavoriteCell.swift */,
-				7B79A5FA2BA86CD000775CEB /* FavoriteCell.xib */,
+				7BB91CF52BA98AC40075E9D5 /* View */,
 			);
 			path = Favorite;
 			sourceTree = "<group>";

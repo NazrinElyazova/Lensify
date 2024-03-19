@@ -10,32 +10,32 @@ import UIKit
 class FavoriteController: UIViewController {
     
     let manager = CoreDataManager()
-    @IBOutlet weak var table: UITableView!
     var items: [Detail]?
+    
+    @IBOutlet weak var table: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.table.backgroundColor = UIColor.black
-        self.table.dataSource = self
-        self.table.delegate = self
-
         configureUI()
     }
     
     func configureUI() {
+        self.table.backgroundColor = UIColor.black
+        self.table.dataSource = self
+        self.table.delegate = self
         self.table.register(UINib(nibName: "\(FavoriteCell.self)", bundle: nil), forCellReuseIdentifier: "\(FavoriteCell.self)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-            manager.fetchImage()
-            manager.success = { [weak self] item in
+        manager.fetchImage()
+        manager.success = { [weak self] item in
+            guard let self else { return }
+            items = item
+            DispatchQueue.main.async { [weak self] in
                 guard let self else { return }
-                items = item
-                DispatchQueue.main.async { [weak self] in
-                    guard let self else { return }
-                    table.reloadData()
-                }
+                table.reloadData()
+            }
         }
     }
 }

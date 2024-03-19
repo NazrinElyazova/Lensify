@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>UIUserInterfaceStyle</key>
-	<string>Dark</string>
+	<string>Light</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -23,8 +23,6 @@
 			</array>
 		</dict>
 	</array>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 	<key>FacebookAppID</key>
 	<string>708181877964501</string>
 	<key>FacebookClientToken</key>

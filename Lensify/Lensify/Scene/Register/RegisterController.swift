@@ -71,6 +71,7 @@ class RegisterController: UIViewController {
     }
     
     func configureUI() {
+        
         googleButton.clipsToBounds = true
         googleButton.layer.cornerRadius = 20
         registerButton.clipsToBounds = true
