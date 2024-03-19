@@ -2,17 +2,11 @@
 //  FavoriteCell.swift
 //  Lensify
 //
-//  Created by Nazrin on 13.03.24.
+//  Created by Nazrin on 18.03.24.
 //
 
 import UIKit
 
-class FavoriteCell: UICollectionViewCell {
-    
+class FavoriteCell: UITableViewCell {
     @IBOutlet weak var favoriteImage: UIImageView!
-    
-    func configureFav(data: GetTopics) {
-        favoriteImage.layer.cornerRadius = 10
-        favoriteImage.loadImage(url: data.urls?.small ?? "")
-    }
 }

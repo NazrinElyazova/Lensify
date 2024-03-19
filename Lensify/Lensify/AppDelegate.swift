@@ -14,7 +14,7 @@ import FBSDKCoreKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+        
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
@@ -22,6 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ApplicationDelegate.shared.application(
             application,
             didFinishLaunchingWithOptions: launchOptions)
+        
+        UIApplication.shared.windows.forEach { screen in
+            screen.overrideUserInterfaceStyle = .dark
+        }
+        
         return true
     }
     

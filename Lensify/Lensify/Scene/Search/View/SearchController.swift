@@ -17,12 +17,13 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         hideKeyboardWhenTappedAround()
         configureUI()
         configureViewModel()
         setupSearchbar()
     }
-    
+        
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.hidesBackButton = false

@@ -9,12 +9,9 @@ import UIKit
 
 class FavoriteController: UIViewController {
     
-    private let manager = SaveFileManager.saveFile
-    
-    var star = [GetTopics]()
-    var onUpdate: (([GetTopics]) -> Void)?
-    
-    @IBOutlet weak var collection: UICollectionView!
+    let manager = CoreDataManager()
+    @IBOutlet weak var table: UITableView!
+    var items: [Detail]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +20,7 @@ class FavoriteController: UIViewController {
     }
     
     func configureUI() {
-        self.collection.register(UINib(nibName: "\(FavoriteCell.self)", bundle: nil), forCellWithReuseIdentifier: "\(FavoriteCell.self)")
+        self.table.register(UINib(nibName: "\(FavoriteCell.self)", bundle: nil), forCellReuseIdentifier: "\(FavoriteCell.self)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,20 +33,38 @@ class FavoriteController: UIViewController {
     }
 }
 
-extension FavoriteController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension FavoriteController: UITableViewDelegate, UITableViewDataSource {
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return  star.count
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return  items?.count ?? 0
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(FavoriteCell.self)", for: indexPath) as! FavoriteCell
-        cell.configureFav(data: star[indexPath.item])
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "\(FavoriteCell.self)", for: indexPath) as! FavoriteCell
+        
+        if let imageData = items![indexPath.item].detailPhoto {
+            cell.favoriteImage.image = UIImage(data: imageData)
+        }
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        .init(width: collectionView.frame.width, height: 250)
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.contentView.backgroundColor = UIColor.black
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Delete") {
+            (action, view, completionHandler) in
+            
+            let photoToRemove = self.items![indexPath.row]
+            self.manager.context.delete(photoToRemove)
+            self.manager.deleteAction()
+            self.manager.fetchImage()
+        }
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 230
     }
 }
-
