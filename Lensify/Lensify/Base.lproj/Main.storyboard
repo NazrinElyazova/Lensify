@@ -980,34 +980,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7X1-Jp-Zag">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vAO-W2-8gQ">
                                 <rect key="frame" x="0.0" y="155" width="430" height="694"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jnh-qJ-gKc">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <connections>
-                                    <outlet property="dataSource" destination="TAk-kZ-TUt" id="dCM-73-p4n"/>
-                                    <outlet property="delegate" destination="TAk-kZ-TUt" id="KUs-FB-33E"/>
-                                </connections>
-                            </collectionView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="w1d-bO-WWj"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="w1d-bO-WWj" firstAttribute="trailing" secondItem="7X1-Jp-Zag" secondAttribute="trailing" id="50w-lB-nOI"/>
-                            <constraint firstItem="w1d-bO-WWj" firstAttribute="bottom" secondItem="7X1-Jp-Zag" secondAttribute="bottom" id="73y-sg-tyJ"/>
-                            <constraint firstItem="7X1-Jp-Zag" firstAttribute="top" secondItem="w1d-bO-WWj" secondAttribute="top" id="aTc-wL-Ni1"/>
-                            <constraint firstItem="7X1-Jp-Zag" firstAttribute="leading" secondItem="w1d-bO-WWj" secondAttribute="leading" id="sTH-qO-FAp"/>
+                            <constraint firstItem="vAO-W2-8gQ" firstAttribute="top" secondItem="w1d-bO-WWj" secondAttribute="top" id="FTd-Nb-Pfd"/>
+                            <constraint firstItem="w1d-bO-WWj" firstAttribute="bottom" secondItem="vAO-W2-8gQ" secondAttribute="bottom" id="FZA-5h-aE3"/>
+                            <constraint firstItem="vAO-W2-8gQ" firstAttribute="leading" secondItem="w1d-bO-WWj" secondAttribute="leading" id="HVN-IE-6bY"/>
+                            <constraint firstItem="w1d-bO-WWj" firstAttribute="trailing" secondItem="vAO-W2-8gQ" secondAttribute="trailing" id="VE1-2b-lz4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Favorites" id="hjm-kL-uVa"/>
                     <connections>
-                        <outlet property="collection" destination="7X1-Jp-Zag" id="XON-ue-TFg"/>
+                        <outlet property="table" destination="vAO-W2-8gQ" id="vHS-YA-TVd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Nq-RL-PAv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

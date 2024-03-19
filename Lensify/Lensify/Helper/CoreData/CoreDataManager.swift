@@ -19,8 +19,9 @@ class CoreDataManager {
         do {
             let items = try context.fetch(Detail.fetchRequest())
             self.items = items
-            DispatchQueue.main.async {
-                self.success?(items)
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                success?(items)
             }
         }
         catch {
@@ -30,12 +31,12 @@ class CoreDataManager {
     
     func deleteAction() {
         do {
-            try self.context.save()
+            try context.save()
         }
         catch {
             print(error.localizedDescription)
         }
-        self.fetchImage()
+        fetchImage()
     }
 }
 

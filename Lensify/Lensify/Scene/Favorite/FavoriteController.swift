@@ -15,7 +15,10 @@ class FavoriteController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //                hideTitle()
+        self.table.backgroundColor = UIColor.black
+        self.table.dataSource = self
+        self.table.delegate = self
+
         configureUI()
     }
     
@@ -25,10 +28,14 @@ class FavoriteController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        manager.readJsonFile { star in
-            self.star = star
-            self.collection.reloadData()
+            manager.fetchImage()
+            manager.success = { [weak self] item in
+                guard let self else { return }
+                items = item
+                DispatchQueue.main.async { [weak self] in
+                    guard let self else { return }
+                    table.reloadData()
+                }
         }
     }
 }
@@ -36,7 +43,7 @@ class FavoriteController: UIViewController {
 extension FavoriteController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return  items?.count ?? 0
+        return items?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
