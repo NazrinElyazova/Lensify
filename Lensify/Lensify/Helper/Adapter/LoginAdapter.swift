@@ -15,7 +15,7 @@ class LoginAdapter {
     
     var success: (() -> Void)?
     var completion: ((UserData)->())?
-    var controller: UIViewController 
+    var controller: UIViewController
     
     init(controller: UIViewController) {
         self.controller = controller
@@ -45,6 +45,7 @@ class LoginAdapter {
                                     password: "",
                                     firstName: result.user.profile?.name ?? "")
                 self.completion?(user)
+                self.success?()
             }
         }
     }
@@ -55,6 +56,8 @@ class LoginAdapter {
             GraphRequest(graphPath: "me", parameters: ["fields": "id,email,first_name,last_name"]).start { (connection, result, error) in
                 if let error = error {
                     print("Facebook Graph API Error var: \(error.localizedDescription)")
+                } else {
+                    self.success?()
                 }
             }
         }

@@ -48,17 +48,19 @@ class LoginController: UIViewController {
             self?.userNameEmailTextField.text = email
         }
         navigationController?.show(controller, sender: nil)
-        
     }
     
     @IBAction func loginButtonAction(_ sender: Any) {
-        if !(passwordTextField.text?.isEmpty == true), !(userNameEmailTextField.text?.isEmpty == true),
-           let email = userNameEmailTextField.text,
-           let password = passwordTextField.text {
-            let controller = storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
-            navigationController?.show(controller, sender: nil)
-            getUserInfo()
-            adapterSave()
+        Auth.auth().signIn(withEmail: userNameEmailTextField.text ?? "", password: passwordTextField.text ?? "") { [weak self] authResult, error in
+            if let error = error {
+                print("Login failed: \(error.localizedDescription)")
+                self?.showLanguageAlert(title: "Warning 🆘", message: "Please, fill the information correctly.", okButton: UIAlertAction(title: "OK", style: UIAlertAction.Style.default), cancelButton: UIAlertAction(title: "Cancel", style: .cancel))
+            } else {
+                let controller = self?.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
+                self?.navigationController?.show(controller, sender: nil)
+                self?.getUserInfo()
+                self?.adapterSave()
+            }
         }
     }
     

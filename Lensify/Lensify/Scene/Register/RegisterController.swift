@@ -44,11 +44,12 @@ class RegisterController: UIViewController {
     
     @IBAction func googleButtonAction(_ sender: Any) {
         adapter?.login(type: .google)
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
-        self.navigationController?.show(controller, sender: nil)
-        login()
+        self.adapter?.success = {
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
+            self.navigationController?.show(controller, sender: nil)
+            self.login()
+        }
     }
-    
     @IBAction func loginActionButton(_ sender: Any) {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(LoginController.self)") as! LoginController
         navigationController?.show(controller, sender: nil)
@@ -71,7 +72,6 @@ class RegisterController: UIViewController {
     }
     
     func configureUI() {
-        
         googleButton.clipsToBounds = true
         googleButton.layer.cornerRadius = 20
         registerButton.clipsToBounds = true
@@ -94,9 +94,11 @@ class RegisterController: UIViewController {
     
     @objc func facebookButonTapped() {
         adapter?.login(type: .facebook)
-        let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
-        self.navigationController?.show(controller, sender: nil)
-        login()
+        self.adapter?.success = {
+            let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
+            self.navigationController?.show(controller, sender: nil)
+            self.login()
+        }
     }
     
     func adapterSave() {
