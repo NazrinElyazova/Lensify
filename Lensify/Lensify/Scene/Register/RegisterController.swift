@@ -94,7 +94,7 @@ class RegisterController: UIViewController {
     
     @objc func facebookButonTapped() {
         adapter?.login(type: .facebook)
-        self.adapter?.success = {
+        self.adapter?.success = { 
             let controller = self.storyboard?.instantiateViewController(withIdentifier: "\(ReadyForDownloadController.self)") as! ReadyForDownloadController
             self.navigationController?.show(controller, sender: nil)
             self.login()
@@ -103,9 +103,9 @@ class RegisterController: UIViewController {
     
     func adapterSave() {
         adapter = LoginAdapter(controller: self)
-        adapter?.completion = {
+        adapter?.completion = { [weak self]
             user in
-            self.databaseAdapter.saveUserInfo(data: user)
+            self?.databaseAdapter.saveUserInfo(data: user)
         }
     }
     

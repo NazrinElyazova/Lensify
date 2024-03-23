@@ -66,10 +66,10 @@ class LoginController: UIViewController {
     
     func adapterSave() {
         adapter = LoginAdapter(controller: self)
-        adapter?.completion = {
+        adapter?.completion = { [weak self]
             user in
-            self.databaseAdapter.saveUserInfo(data: user)
-            self.login()
+            self?.databaseAdapter.saveUserInfo(data: user)
+            self?.login()
         }
     }
     

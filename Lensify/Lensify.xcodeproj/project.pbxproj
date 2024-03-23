@@ -39,7 +39,6 @@
 		7B5CECA02BA4C316007F8313 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B5CEC932BA4C316007F8313 /* Roboto-Italic.ttf */; };
 		7B5CECA12BA4C316007F8313 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B5CEC942BA4C316007F8313 /* LICENSE.txt */; };
 		7B5CECA32BA4C316007F8313 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B5CEC962BA4C316007F8313 /* Roboto-Bold.ttf */; };
-		7B63A97F2B9EDA4D00C641DE /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B63A97E2B9EDA4D00C641DE /* UserDefaultsExtension.swift */; };
 		7B63A9812B9EDDA700C641DE /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B63A9802B9EDDA700C641DE /* LoginController.swift */; };
 		7B63A9872B9F323900C641DE /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 7B63A9862B9F323900C641DE /* FirebaseStorage */; };
 		7B63A9892B9F326800C641DE /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 7B63A9882B9F326800C641DE /* FirebaseStorageCombine-Community */; };
@@ -79,7 +78,6 @@
 		7B9F3C922B889F3B002AA027 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F3C912B889F3B002AA027 /* StringExtension.swift */; };
 		7B9F3C942B88A32D002AA027 /* LanguageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9F3C932B88A32D002AA027 /* LanguageController.swift */; };
 		7BA58EC52B98875300422749 /* SafariExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC42B98875300422749 /* SafariExtension.swift */; };
-		7BA58EC72B98A5EC00422749 /* HideTitleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA58EC62B98A5EC00422749 /* HideTitleExtension.swift */; };
 		7BABCF752B77E2D3008FCDDE /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 7BABCF742B77E2D3008FCDDE /* SkeletonView */; };
 		7BB91CF22BA96B610075E9D5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB91CF12BA96B610075E9D5 /* CoreDataManager.swift */; };
 		7BC6AEF82B6A0FD900694CD0 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC6AEF72B6A0FD900694CD0 /* RegisterController.swift */; };
@@ -101,6 +99,7 @@
 		7BDB91CA2B5B924B00002EAC /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */; };
 		7BE672752BA8531800497F29 /* Detail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE672732BA8531800497F29 /* Detail+CoreDataClass.swift */; };
 		7BE672762BA8531800497F29 /* Detail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE672742BA8531800497F29 /* Detail+CoreDataProperties.swift */; };
+		7BFC1E942BAED0ED00F72E9F /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFC1E932BAED0ED00F72E9F /* ViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,7 +124,6 @@
 		7B5CEC932BA4C316007F8313 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
 		7B5CEC942BA4C316007F8313 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		7B5CEC962BA4C316007F8313 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		7B63A97E2B9EDA4D00C641DE /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		7B63A9802B9EDDA700C641DE /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		7B7967822B6D35A90032BB63 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7B79A5F92BA86CD000775CEB /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
@@ -160,7 +158,6 @@
 		7B9F3C912B889F3B002AA027 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		7B9F3C932B88A32D002AA027 /* LanguageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageController.swift; sourceTree = "<group>"; };
 		7BA58EC42B98875300422749 /* SafariExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtension.swift; sourceTree = "<group>"; };
-		7BA58EC62B98A5EC00422749 /* HideTitleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideTitleExtension.swift; sourceTree = "<group>"; };
 		7BB91CF12BA96B610075E9D5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		7BC24F242B88ACC100E8B654 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7BC24F252B88ACC100E8B654 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
@@ -184,6 +181,7 @@
 		7BDB91C92B5B924B00002EAC /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
 		7BE672732BA8531800497F29 /* Detail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detail+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7BE672742BA8531800497F29 /* Detail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detail+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		7BFC1E932BAED0ED00F72E9F /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		7BFEFFF32B72C2F200A1CCC7 /* Lensify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lensify.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -533,8 +531,7 @@
 				7BCD82902B89EC6C00FE1877 /* AlertExtension.swift */,
 				7B425A1E2B8BC8DF00E5AC05 /* ConfigureButtonExtension.swift */,
 				7BA58EC42B98875300422749 /* SafariExtension.swift */,
-				7BA58EC62B98A5EC00422749 /* HideTitleExtension.swift */,
-				7B63A97E2B9EDA4D00C641DE /* UserDefaultsExtension.swift */,
+				7BFC1E932BAED0ED00F72E9F /* ViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -774,7 +771,6 @@
 				7BD600842B6ED58700B28661 /* ReadyForDownloadController.swift in Sources */,
 				7B90E2AC2B52FB550099FBA3 /* KingfisherExtension.swift in Sources */,
 				7B9565322B64C64700044E58 /* TopicCell.swift in Sources */,
-				7BA58EC72B98A5EC00422749 /* HideTitleExtension.swift in Sources */,
 				7B90E29F2B52C4FD0099FBA3 /* NetworkManager.swift in Sources */,
 				7B97B9D02B5451D300D489CB /* HomeCell.swift in Sources */,
 				7BCD82912B89EC6C00FE1877 /* AlertExtension.swift in Sources */,
@@ -785,6 +781,7 @@
 				7B63A9812B9EDDA700C641DE /* LoginController.swift in Sources */,
 				7BCF89022B93596C00645CEA /* DetailManager.swift in Sources */,
 				7BC6AEFA2B6A183400694CD0 /* User.swift in Sources */,
+				7BFC1E942BAED0ED00F72E9F /* ViewControllerExtension.swift in Sources */,
 				7B9565422B650C1800044E58 /* Topic.swift in Sources */,
 				7BCF89002B93592600645CEA /* DetailViewModel.swift in Sources */,
 				7BC6AEFF2B6A72A700694CD0 /* DatabaseAdapter.swift in Sources */,
@@ -795,7 +792,6 @@
 				7BB91CF22BA96B610075E9D5 /* CoreDataManager.swift in Sources */,
 				7B4DE9B62B57F44B00F4C3AA /* HomeEndpoint.swift in Sources */,
 				7BC6AF1E2B6AAB1600694CD0 /* SearchEndpoint.swift in Sources */,
-				7B63A97F2B9EDA4D00C641DE /* UserDefaultsExtension.swift in Sources */,
 				7B95653E2B65025800044E58 /* TopicHeaderView.swift in Sources */,
 				7B90E2A12B52C5260099FBA3 /* NetworkHelper.swift in Sources */,
 				7B79A5FB2BA86CD000775CEB /* FavoriteCell.swift in Sources */,

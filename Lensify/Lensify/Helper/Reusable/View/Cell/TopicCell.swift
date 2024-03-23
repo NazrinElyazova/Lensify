@@ -9,8 +9,9 @@ import UIKit
 
 class TopicCell: UICollectionViewCell {
 
-    @IBOutlet weak var topicLabel: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
+     @IBOutlet private weak var topicLabel: UILabel!
+   
+    func configureCell(data: TopicElement) {
+      topicLabel.text = data.title
     }
 }

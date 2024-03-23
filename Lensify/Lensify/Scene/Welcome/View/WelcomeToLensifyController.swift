@@ -26,6 +26,8 @@ class WelcomeToLensifyController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setGradientColor()
+        view.bringSubviewToFront(myLabel)
+        view.bringSubviewToFront(startWelcomeButton)
     }
     
     @IBAction func startActionButton(_ sender: UIButton) {
@@ -45,19 +47,6 @@ class WelcomeToLensifyController: UIViewController {
     func translateTitle() {
         myLabel.text = "welcomeLabel".localize
         startWelcomeButton.setTitle("welcomeButton".localize, for: .normal)
-    }
-    
-    func setGradientColor() {
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = view.bounds
-        gradientLayer.colors = [UIColor.purple.cgColor,  UIColor.systemPink.cgColor, UIColor.blue.cgColor, UIColor.yellow.cgColor, UIColor.red.cgColor, UIColor.green.cgColor]
-        
-        gradientLayer.startPoint = CGPoint(x: 0.7, y: 0.3)
-        gradientLayer.endPoint = CGPoint(x: 0.2, y: 1.3)
-        
-        view.layer.addSublayer(gradientLayer)
-        view.bringSubviewToFront(myLabel)
-        view.bringSubviewToFront(startWelcomeButton)
     }
 }
 

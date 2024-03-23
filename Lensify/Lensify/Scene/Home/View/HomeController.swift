@@ -30,10 +30,10 @@ class HomeController: UIViewController {
     func configureUI() {
         navigationItem.title = "Lensify"
         topicView.addSubview(topicHeaderView)
-        topicHeaderView.callback = { id in
-            self.viewModel.items.removeAll()
-            self.collection.reloadData()
-            self.viewModel.topicId = id
+        topicHeaderView.callback = { [weak self] id in
+            self?.viewModel.items.removeAll()
+            self?.collection.reloadData()
+            self?.viewModel.topicId = id
         }
         
         topicHeaderView.frame = topicView.bounds
