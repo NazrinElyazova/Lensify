@@ -100,6 +100,7 @@
 		7BE672752BA8531800497F29 /* Detail+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE672732BA8531800497F29 /* Detail+CoreDataClass.swift */; };
 		7BE672762BA8531800497F29 /* Detail+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE672742BA8531800497F29 /* Detail+CoreDataProperties.swift */; };
 		7BFC1E942BAED0ED00F72E9F /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFC1E932BAED0ED00F72E9F /* ViewControllerExtension.swift */; };
+		7BFC1E992BAED77900F72E9F /* DetailScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFC1E982BAED77900F72E9F /* DetailScreenCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -182,6 +183,7 @@
 		7BE672732BA8531800497F29 /* Detail+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detail+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7BE672742BA8531800497F29 /* Detail+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Detail+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7BFC1E932BAED0ED00F72E9F /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		7BFC1E982BAED77900F72E9F /* DetailScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreenCoordinator.swift; sourceTree = "<group>"; };
 		7BFEFFF32B72C2F200A1CCC7 /* Lensify.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lensify.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -478,6 +480,7 @@
 		7B90E2AA2B52FB490099FBA3 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				7BFC1E972BAED74200F72E9F /* Coordinator */,
 				7BE672772BA8535D00497F29 /* CoreData */,
 				7B5CEC8A2BA4C2F6007F8313 /* Fonts */,
 				7B9F3C8E2B889F16002AA027 /* Extensions */,
@@ -642,6 +645,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		7BFC1E972BAED74200F72E9F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				7BFC1E982BAED77900F72E9F /* DetailScreenCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -777,6 +788,7 @@
 				7B53E7A12B53E6B3005D0CED /* HomeController.swift in Sources */,
 				7B90E2A32B52EC840099FBA3 /* WelcomeToLensifyController.swift in Sources */,
 				7BD2854A2B9655A00075B31E /* FavoriteController.swift in Sources */,
+				7BFC1E992BAED77900F72E9F /* DetailScreenCoordinator.swift in Sources */,
 				7BDB91CA2B5B924B00002EAC /* HomeUseCase.swift in Sources */,
 				7B63A9812B9EDDA700C641DE /* LoginController.swift in Sources */,
 				7BCF89022B93596C00645CEA /* DetailManager.swift in Sources */,

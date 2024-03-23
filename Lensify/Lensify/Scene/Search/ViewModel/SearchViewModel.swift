@@ -14,7 +14,7 @@ class SearchViewModel {
     var search = [SearchResult]()
     var onSucces: (()->Void)?
     var onError: ((String)-> Void)?
-    
+        
     var page = 1
     var searchText: String? {
         didSet {

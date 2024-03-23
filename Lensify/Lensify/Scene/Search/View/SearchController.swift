@@ -79,6 +79,10 @@ class SearchController: UIViewController, UITextFieldDelegate, UISearchBarDelega
             self.collection.reloadData()
         }
     }
+    func showDetail(id: String, model: SearchResult) {
+        let coordinator = DetailScreenCoordinator(navigatonController: navigationController ?? UINavigationController(), id: id, result: model)
+        coordinator.start()
+    }
 }
 
 extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -102,10 +106,7 @@ extension SearchController: UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "\(DetailController.self)") as! DetailController
-        controller.viewModel = DetailViewModel(id: viewModel.search[indexPath.item].id ?? "")
-        controller.searchItem = viewModel.search[indexPath.item]
-        navigationController?.show(controller, sender: nil)
+        showDetail(id: viewModel.search[indexPath.item].id ?? "", model: viewModel.search[indexPath.item])
     }
 }
 
