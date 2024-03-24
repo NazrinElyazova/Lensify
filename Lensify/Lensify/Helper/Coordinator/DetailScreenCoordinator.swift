@@ -18,6 +18,7 @@ class DetailScreenCoordinator: Coordinator {
     var id: String
     
     var result: SearchResult?
+    var homeResult: GetTopics?
     
     let viewModel = SearchViewModel()
 
