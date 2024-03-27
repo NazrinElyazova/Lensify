@@ -12,15 +12,15 @@ class CoreDataManager {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    var success: (([Detail]) -> Void)?
-    var items: [Detail]?
+    static let shared = CoreDataManager()
     
-    func fetchImage() {
+    private init() {}
+
+    func fetchImage(success:  (([Detail]) -> Void)?) {
         do {
             let items = try context.fetch(Detail.fetchRequest())
-            self.items = items
             DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
+                guard let _ = self else { return }
                 success?(items)
             }
         }
@@ -29,14 +29,18 @@ class CoreDataManager {
         }
     }
     
-    func deleteAction() {
+    func deleteAction(id: Detail, success:  (([Detail]) -> Void)?) {
+        context.delete(id)
+
         do {
             try context.save()
         }
         catch {
             print(error.localizedDescription)
         }
-        fetchImage()
+        fetchImage { items in
+            success?(items)
+        }
     }
 }
 

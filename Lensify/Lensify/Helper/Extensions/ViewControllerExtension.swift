@@ -10,7 +10,6 @@ import UIKit
 
 //MARK: User Defaults
 extension UIViewController {
-    
     func login() {
         UserDefaults.standard.set(true, forKey: "loggedIn")
     }
@@ -18,7 +17,6 @@ extension UIViewController {
 
 //MARK: Hide Title
 extension UIViewController {
-    
     func hideTitle() {
         self.navigationController?.navigationBar.topItem?.title = ""
     }
