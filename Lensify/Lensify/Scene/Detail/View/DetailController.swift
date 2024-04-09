@@ -60,8 +60,8 @@ class DetailController: UIViewController {
     }
     
     func downloadDetailPhoto() {
-        detailPhoto?.loadImage(url: searchItem?.urls?.small ?? "")
-        detailPhoto.loadImage(url: item?.urls?.regular ?? "")
+        detailPhoto?.loadImage(url: searchItem?.urls?.full ?? "")
+        detailPhoto.loadImage(url: item?.urls?.full ?? "")
     }
     
     func translateText() {
