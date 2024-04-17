@@ -7,6 +7,7 @@
 
 import UIKit
 import SkeletonView
+import Combine
 
 class HomeController: UIViewController {
     
@@ -46,14 +47,30 @@ class HomeController: UIViewController {
             self.topicHeaderView.configure(data: self.viewModel.topicItems)
         }
         
-        viewModel.onSuccess = {
-            self.collection.reloadData()
-        }
+//        viewModel.onSuccess = {
+//            self.collection.reloadData()
+//        }()
+//        
+//        viewModel.onError = {
+//            errorMessage in
+//            print("Home controllerde error var: \(errorMessage)")
+//        }
         
-        viewModel.onError = {
-            errorMessage in
-            print("Home controllerde error var: \(errorMessage)")
-        }
+        viewModel.onSuccess = PassthroughSubject<Void, Never>()
+        viewModel.onSuccess
+            .sink { [weak self] in
+                self?.collection.reloadData()
+            }
+            .store(in: &viewModel.cancellables)
+
+        viewModel.onError = PassthroughSubject<String, Never>()
+        
+        viewModel.onError
+            .sink { errorMessage in
+                print("Home controllerde error var: \(errorMessage)")
+            }
+            .store(in: &viewModel.cancellables)
+
     }
     
     func presentSaveAndShareSheet(image: UIImage) {

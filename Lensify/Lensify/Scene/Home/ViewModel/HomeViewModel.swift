@@ -1,22 +1,76 @@
+////
+////  HomeViewModel.swift
+////  Lensify
+////
+////  Created by Nazrin on 14.01.24.
+////
 //
-//  HomeViewModel.swift
-//  Lensify
+//import Foundation
 //
-//  Created by Nazrin on 14.01.24.
+//class HomeViewModel {
+//    private let manager = HomeManager()
 //
-
+//    var items = [GetTopics]()
+//    var onSuccess: (()-> Void)?
+//    var topicSuccess: (()-> Void)?
+//    var onError: ((String)-> Void)?
+//    var currentItems = [GetTopics]()
+//    var topicItems = [TopicElement]()
+//
+//    var page = 1
+//    var topicId: String? {
+//        didSet {
+//            getPhotos()
+//        }
+//    }
+//
+//    func getTopics() {
+//        manager.getTopics() { data, errorMessage in
+//            if let errorMessage {
+//                self.onError?(errorMessage)
+//            } else if let data {
+//                self.topicItems = data
+//                self.topicId = data.first?.id
+//                self.topicSuccess?()
+//            }
+//        }
+//    }
+//
+//    func getPhotos() {
+//        manager.getHomeList(pageNumber: page, id: topicId ?? "") {
+//            data, errorMessage in
+//            if let errorMessage = errorMessage {
+//                self.onError?(errorMessage)
+//            } else if let data = data {
+//                self.currentItems = data
+//                self.items.append(contentsOf: data)
+//                self.onSuccess?()
+//            }
+//        }
+//    }
+//
+//    func pagination(index: Int) {
+//        if index == items.count-1 && !currentItems.isEmpty {
+//            page += 1
+//            getPhotos()
+//        }
+//    }
+//}
+//
+import Combine
 import Foundation
 
 class HomeViewModel {
-    private let manager = HomeManager()
+    let manager = HomeManager()
     
     var items = [GetTopics]()
-    var onSuccess: (()-> Void)?
-    var topicSuccess: (()-> Void)?
-    var onError: ((String)-> Void)?
+    var onSuccess: PassthroughSubject<Void, Never> = PassthroughSubject<Void, Never>()
+    var onError: PassthroughSubject<String, Never> = PassthroughSubject<String, Never>()
     var currentItems = [GetTopics]()
-    var topicItems = [TopicElement]()
+    var topicSuccess: (()-> Void)?
+    var cancellables = Set<AnyCancellable>()
     
+    var topicItems = [TopicElement]()
     var page = 1
     var topicId: String? {
         didSet {
@@ -24,11 +78,27 @@ class HomeViewModel {
         }
     }
     
+    init() {
+        setupSubscribers()
+    }
+    
+    private func setupSubscribers() {
+        onSuccess
+            .sink {_ in
+            }
+            .store(in: &cancellables)
+        
+        onError
+            .sink {_ in
+            }
+            .store(in: &cancellables)
+    }
+    
     func getTopics() {
         manager.getTopics() { data, errorMessage in
-            if let errorMessage {
-                self.onError?(errorMessage)
-            } else if let data {
+            if let errorMessage = errorMessage {
+                self.onError.send(errorMessage)
+            } else if let data = data {
                 self.topicItems = data
                 self.topicId = data.first?.id
                 self.topicSuccess?()
@@ -40,11 +110,11 @@ class HomeViewModel {
         manager.getHomeList(pageNumber: page, id: topicId ?? "") {
             data, errorMessage in
             if let errorMessage = errorMessage {
-                self.onError?(errorMessage)
+                self.onError.send(errorMessage)
             } else if let data = data {
                 self.currentItems = data
                 self.items.append(contentsOf: data)
-                self.onSuccess?()
+                self.onSuccess.send()
             }
         }
     }
@@ -56,4 +126,3 @@ class HomeViewModel {
         }
     }
 }
-
