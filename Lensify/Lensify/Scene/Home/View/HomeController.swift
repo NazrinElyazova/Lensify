@@ -46,16 +46,6 @@ class HomeController: UIViewController {
         viewModel.topicSuccess = {
             self.topicHeaderView.configure(data: self.viewModel.topicItems)
         }
-        
-//        viewModel.onSuccess = {
-//            self.collection.reloadData()
-//        }()
-//        
-//        viewModel.onError = {
-//            errorMessage in
-//            print("Home controllerde error var: \(errorMessage)")
-//        }
-        
         viewModel.onSuccess = PassthroughSubject<Void, Never>()
         viewModel.onSuccess
             .sink { [weak self] in
