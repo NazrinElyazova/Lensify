@@ -11,7 +11,7 @@ import FBSDKLoginKit
 
 class LoginAdapter {
     
-    let manager = LoginManager()
+//    let manager = LoginManager()
     
     var success: (() -> Void)?
     var completion: ((UserData)->())?
